@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Disclaimer</title>
+<title>Game Store</title>
 
 <style>
 body{
@@ -13,9 +12,29 @@ body{
   background:#eef1f6;
 }
 
+/* NAV */
+.nav{
+  display:flex;
+  gap:8px;
+  padding:10px;
+  background:#1e6fd9;
+}
+.nav button{
+  flex:1;
+  padding:10px;
+  border:none;
+  border-radius:10px;
+  background:#fff;
+  font-weight:bold;
+}
+.nav button.active{
+  background:#1abc9c;
+  color:#fff;
+}
+
 /* HEADER */
 .header{
-  background:linear-gradient(90deg,#0a3d62,#0b5ed7);
+  background:#1e6fd9;
   color:#fff;
   text-align:center;
   padding:16px;
@@ -23,163 +42,149 @@ body{
   font-weight:bold;
 }
 
-/* MAIN BOX */
+/* SECTIONS */
+.section{ display:none; }
+.section.active{ display:block; }
+
+/* CARD */
+.card{
+  background:#fff;
+  margin:14px;
+  padding:14px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  box-shadow:0 6px 16px rgba(0,0,0,.1);
+}
+.card img{
+  width:64px;
+  height:64px;
+  border-radius:12px;
+}
+.info{
+  flex:1;
+  margin-left:12px;
+}
+.info h3{
+  margin:0;
+  font-size:16px;
+}
+.btn{
+  background:#1e90ff;
+  color:#fff;
+  padding:10px 14px;
+  border-radius:10px;
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* BOX */
 .box{
   background:#fff;
   margin:16px;
-  padding:20px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,.1);
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 6px 16px rgba(0,0,0,.1);
   line-height:1.7;
-  font-size:15px;
 }
 
-/* HEADINGS */
-.box h2{
-  margin-top:0;
-  color:#c0392b;
-}
-
-/* BUTTON */
-.btn{
-  display:block;
-  margin:18px auto 10px;
-  padding:12px 18px;
-  background:#0b7dda;
-  color:#fff;
-  text-decoration:none;
-  border-radius:10px;
-  font-weight:bold;
+/* FOOTER */
+.footer{
   text-align:center;
-  width:90%;
-  max-width:320px;
-}
-
-/* SHARE */
-.share{
-  text-align:center;
-  margin-top:12px;
-  font-weight:bold;
-}
-
-/* FOOTER LINKS */
-.footer-links{
-  text-align:center;
-  margin:20px 10px;
-  font-size:14px;
-}
-.footer-links a{
-  margin:0 6px;
-  text-decoration:none;
-  color:#0b5ed7;
-  font-weight:600;
+  padding:14px;
+  font-size:13px;
+  color:#555;
 }
 </style>
+
+<script>
+function openTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab+'Btn').classList.add('active');
+}
+</script>
 </head>
 
 <body>
 
-<div class="header">Disclaimer</div>
-
-<div class="box">
-
-  <h2>General Disclaimer</h2>
-
-  <p>
-    This website acts only as an <b>informational and promotional platform</b>.
-    We do <b>not own, operate, or manage</b> any of the applications listed here.
-    All apps are owned and controlled by their respective third-party developers
-    or companies.
-  </p>
-
-  <p>
-    The applications listed on this platform may involve various levels of risk,
-    including <b>financial risk</b>. Users should play, invest, or engage in these
-    apps strictly at their <b>own discretion and responsibility</b>.
-  </p>
-
-  <h2>Independent App Disclaimers</h2>
-
-  <p>
-    Users are strongly advised to carefully read and understand the
-    <b>official disclaimer, terms & conditions, and privacy policy</b>
-    of each individual app before using it.
-  </p>
-
-  <p>
-    The brief information provided on this website is <b>not exhaustive</b>
-    and may not include all risks, rules, or conditions related to each app.
-  </p>
-
-  <h2>No Liability</h2>
-
-  <p>
-    We shall <b>not be held responsible</b> for any direct or indirect losses,
-    damages, disputes, delays, payment failures, or issues arising from
-    the use of any third-party application.
-  </p>
-
-  <p>
-    Our role is limited only to sharing links and basic information.
-    We do not guarantee earnings, bonuses, withdrawals, or gameplay outcomes.
-  </p>
-
-  <h2>Regional Legal Restrictions</h2>
-
-  <p>
-    Certain applications such as <b>Rummy, Poker, Fantasy Sports</b>
-    may be restricted or prohibited in some Indian states.
-  </p>
-
-  <p>
-    These states may include:
-    <b>Andhra Pradesh, Sikkim, Nagaland, Assam, Arunachal Pradesh,
-    Tamil Nadu, Odisha, and Telangana</b>.
-  </p>
-
-  <p>
-    It is the <b>user’s sole responsibility</b> to verify whether participation
-    in such apps is legal in their state or region.
-  </p>
-
-  <h2>Important Notice</h2>
-
-  <p>
-    Rummy and similar games can be <b>addictive</b> and may lead to
-    <b>financial loss</b>. Please play responsibly.
-  </p>
-
-  <p>
-    This website is strictly intended for <b>18+ users only</b>.
-  </p>
-
-  <p>
-    By using this website, users acknowledge that they fully understand
-    and accept this disclaimer and agree that all interactions with
-    third-party apps are done at their own risk.
-  </p>
-
-  <a class="btn" href="telegram-link.html" target="_blank">
-    🚀 Join Our Telegram Channel
-  </a>
-
-  <div class="share">
-    Share With Friends!
-    <a href="share.php">Click Here To Share</a>
-  </div>
-
+<div class="nav">
+  <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
+  <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
+  <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
+  <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
-<div class="footer-links">
-  <a href="about-us.html">About Us</a> |
-  <a href="disclaimer.html">Disclaimer</a> |
-  <a href="contact-us.html">Contact Us</a> |
-  <a href="privacy-policy.html">Privacy Policy</a> |
-  <a href="terms-and-conditions.html">Terms & Conditions</a>
+<div class="header">Game Store</div>
+
+<!-- HOME -->
+<div id="home" class="section active">
+  <div class="card">
+    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    <div class="info">
+      <h3>Teen Patti Master</h3>
+      🎁 Bonus Available<br>🏦 Fast Withdraw
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      🎁 ₹13+ Bonus<br>💸 Cashback
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+  <div class="box">
+    <h3>About Us</h3>
+    This platform was created to help users discover and access
+    various applications easily. Our focus is on simplicity,
+    transparency, and user-friendly experience.
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+  <div class="box">
+    <h3>Contact Us</h3>
+    📧 Email: <b>support@example.com</b>
+  </div>
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disc" class="section">
+  <div class="box">
+    <h3>Disclaimer</h3>
+    This website only provides information and links to third-party apps.
+    We do not own or operate any apps.<br><br>
+    Games may involve financial risk. Please play responsibly.<br><br>
+    <b>18+ Only</b>
+  </div>
+</div>
+
+<div class="footer">
+© 2026 Game Store. All Rights Reserved.
 </div>
 
 </body>
 </html>
+
 
 
 
