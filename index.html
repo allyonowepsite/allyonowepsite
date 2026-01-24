@@ -1,120 +1,126 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>All Game Store</title>
+  <!-- Google Site Verification -->
+  <meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw">
 
-<style>
-body{
-  margin:0;
-  font-family:'Segoe UI',Arial,sans-serif;
-  background:#eef1f6;
-}
+  <title>All Game Store – Teen Patti & Rummy Apps</title>
+  <meta name="description" content="Download Teen Patti, Rummy & Skill Games. Fast withdraw, real cash & bonus offers.">
 
-/* NAV BAR */
-.nav{
-  display:flex;
-  background:linear-gradient(90deg,#0a3d62,#0b5ed7);
-  padding:8px;
-  gap:8px;
-}
-.nav button{
-  flex:1;
-  padding:10px;
-  border:none;
-  border-radius:10px;
-  background:#ffffff;
-  font-weight:600;
-}
-.nav button.active{
-  background:#1abc9c;
-  color:#fff;
-}
+  <style>
+    body{
+      margin:0;
+      font-family:'Segoe UI',Arial,sans-serif;
+      background:#eef1f6;
+    }
 
-/* HEADER */
-.header{
-  background:linear-gradient(90deg,#0a3d62,#0b5ed7);
-  color:#fff;
-  text-align:center;
-  padding:16px;
-  font-size:22px;
-  font-weight:700;
-}
+    /* NAV BAR */
+    .nav{
+      display:flex;
+      background:linear-gradient(90deg,#0a3d62,#0b5ed7);
+      padding:8px;
+      gap:8px;
+    }
+    .nav button{
+      flex:1;
+      padding:10px;
+      border:none;
+      border-radius:10px;
+      background:#fff;
+      font-weight:600;
+      cursor:pointer;
+    }
+    .nav button.active{
+      background:#1abc9c;
+      color:#fff;
+    }
 
-/* SECTION */
-.section{display:none;}
-.section.active{display:block;}
+    /* HEADER */
+    .header{
+      background:linear-gradient(90deg,#0a3d62,#0b5ed7);
+      color:#fff;
+      text-align:center;
+      padding:16px;
+      font-size:22px;
+      font-weight:700;
+    }
 
-/* CARD */
-.card{
-  background:#fff;
-  margin:14px;
-  padding:14px;
-  border-radius:16px;
-  display:flex;
-  align-items:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-.card img{
-  width:72px;
-  height:72px;
-  border-radius:14px;
-}
-.info{
-  flex:1;
-  margin-left:14px;
-}
-.info h3{
-  margin:0;
-  font-size:17px;
-}
+    /* SECTION */
+    .section{display:none;}
+    .section.active{display:block;}
 
-/* DOWNLOAD BUTTON */
-.btn{
-  background:linear-gradient(90deg,#1e90ff,#0066ff);
-  color:#fff;
-  padding:10px 16px;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:600;
-  box-shadow:0 4px 10px rgba(0,0,0,.2);
-}
+    /* CARD */
+    .card{
+      background:#fff;
+      margin:14px;
+      padding:14px;
+      border-radius:16px;
+      display:flex;
+      align-items:center;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+    }
+    .card img{
+      width:72px;
+      height:72px;
+      border-radius:14px;
+    }
+    .info{
+      flex:1;
+      margin-left:14px;
+      font-size:14px;
+    }
+    .info h3{
+      margin:0 0 4px;
+      font-size:17px;
+    }
 
-/* ABOUT BOX */
-.box{
-  background:#fff;
-  margin:16px;
-  padding:18px;
-  border-radius:16px;
-  box-shadow:0 8px 20px rgba(0,0,0,.08);
-}
-.box h2{
-  color:#d63031;
-  margin-top:0;
-}
+    /* BUTTON */
+    .btn{
+      background:linear-gradient(90deg,#1e90ff,#0066ff);
+      color:#fff;
+      padding:10px 16px;
+      border-radius:10px;
+      text-decoration:none;
+      font-weight:600;
+      box-shadow:0 4px 10px rgba(0,0,0,.2);
+    }
 
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:15px;
-  font-size:13px;
-  color:#555;
-}
-</style>
+    /* BOX */
+    .box{
+      background:#fff;
+      margin:16px;
+      padding:18px;
+      border-radius:16px;
+      box-shadow:0 8px 20px rgba(0,0,0,.08);
+      font-size:14px;
+      line-height:1.6;
+    }
+    .box h2{
+      color:#d63031;
+      margin-top:0;
+    }
 
-<script>
-function openTab(tab){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(tab).classList.add('active');
+    /* FOOTER */
+    .footer{
+      text-align:center;
+      padding:15px;
+      font-size:13px;
+      color:#555;
+    }
+  </style>
 
-  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
-  document.getElementById(tab+'Btn').classList.add('active');
-}
-</script>
+  <script>
+    function openTab(tab){
+      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+      document.getElementById(tab).classList.add('active');
+
+      document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+      document.getElementById(tab+'Btn').classList.add('active');
+    }
+  </script>
 </head>
 
 <body>
@@ -133,7 +139,7 @@ function openTab(tab){
 <div id="home" class="section active">
 
   <div class="card">
-    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png" alt="Teen Patti Master">
     <div class="info">
       <h3>Teen Patti Master</h3>
       🎁 Bonus Available<br>🏦 Fast Withdraw
@@ -142,7 +148,7 @@ function openTab(tab){
   </div>
 
   <div class="card">
-    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png" alt="101Z Game">
     <div class="info">
       <h3>101Z Skill Game</h3>
       🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
@@ -151,7 +157,7 @@ function openTab(tab){
   </div>
 
   <div class="card">
-    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png" alt="Yono Rummy">
     <div class="info">
       <h3>Yono Rummy</h3>
       🎁 ₹13+ Bonus<br>💸 Cashback
@@ -164,32 +170,25 @@ function openTab(tab){
 <!-- ABOUT -->
 <div id="about" class="section">
   <div class="box">
-    <h2> About Us
-Welcome to our platform, a comprehensive hub created on July 27, 2024, dedicated to enhancing digital experiences for everyone. At the heart of our mission lies the commitment to empower users with access to a wide range of applications, mirroring the global accessibility of platforms like the renowned app marketplaces, but with a unique focus on Indian users.
+    <h2>About Us</h2>
+    Welcome to <b>All Game Store</b>, launched on July 27, 2024.  
+    We provide easy access to popular Indian gaming apps including Teen Patti,
+    Rummy, and skill-based games.
 
-Our journey began with a simple yet powerful vision: to revolutionize the way people discover and download apps. We recognize the evolving needs of the digital age and strive to meet them by offering an extensive selection of applications. From utility and productivity apps to entertainment and lifestyle options, our platform is a one-stop destination for all your app needs.
+    <br><br>
+    Our goal is to help users discover trusted apps with bonus offers, fast
+    withdrawals, and smooth gameplay.
 
-We are not just about providing access to apps; we are about fostering a community where knowledge about the latest digital tools is shared and celebrated. Our platform is designed to be user-friendly, ensuring a seamless experience for everyone, from tech-savvy individuals to those just starting their digital journey.
-
-Our focus on Indian applications sets us apart, reflecting our dedication to cater to the unique needs and preferences of our audience. We believe in the power of local solutions for local challenges, and our platform is a testament to this belief.
-
-Join us in our endeavor to bring the best of digital innovations to your fingertips. Explore, download, and stay ahead in the ever-evolving world of apps with us.
-
-Join Our Telegram Channel
-Join Now
- Share With Freinds!
-Click Here To Share
-About Us      Disclaimer      Contact Us     
-Privacy Policy      Terms & conditions
-
-Join Our Telegram:
-Click here
+    <br><br>
+    📢 <b>Join our Telegram Channel</b> for updates & offers.
+  </div>
+</div>
 
 <!-- CONTACT -->
 <div id="contact" class="section">
   <div class="box">
     <h2>Contact Us</h2>
-    support@allgamestore.com
+    📧 Email: <b>support@allgamestore.com</b>
   </div>
 </div>
 
@@ -197,17 +196,18 @@ Click here
 <div id="disc" class="section">
   <div class="box">
     <h2>Disclaimer</h2>
-    We do not own any apps.<br>
-    Games involve financial risk.<br>
+    We do not own any apps listed on this site.<br>
+    All games involve financial risk.<br>
     <b>18+ Only</b>
   </div>
 </div>
 
 <div class="footer">
-© 2026 All Game Store. All Rights Reserved.
+  © 2026 All Game Store. All Rights Reserved.
 </div>
 
 </body>
 </html>
+
 
 
