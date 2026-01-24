@@ -2,145 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>About Us – All Yono Store</title>
+
+<!-- GOOGLE VERIFY -->
+<meta name="google-site-verification"
+content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
+
+<title>All Game Store</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
-    margin:0;
-    font-family:Arial, sans-serif;
-    background:#ffffff;
-    color:#000;
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f4f7;
 }
-.container{
-    padding:15px;
+
+/* TOP BAR */
+.nav{
+  display:flex;
+  gap:6px;
+  padding:8px;
+  background:#0b5ed7;
 }
-h1{
-    color:#e60000;
-    font-size:24px;
-    margin-bottom:10px;
+.nav button{
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  font-size:14px;
+  cursor:pointer;
 }
-p{
-    font-size:15px;
-    line-height:1.6;
-    margin-bottom:14px;
+.nav .active{background:#198754;color:#fff;}
+.nav .normal{background:#fff;color:#000;}
+
+.header{
+  background:#0b5ed7;
+  color:#fff;
+  text-align:center;
+  padding:14px;
+  font-size:20px;
+  font-weight:bold;
 }
-.btn-row{
-    display:flex;
-    gap:10px;
-    margin:15px 0;
+
+/* GAME CARD */
+.card{
+  background:#fff;
+  margin:12px;
+  padding:12px;
+  border-radius:12px;
+  display:flex;
+  gap:12px;
+  align-items:center;
+}
+.card img{
+  width:70px;height:70px;border-radius:12px;
 }
 .btn{
-    flex:1;
-    text-align:center;
-    padding:12px;
-    border-radius:8px;
-    text-decoration:none;
-    font-weight:bold;
-    font-size:14px;
+  background:#0d6efd;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:6px;
+  text-decoration:none;
+  font-size:14px;
 }
-.telegram{
-    background:#1da1f2;
-    color:#fff;
+
+/* SECTIONS */
+.section{
+  display:none;
+  background:#fff;
+  margin:12px;
+  padding:15px;
+  border-radius:10px;
 }
-.share{
-    background:#28a745;
-    color:#fff;
+.section h2{
+  color:#e60000;
+  margin-top:0;
 }
-.footer-links{
-    margin-top:20px;
-    text-align:center;
-    font-size:14px;
-}
-.footer-links a{
-    color:#0044cc;
-    text-decoration:none;
-    margin:0 6px;
-}
-.join{
-    margin-top:25px;
-    background:#0b3c5d;
-    color:#fff;
-    text-align:center;
-    padding:20px;
-}
-.join a{
-    color:#fff;
-    font-weight:bold;
-    text-decoration:underline;
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  font-size:12px;
+  color:#555;
+  padding:15px;
 }
 </style>
+
+<script>
+function showSection(id){
+  document.getElementById("home").style.display="none";
+  document.getElementById("about").style.display="none";
+  document.getElementById("contact").style.display="none";
+  document.getElementById("disclaimer").style.display="none";
+  document.getElementById(id).style.display="block";
+}
+</script>
 </head>
 
 <body>
 
-<div class="container">
+<!-- TOP MENU -->
+<div class="nav">
+  <button class="active" onclick="showSection('home')">🏠 Home</button>
+  <button class="normal" onclick="showSection('about')">👤 About</button>
+  <button class="normal" onclick="showSection('contact')">✉️ Contact</button>
+  <button class="normal" onclick="showSection('disclaimer')">⚠️ Disclaimer</button>
+  <a class="normal" href="https://t.me/YOUR_TELEGRAM"
+     style="text-decoration:none;padding:8px 12px;border-radius:6px;background:#fff;">
+     📢 Telegram
+  </a>
+</div>
 
-<h1>About Us</h1>
+<div class="header">All Game Store</div>
 
+<!-- HOME -->
+<div id="home">
+
+<div class="card">
+<img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+<div>
+<b>Teen Patti Master</b><br>
+🎁 Bonus Available<br>
+🏦 Fast Withdraw
+</div>
+<a class="btn" href="https://www.earntp.com/gold/jexzd">Download</a>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/9mWjVf1m/101z.png">
+<div>
+<b>101Z Skill Game</b><br>
+🎁 ₹10 + ₹692 Bonus<br>
+💰 Real Cash
+</div>
+<a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8">Download</a>
+</div>
+
+<div class="card">
+<img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+<div>
+<b>Yono Rummy</b><br>
+🎁 ₹13+ Bonus<br>
+💸 Cashback
+</div>
+<a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE">Download</a>
+</div>
+
+</div>
+
+<!-- ABOUT (HIDDEN BY DEFAULT) -->
+<div id="about" class="section">
+<h2>About Us</h2>
 <p>
 Welcome to our platform, a comprehensive hub created on July 27, 2024,
-dedicated to enhancing digital experiences for everyone. At the heart of our
-mission lies the commitment to empower users with access to a wide range of
-applications, with a unique focus on Indian users.
+dedicated to enhancing digital experiences for everyone.
 </p>
-
 <p>
-Our journey began with a simple yet powerful vision: to revolutionize the way
-people discover and download apps. From utility and productivity apps to
-entertainment and lifestyle options, our platform is a one-stop destination
-for all your app needs.
+Our mission is to help users discover Indian applications easily.
+We do not own any apps.
 </p>
-
 <p>
-We are not just about providing access to apps; we are about fostering a
-community where knowledge about the latest digital tools is shared and
-celebrated. Our platform is designed to be user-friendly for both beginners
-and tech-savvy users.
+Our platform is designed for both beginners and tech-savvy users.
 </p>
 
-<p>
-Our focus on Indian applications sets us apart. We strongly believe in local
-solutions for local challenges, and our platform reflects this commitment.
-</p>
-
-<p>
-Join us in our journey to bring the best of digital innovations to your
-fingertips. Explore, download, and stay ahead in the ever-evolving world of
-apps with us.
-</p>
-
-<div class="btn-row">
-<a class="btn telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
-🚀 Join Our Telegram Channel
-</a>
-<a class="btn telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
-Join Now
-</a>
+<a class="btn" href="https://t.me/YOUR_TELEGRAM">Join Our Telegram</a>
 </div>
 
-<div class="btn-row">
-<a class="btn share" href="#" onclick="navigator.share ? navigator.share({title:'All Yono Store',url:window.location.href}) : alert('Share this page');">
-🔗 Share With Friends
-</a>
-<a class="btn share" href="#">
-Click Here To Share
-</a>
+<!-- CONTACT -->
+<div id="contact" class="section">
+<h2>Contact Us</h2>
+<p>Email: support@allyonowepsite.com</p>
 </div>
 
-<div class="footer-links">
-<a href="about.html">About Us</a> |
-<a href="disclaimer.html">Disclaimer</a> |
-<a href="contact.html">Contact Us</a><br><br>
-<a href="privacy-policy.html">Privacy Policy</a> |
-<a href="terms-and-conditions.html">Terms & Conditions</a>
+<!-- DISCLAIMER -->
+<div id="disclaimer" class="section">
+<h2>Disclaimer</h2>
+<p>
+This website does not own or operate any gaming apps.<br>
+Games involve financial risk.<br>
+<b>18+ users only.</b>
+</p>
 </div>
 
-</div>
-
-<div class="join">
-<h2>Join Our Telegram:</h2>
-<a href="https://t.me/YOUR_TELEGRAM" target="_blank">Click here</a>
+<div class="footer">
+© 2026 All Game Store. All Rights Reserved.
 </div>
 
 </body>
