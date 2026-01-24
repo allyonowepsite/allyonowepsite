@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- ✅ GOOGLE SITE VERIFICATION (ONLY ONE, DO NOT ADD ANOTHER) -->
+<!-- ✅ GOOGLE SITE VERIFICATION (ONLY THIS ONE) -->
 <meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
 
 <title>All Game Store – Teen Patti & Rummy Apps</title>
@@ -17,6 +17,30 @@ body{
     font-family:Arial, sans-serif;
     background:#f4f6f8;
 }
+
+/* TOP NAV BAR */
+.top-nav{
+    display:flex;
+    gap:8px;
+    padding:8px;
+    background:#0b5ed7;
+    overflow-x:auto;
+}
+.top-nav a{
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:6px;
+    font-size:14px;
+    white-space:nowrap;
+}
+.top-nav a.active{
+    background:#198754;
+    color:#fff;
+}
+
+/* HEADER */
 .header{
     background:#0b5ed7;
     color:#fff;
@@ -25,6 +49,8 @@ body{
     font-size:20px;
     font-weight:bold;
 }
+
+/* GAME CARD */
 .game{
     background:#fff;
     margin:12px;
@@ -60,6 +86,8 @@ body{
     border-radius:6px;
     font-size:14px;
 }
+
+/* NOTICE */
 .notice{
     background:#fff3cd;
     border:1px solid #ffeeba;
@@ -68,6 +96,8 @@ body{
     border-radius:8px;
     font-size:13px;
 }
+
+/* FOOTER */
 .footer{
     text-align:center;
     padding:12px;
@@ -79,46 +109,66 @@ body{
 
 <body>
 
+<!-- TOP MENU -->
+<div class="top-nav">
+  <a href="#" class="active">🏠 Home</a>
+  <a href="#about">👤 About</a>
+  <a href="#contact">✉️ Contact Us</a>
+  <a href="#disclaimer">⚠️ Disclaimer</a>
+  <a href="https://t.me/YOUR_TELEGRAM" target="_blank">📢 Join Telegram</a>
+</div>
+
 <div class="header">All Game Store</div>
 
 <!-- Teen Patti Master -->
 <div class="game">
-    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png" alt="Teen Patti Master">
-    <div class="game-info">
-        <h3>Teen Patti Master</h3>
-        <p>🎁 Sign Up Bonus Available</p>
-        <p>🏦 Fast Withdraw Support</p>
-    </div>
-    <a class="download" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
+  <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png" alt="Teen Patti Master">
+  <div class="game-info">
+    <h3>Teen Patti Master</h3>
+    <p>🎁 Sign Up Bonus Available</p>
+    <p>🏦 Fast Withdraw Support</p>
+  </div>
+  <a class="download" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
 </div>
 
 <!-- 101Z Game -->
 <div class="game">
-    <img src="https://i.ibb.co/9mWjVf1m/101z.png" alt="101Z Game">
-    <div class="game-info">
-        <h3>101Z Skill Game</h3>
-        <p>🎁 ₹10 Joining + ₹692 Login Bonus</p>
-        <p>💰 Real Cash Games</p>
-    </div>
-    <a class="download" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
+  <img src="https://i.ibb.co/9mWjVf1m/101z.png" alt="101Z Game">
+  <div class="game-info">
+    <h3>101Z Skill Game</h3>
+    <p>🎁 ₹10 Joining + ₹692 Login Bonus</p>
+    <p>💰 Real Cash Games</p>
+  </div>
+  <a class="download" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
 </div>
 
 <!-- Yono Rummy -->
 <div class="game">
-    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png" alt="Yono Rummy">
-    <div class="game-info">
-        <h3>Yono Rummy</h3>
-        <p>🎁 ₹13+ Bonus + Daily Rewards</p>
-        <p>💸 Cashback on Deposit</p>
-    </div>
-    <a class="download" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
+  <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png" alt="Yono Rummy">
+  <div class="game-info">
+    <h3>Yono Rummy</h3>
+    <p>🎁 ₹13+ Bonus + Daily Rewards</p>
+    <p>💸 Cashback on Deposit</p>
+  </div>
+  <a class="download" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
 </div>
 
-<div class="notice">
-<b>Important Notice:</b><br>
-This website does not own or operate any gaming apps listed here.<br>
-Games may involve financial risk and can be addictive.<br>
-Only for <b>18+ users</b>. Please play responsibly.
+<!-- INFO SECTIONS -->
+<div id="about" class="notice">
+<b>About:</b><br>
+All Game Store is an informational platform only.
+</div>
+
+<div id="contact" class="notice">
+<b>Contact Us:</b><br>
+Email: support@allyonowepsite.com
+</div>
+
+<div id="disclaimer" class="notice">
+<b>Disclaimer:</b><br>
+We do not own or operate any gaming apps.<br>
+Games involve financial risk.<br>
+<b>18+ only</b>.
 </div>
 
 <div class="footer">
