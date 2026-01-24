@@ -1,213 +1,161 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us – All Yono Store</title>
 
-  <!-- Google Site Verification -->
-  <meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw">
+<style>
+body{
+  margin:0;
+  min-height:100vh;
+  font-family:Arial,Helvetica,sans-serif;
+  background:#eef1f6;
+}
 
-  <title>All Game Store – Teen Patti & Rummy Apps</title>
-  <meta name="description" content="Download Teen Patti, Rummy & Skill Games. Fast withdraw, real cash & bonus offers.">
+/* HEADER */
+.header{
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:linear-gradient(90deg,#0a3d62,#0b5ed7);
+  color:#fff;
+  text-align:center;
+  padding:16px;
+  font-size:22px;
+  font-weight:bold;
+}
 
-  <style>
-    body{
-      margin:0;
-      font-family:'Segoe UI',Arial,sans-serif;
-      background:#eef1f6;
-    }
+/* CONTENT BOX */
+.box{
+  background:#fff;
+  margin:16px;
+  padding:18px;
+  border-radius:16px;
+  box-shadow:0 8px 20px rgba(0,0,0,.08);
+  line-height:1.6;
+  font-size:14px;
+}
+.box h2{
+  margin-top:0;
+  color:#0a3d62;
+}
 
-    /* NAV BAR */
-    .nav{
-      display:flex;
-      background:linear-gradient(90deg,#0a3d62,#0b5ed7);
-      padding:8px;
-      gap:8px;
-    }
-    .nav button{
-      flex:1;
-      padding:10px;
-      border:none;
-      border-radius:10px;
-      background:#fff;
-      font-weight:600;
-      cursor:pointer;
-    }
-    .nav button.active{
-      background:#1abc9c;
-      color:#fff;
-    }
+/* TABLE */
+.table{
+  width:100%;
+  border-collapse:collapse;
+  margin-top:15px;
+}
+.table th,
+.table td{
+  border:1px solid #ccc;
+  padding:10px;
+  text-align:left;
+}
+.table th{
+  background:#f1f1f1;
+}
 
-    /* HEADER */
-    .header{
-      background:linear-gradient(90deg,#0a3d62,#0b5ed7);
-      color:#fff;
-      text-align:center;
-      padding:16px;
-      font-size:22px;
-      font-weight:700;
-    }
+/* BUTTON */
+.btn{
+  display:inline-block;
+  margin-top:12px;
+  padding:10px 16px;
+  background:#0088cc;
+  color:#fff;
+  text-decoration:none;
+  border-radius:8px;
+  font-weight:600;
+}
 
-    /* SECTION */
-    .section{display:none;}
-    .section.active{display:block;}
-
-    /* CARD */
-    .card{
-      background:#fff;
-      margin:14px;
-      padding:14px;
-      border-radius:16px;
-      display:flex;
-      align-items:center;
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-    }
-    .card img{
-      width:72px;
-      height:72px;
-      border-radius:14px;
-    }
-    .info{
-      flex:1;
-      margin-left:14px;
-      font-size:14px;
-    }
-    .info h3{
-      margin:0 0 4px;
-      font-size:17px;
-    }
-
-    /* BUTTON */
-    .btn{
-      background:linear-gradient(90deg,#1e90ff,#0066ff);
-      color:#fff;
-      padding:10px 16px;
-      border-radius:10px;
-      text-decoration:none;
-      font-weight:600;
-      box-shadow:0 4px 10px rgba(0,0,0,.2);
-    }
-
-    /* BOX */
-    .box{
-      background:#fff;
-      margin:16px;
-      padding:18px;
-      border-radius:16px;
-      box-shadow:0 8px 20px rgba(0,0,0,.08);
-      font-size:14px;
-      line-height:1.6;
-    }
-    .box h2{
-      color:#d63031;
-      margin-top:0;
-    }
-
-    /* FOOTER */
-    .footer{
-      text-align:center;
-      padding:15px;
-      font-size:13px;
-      color:#555;
-    }
-  </style>
-
-  <script>
-    function openTab(tab){
-      document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-      document.getElementById(tab).classList.add('active');
-
-      document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
-      document.getElementById(tab+'Btn').classList.add('active');
-    }
-  </script>
+/* FOOTER LINKS */
+.footer-links{
+  text-align:center;
+  margin:20px 10px;
+  padding-bottom:20px;
+  font-size:14px;
+}
+.footer-links a{
+  margin:0 6px;
+  text-decoration:none;
+  color:#0b5ed7;
+  font-weight:600;
+}
+</style>
 </head>
 
 <body>
 
-<!-- NAV -->
-<div class="nav">
-  <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
-  <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
-  <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
-  <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
+<div class="header">Contact Us</div>
+
+<div class="box">
+  <p>
+    <b>All Yono Store</b> does not provide Customer Support for
+    <b>Listed Apps/Games</b>.  
+    If you encounter any problems, please contact the support option
+    within those games.
+  </p>
+
+  <p>
+    Because the <b>Listed Games/Apps</b> are not ours.
+    We do not own those games.
+  </p>
+
+  <h2>Advertisement / Business Queries</h2>
+
+  <p>
+    If you are a game maker company, operator, or administrator,
+    and you want to promote your application through our website,
+    you can contact us using the details below to discuss promotion
+    and cooperation.
+  </p>
+
+  <table class="table">
+    <tr>
+      <th>Title</th>
+      <th>Link</th>
+    </tr>
+    <tr>
+      <td>Email</td>
+      <td>support@allyonostore.com</td>
+    </tr>
+    <tr>
+      <td>Telegram</td>
+      <td>
+        <a href="https://allyonostore.com/link%20tg" target="_blank">
+          Click Here
+        </a>
+      </td>
+    </tr>
+  </table>
+
+  <p>
+    You can directly contact us through <b>Email</b> as given in the
+    <b>Table</b> above, and can deal with us.
+  </p>
+
+  <a class="btn" href="https://allyonostore.com/tg.php" target="_blank">
+    🚀 Join Our Telegram Channel
+  </a>
+
+  <p style="margin-top:15px;">
+    <b>Share With Friends!</b>
+    <a href="https://allyonostore.com/share.php">Click Here To Share</a>
+  </p>
 </div>
 
-<div class="header">All Game Store</div>
-
-<!-- HOME -->
-<div id="home" class="section active">
-
-  <div class="card">
-    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png" alt="Teen Patti Master">
-    <div class="info">
-      <h3>Teen Patti Master</h3>
-      🎁 Bonus Available<br>🏦 Fast Withdraw
-    </div>
-    <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
-  </div>
-
-  <div class="card">
-    <img src="https://i.ibb.co/9mWjVf1m/101z.png" alt="101Z Game">
-    <div class="info">
-      <h3>101Z Skill Game</h3>
-      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
-    </div>
-    <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
-  </div>
-
-  <div class="card">
-    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png" alt="Yono Rummy">
-    <div class="info">
-      <h3>Yono Rummy</h3>
-      🎁 ₹13+ Bonus<br>💸 Cashback
-    </div>
-    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
-  </div>
-
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section">
-  <div class="box">
-    <h2>About Us</h2>
-    Welcome to <b>All Game Store</b>, launched on July 27, 2024.  
-    We provide easy access to popular Indian gaming apps including Teen Patti,
-    Rummy, and skill-based games.
-
-    <br><br>
-    Our goal is to help users discover trusted apps with bonus offers, fast
-    withdrawals, and smooth gameplay.
-
-    <br><br>
-    📢 <b>Join our Telegram Channel</b> for updates & offers.
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="contact" class="section">
-  <div class="box">
-    <h2>Contact Us</h2>
-    📧 Email: <b>support@allgamestore.com</b>
-  </div>
-</div>
-
-<!-- DISCLAIMER -->
-<div id="disc" class="section">
-  <div class="box">
-    <h2>Disclaimer</h2>
-    We do not own any apps listed on this site.<br>
-    All games involve financial risk.<br>
-    <b>18+ Only</b>
-  </div>
-</div>
-
-<div class="footer">
-  © 2026 All Game Store. All Rights Reserved.
+<div class="footer-links">
+  <a href="https://allyonostore.com/about-us.html">About Us</a> |
+  <a href="https://allyonostore.com/disclaimer.html">Disclaimer</a> |
+  <a href="https://allyonostore.com/contact-us.html">Contact Us</a> |
+  <a href="https://allyonostore.com/privacy-policy.html">Privacy Policy</a> |
+  <a href="https://allyonostore.com/terms-and-conditions.html">Terms & Conditions</a>
 </div>
 
 </body>
 </html>
+
 
 
 
