@@ -2,197 +2,189 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- GOOGLE SITE VERIFICATION -->
 <meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
 
 <title>All Game Store</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="All Game Store - Teen Patti, 101Z, Yono Rummy Download">
 
 <style>
 body{
   margin:0;
   font-family:Arial, sans-serif;
-  background:#f4f6f8;
+  background:#f2f4f7;
 }
 
 /* TOP NAV */
-.top-nav{
+.nav{
   display:flex;
   gap:8px;
-  padding:10px;
-  background:#0d6efd;
+  padding:8px;
+  background:#0b5ed7;
 }
-.top-nav button{
+.nav button{
   flex:1;
   padding:10px;
   border:none;
-  border-radius:8px;
+  border-radius:10px;
   background:#fff;
   font-size:14px;
 }
-.top-nav button.active{
+.nav button.active{
   background:#198754;
   color:#fff;
 }
 
 /* HEADER */
 .header{
-  background:#0d6efd;
+  background:#0b5ed7;
   color:#fff;
-  padding:15px;
   text-align:center;
+  padding:14px;
   font-size:20px;
   font-weight:bold;
 }
 
-/* PAGE SYSTEM */
-.page{display:none;}
-.page.active{display:block;}
-
-/* GAME CARD */
-.game{
+/* CARD */
+.card{
   background:#fff;
   margin:12px;
   padding:12px;
-  border-radius:12px;
+  border-radius:14px;
   display:flex;
   align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
 }
-.game img{
+.card img{
   width:70px;
   height:70px;
   border-radius:12px;
 }
-.game-info{
+.info{
   flex:1;
   margin-left:12px;
 }
-.download{
+.info h3{margin:0;}
+
+.btn{
   background:#0d6efd;
   color:#fff;
-  padding:10px 16px;
-  text-decoration:none;
+  padding:8px 14px;
   border-radius:8px;
-  pointer-events:auto;
-  z-index:10;
+  text-decoration:none;
+  font-size:14px;
 }
 
-/* ABOUT BOX */
-.box{
+/* SECTIONS */
+.section{display:none;}
+.section.active{display:block;}
+
+.about{
   background:#fff;
   margin:15px;
-  padding:15px;
-  border-radius:12px;
+  padding:18px;
+  border-radius:14px;
 }
-.box h2{color:#d32f2f}
+.about h2{color:#d32f2f;margin-top:0;}
 
-/* BUTTONS */
-.btn{
-  display:inline-block;
-  margin:8px 4px;
-  padding:10px 14px;
-  background:#1e88e5;
-  color:#fff;
-  text-decoration:none;
-  border-radius:8px;
-}
-
-/* FOOTER */
 .footer{
   text-align:center;
   padding:15px;
-  color:#555;
   font-size:13px;
+  color:#555;
 }
 </style>
+
+<script>
+function openTab(tab){
+  document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab+'Btn').classList.add('active');
+}
+</script>
 </head>
 
 <body>
 
-<!-- TOP MENU -->
-<div class="top-nav">
-  <button class="active" onclick="openTab('home',this)">Home</button>
-  <button onclick="openTab('about',this)">About</button>
-  <button onclick="openTab('contact',this)">Contact</button>
-  <button onclick="openTab('disclaimer',this)">Disclaimer</button>
+<!-- NAV BAR -->
+<div class="nav">
+  <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
+  <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
+  <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
+  <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
 <div class="header">All Game Store</div>
 
 <!-- HOME -->
-<div id="home" class="page active">
+<div id="home" class="section active">
 
-  <div class="game">
+  <div class="card">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-    <div class="game-info">
-      <b>Teen Patti Master</b><br>
-      🎁 Bonus Available<br>
-      🏦 Fast Withdraw
+    <div class="info">
+      <h3>Teen Patti Master</h3>
+      🎁 Bonus Available<br>🏦 Fast Withdraw
     </div>
-    <a class="download" href="https://www.earntp.com/gold/jexzd" target="_blank" rel="noopener">Download</a>
+    <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
 
-  <div class="game">
+  <div class="card">
     <img src="https://i.ibb.co/9mWjVf1m/101z.png">
-    <div class="game-info">
-      <b>101Z Skill Game</b><br>
-      🎁 ₹10 + ₹692 Bonus<br>
-      💰 Real Cash
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
     </div>
-    <a class="download" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank" rel="noopener">Download</a>
+    <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
   </div>
 
-  <div class="game">
+  <div class="card">
     <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    <div class="game-info">
-      <b>Yono Rummy</b><br>
-      🎁 ₹13+ Bonus<br>
-      💸 Cashback
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      🎁 ₹13+ Bonus<br>💸 Cashback
     </div>
-    <a class="download" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank" rel="noopener">Download</a>
+    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
   </div>
 
 </div>
 
 <!-- ABOUT -->
-<div id="about" class="page">
-  <div class="box">
+<div id="about" class="section">
+  <div class="about">
     <h2>About Us</h2>
     <p>
-    Welcome to our platform, a comprehensive hub created on July 27, 2024,
-    dedicated to enhancing digital experiences for everyone.
+      Welcome to our platform, a comprehensive hub created on July 27, 2024,
+      dedicated to enhancing digital experiences for everyone.
     </p>
     <p>
-    Our journey began with a vision to revolutionize how people discover and
-    download apps. We focus mainly on Indian applications.
+      Our mission is to help users discover Indian applications easily.
+      We do not own any apps.
     </p>
     <p>
-    We do not own or operate any apps. We only share information.
+      Our platform is designed for both beginners and tech-savvy users.
     </p>
 
-    <a class="btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">🚀 Join Telegram</a>
+    <a class="btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">🚀 Join Our Telegram</a>
   </div>
 </div>
 
 <!-- CONTACT -->
-<div id="contact" class="page">
-  <div class="box">
+<div id="contact" class="section">
+  <div class="about">
     <h2>Contact Us</h2>
-    <p>Email: support@allgamestore.com</p>
+    Email: support@allgamestore.com
   </div>
 </div>
 
 <!-- DISCLAIMER -->
-<div id="disclaimer" class="page">
-  <div class="box">
+<div id="disc" class="section">
+  <div class="about">
     <h2>Disclaimer</h2>
-    <p>
-    This website does not own any gaming apps.<br>
-    Games may involve financial risk.<br>
-    Only for 18+ users.
-    </p>
+    We do not own or operate any apps.<br>
+    Games involve financial risk.<br>
+    <b>18+ Only</b>
   </div>
 </div>
 
@@ -200,15 +192,6 @@ body{
 © 2026 All Game Store. All Rights Reserved.
 </div>
 
-<script>
-function openTab(id,btn){
-  document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-
-  document.querySelectorAll('.top-nav button').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-}
-</script>
-
 </body>
 </html>
+
