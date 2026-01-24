@@ -1,125 +1,199 @@
-<!-- ABOUT US SECTION -->
-<section id="about" style="
-background:#ffffff;
-margin:15px;
-padding:20px;
-border-radius:14px;
-box-shadow:0 2px 10px rgba(0,0,0,0.12);
-font-family:Arial, sans-serif;
-">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
-<h2 style="
-color:#d32f2f;
-margin-top:0;
-font-size:24px;
-">About Us</h2>
+<meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
 
-<p style="font-size:15px;line-height:1.7;color:#000;">
-Welcome to our platform, a comprehensive hub created on July 27, 2024,
-dedicated to enhancing digital experiences for everyone. At the heart of our
-mission lies the commitment to empower users with access to a wide range of
-applications, with a unique focus on Indian users.
-</p>
+<title>All Game Store</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<p style="font-size:15px;line-height:1.7;color:#000;">
-Our journey began with a simple yet powerful vision: to revolutionize the way
-people discover and download apps. From utility and productivity apps to
-entertainment and lifestyle options, our platform is a one-stop destination
-for all your app needs.
-</p>
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f4f7;
+}
 
-<p style="font-size:15px;line-height:1.7;color:#000;">
-We are not just about providing access to apps; we are about fostering a
-community where knowledge about the latest digital tools is shared and
-celebrated. Our platform is designed to be user-friendly for both beginners
-and tech-savvy users.
-</p>
-
-<p style="font-size:15px;line-height:1.7;color:#000;">
-Our focus on Indian applications sets us apart. We strongly believe in local
-solutions for local challenges, and our platform reflects this commitment.
-</p>
-
-<p style="font-size:15px;line-height:1.7;color:#000;">
-Join us in our journey to bring the best of digital innovations to your
-fingertips. Explore, download, and stay ahead in the ever-evolving world of
-apps with us.
-</p>
-
-<!-- BUTTONS -->
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:18px;">
-  <a href="https://t.me/YOUR_TELEGRAM" style="
+/* TOP MENU */
+.nav{
+  display:flex;
+  gap:8px;
+  padding:8px;
+  background:#0b5ed7;
+}
+.nav button{
   flex:1;
-  background:#2196f3;
-  color:#fff;
-  padding:12px;
-  text-align:center;
+  padding:10px;
+  border:none;
   border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  ">🚀 Join Our Telegram Channel</a>
+  font-size:14px;
+  background:#fff;
+}
+.nav button.active{
+  background:#198754;
+  color:#fff;
+}
 
-  <a href="https://t.me/YOUR_TELEGRAM" style="
-  flex:1;
-  background:#42a5f5;
+/* HEADER */
+.header{
+  background:#0b5ed7;
   color:#fff;
-  padding:12px;
   text-align:center;
-  border-radius:10px;
-  text-decoration:none;
+  padding:14px;
+  font-size:20px;
   font-weight:bold;
-  ">Join Now</a>
+}
+
+/* CARDS */
+.card{
+  background:#fff;
+  margin:12px;
+  padding:12px;
+  border-radius:14px;
+  display:flex;
+  align-items:center;
+  box-shadow:0 2px 8px rgba(0,0,0,.1);
+}
+.card img{
+  width:70px;
+  height:70px;
+  border-radius:12px;
+}
+.info{
+  flex:1;
+  margin-left:12px;
+}
+.info h3{margin:0;}
+.btn{
+  background:#0d6efd;
+  color:#fff;
+  padding:8px 14px;
+  border-radius:8px;
+  text-decoration:none;
+}
+
+/* SECTIONS */
+.section{display:none;}
+.section.active{display:block;}
+
+/* ABOUT */
+.about{
+  background:#fff;
+  margin:15px;
+  padding:18px;
+  border-radius:14px;
+}
+.about h2{color:#d32f2f;margin-top:0;}
+
+.footer{
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+  color:#555;
+}
+</style>
+
+<script>
+function showTab(tab){
+  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+  document.getElementById(tab).classList.add('active');
+
+  document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
+  document.getElementById(tab+'Btn').classList.add('active');
+}
+</script>
+</head>
+
+<body>
+
+<!-- NAV -->
+<div class="nav">
+  <button id="homeBtn" class="active" onclick="showTab('home')">🏠 Home</button>
+  <button id="aboutBtn" onclick="showTab('about')">👤 About</button>
+  <button id="contactBtn" onclick="showTab('contact')">✉️ Contact</button>
+  <button id="discBtn" onclick="showTab('disc')">⚠️ Disclaimer</button>
 </div>
 
-<div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:10px;">
-  <a href="#" style="
-  flex:1;
-  background:#4caf50;
-  color:#fff;
-  padding:12px;
-  text-align:center;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  ">🔗 Share With Friends</a>
+<div class="header">All Game Store</div>
 
-  <a href="#" style="
-  flex:1;
-  background:#43a047;
-  color:#fff;
-  padding:12px;
-  text-align:center;
-  border-radius:10px;
-  text-decoration:none;
-  font-weight:bold;
-  ">Click Here To Share</a>
+<!-- HOME -->
+<div id="home" class="section active">
+
+  <div class="card">
+    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    <div class="info">
+      <h3>Teen Patti Master</h3>
+      🎁 Bonus Available<br>🏦 Fast Withdraw
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      🎁 ₹13+ Bonus<br>💸 Cashback
+    </div>
+    <a class="btn" href="#">Download</a>
+  </div>
+
 </div>
 
-<!-- LINKS -->
-<div style="text-align:center;margin-top:18px;font-size:15px;">
-  <a href="#about">About Us</a> |
-  <a href="#disclaimer">Disclaimer</a> |
-  <a href="#contact">Contact Us</a><br><br>
-  <a href="#">Privacy Policy</a> |
-  <a href="#">Terms & Conditions</a>
+<!-- ABOUT -->
+<div id="about" class="section">
+  <div class="about">
+    <h2>About Us</h2>
+
+    <p>
+    Welcome to our platform, a comprehensive hub created on July 27, 2024,
+    dedicated to enhancing digital experiences for everyone.
+    </p>
+
+    <p>
+    Our journey began with a simple yet powerful vision: to revolutionize the way
+    people discover and download apps. From utility and productivity apps to
+    entertainment and lifestyle options, our platform is a one-stop destination.
+    </p>
+
+    <p>
+    We focus on Indian applications and believe in local solutions for local
+    challenges.
+    </p>
+
+    <a class="btn" href="https://t.me/YOUR_TELEGRAM">🚀 Join Our Telegram</a>
+  </div>
 </div>
 
-</section>
-
-<!-- TELEGRAM FOOTER -->
-<div style="
-background:#0d3b66;
-color:#fff;
-text-align:center;
-padding:22px;
-margin:15px;
-border-radius:14px;
-">
-<h3 style="margin:0 0 10px 0;">Join Our Telegram:</h3>
-<a href="https://t.me/YOUR_TELEGRAM" style="
-color:#fff;
-font-size:16px;
-font-weight:bold;
-text-decoration:underline;
-">Click here</a>
+<!-- CONTACT -->
+<div id="contact" class="section">
+  <div class="about">
+    <h2>Contact Us</h2>
+    Email: support@allgamestore.com
+  </div>
 </div>
+
+<!-- DISCLAIMER -->
+<div id="disc" class="section">
+  <div class="about">
+    <h2>Disclaimer</h2>
+    We do not own any apps. Games involve financial risk. 18+ only.
+  </div>
+</div>
+
+<div class="footer">
+© 2026 All Game Store. All Rights Reserved.
+</div>
+
+</body>
+</html>
+
