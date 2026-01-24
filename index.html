@@ -2,11 +2,11 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
 
 <title>All Game Store</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 body{
@@ -15,7 +15,7 @@ body{
   background:#f2f4f7;
 }
 
-/* TOP MENU */
+/* TOP NAV */
 .nav{
   display:flex;
   gap:8px;
@@ -27,8 +27,8 @@ body{
   padding:10px;
   border:none;
   border-radius:10px;
-  font-size:14px;
   background:#fff;
+  font-size:14px;
 }
 .nav button.active{
   background:#198754;
@@ -45,7 +45,7 @@ body{
   font-weight:bold;
 }
 
-/* CARDS */
+/* CARD */
 .card{
   background:#fff;
   margin:12px;
@@ -65,19 +65,20 @@ body{
   margin-left:12px;
 }
 .info h3{margin:0;}
+
 .btn{
   background:#0d6efd;
   color:#fff;
   padding:8px 14px;
   border-radius:8px;
   text-decoration:none;
+  font-size:14px;
 }
 
 /* SECTIONS */
 .section{display:none;}
 .section.active{display:block;}
 
-/* ABOUT */
 .about{
   background:#fff;
   margin:15px;
@@ -95,8 +96,8 @@ body{
 </style>
 
 <script>
-function showTab(tab){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
+function openTab(tab){
+  document.querySelectorAll('.section').forEach(x=>x.classList.remove('active'));
   document.getElementById(tab).classList.add('active');
 
   document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
@@ -107,12 +108,12 @@ function showTab(tab){
 
 <body>
 
-<!-- NAV -->
+<!-- NAV BAR -->
 <div class="nav">
-  <button id="homeBtn" class="active" onclick="showTab('home')">🏠 Home</button>
-  <button id="aboutBtn" onclick="showTab('about')">👤 About</button>
-  <button id="contactBtn" onclick="showTab('contact')">✉️ Contact</button>
-  <button id="discBtn" onclick="showTab('disc')">⚠️ Disclaimer</button>
+  <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
+  <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
+  <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
+  <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
 <div class="header">All Game Store</div>
@@ -126,7 +127,7 @@ function showTab(tab){
       <h3>Teen Patti Master</h3>
       🎁 Bonus Available<br>🏦 Fast Withdraw
     </div>
-    <a class="btn" href="#">Download</a>
+    <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
 
   <div class="card">
@@ -135,7 +136,7 @@ function showTab(tab){
       <h3>101Z Skill Game</h3>
       🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
     </div>
-    <a class="btn" href="#">Download</a>
+    <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
   </div>
 
   <div class="card">
@@ -144,7 +145,7 @@ function showTab(tab){
       <h3>Yono Rummy</h3>
       🎁 ₹13+ Bonus<br>💸 Cashback
     </div>
-    <a class="btn" href="#">Download</a>
+    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
   </div>
 
 </div>
@@ -153,24 +154,19 @@ function showTab(tab){
 <div id="about" class="section">
   <div class="about">
     <h2>About Us</h2>
-
     <p>
-    Welcome to our platform, a comprehensive hub created on July 27, 2024,
-    dedicated to enhancing digital experiences for everyone.
+      Welcome to our platform, a comprehensive hub created on July 27, 2024,
+      dedicated to enhancing digital experiences for everyone.
+    </p>
+    <p>
+      Our mission is to help users discover Indian applications easily.
+      We do not own any apps.
+    </p>
+    <p>
+      Our platform is designed for both beginners and tech-savvy users.
     </p>
 
-    <p>
-    Our journey began with a simple yet powerful vision: to revolutionize the way
-    people discover and download apps. From utility and productivity apps to
-    entertainment and lifestyle options, our platform is a one-stop destination.
-    </p>
-
-    <p>
-    We focus on Indian applications and believe in local solutions for local
-    challenges.
-    </p>
-
-    <a class="btn" href="https://t.me/YOUR_TELEGRAM">🚀 Join Our Telegram</a>
+    <a class="btn" href="https://t.me/YOUR_TELEGRAM" target="_blank">🚀 Join Our Telegram</a>
   </div>
 </div>
 
@@ -186,7 +182,9 @@ function showTab(tab){
 <div id="disc" class="section">
   <div class="about">
     <h2>Disclaimer</h2>
-    We do not own any apps. Games involve financial risk. 18+ only.
+    We do not own or operate any apps.<br>
+    Games involve financial risk.<br>
+    <b>18+ Only</b>
   </div>
 </div>
 
@@ -196,4 +194,3 @@ function showTab(tab){
 
 </body>
 </html>
-
