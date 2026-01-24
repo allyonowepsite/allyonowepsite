@@ -1,50 +1,195 @@
-<!-- 🔒 HIDDEN ABOUT / PAGES (SEO ONLY - NOT VISIBLE) -->
-<div style="display:none; visibility:hidden;">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
 
-<h1>About Us</h1>
-<p>
-Welcome to All Game Store, a platform created on July 27, 2024, dedicated to helping users
-discover and download popular Indian gaming and utility applications.
-</p>
+<!-- ✅ GOOGLE SITE VERIFICATION (ONLY ONE) -->
+<meta name="google-site-verification" content="iYx0MMennqTAfSvg5BUcbVhFDFzSefwE1ErYNjTJjJw" />
 
-<p>
-Our goal is to provide easy access to trusted apps like Teen Patti Master, 101Z Game,
-and Yono Rummy while promoting responsible usage.
-</p>
+<title>All Game Store – Teen Patti & Rummy Apps</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Download Teen Patti Master, 101Z Game, Yono Rummy App. Trusted online gaming apps with bonus.">
 
-<p>
-We focus on Indian applications and aim to deliver a smooth, user-friendly digital experience
-for both beginners and experienced users.
-</p>
+<style>
+body{
+    margin:0;
+    font-family:Arial, sans-serif;
+    background:#f4f6f8;
+}
 
-<h2>Disclaimer</h2>
-<p>
-All Game Store does not own or operate any gaming apps listed on this website.
-Games may involve financial risk and can be addictive.
-This platform is intended only for users aged 18 and above.
-</p>
+/* TOP NAV */
+.top-nav{
+    display:flex;
+    gap:8px;
+    padding:8px;
+    background:#0b5ed7;
+    overflow-x:auto;
+}
+.top-nav a{
+    background:#fff;
+    color:#000;
+    text-decoration:none;
+    padding:8px 12px;
+    border-radius:6px;
+    font-size:14px;
+    white-space:nowrap;
+    cursor:pointer;
+}
+.top-nav a.active{
+    background:#198754;
+    color:#fff;
+}
 
-<h2>Contact Us</h2>
-<p>
-For any queries or concerns, please reach out to us via our official contact channels.
-</p>
+/* HEADER */
+.header{
+    background:#0b5ed7;
+    color:#fff;
+    padding:15px;
+    text-align:center;
+    font-size:20px;
+    font-weight:bold;
+}
 
-<h2>Privacy Policy</h2>
-<p>
-We respect user privacy and do not collect personal data without consent.
-Any information shared is used only to improve user experience.
-</p>
+/* GAME CARD */
+.game{
+    background:#fff;
+    margin:12px;
+    padding:12px;
+    border-radius:10px;
+    display:flex;
+    align-items:center;
+    box-shadow:0 2px 6px rgba(0,0,0,0.1);
+}
+.game img{
+    width:70px;
+    height:70px;
+    border-radius:12px;
+}
+.game-info{
+    flex:1;
+    margin-left:12px;
+}
+.game-info h3{
+    margin:0;
+    font-size:16px;
+}
+.game-info p{
+    margin:4px 0;
+    font-size:13px;
+    color:#333;
+}
+.download{
+    background:#0d6efd;
+    color:#fff;
+    padding:8px 14px;
+    text-decoration:none;
+    border-radius:6px;
+    font-size:14px;
+}
 
-<h2>Terms & Conditions</h2>
-<p>
-By using this website, you agree to follow all applicable laws and accept our terms
-regarding responsible usage and third-party links.
-</p>
+/* HIDDEN SECTIONS */
+.section{
+    display:none;
+    background:#fff3cd;
+    margin:15px;
+    padding:15px;
+    border-radius:8px;
+    font-size:14px;
+}
 
-<p>
-Join our Telegram channel to stay updated with the latest app information and offers.
-</p>
+/* FOOTER */
+.footer{
+    text-align:center;
+    padding:12px;
+    font-size:12px;
+    color:#555;
+}
+</style>
 
+<script>
+function showSection(id){
+    const sections = document.querySelectorAll('.section');
+    sections.forEach(sec => sec.style.display = 'none');
+    document.getElementById(id).style.display = 'block';
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- TOP MENU -->
+<div class="top-nav">
+  <a onclick="showSection('home')" class="active">🏠 Home</a>
+  <a onclick="showSection('about')">👤 About</a>
+  <a onclick="showSection('contact')">✉️ Contact</a>
+  <a onclick="showSection('disclaimer')">⚠️ Disclaimer</a>
+  <a href="https://t.me/YOUR_TELEGRAM" target="_blank">📢 Telegram</a>
 </div>
-<!-- 🔒 END HIDDEN ABOUT -->
 
+<div class="header">All Game Store</div>
+
+<!-- HOME -->
+<div id="home">
+<div class="game">
+  <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+  <div class="game-info">
+    <h3>Teen Patti Master</h3>
+    <p>🎁 Sign Up Bonus Available</p>
+    <p>🏦 Fast Withdraw Support</p>
+  </div>
+  <a class="download" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
+</div>
+
+<div class="game">
+  <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+  <div class="game-info">
+    <h3>101Z Skill Game</h3>
+    <p>🎁 ₹10 Joining + ₹692 Bonus</p>
+    <p>💰 Real Cash Games</p>
+  </div>
+  <a class="download" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
+</div>
+
+<div class="game">
+  <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+  <div class="game-info">
+    <h3>Yono Rummy</h3>
+    <p>🎁 ₹13+ Bonus</p>
+    <p>💸 Cashback</p>
+  </div>
+  <a class="download" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
+</div>
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="section">
+<h3>About Us</h3>
+<p>
+All Game Store is an informational platform launched in 2024 to help users discover
+popular Indian gaming apps. We do not own any apps.
+</p>
+</div>
+
+<!-- CONTACT -->
+<div id="contact" class="section">
+<h3>Contact Us</h3>
+<p>Email: support@allyonowepsite.com</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimer" class="section">
+<h3>Disclaimer</h3>
+<p>
+We do not own or operate any gaming apps.<br>
+Games involve financial risk.<br>
+<b>18+ users only</b>.
+</p>
+</div>
+
+<div class="footer">
+© 2026 All Game Store. All Rights Reserved.
+</div>
+
+</body>
+</html>
