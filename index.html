@@ -39,7 +39,7 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* TOP CONTENT */
+/* TOP */
 .top{
   display:flex;
   align-items:center;
@@ -66,14 +66,10 @@ body{
   width:56px;
   height:56px;
   border-radius:12px;
-  flex-shrink:0;
 }
 
 /* DETAILS */
-.details{
-  flex:1;
-}
-
+.details{flex:1}
 .details h3{
   margin:0;
   font-size:18px;
@@ -81,9 +77,7 @@ body{
 }
 
 /* ONLY 2 LINES */
-.tags{
-  margin-top:4px;
-}
+.tags{margin-top:4px}
 .tag{
   display:block;
   font-size:14px;
@@ -91,21 +85,50 @@ body{
   line-height:1.2;
   white-space:nowrap;
 }
-.tag.bonus{color:#e53935;}
-.tag.withdraw{color:#2e7d32;}
+.tag.bonus{color:#e53935}
+.tag.withdraw{color:#2e7d32}
 
-/* DOWNLOAD BUTTON BOTTOM */
+/* 🔥 SMALL 3D HD DOWNLOAD BUTTON */
 .download-btn{
-  margin-top:12px;
-  width:100%;
-  background:#4a8df6;
+  margin:14px auto 0;
+  width:70%;              /* SMALL */
+  display:block;
+
+  background:linear-gradient(
+    135deg,
+    #4facfe,
+    #00c6ff,
+    #6a5cff
+  );
+
   color:#fff;
   border:none;
-  padding:12px;
-  border-radius:12px;
-  font-size:15px;
+  padding:10px 0;
+  border-radius:14px;
+
+  font-size:14px;
   font-weight:800;
+  letter-spacing:.4px;
   cursor:pointer;
+
+  box-shadow:
+    0 6px 0 #2b5bd7,
+    0 12px 22px rgba(0,0,0,.35);
+
+  transition:all .15s ease;
+}
+
+/* PRESS EFFECT */
+.download-btn:active{
+  transform:translateY(4px);
+  box-shadow:
+    0 2px 0 #2b5bd7,
+    0 6px 10px rgba(0,0,0,.3);
+}
+
+/* HOVER GLOW */
+.download-btn:hover{
+  filter:brightness(1.12);
 }
 
 /* DISCLAIMER */
@@ -211,6 +234,7 @@ Online games involve financial risk. 🔞 18+ only. Play responsibly.
 
 </body>
 </html>
+
 
 
 
