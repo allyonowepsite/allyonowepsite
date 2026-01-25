@@ -8,13 +8,13 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- ✅ SEO TAGS -->
+<!-- ✅ SEO -->
 <meta name="title" content="Al Yono App Store – Best Indian Gaming & Earning Apps">
 <meta name="description" content="Download trusted Indian Yono, Teen Patti, Rummy & skill-based gaming apps. Fast withdraw, real cash bonus. 18+ only.">
-<meta name="keywords" content="Yono App, Teen Patti Master, 101Z Game, Yono Rummy, Indian Gaming Apps, Earn Money Games">
+<meta name="keywords" content="Yono App, Teen Patti Master, 101Z Game, Yono Rummy, Indian Gaming Apps">
 <meta name="robots" content="index, follow">
 
-<title>Al Yono App Store – Trusted Indian Gaming Apps</title>
+<title>Al Yono App Store</title>
 
 <style>
 *{box-sizing:border-box}
@@ -30,10 +30,10 @@ body{
   grid-template-columns:repeat(3,1fr);
   gap:10px;
   padding:12px;
-  background:#1e6fd9;
+  background:linear-gradient(45deg,#1e6fd9,#00c6ff);
 }
 .nav button{
-  padding:14px 8px;
+  padding:14px;
   border:none;
   border-radius:18px;
   background:#fff;
@@ -46,15 +46,15 @@ body{
 
 /* HEADER */
 .header{
-  background:#1e6fd9;
+  background:linear-gradient(45deg,#1e6fd9,#00c6ff);
   color:#fff;
   text-align:center;
-  padding:18px;
+  padding:20px;
   font-size:22px;
   font-weight:bold;
 }
 
-/* SECTION */
+/* SECTIONS */
 .section{display:none;}
 .section.active{display:block;}
 
@@ -63,7 +63,7 @@ body{
   margin:16px;
   padding:22px;
   border-radius:22px;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  box-shadow:0 12px 25px rgba(0,0,0,.18);
   line-height:1.8;
 }
 
@@ -79,7 +79,7 @@ body{
 .info{flex:1;margin-left:12px}
 
 .btn{
-  background:#1e90ff;
+  background:linear-gradient(45deg,#1e90ff,#00c6ff);
   color:#fff;
   padding:10px 18px;
   border-radius:16px;
@@ -87,25 +87,45 @@ body{
   font-weight:bold;
 }
 
-/* SOCIAL BUTTONS */
+/* 🔥 SOCIAL MOMENT 3D */
 .social{
   display:flex;
   gap:12px;
   justify-content:center;
-  margin:20px;
+  margin:25px 15px;
 }
 .social a{
   flex:1;
   text-align:center;
-  padding:14px;
-  border-radius:18px;
+  padding:16px 10px;
+  border-radius:22px;
   color:#fff;
   text-decoration:none;
   font-weight:bold;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
+  transition:all .3s ease;
 }
-.telegram{background:#0088cc}
-.whatsapp{background:#25D366}
-.share{background:#ff9800}
+.social a:hover{
+  transform:translateY(-6px) scale(1.03);
+}
+
+.social img{
+  width:32px;
+  height:32px;
+  display:block;
+  margin:0 auto 6px;
+}
+
+/* COLORS */
+.telegram{
+  background:linear-gradient(45deg,#0088cc,#00c6ff);
+}
+.whatsapp{
+  background:linear-gradient(45deg,#25D366,#00ff99);
+}
+.share{
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+}
 
 .footer{
   text-align:center;
@@ -119,7 +139,6 @@ body{
 function openTab(tab){
   document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
   document.getElementById(tab).classList.add('active');
-
   document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById(tab+'Btn').classList.add('active');
   window.scrollTo(0,0);
@@ -129,11 +148,11 @@ function shareSite(){
   if(navigator.share){
     navigator.share({
       title:'Al Yono App Store',
-      text:'Download Best Indian Gaming Apps from Al Yono App Store',
+      text:'Best Indian Gaming Apps – Join Now!',
       url:window.location.href
     });
   }else{
-    alert('Share this link with friends:\n'+window.location.href);
+    alert(window.location.href);
   }
 }
 </script>
@@ -145,8 +164,6 @@ function shareSite(){
   <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
   <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
   <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
-  <button id="privacyBtn" onclick="openTab('privacy')">🔒 Privacy</button>
-  <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
 <div class="header">Al Yono App Store</div>
@@ -187,51 +204,35 @@ function shareSite(){
 <div id="about" class="section">
   <div class="box">
     <h3>About Us</h3>
-    <p>
-      Al Yono App Store helps Indian users discover trusted gaming & earning apps.
-      We do not own any apps. We only share official links.
-    </p>
+    We help Indian users discover trusted gaming apps.
+    We do not own any apps.
   </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="section">
   <div class="box">
-    <h3>Contact Us</h3>
-    <p>
-      We do not provide support for listed apps.  
-      Contact in-app support only.
-    </p>
-    <p>📧 Email: <b>support@example.com</b></p>
+    <h3>Contact</h3>
+    📧 support@example.com
   </div>
 </div>
 
-<!-- PRIVACY -->
-<div id="privacy" class="section">
-  <div class="box">
-    <h3>Privacy Policy</h3>
-    <p>
-      We do not collect personal or payment data.
-    </p>
-  </div>
-</div>
-
-<!-- DISCLAIMER -->
-<div id="disc" class="section">
-  <div class="box">
-    <h3>Disclaimer</h3>
-    <p>
-      Games may involve financial risk.  
-      🔞 18+ Only.
-    </p>
-  </div>
-</div>
-
-<!-- 🔥 SOCIAL FOOTER -->
+<!-- 🔥 SOCIAL MOMENT -->
 <div class="social">
-  <a class="telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">📢 Join Telegram</a>
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
-  <a class="share" href="javascript:void(0)" onclick="shareSite()">🔗 Share</a>
+  <a class="telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
+    Join Telegram
+  </a>
+
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
+    WhatsApp
+  </a>
+
+  <a class="share" href="javascript:void(0)" onclick="shareSite()">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Share_Icon.svg">
+    Share
+  </a>
 </div>
 
 <div class="footer">
@@ -240,6 +241,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
