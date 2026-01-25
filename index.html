@@ -39,7 +39,8 @@ body{
   display:flex;
   align-items:center;
   justify-content:space-between;
-  gap:10px;
+  gap:12px;
+  flex-wrap:wrap;              /* ✅ OVERLAP FIX */
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
@@ -116,6 +117,16 @@ body{
   justify-content:center;
   gap:6px;
   flex-shrink:0;
+}
+
+/* 📱 MOBILE FIX */
+@media (max-width:600px){
+  .list-card{
+    align-items:flex-start;
+  }
+  .download-btn{
+    width:100%;          /* button full width */
+  }
 }
 
 /* DISCLAIMER */
@@ -221,6 +232,7 @@ Online games involve financial risk. 🔞 18+ only. Play responsibly.
 
 </body>
 </html>
+
 
 
 
