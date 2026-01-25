@@ -39,7 +39,7 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* TOP */
+/* TOP ROW */
 .top{
   display:flex;
   align-items:center;
@@ -58,7 +58,6 @@ body{
   align-items:center;
   justify-content:center;
   font-size:14px;
-  flex-shrink:0;
 }
 
 /* ICON */
@@ -69,7 +68,9 @@ body{
 }
 
 /* DETAILS */
-.details{flex:1}
+.details{
+  flex:1;
+}
 .details h3{
   margin:0;
   font-size:18px;
@@ -88,47 +89,35 @@ body{
 .tag.bonus{color:#e53935}
 .tag.withdraw{color:#2e7d32}
 
-/* 🔥 SMALL 3D HD DOWNLOAD BUTTON */
+/* 🔥 SMALL 3D BUTTON – RIGHT SIDE */
+.btn-wrap{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:10px;
+}
+
 .download-btn{
-  margin:14px auto 0;
-  width:70%;              /* SMALL */
-  display:block;
-
-  background:linear-gradient(
-    135deg,
-    #4facfe,
-    #00c6ff,
-    #6a5cff
-  );
-
+  background:linear-gradient(135deg,#4facfe,#00c6ff,#6a5cff);
   color:#fff;
   border:none;
-  padding:10px 0;
-  border-radius:14px;
-
-  font-size:14px;
+  padding:8px 18px;        /* SMALL */
+  border-radius:12px;
+  font-size:13px;
   font-weight:800;
-  letter-spacing:.4px;
   cursor:pointer;
 
   box-shadow:
-    0 6px 0 #2b5bd7,
-    0 12px 22px rgba(0,0,0,.35);
+    0 5px 0 #2b5bd7,
+    0 10px 18px rgba(0,0,0,.35);
 
   transition:all .15s ease;
 }
 
-/* PRESS EFFECT */
 .download-btn:active{
-  transform:translateY(4px);
+  transform:translateY(3px);
   box-shadow:
     0 2px 0 #2b5bd7,
-    0 6px 10px rgba(0,0,0,.3);
-}
-
-/* HOVER GLOW */
-.download-btn:hover{
-  filter:brightness(1.12);
+    0 5px 10px rgba(0,0,0,.3);
 }
 
 /* DISCLAIMER */
@@ -163,9 +152,7 @@ body{
 <div class="list-card">
   <div class="top">
     <div class="rank">1</div>
-    <div class="icon">
-      <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-    </div>
+    <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
     <div class="details">
       <h3>Teen Patti Master</h3>
       <div class="tags">
@@ -174,18 +161,18 @@ body{
       </div>
     </div>
   </div>
-  <a href="https://www.earntp.com/gold/jexzd" target="_blank">
-    <button class="download-btn">⬇ Download</button>
-  </a>
+  <div class="btn-wrap">
+    <a href="https://www.earntp.com/gold/jexzd" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
+  </div>
 </div>
 
 <!-- APP 2 -->
 <div class="list-card">
   <div class="top">
     <div class="rank">2</div>
-    <div class="icon">
-      <img src="https://i.ibb.co/9mWjVf1m/101z.png">
-    </div>
+    <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
     <div class="details">
       <h3>101Z Skill Game</h3>
       <div class="tags">
@@ -194,18 +181,18 @@ body{
       </div>
     </div>
   </div>
-  <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
-    <button class="download-btn">⬇ Download</button>
-  </a>
+  <div class="btn-wrap">
+    <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
+  </div>
 </div>
 
 <!-- APP 3 -->
 <div class="list-card">
   <div class="top">
     <div class="rank">3</div>
-    <div class="icon">
-      <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    </div>
+    <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
     <div class="details">
       <h3>Yono Rummy</h3>
       <div class="tags">
@@ -214,9 +201,11 @@ body{
       </div>
     </div>
   </div>
-  <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
-    <button class="download-btn">⬇ Download</button>
-  </a>
+  <div class="btn-wrap">
+    <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
+  </div>
 </div>
 
 </div>
@@ -234,6 +223,7 @@ Online games involve financial risk. 🔞 18+ only. Play responsibly.
 
 </body>
 </html>
+
 
 
 
