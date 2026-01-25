@@ -38,6 +38,8 @@ body{
   border-radius:16px;
   display:flex;
   align-items:center;
+  justify-content:space-between; /* 👈 IMPORTANT */
+  gap:10px;
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
@@ -45,6 +47,7 @@ body{
 .left{
   display:flex;
   align-items:center;
+  min-width:0;
   flex:1;
 }
 
@@ -61,6 +64,7 @@ body{
   justify-content:center;
   margin-right:10px;
   font-size:14px;
+  flex-shrink:0;
 }
 
 /* ICON */
@@ -68,11 +72,13 @@ body{
   width:56px;
   height:56px;
   border-radius:12px;
+  flex-shrink:0;
 }
 
 /* DETAILS */
 .details{
   margin-left:10px;
+  min-width:0;
 }
 
 .details h3{
@@ -81,7 +87,7 @@ body{
   color:#111;
 }
 
-/* 🔥 TAGS – STRICT 2 LINE ONLY */
+/* TAGS – STRICT 2 LINE */
 .tags{
   margin-top:4px;
 }
@@ -90,24 +96,19 @@ body{
   display:block;
   font-size:14px;
   font-weight:700;
-  line-height:1.2;        /* extra space remove */
-  white-space:nowrap;     /* 👈 line tootne nahi dega */
+  line-height:1.2;
+  white-space:nowrap;
 }
 
-.tag.bonus{
-  color:#e53935;
-}
+.tag.bonus{ color:#e53935; }
+.tag.withdraw{ color:#2e7d32; }
 
-.tag.withdraw{
-  color:#2e7d32;
-}
-
-/* DOWNLOAD BUTTON */
+/* DOWNLOAD BUTTON (FULL VIEW FIXED) */
 .download-btn{
   background:#4a8df6;
   color:#fff;
   border:none;
-  padding:10px 20px;
+  padding:10px 18px;
   border-radius:10px;
   font-size:14px;
   font-weight:700;
@@ -115,6 +116,9 @@ body{
   display:flex;
   align-items:center;
   gap:6px;
+  min-width:120px;      /* 👈 cut nahi hoga */
+  justify-content:center;
+  flex-shrink:0;
 }
 
 /* DISCLAIMER */
@@ -220,6 +224,7 @@ Online games involve financial risk. 🔞 18+ only. Play responsibly.
 
 </body>
 </html>
+
 
 
 
