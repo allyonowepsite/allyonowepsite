@@ -51,9 +51,7 @@ body{
   border-radius:20px;
 }
 
-.info{
-  flex:1;
-}
+.info{flex:1}
 .info h3{
   margin:0;
   font-size:22px;
@@ -80,7 +78,6 @@ body{
   font-size:13px;
   font-weight:600;
   color:#333;
-  white-space:nowrap;
 }
 
 /* DOWNLOAD */
@@ -94,13 +91,9 @@ body{
   font-weight:800;
   text-decoration:none;
   box-shadow:0 12px 25px rgba(221,36,118,.45);
-  transition:.3s;
-}
-.download-btn:hover{
-  transform:translateY(-4px);
 }
 
-/* ===== HD 3D MOMENT (NEW) ===== */
+/* HD 3D MOMENT */
 .hd-moment{
   margin:40px 14px;
   display:flex;
@@ -117,21 +110,25 @@ body{
   text-align:center;
   font-weight:800;
   box-shadow:0 20px 40px rgba(0,0,0,.35);
-  transition:.35s;
   cursor:pointer;
 }
-.hd-card:hover{
-  transform:translateY(-10px) scale(1.05);
-}
 
-.hd-telegram{
-  background:linear-gradient(135deg,#0088cc,#00c6ff);
-}
-.hd-whatsapp{
-  background:linear-gradient(135deg,#25D366,#00ff99);
-}
-.hd-share{
-  background:linear-gradient(135deg,#ff9800,#ff5722);
+.hd-telegram{background:linear-gradient(135deg,#0088cc,#00c6ff)}
+.hd-whatsapp{background:linear-gradient(135deg,#25D366,#00ff99)}
+.hd-share{background:linear-gradient(135deg,#ff9800,#ff5722)}
+
+/* DISCLAIMER */
+.disclaimer{
+  max-width:1100px;
+  margin:30px auto;
+  padding:18px 20px;
+  background:linear-gradient(135deg,#fff1f0,#ffe4d9);
+  border-left:6px solid #ff4d4f;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
 }
 
 /* FOOTER */
@@ -140,12 +137,6 @@ body{
   padding:16px;
   font-size:13px;
   color:#555;
-}
-
-/* MOBILE */
-@media(max-width:768px){
-  .top img{width:75px;height:75px}
-  .hd-card{width:140px}
 }
 </style>
 
@@ -247,17 +238,22 @@ function shareSite(){
 
 </div>
 
-<!-- 🔥 HD 3D MOMENT -->
+<!-- HD 3D MOMENT -->
 <div class="hd-moment">
-  <div class="hd-card hd-telegram" onclick="window.open('https://t.me/YOURCHANNEL','_blank')">
-    🚀 Telegram
-  </div>
-  <div class="hd-card hd-whatsapp" onclick="window.open('https://wa.me/91XXXXXXXXXX','_blank')">
-    💬 WhatsApp
-  </div>
-  <div class="hd-card hd-share" onclick="shareSite()">
-    🔗 Share
-  </div>
+  <div class="hd-card hd-telegram" onclick="window.open('https://t.me/YOURCHANNEL','_blank')">🚀 Telegram</div>
+  <div class="hd-card hd-whatsapp" onclick="window.open('https://wa.me/91XXXXXXXXXX','_blank')">💬 WhatsApp</div>
+  <div class="hd-card hd-share" onclick="shareSite()">🔗 Share</div>
+</div>
+
+<!-- ⚠️ DISCLAIMER -->
+<div class="disclaimer">
+<b>⚠️ Disclaimer & Warning:</b><br><br>
+Al Yono App Store does <b>NOT own or operate</b> any gaming applications listed on this website.
+All app names, logos, and trademarks belong to their respective owners.<br><br>
+
+🎮 Online games may involve <b>financial risk</b> and can be addictive. Please play responsibly.<br>
+🔞 This website is strictly intended for <b>18+ users only</b>.<br>
+🏦 Bonus, login rewards, and withdrawals depend entirely on the respective app policies.
 </div>
 
 <div class="footer">
@@ -266,6 +262,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
