@@ -3,144 +3,162 @@
 <head>
 <meta charset="UTF-8">
 
-<!-- GOOGLE SITE VERIFICATION -->
+<!-- ✅ GOOGLE SITE VERIFICATION -->
 <meta name="google-site-verification" content="iryUdDJOsQdUWQro_ONKQXCIzPpUl4V9oJAHTeDGWJs" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<!-- SEO -->
-<title>Al Yono App Store – Best Indian Gaming Apps</title>
-<meta name="description" content="Download trusted Indian gaming & earning apps. Fast withdraw, real cash bonus. 18+ only.">
-<meta name="keywords" content="Yono App, Teen Patti, Rummy, 101Z, Indian Gaming Apps">
+<!-- ✅ SEO -->
+<meta name="title" content="Al Yono App Store – Best Indian Gaming & Earning Apps">
+<meta name="description" content="Download trusted Indian Yono, Teen Patti, Rummy & skill-based gaming apps. Fast withdraw, real cash bonus. 18+ only.">
+<meta name="keywords" content="Yono App, Teen Patti Master, 101Z Game, Yono Rummy, Indian Gaming Apps">
 <meta name="robots" content="index, follow">
+
+<title>Al Yono App Store</title>
 
 <style>
 *{box-sizing:border-box}
 body{
   margin:0;
-  font-family:Arial,Helvetica,sans-serif;
-  background:linear-gradient(180deg,#f4f7ff,#e9f0ff);
+  font-family:Segoe UI,Arial,Helvetica,sans-serif;
+  background:#f2f6fb;
 }
 
-/* NAV */
+/* ===== NAV ===== */
 .nav{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:10px;
-  padding:12px;
-  background:linear-gradient(45deg,#0f4cff,#00c6ff);
+  display:flex;
+  justify-content:center;
+  gap:15px;
+  padding:14px;
+  background:linear-gradient(90deg,#1e6fd9,#00c6ff);
 }
 .nav button{
-  padding:14px;
+  padding:12px 26px;
   border:none;
-  border-radius:18px;
-  background:#ffffff;
-  font-weight:bold;
-  color:#0f4cff;
+  border-radius:30px;
+  background:#fff;
+  font-weight:700;
+  cursor:pointer;
 }
 .nav button.active{
-  background:linear-gradient(45deg,#00c853,#00e676);
+  background:#1abc9c;
   color:#fff;
 }
 
-/* HEADER */
+/* ===== HEADER ===== */
 .header{
-  background:linear-gradient(45deg,#0f4cff,#00c6ff);
+  background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
   text-align:center;
-  padding:22px;
-  font-size:24px;
-  font-weight:bold;
-  letter-spacing:.5px;
+  padding:26px 10px;
+  font-size:28px;
+  font-weight:800;
 }
 
-/* SECTIONS */
+/* ===== SECTIONS ===== */
 .section{display:none;}
 .section.active{display:block;}
 
-/* CARD */
-.card,.box{
-  background:linear-gradient(180deg,#ffffff,#f7f9ff);
-  margin:16px;
-  padding:22px;
-  border-radius:22px;
-  box-shadow:0 14px 30px rgba(0,0,0,.18);
-  line-height:1.8;
+/* ===== LAYOUT ===== */
+.container{
+  max-width:1100px;
+  margin:auto;
+  padding:10px;
 }
 
+/* ===== CARD ===== */
 .card{
+  background:#fff;
+  margin:16px 0;
+  padding:22px;
+  border-radius:22px;
+  box-shadow:0 15px 30px rgba(0,0,0,.15);
   display:flex;
   align-items:center;
-  gap:12px;
+  gap:18px;
 }
 .card img{
-  width:72px;
-  height:72px;
-  border-radius:18px;
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
+  width:90px;
+  height:90px;
+  border-radius:20px;
 }
 .info{
   flex:1;
-  color:#1a237e;
+}
+.info b{
+  font-size:20px;
+  color:#1e2a55;
+}
+.info span{
+  display:block;
+  margin-top:6px;
+  color:#333;
+  font-size:15px;
 }
 
-/* BUTTON */
+/* ===== BUTTON ===== */
 .btn{
-  background:linear-gradient(45deg,#ff1744,#ff5252);
+  background:linear-gradient(45deg,#ff416c,#ff4b2b);
   color:#fff;
-  padding:12px 20px;
-  border-radius:18px;
+  padding:14px 28px;
+  border-radius:30px;
   text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 8px 20px rgba(255,23,68,.45);
+  font-weight:800;
+  font-size:15px;
+  box-shadow:0 10px 20px rgba(255,75,43,.4);
+  transition:.3s;
+}
+.btn:hover{
+  transform:translateY(-3px);
 }
 
-/* SOCIAL */
+/* ===== SOCIAL ===== */
 .social{
   display:flex;
-  gap:12px;
+  gap:18px;
   justify-content:center;
-  margin:26px 16px;
+  margin:35px 0;
 }
 .social a{
-  flex:1;
+  width:220px;
   text-align:center;
-  padding:18px 10px;
-  border-radius:24px;
+  padding:18px;
+  border-radius:26px;
   color:#fff;
   text-decoration:none;
-  font-weight:bold;
-  box-shadow:0 12px 28px rgba(0,0,0,.35);
+  font-weight:800;
+  box-shadow:0 14px 28px rgba(0,0,0,.3);
   transition:.3s;
 }
 .social a:hover{
-  transform:translateY(-6px);
+  transform:translateY(-6px) scale(1.05);
 }
-
 .social img{
   width:34px;
   height:34px;
   display:block;
-  margin:0 auto 6px;
+  margin:0 auto 8px;
 }
 
-/* SOCIAL COLORS */
-.telegram{
-  background:linear-gradient(45deg,#0088cc,#00bfff);
-}
-.whatsapp{
-  background:linear-gradient(45deg,#00c853,#69f0ae);
-}
-.share{
-  background:linear-gradient(45deg,#ff9100,#ff3d00);
-}
+.telegram{background:linear-gradient(45deg,#0088cc,#00c6ff)}
+.whatsapp{background:linear-gradient(45deg,#25D366,#00ff99)}
+.share{background:linear-gradient(45deg,#ff9800,#ff5722)}
 
-/* FOOTER */
+/* ===== FOOTER ===== */
 .footer{
   text-align:center;
   padding:18px;
-  font-size:13px;
-  color:#455a64;
+  color:#555;
+  font-size:14px;
+}
+
+/* ===== MOBILE ===== */
+@media(max-width:768px){
+  .header{font-size:22px}
+  .card{flex-direction:row}
+  .card img{width:70px;height:70px}
+  .btn{padding:12px 22px}
+  .social{flex-direction:column;align-items:center}
 }
 </style>
 
@@ -152,15 +170,16 @@ function openTab(tab){
   document.getElementById(tab+'Btn').classList.add('active');
   window.scrollTo(0,0);
 }
+
 function shareSite(){
   if(navigator.share){
     navigator.share({
       title:'Al Yono App Store',
-      text:'Best Indian Gaming Apps – Download Now',
-      url:location.href
+      text:'Best Indian Gaming Apps – Join Now!',
+      url:window.location.href
     });
   }else{
-    alert(location.href);
+    alert(window.location.href);
   }
 }
 </script>
@@ -176,14 +195,16 @@ function shareSite(){
 
 <div class="header">Al Yono App Store</div>
 
+<div class="container">
+
 <!-- HOME -->
 <div id="home" class="section active">
 
   <div class="card">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
     <div class="info">
-      <b>Teen Patti Master</b><br>
-      🎁 Bonus Available | 🏦 Fast Withdraw
+      <b>Teen Patti Master</b>
+      <span>🎁 Bonus Available | 🏦 Fast Withdraw</span>
     </div>
     <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
@@ -191,8 +212,8 @@ function shareSite(){
   <div class="card">
     <img src="https://i.ibb.co/9mWjVf1m/101z.png">
     <div class="info">
-      <b>101Z Skill Game</b><br>
-      🎁 ₹10 + ₹692 Bonus | 💰 Real Cash
+      <b>101Z Skill Game</b>
+      <span>🎁 ₹10 + ₹692 Bonus | 💰 Real Cash</span>
     </div>
     <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
   </div>
@@ -200,8 +221,8 @@ function shareSite(){
   <div class="card">
     <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
     <div class="info">
-      <b>Yono Rummy</b><br>
-      🎁 ₹13+ Bonus | 💸 Cashback
+      <b>Yono Rummy</b>
+      <span>🎁 ₹13+ Bonus | 💸 Cashback</span>
     </div>
     <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
   </div>
@@ -210,18 +231,21 @@ function shareSite(){
 
 <!-- ABOUT -->
 <div id="about" class="section">
-  <div class="box">
-    <h3>About Us</h3>
-    We help Indian users discover trusted gaming apps.<br>
-    We do not own any apps.
+  <div class="card">
+    <div class="info">
+      <b>About Us</b>
+      <span>We help Indian users discover trusted gaming apps. We do not own any apps.</span>
+    </div>
   </div>
 </div>
 
 <!-- CONTACT -->
 <div id="contact" class="section">
-  <div class="box">
-    <h3>Contact</h3>
-    📧 support@example.com
+  <div class="card">
+    <div class="info">
+      <b>Contact</b>
+      <span>📧 support@example.com</span>
+    </div>
   </div>
 </div>
 
@@ -229,7 +253,7 @@ function shareSite(){
 <div class="social">
   <a class="telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/8/82/Telegram_logo.svg">
-    Telegram
+    Join Telegram
   </a>
   <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">
     <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg">
@@ -241,12 +265,15 @@ function shareSite(){
   </a>
 </div>
 
+</div>
+
 <div class="footer">
 © 2026 Al Yono App Store. All Rights Reserved.
 </div>
 
 </body>
 </html>
+
 
 
 
