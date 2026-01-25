@@ -11,7 +11,6 @@ body{
   font-family:Segoe UI,Arial;
   background:#eef2f7;
 }
-
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
@@ -20,13 +19,11 @@ body{
   font-size:22px;
   font-weight:800;
 }
-
 .container{
   max-width:1100px;
   margin:auto;
   padding:12px;
 }
-
 .list-card{
   background:#fff;
   margin:14px 0;
@@ -34,13 +31,11 @@ body{
   border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
-
 .top{
   display:flex;
   gap:10px;
   align-items:center;
 }
-
 .rank{
   background:#ff9800;
   color:#fff;
@@ -52,71 +47,70 @@ body{
   align-items:center;
   justify-content:center;
 }
-
 .icon img{
   width:56px;
   height:56px;
   border-radius:12px;
 }
-
 .details h3{margin:0}
-
-.tag{font-weight:700;font-size:14px}
+.tag{font-size:14px;font-weight:700}
 .bonus{color:#e53935}
 .withdraw{color:#2e7d32}
 
-.btn-area{
+/* BUTTON */
+.download-btn{
+  margin-top:12px;
+  width:70%;
+  padding:10px;
+  border:none;
+  border-radius:14px;
+  font-weight:800;
+  color:#fff;
+  cursor:pointer;
+  background:linear-gradient(135deg,#4facfe,#00c6ff);
+  box-shadow:0 6px 0 #2b5bd7,0 10px 18px rgba(0,0,0,.35);
+}
+
+/* RED */
+.red{
+  background:linear-gradient(135deg,#ff5252,#ff1744);
+}
+
+/* PINK */
+.pink{
+  background:linear-gradient(135deg,#ff5fd8,#ff8ccf);
+}
+
+/* SOCIAL */
+.social{
+  display:none;
   margin-top:12px;
   text-align:center;
 }
-
-/* BUTTON STATES */
-.btn{
-  padding:10px 22px;
-  border:none;
-  border-radius:14px;
-  font-size:14px;
-  font-weight:800;
-  cursor:pointer;
-  color:#fff;
-  box-shadow:0 6px 16px rgba(0,0,0,.35);
-}
-
-.blue{background:linear-gradient(135deg,#4facfe,#00c6ff)}
-.red{background:linear-gradient(135deg,#ff4d4f,#ff0000)}
-.pink{background:linear-gradient(135deg,#ff5acd,#ff2fa0)}
-
-.social{
-  display:none;
-  margin-top:14px;
-  gap:10px;
-  justify-content:center;
-}
-
 .social button{
+  margin:6px;
   padding:10px 18px;
   border:none;
   border-radius:14px;
-  font-weight:800;
   color:#fff;
+  font-weight:800;
   cursor:pointer;
 }
-
 .telegram{background:#0088cc}
 .share{background:#25d366}
 
-/* HIDE OTHER APPS INITIALLY */
-.other-apps{display:none}
+/* OTHER APPS */
+#otherApps{display:none}
 
+/* WARNING */
 .warning{
-  margin:30px auto;
-  padding:20px;
-  max-width:1100px;
+  margin:30px;
+  padding:18px;
   background:#fff3e0;
   border-left:8px solid #ff4d4f;
   border-radius:16px;
-  line-height:1.8;
   font-size:14px;
+  line-height:1.8;
 }
 </style>
 </head>
@@ -131,7 +125,9 @@ body{
 <div class="list-card">
   <div class="top">
     <div class="rank">1</div>
-    <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
+    <div class="icon">
+      <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    </div>
     <div class="details">
       <h3>Teen Patti Master</h3>
       <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
@@ -139,57 +135,57 @@ body{
     </div>
   </div>
 
-  <div class="btn-area">
-    <button id="downloadBtn" class="btn blue">⬇ Download</button>
+  <button id="mainBtn" class="download-btn" onclick="stepOne()">⬇ Download</button>
 
-    <div class="social" id="socialBox">
-      <button class="telegram" onclick="window.open('https://t.me/YOUR_TELEGRAM')">📢 Telegram</button>
-      <button class="share" onclick="navigator.share({title:'Yono App',url:location.href})">🔗 Share</button>
-    </div>
+  <div class="social" id="socialBox">
+    <button class="telegram" onclick="window.open('https://t.me/YOUR_CHANNEL')">📢 Telegram</button>
+    <button class="share" onclick="navigator.share({title:'Yono App',url:location.href})">🔗 Share</button>
   </div>
 </div>
 
 <!-- OTHER APPS -->
-<div class="other-apps" id="otherApps">
-  <div class="list-card">📱 101Z Skill Game</div>
-  <div class="list-card">📱 Yono Rummy</div>
-  <div class="list-card">📱 Rummy Ludo</div>
+<div id="otherApps">
+  <div class="list-card">101Z Skill Game – Download</div>
+  <div class="list-card">Yono Rummy – Download</div>
+  <div class="list-card">OK Rummy – Download</div>
 </div>
 
 </div>
 
 <div class="warning">
-⚠️ <b>WARNING:</b><br><br>
-This website does NOT own or operate any gaming apps listed here.
-Online games involve financial risk and may be addictive.
-18+ only. Play responsibly. We are not responsible for any loss.
+⚠️ <b>Important Warning:</b><br><br>
+This website does NOT own or operate any gaming app.  
+Online games involve financial risk.  
+18+ only. Play responsibly.  
+Use at your own risk.
 </div>
 
 <script>
-let clickCount = 0;
-const btn = document.getElementById("downloadBtn");
-const social = document.getElementById("socialBox");
-const otherApps = document.getElementById("otherApps");
+let step = 0;
+function stepOne(){
+  const btn = document.getElementById("mainBtn");
+  const social = document.getElementById("socialBox");
+  const apps = document.getElementById("otherApps");
 
-btn.onclick = () => {
-  clickCount++;
-
-  if(clickCount === 1){
-    btn.className = "btn red";
+  if(step === 0){
+    btn.classList.add("red");
+    btn.innerText = "⬇ Click Again";
+    social.style.display = "block";
+    step++;
+  }
+  else{
+    btn.classList.remove("red");
+    btn.classList.add("pink");
     btn.innerText = "⬇ Download Now";
+    apps.style.display = "block";
+    window.open("https://www.earntp.com/gold/jexzd","_blank");
   }
-
-  if(clickCount === 2){
-    btn.className = "btn pink";
-    btn.innerText = "⬇ Final Download";
-    social.style.display = "flex";
-    otherApps.style.display = "block";
-  }
-};
+}
 </script>
 
 </body>
 </html>
+
 
 
 
