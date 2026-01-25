@@ -3,34 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>All Yono App Store – Best Yono Games</title>
-
-<!-- 🔍 SEO KEYWORDS -->
-<meta name="keywords" content="
-Yono App Store,
-All Yono Games,
-Teen Patti Master Download,
-101Z Skill Game,
-Yono Rummy App,
-Best Yono Game,
-Yono Game Bonus,
-₹550 Signup Bonus,
-Real Money Games India,
-Play & Earn Apps
-">
-
-<meta name="description" content="All Yono App Store – Download best Yono games with ₹550 sign up bonus. Teen Patti, Rummy & Skill games. 18+ Play responsibly.">
+<title>All Yono App Store</title>
 
 <style>
-*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Segoe UI,Arial;
   background:#eef2f7;
 }
 
-/* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
@@ -40,27 +21,12 @@ body{
   font-weight:800;
 }
 
-/* SUCCESS MESSAGE */
-.success{
-  max-width:1100px;
-  margin:14px auto;
-  padding:14px;
-  background:#e8fff0;
-  border-left:6px solid #00c853;
-  border-radius:14px;
-  font-size:15px;
-  font-weight:700;
-  color:#1b5e20;
-}
-
-/* CONTAINER */
 .container{
   max-width:1100px;
   margin:auto;
   padding:12px;
 }
 
-/* CARD */
 .list-card{
   background:#fff;
   margin:14px 0;
@@ -69,14 +35,12 @@ body{
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 
-/* TOP */
 .top{
   display:flex;
-  align-items:center;
   gap:10px;
+  align-items:center;
 }
 
-/* RANK */
 .rank{
   background:#ff9800;
   color:#fff;
@@ -89,106 +53,70 @@ body{
   justify-content:center;
 }
 
-/* ICON */
 .icon img{
   width:56px;
   height:56px;
   border-radius:12px;
 }
 
-/* DETAILS */
-.details{flex:1}
-.details h3{margin:0;font-size:18px}
+.details h3{margin:0}
 
-/* TAGS */
-.tags{margin-top:4px}
-.tag{
-  display:block;
-  font-size:14px;
-  font-weight:700;
-}
+.tag{font-weight:700;font-size:14px}
 .bonus{color:#e53935}
 .withdraw{color:#2e7d32}
 
-/* BUTTON RIGHT */
-.btn-wrap{
-  display:flex;
-  justify-content:flex-end;
-  margin-top:10px;
+.btn-area{
+  margin-top:12px;
+  text-align:center;
 }
 
-/* 🔥 3D BUTTON */
-.download-btn{
-  background:linear-gradient(135deg,#4facfe,#00c6ff,#6a5cff);
-  color:#fff;
+/* BUTTON STATES */
+.btn{
+  padding:10px 22px;
   border:none;
-  padding:8px 18px;
-  border-radius:12px;
-  font-size:13px;
-  font-weight:800;
-  cursor:pointer;
-
-  box-shadow:
-    0 5px 0 #2b5bd7,
-    0 10px 18px rgba(0,0,0,.35);
-
-  transition:.15s;
-}
-.download-btn:active{
-  transform:translateY(3px);
-  box-shadow:
-    0 2px 0 #2b5bd7,
-    0 5px 10px rgba(0,0,0,.3);
-}
-
-/* TELEGRAM + SHARE */
-.social{
-  display:flex;
-  gap:10px;
-  justify-content:center;
-  margin:22px auto;
-}
-
-.social a{
-  text-decoration:none;
-}
-
-.social-btn{
-  padding:12px 20px;
   border-radius:14px;
+  font-size:14px;
   font-weight:800;
-  color:#fff;
-  border:none;
   cursor:pointer;
+  color:#fff;
   box-shadow:0 6px 16px rgba(0,0,0,.35);
 }
 
-.telegram{
-  background:linear-gradient(135deg,#0088cc,#00bfff);
+.blue{background:linear-gradient(135deg,#4facfe,#00c6ff)}
+.red{background:linear-gradient(135deg,#ff4d4f,#ff0000)}
+.pink{background:linear-gradient(135deg,#ff5acd,#ff2fa0)}
+
+.social{
+  display:none;
+  margin-top:14px;
+  gap:10px;
+  justify-content:center;
 }
 
-.share{
-  background:linear-gradient(135deg,#25d366,#128c7e);
+.social button{
+  padding:10px 18px;
+  border:none;
+  border-radius:14px;
+  font-weight:800;
+  color:#fff;
+  cursor:pointer;
 }
 
-/* LONG WARNING */
+.telegram{background:#0088cc}
+.share{background:#25d366}
+
+/* HIDE OTHER APPS INITIALLY */
+.other-apps{display:none}
+
 .warning{
-  max-width:1100px;
   margin:30px auto;
   padding:20px;
+  max-width:1100px;
   background:#fff3e0;
   border-left:8px solid #ff4d4f;
   border-radius:16px;
-  font-size:14px;
   line-height:1.8;
-}
-
-/* FOOTER */
-.footer{
-  text-align:center;
-  padding:14px;
-  font-size:13px;
-  color:#555;
+  font-size:14px;
 }
 </style>
 </head>
@@ -197,108 +125,72 @@ body{
 
 <div class="header">All Yono App Store</div>
 
-<div class="success">
-✅ <b>Successful!</b> Best Yono games verified & updated. Download now and enjoy bonus offers.
-</div>
-
 <div class="container">
 
-<!-- APP 1 -->
+<!-- MAIN APP -->
 <div class="list-card">
   <div class="top">
     <div class="rank">1</div>
     <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
     <div class="details">
       <h3>Teen Patti Master</h3>
-      <div class="tags">
-        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
-        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
-      </div>
+      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
     </div>
   </div>
-  <div class="btn-wrap">
-    <a href="https://www.earntp.com/gold/jexzd" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
-  </div>
-</div>
 
-<!-- APP 2 -->
-<div class="list-card">
-  <div class="top">
-    <div class="rank">2</div>
-    <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
-    <div class="details">
-      <h3>101Z Skill Game</h3>
-      <div class="tags">
-        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
-        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
-      </div>
+  <div class="btn-area">
+    <button id="downloadBtn" class="btn blue">⬇ Download</button>
+
+    <div class="social" id="socialBox">
+      <button class="telegram" onclick="window.open('https://t.me/YOUR_TELEGRAM')">📢 Telegram</button>
+      <button class="share" onclick="navigator.share({title:'Yono App',url:location.href})">🔗 Share</button>
     </div>
   </div>
-  <div class="btn-wrap">
-    <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
-  </div>
 </div>
 
-<!-- APP 3 -->
-<div class="list-card">
-  <div class="top">
-    <div class="rank">3</div>
-    <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
-    <div class="details">
-      <h3>Yono Rummy</h3>
-      <div class="tags">
-        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
-        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
-      </div>
-    </div>
-  </div>
-  <div class="btn-wrap">
-    <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
-  </div>
+<!-- OTHER APPS -->
+<div class="other-apps" id="otherApps">
+  <div class="list-card">📱 101Z Skill Game</div>
+  <div class="list-card">📱 Yono Rummy</div>
+  <div class="list-card">📱 Rummy Ludo</div>
 </div>
 
 </div>
 
-<!-- TELEGRAM + SHARE -->
-<div class="social">
-  <a href="https://t.me/YOUR_TELEGRAM_USERNAME" target="_blank">
-    <button class="social-btn telegram">📢 Join Telegram</button>
-  </a>
-
-  <a href="javascript:navigator.share({title:'All Yono App Store',text:'Download best Yono games with bonus!',url:location.href});">
-    <button class="social-btn share">🔗 Share with Friends</button>
-  </a>
-</div>
-
-<!-- ⚠️ LONG WARNING -->
 <div class="warning">
-⚠️ <b>Important Warning & Disclaimer:</b><br><br>
-
-This website <b>does NOT own, develop, manage, or operate</b> any gaming or betting application listed here.  
-All trademarks, logos, game names, and bonus offers belong to their respective owners only.<br><br>
-
-Online real-money games involve <b>financial risk</b> and can be addictive.  
-Users may lose money. Play at your own responsibility.<br><br>
-
-This website is strictly for <b>informational and promotional purposes only</b>.  
-We are not responsible for any loss, fraud, or dispute between users and game providers.<br><br>
-
-🔞 <b>18+ ONLY.</b> If you are under 18, please leave this website immediately.  
-Always follow your local laws and regulations before playing any online game.
+⚠️ <b>WARNING:</b><br><br>
+This website does NOT own or operate any gaming apps listed here.
+Online games involve financial risk and may be addictive.
+18+ only. Play responsibly. We are not responsible for any loss.
 </div>
 
-<div class="footer">
-© 2026 All Yono App Store. All Rights Reserved.
-</div>
+<script>
+let clickCount = 0;
+const btn = document.getElementById("downloadBtn");
+const social = document.getElementById("socialBox");
+const otherApps = document.getElementById("otherApps");
+
+btn.onclick = () => {
+  clickCount++;
+
+  if(clickCount === 1){
+    btn.className = "btn red";
+    btn.innerText = "⬇ Download Now";
+  }
+
+  if(clickCount === 2){
+    btn.className = "btn pink";
+    btn.innerText = "⬇ Final Download";
+    social.style.display = "flex";
+    otherApps.style.display = "block";
+  }
+};
+</script>
 
 </body>
 </html>
+
 
 
 
