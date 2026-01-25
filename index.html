@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Yono New Games – Download</title>
+<title>Al Yono App Store</title>
 
 <style>
 body{
@@ -12,53 +12,67 @@ body{
   background:#eef1f6;
 }
 
-.app-card{
+/* HEADER */
+.header{
+  background:#1e6fd9;
+  color:#fff;
+  padding:16px;
+  text-align:center;
+  font-size:22px;
+  font-weight:bold;
+}
+
+/* APP CARD */
+.app{
   background:#fff;
   margin:14px;
-  padding:16px;
+  padding:14px;
   border-radius:18px;
+  box-shadow:0 8px 20px rgba(0,0,0,.15);
   display:flex;
   gap:12px;
-  align-items:center;
-  box-shadow:0 8px 22px rgba(0,0,0,.15);
 }
 
-.app-card img{
-  width:70px;
-  height:70px;
+/* ICON */
+.app img{
+  width:72px;
+  height:72px;
   border-radius:16px;
+  flex-shrink:0;
 }
 
-.app-info{
+/* INFO */
+.info{
   flex:1;
 }
 
-.app-info h3{
+.info h3{
   margin:0;
   font-size:16px;
 }
 
 .meta{
   display:flex;
-  gap:12px;
-  font-size:13px;
+  flex-wrap:wrap;
+  gap:6px;
   margin:6px 0;
-  color:#555;
+  font-size:12px;
 }
 
 .meta span{
-  background:#f1f3f6;
+  background:#f2f3f6;
   padding:4px 8px;
   border-radius:10px;
 }
 
 .bonus{
-  color:#0a7d2c;
   font-weight:bold;
-  font-size:14px;
+  color:#0a7d2c;
+  margin-top:4px;
 }
 
-.buttons{
+/* BUTTONS */
+.btns{
   display:flex;
   flex-direction:column;
   gap:8px;
@@ -72,25 +86,63 @@ body{
   font-size:14px;
   font-weight:bold;
   text-align:center;
-  box-shadow:0 6px 14px rgba(0,0,0,.25);
 }
 
-/* BUTTON COLORS */
-.red{
-  background:linear-gradient(45deg,#ff0000,#ff4d4d);
+.red{background:#ff2b2b;}
+.pink{background:#ff4fb7;}
+
+/* SOCIAL */
+.social{
+  display:flex;
+  gap:10px;
+  margin:16px;
 }
-.pink{
-  background:linear-gradient(45deg,#ff2fa0,#ff77c8);
+
+.social a{
+  flex:1;
+  padding:14px;
+  border-radius:18px;
+  text-align:center;
+  color:#fff;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+.tg{background:#0088cc;}
+.wa{background:#25D366;}
+.sh{background:#ff9800;}
+
+.footer{
+  text-align:center;
+  padding:14px;
+  font-size:13px;
+  color:#555;
 }
 </style>
+
+<script>
+function shareSite(){
+  if(navigator.share){
+    navigator.share({
+      title:'Al Yono App Store',
+      text:'Best Indian Gaming Apps',
+      url:location.href
+    });
+  }else{
+    alert(location.href);
+  }
+}
+</script>
 </head>
 
 <body>
 
-<!-- 🔥 APP 1 -->
-<div class="app-card">
+<div class="header">Al Yono App Store</div>
+
+<!-- APP 1 -->
+<div class="app">
   <img src="https://i.ibb.co/9vHn3qC/rummyludo.png">
-  <div class="app-info">
+  <div class="info">
     <h3>Rummy Ludo</h3>
     <div class="meta">
       <span>⭐ 4.1</span>
@@ -99,68 +151,62 @@ body{
     </div>
     <div class="bonus">🎁 Bonus Upto ₹581</div>
   </div>
-  <div class="buttons">
-    <a class="btn red" href="https://example.com/rummyludo" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com/rummyludo" target="_blank">VIP Download</a>
+  <div class="btns">
+    <a class="btn red" href="https://example.com" target="_blank">Download</a>
+    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
   </div>
 </div>
 
-<!-- 🔥 APP 2 -->
-<div class="app-card">
-  <img src="https://i.ibb.co/xYd1m0Q/ok-rummy.png">
-  <div class="app-info">
+<!-- APP 2 -->
+<div class="app">
+  <img src="https://i.ibb.co/4Zk8Zqk/okrummy.png">
+  <div class="info">
     <h3>OK Rummy</h3>
     <div class="meta">
       <span>⭐ 4.3</span>
       <span>📦 65 MB</span>
       <span>🆓 Free</span>
     </div>
-    <div class="bonus">🎁 Signup Bonus ₹550</div>
+    <div class="bonus">🎁 Signup ₹550</div>
   </div>
-  <div class="buttons">
-    <a class="btn red" href="https://example.com/okrummy" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com/okrummy" target="_blank">VIP Download</a>
-  </div>
-</div>
-
-<!-- 🔥 APP 3 -->
-<div class="app-card">
-  <img src="https://i.ibb.co/7Q6c4fF/ind-rummy.png">
-  <div class="app-info">
-    <h3>IND Rummy</h3>
-    <div class="meta">
-      <span>⭐ 4.2</span>
-      <span>📦 72 MB</span>
-      <span>💳 Payback</span>
-    </div>
-    <div class="bonus">🎁 Min Withdraw ₹100</div>
-  </div>
-  <div class="buttons">
-    <a class="btn red" href="https://example.com/indrummy" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com/indrummy" target="_blank">VIP Download</a>
+  <div class="btns">
+    <a class="btn red" href="https://example.com" target="_blank">Download</a>
+    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
   </div>
 </div>
 
-<!-- 🔥 APP 4 -->
-<div class="app-card">
-  <img src="https://i.ibb.co/n7M7fTn/rummy91.png">
-  <div class="app-info">
-    <h3>Rummy 91</h3>
+<!-- APP 3 -->
+<div class="app">
+  <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+  <div class="info">
+    <h3>Yono Rummy</h3>
     <div class="meta">
       <span>⭐ 4.4</span>
       <span>📦 60 MB</span>
-      <span>🆓 Free</span>
+      <span>💰 Cashback</span>
     </div>
-    <div class="bonus">🎁 Signup Bonus ₹550</div>
+    <div class="bonus">🎁 Bonus ₹13+</div>
   </div>
-  <div class="buttons">
-    <a class="btn red" href="https://example.com/rummy91" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com/rummy91" target="_blank">VIP Download</a>
+  <div class="btns">
+    <a class="btn red" href="https://example.com" target="_blank">Download</a>
+    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
   </div>
+</div>
+
+<!-- SOCIAL -->
+<div class="social">
+  <a class="tg" href="https://t.me/YOURCHANNEL" target="_blank">📢 Telegram</a>
+  <a class="wa" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
+  <a class="sh" href="javascript:void(0)" onclick="shareSite()">🔗 Share</a>
+</div>
+
+<div class="footer">
+© 2026 Al Yono App Store. All Rights Reserved.
 </div>
 
 </body>
 </html>
+
 
 
 
