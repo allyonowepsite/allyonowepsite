@@ -6,25 +6,28 @@
 <title>Al Yono App Store</title>
 
 <style>
-body{
+*{box-sizing:border-box}
+
+html,body{
   margin:0;
+  padding:0;
+  height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#eef1f6;
 }
 
 /* NAV */
 .nav{
-  display:flex;
-  flex-wrap:wrap;
-  gap:8px;
-  padding:10px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:10px;
+  padding:12px;
   background:#1e6fd9;
 }
 .nav button{
-  flex:1 1 30%;
-  padding:12px;
+  padding:14px 8px;
   border:none;
-  border-radius:16px;
+  border-radius:18px;
   background:#fff;
   font-weight:bold;
   font-size:14px;
@@ -44,6 +47,12 @@ body{
   font-weight:bold;
 }
 
+/* MAIN */
+.main{
+  min-height:100vh;
+  padding-bottom:40px;
+}
+
 /* SECTIONS */
 .section{display:none;}
 .section.active{display:block;}
@@ -52,16 +61,16 @@ body{
 .card{
   background:#fff;
   margin:14px;
-  padding:14px;
-  border-radius:18px;
+  padding:16px;
+  border-radius:20px;
   display:flex;
   align-items:center;
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 .card img{
-  width:64px;
-  height:64px;
-  border-radius:14px;
+  width:70px;
+  height:70px;
+  border-radius:16px;
 }
 .info{
   flex:1;
@@ -74,19 +83,20 @@ body{
 .btn{
   background:#1e90ff;
   color:#fff;
-  padding:10px 16px;
-  border-radius:14px;
+  padding:10px 18px;
+  border-radius:16px;
   text-decoration:none;
   font-weight:bold;
+  white-space:nowrap;
 }
 
 /* BOX */
 .box{
   background:#fff;
   margin:16px;
-  padding:20px;
-  border-radius:20px;
-  box-shadow:0 8px 18px rgba(0,0,0,.12);
+  padding:22px;
+  border-radius:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
   line-height:1.8;
   font-size:15px;
 }
@@ -94,7 +104,7 @@ body{
 /* FOOTER */
 .footer{
   text-align:center;
-  padding:14px;
+  padding:16px;
   font-size:13px;
   color:#555;
 }
@@ -107,6 +117,8 @@ function openTab(tab){
 
   document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById(tab+'Btn').classList.add('active');
+
+  window.scrollTo(0,0);
 }
 </script>
 </head>
@@ -124,8 +136,11 @@ function openTab(tab){
 
 <div class="header">Al Yono App Store</div>
 
+<div class="main">
+
 <!-- HOME -->
 <div id="home" class="section active">
+
   <div class="card">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
     <div class="info">
@@ -134,17 +149,33 @@ function openTab(tab){
     </div>
     <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
+    </div>
+    <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
+  </div>
+
+  <div class="card">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      🎁 ₹13+ Bonus<br>💸 Cashback
+    </div>
+    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
+  </div>
+
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="section">
   <div class="box">
     <h3>About Us</h3>
-    Welcome to our platform, created on <b>July 27, 2024</b>, dedicated to
-    enhancing digital experiences with a focus on Indian users.
-    <br><br>
-    Our mission is to help users discover and access a wide range of applications
-    easily with a simple, fast, and mobile-friendly experience.
+    Welcome to our platform, created on <b>July 27, 2024</b>, focused on Indian users.
+    We help people discover apps easily with a fast and mobile-friendly experience.
   </div>
 </div>
 
@@ -152,42 +183,18 @@ function openTab(tab){
 <div id="contact" class="section">
   <div class="box">
     <h3>Contact Us</h3>
-    This platform does not provide customer support for listed apps/games.
-    <br><br>
-    Email: <b>support@example.com</b><br>
+    We do not provide support for listed apps.<br><br>
+    📧 Email: <b>support@example.com</b><br>
     Telegram: Available on request
   </div>
 </div>
 
-<!-- PRIVACY POLICY -->
+<!-- PRIVACY -->
 <div id="privacy" class="section">
   <div class="box">
     <h3>Privacy Policy</h3>
-
-    If You are a parent or guardian and You are aware that Your child has provided
-    Us with Personal Data, please contact Us. If We become aware that We have
-    collected Personal Data from anyone under the age of 13 without verification
-    of parental consent, We take steps to remove that information from Our servers.
-    <br><br>
-
-    If We need to rely on consent as a legal basis for processing Your information
-    and Your country requires consent from a parent, We may require Your parent's
-    consent before We collect and use that information.
-    <br><br>
-
-    <b>Links to Other Websites</b><br>
-    Our Service may contain links to other websites that are not operated by Us.
-    We strongly advise You to review the Privacy Policy of every site You visit.
-    We have no control over and assume no responsibility for third-party sites.
-    <br><br>
-
-    <b>Changes to this Privacy Policy</b><br>
-    We may update Our Privacy Policy from time to time. Changes are effective
-    when they are posted on this page.
-    <br><br>
-
-    <b>Contact Us</b><br>
-    If you have any questions about this Privacy Policy, you can contact us.
+    If you are a parent or guardian and believe your child provided data, contact us.
+    We remove data collected from users under 13 without consent.
   </div>
 </div>
 
@@ -195,8 +202,7 @@ function openTab(tab){
 <div id="terms" class="section">
   <div class="box">
     <h3>Terms & Conditions</h3>
-    By using this platform, you agree to comply with all applicable laws and
-    regulations. Use apps at your own responsibility.
+    Use apps at your own risk. We only provide links to third-party apps.
   </div>
 </div>
 
@@ -204,13 +210,11 @@ function openTab(tab){
 <div id="disc" class="section">
   <div class="box">
     <h3>Disclaimer</h3>
-    This platform only provides access to third-party apps and is not involved
-    in their operation or management.
-    <br><br>
-    Apps may involve financial risk. Users must engage at their own discretion.
-    <br><br>
-    <b>18+ Only.</b> Some games may be restricted in certain Indian states.
+    We do not own or manage apps. Financial risk possible.<br><br>
+    <b>18+ Only</b>
   </div>
+</div>
+
 </div>
 
 <div class="footer">
@@ -219,6 +223,7 @@ function openTab(tab){
 
 </body>
 </html>
+
 
 
 
