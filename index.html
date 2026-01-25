@@ -2,10 +2,20 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+
+<!-- GOOGLE VERIFY -->
+<meta name="google-site-verification" content="iryUdDJOsQdUWQro_ONKQXCIzPpUl4V9oJAHTeDGWJs" />
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al Yono App Store</title>
+
+<!-- SEO -->
+<title>Al Yono App Store – Best Indian Gaming Apps</title>
+<meta name="description" content="Download best Indian gaming & earning apps. Real cash, fast withdraw, bonus apps. 18+ only.">
+<meta name="keywords" content="Yono App, Teen Patti, Rummy, 101Z, Indian Gaming Apps">
+<meta name="robots" content="index, follow">
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
@@ -14,23 +24,48 @@ body{
 
 /* HEADER */
 .header{
-  background:#1e6fd9;
+  background:linear-gradient(45deg,#1e6fd9,#00c6ff);
   color:#fff;
-  padding:16px;
   text-align:center;
+  padding:18px;
   font-size:22px;
   font-weight:bold;
 }
 
-/* APP CARD */
+/* APP LIST */
+.list{
+  counter-reset:rank;
+}
+
+/* CARD */
 .app{
   background:#fff;
   margin:14px;
   padding:14px;
-  border-radius:18px;
-  box-shadow:0 8px 20px rgba(0,0,0,.15);
+  border-radius:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,.18);
   display:flex;
   gap:12px;
+  position:relative;
+}
+
+/* AUTO RANK */
+.app::before{
+  counter-increment:rank;
+  content:counter(rank);
+  position:absolute;
+  top:-12px;
+  left:-12px;
+  width:36px;
+  height:36px;
+  background:linear-gradient(45deg,#ff9800,#ff5722);
+  color:#fff;
+  font-weight:bold;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 6px 15px rgba(0,0,0,.3);
 }
 
 /* ICON */
@@ -38,14 +73,12 @@ body{
   width:72px;
   height:72px;
   border-radius:16px;
-  flex-shrink:0;
 }
 
 /* INFO */
 .info{
   flex:1;
 }
-
 .info h3{
   margin:0;
   font-size:16px;
@@ -55,10 +88,9 @@ body{
   display:flex;
   flex-wrap:wrap;
   gap:6px;
-  margin:6px 0;
   font-size:12px;
+  margin:6px 0;
 }
-
 .meta span{
   background:#f2f3f6;
   padding:4px 8px;
@@ -66,8 +98,8 @@ body{
 }
 
 .bonus{
-  font-weight:bold;
   color:#0a7d2c;
+  font-weight:bold;
   margin-top:4px;
 }
 
@@ -77,7 +109,6 @@ body{
   flex-direction:column;
   gap:8px;
 }
-
 .btn{
   text-decoration:none;
   color:#fff;
@@ -87,17 +118,19 @@ body{
   font-weight:bold;
   text-align:center;
 }
-
-.red{background:#ff2b2b;}
-.pink{background:#ff4fb7;}
+.download{
+  background:linear-gradient(45deg,#ff1e1e,#ff5252);
+}
+.vip{
+  background:linear-gradient(45deg,#ff4fb7,#ff85d6);
+}
 
 /* SOCIAL */
 .social{
   display:flex;
   gap:10px;
-  margin:16px;
+  margin:18px;
 }
-
 .social a{
   flex:1;
   padding:14px;
@@ -106,11 +139,11 @@ body{
   color:#fff;
   font-weight:bold;
   text-decoration:none;
+  box-shadow:0 10px 25px rgba(0,0,0,.3);
 }
-
-.tg{background:#0088cc;}
-.wa{background:#25D366;}
-.sh{background:#ff9800;}
+.telegram{background:linear-gradient(45deg,#0088cc,#00c6ff)}
+.whatsapp{background:linear-gradient(45deg,#25D366,#00ff99)}
+.share{background:linear-gradient(45deg,#ff9800,#ff5722)}
 
 .footer{
   text-align:center;
@@ -125,7 +158,7 @@ function shareSite(){
   if(navigator.share){
     navigator.share({
       title:'Al Yono App Store',
-      text:'Best Indian Gaming Apps',
+      text:'Best Indian Gaming Apps – Download Now',
       url:location.href
     });
   }else{
@@ -138,6 +171,8 @@ function shareSite(){
 <body>
 
 <div class="header">Al Yono App Store</div>
+
+<div class="list">
 
 <!-- APP 1 -->
 <div class="app">
@@ -152,8 +187,8 @@ function shareSite(){
     <div class="bonus">🎁 Bonus Upto ₹581</div>
   </div>
   <div class="btns">
-    <a class="btn red" href="https://example.com" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
+    <a class="btn download" href="#" target="_blank">Download</a>
+    <a class="btn vip" href="#" target="_blank">VIP</a>
   </div>
 </div>
 
@@ -167,11 +202,11 @@ function shareSite(){
       <span>📦 65 MB</span>
       <span>🆓 Free</span>
     </div>
-    <div class="bonus">🎁 Signup ₹550</div>
+    <div class="bonus">🎁 Signup Bonus ₹550</div>
   </div>
   <div class="btns">
-    <a class="btn red" href="https://example.com" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
+    <a class="btn download" href="#" target="_blank">Download</a>
+    <a class="btn vip" href="#" target="_blank">VIP</a>
   </div>
 </div>
 
@@ -188,16 +223,18 @@ function shareSite(){
     <div class="bonus">🎁 Bonus ₹13+</div>
   </div>
   <div class="btns">
-    <a class="btn red" href="https://example.com" target="_blank">Download</a>
-    <a class="btn pink" href="https://example.com" target="_blank">VIP</a>
+    <a class="btn download" href="#" target="_blank">Download</a>
+    <a class="btn vip" href="#" target="_blank">VIP</a>
   </div>
+</div>
+
 </div>
 
 <!-- SOCIAL -->
 <div class="social">
-  <a class="tg" href="https://t.me/YOURCHANNEL" target="_blank">📢 Telegram</a>
-  <a class="wa" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
-  <a class="sh" href="javascript:void(0)" onclick="shareSite()">🔗 Share</a>
+  <a class="telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">📢 Telegram</a>
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">💬 WhatsApp</a>
+  <a class="share" href="javascript:void(0)" onclick="shareSite()">🔗 Share</a>
 </div>
 
 <div class="footer">
@@ -206,6 +243,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
