@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Al Yono App Store</title>
 
@@ -14,7 +13,7 @@ body{
   background:#f2f6fb;
 }
 
-/* ===== TOP NAV ===== */
+/* TOP NAV */
 .nav{
   display:flex;
   justify-content:center;
@@ -34,7 +33,7 @@ body{
   color:#fff;
 }
 
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
@@ -44,49 +43,74 @@ body{
   font-weight:800;
 }
 
-/* ===== CARD ===== */
+/* CONTAINER */
 .container{
-  max-width:1100px;
+  max-width:900px;
   margin:auto;
-  padding:10px;
+  padding:12px;
 }
 
+/* CARD */
 .card{
   background:#fff;
-  margin:16px 0;
+  margin:18px 0;
   padding:20px;
-  border-radius:22px;
-  display:flex;
-  align-items:center;
-  gap:18px;
+  border-radius:24px;
   box-shadow:0 14px 28px rgba(0,0,0,.15);
 }
 
-.card img{
-  width:85px;
-  height:85px;
-  border-radius:18px;
+.card-top{
+  display:flex;
+  align-items:center;
+  gap:18px;
 }
 
-.info{
+.app-img{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+}
+
+.app-info{
   flex:1;
 }
 
-.info h3{
-  margin:0;
-  font-size:20px;
+.app-info h3{
+  margin:0 0 6px;
+  font-size:22px;
   color:#1e2a55;
 }
 
-.info p{
-  margin:6px 0 0;
-  color:#444;
+.tags{
   font-size:15px;
+  color:#444;
 }
 
-/* ===== DOWNLOAD BUTTON (NEW) ===== */
+/* META ROW */
+.meta{
+  display:flex;
+  gap:10px;
+  margin-top:14px;
+}
+
+.meta div{
+  flex:1;
+  background:#f6f8fc;
+  border-radius:14px;
+  padding:10px 6px;
+  text-align:center;
+  font-size:13px;
+  color:#333;
+}
+
+/* DOWNLOAD */
+.download-wrap{
+  margin-top:16px;
+  text-align:right;
+}
+
 .download-btn{
-  padding:14px 26px;
+  padding:14px 28px;
   border-radius:30px;
   background:linear-gradient(45deg,#ff512f,#dd2476);
   color:#fff;
@@ -94,20 +118,20 @@ body{
   font-weight:800;
   font-size:15px;
   box-shadow:0 10px 20px rgba(221,36,118,.45);
+  display:inline-block;
   transition:.3s;
 }
 .download-btn:hover{
   transform:translateY(-4px);
 }
 
-/* ===== SMALL SOCIAL ===== */
+/* SOCIAL SMALL */
 .social{
   display:flex;
   justify-content:center;
   gap:12px;
   margin:30px 0;
 }
-
 .social a{
   width:110px;
   padding:10px;
@@ -119,12 +143,11 @@ body{
   text-decoration:none;
   box-shadow:0 8px 16px rgba(0,0,0,.25);
 }
-
 .telegram{background:#0088cc}
 .whatsapp{background:#25D366}
 .share{background:#ff9800}
 
-/* ===== FOOTER ===== */
+/* FOOTER */
 .footer{
   text-align:center;
   padding:16px;
@@ -132,10 +155,9 @@ body{
   color:#555;
 }
 
-/* ===== MOBILE ===== */
+/* MOBILE */
 @media(max-width:768px){
-  .card img{width:70px;height:70px}
-  .download-btn{padding:12px 22px}
+  .app-img{width:75px;height:75px}
 }
 </style>
 
@@ -168,35 +190,71 @@ function shareSite(){
 
 <!-- APP 1 -->
 <div class="card">
-  <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-  <div class="info">
-    <h3>Teen Patti Master</h3>
-    <p>🎁 Bonus Available | 🏦 Fast Withdraw</p>
+  <div class="card-top">
+    <img class="app-img" src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    <div class="app-info">
+      <h3>Teen Patti Master</h3>
+      <div class="tags">🎁 Bonus Available | 🏦 Fast Withdraw</div>
+    </div>
   </div>
-  <a class="download-btn" href="#" target="_blank">Download</a>
+
+  <div class="meta">
+    <div>⭐ 4.1<br>Rating</div>
+    <div>📦 58–100 MB</div>
+    <div>🆓 Free</div>
+    <div>🎁 Bonus</div>
+  </div>
+
+  <div class="download-wrap">
+    <a class="download-btn" href="#" target="_blank">Download</a>
+  </div>
 </div>
 
 <!-- APP 2 -->
 <div class="card">
-  <img src="https://i.ibb.co/9mWjVf1m/101z.png">
-  <div class="info">
-    <h3>101Z Skill Game</h3>
-    <p>🎁 ₹10 + ₹692 Bonus | 💰 Real Cash</p>
+  <div class="card-top">
+    <img class="app-img" src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="app-info">
+      <h3>101Z Skill Game</h3>
+      <div class="tags">🎁 ₹10 + ₹692 Bonus | 💰 Real Cash</div>
+    </div>
   </div>
-  <a class="download-btn" href="#" target="_blank">Download</a>
+
+  <div class="meta">
+    <div>⭐ 4.3</div>
+    <div>📦 65 MB</div>
+    <div>🆓 Free</div>
+    <div>💰 Cash</div>
+  </div>
+
+  <div class="download-wrap">
+    <a class="download-btn" href="#" target="_blank">Download</a>
+  </div>
 </div>
 
 <!-- APP 3 -->
 <div class="card">
-  <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-  <div class="info">
-    <h3>Yono Rummy</h3>
-    <p>🎁 ₹13+ Bonus | 💸 Cashback</p>
+  <div class="card-top">
+    <img class="app-img" src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="app-info">
+      <h3>Yono Rummy</h3>
+      <div class="tags">🎁 ₹13+ Bonus | 💸 Cashback</div>
+    </div>
   </div>
-  <a class="download-btn" href="#" target="_blank">Download</a>
+
+  <div class="meta">
+    <div>⭐ 4.4</div>
+    <div>📦 60 MB</div>
+    <div>🆓 Free</div>
+    <div>💸 Cashback</div>
+  </div>
+
+  <div class="download-wrap">
+    <a class="download-btn" href="#" target="_blank">Download</a>
+  </div>
 </div>
 
-<!-- SMALL SOCIAL -->
+<!-- SOCIAL -->
 <div class="social">
   <a class="telegram" href="#">Telegram</a>
   <a class="whatsapp" href="#">WhatsApp</a>
@@ -211,6 +269,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
