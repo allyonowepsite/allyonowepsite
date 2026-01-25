@@ -9,7 +9,6 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Segoe UI,Arial;background:#eef2f7}
 
-/* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;text-align:center;
@@ -18,7 +17,6 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef2f7}
 
 .container{max-width:1100px;margin:auto;padding:12px}
 
-/* CARD */
 .list-card{
   background:#fff;margin:14px 0;padding:14px;
   border-radius:16px;
@@ -34,46 +32,37 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef2f7}
 .icon img{width:56px;height:56px;border-radius:12px}
 .details{flex:1}
 .details h3{margin:0;font-size:18px}
-.tag{font-size:14px;font-weight:700}
-.bonus{color:#e53935}
-.withdraw{color:#2e7d32}
+.bonus{color:#e53935;font-weight:700}
+.withdraw{color:#2e7d32;font-weight:700}
 
 /* BUTTON */
 .btn-wrap{text-align:right;margin-top:10px}
 .download-btn{
   background:linear-gradient(135deg,#4facfe,#00c6ff,#6a5cff);
   color:#fff;border:none;
-  padding:8px 18px;
-  border-radius:14px;
-  font-size:13px;font-weight:800;
-  cursor:pointer;
+  padding:8px 18px;border-radius:14px;
+  font-size:13px;font-weight:800;cursor:pointer;
   box-shadow:0 5px 0 #2b5bd7,0 10px 18px rgba(0,0,0,.35)
 }
 .download-btn.red{background:linear-gradient(135deg,#ff5252,#ff1744)}
 .download-btn.pink{background:linear-gradient(135deg,#ff5fd8,#ff8ccf)}
 
-/* SOCIAL */
-.social{display:none;margin-top:12px;text-align:center}
+.social{display:none;margin-top:10px;text-align:right}
 .social button{
-  margin:6px;padding:10px 18px;
-  border:none;border-radius:14px;
+  margin-left:6px;padding:8px 14px;
+  border:none;border-radius:12px;
   font-weight:800;color:#fff;cursor:pointer
 }
 .telegram{background:#0088cc}
 .share{background:#25d366}
 
-/* OTHER APPS */
-#otherApps{display:none}
-
 /* WARNING */
 .warning{
-  margin:30px;
-  padding:20px;
+  margin:30px;padding:20px;
   background:#fff3e0;
   border-left:8px solid #ff4d4f;
   border-radius:16px;
-  font-size:14px;
-  line-height:1.9
+  font-size:14px;line-height:1.9
 }
 
 .footer{text-align:center;padding:14px;font-size:13px;color:#555}
@@ -86,85 +75,91 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef2f7}
 
 <div class="container">
 
-<!-- MAIN APP -->
+<!-- APP 1 -->
 <div class="list-card">
   <div class="top">
     <div class="rank">1</div>
     <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
     <div class="details">
       <h3>Teen Patti Master</h3>
-      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+      <div class="bonus">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
     </div>
   </div>
 
   <div class="btn-wrap">
-    <button id="mainBtn" class="download-btn" onclick="handleClick()">⬇ Download</button>
+    <button class="download-btn" onclick="clickBtn(this,'https://www.earntp.com/gold/jexzd')">⬇ Download</button>
   </div>
 
-  <div class="social" id="socialBox">
-    <button class="telegram" onclick="window.open('https://t.me/YOUR_CHANNEL','_blank')">
-      📢 Join Telegram
-    </button>
-    <button class="share" onclick="navigator.share({title:'All Yono App',url:location.href})">
-      🔗 Share with Friends
-    </button>
+  <div class="social">
+    <button class="telegram" onclick="window.open('https://t.me/YOUR_CHANNEL','_blank')">📢 Telegram</button>
+    <button class="share" onclick="navigator.share({title:'All Yono App',url:location.href})">🔗 Share</button>
   </div>
 </div>
 
-<!-- OTHER APPS -->
-<div id="otherApps">
-  <div class="list-card">101Z Skill Game – ⬇ Download</div>
-  <div class="list-card">Yono Rummy – ⬇ Download</div>
-  <div class="list-card">OK Rummy – ⬇ Download</div>
+<!-- APP 2 -->
+<div class="list-card">
+  <div class="top">
+    <div class="rank">2</div>
+    <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
+    <div class="details">
+      <h3>101Z Skill Game</h3>
+      <div class="bonus">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <button class="download-btn" onclick="clickBtn(this,'https://101z2.com/?code=Z9YJW6N9CJ8')">⬇ Download</button>
+  </div>
+</div>
+
+<!-- APP 3 -->
+<div class="list-card">
+  <div class="top">
+    <div class="rank">3</div>
+    <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
+    <div class="details">
+      <h3>Yono Rummy</h3>
+      <div class="bonus">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <button class="download-btn" onclick="clickBtn(this,'https://yonorummy009.com/?code=VIP17W6WRJE')">⬇ Download</button>
+  </div>
 </div>
 
 </div>
 
-<!-- WARNING + DISCLAIMER -->
 <div class="warning">
-⚠️ <b>Important Warning & Disclaimer:</b><br><br>
-This website is only an informational platform and does NOT own, develop,
-modify, or distribute any gaming or betting applications.<br><br>
-
-All app names, APK files, logos, trademarks, bonuses, and offers belong to
-their respective owners. We do not guarantee winnings, bonuses, or withdrawals.<br><br>
-
-Online gaming involves financial risk and may be addictive.
-Users must be 18+ and are fully responsible for their actions.
-Please play responsibly and comply with your local laws.<br><br>
-
-By continuing, you agree to our Privacy Policy and Terms of Use.
+⚠️ <b>Warning / Disclaimer / Privacy Policy</b><br><br>
+This website does NOT own or operate any gaming or betting apps.  
+All APKs, bonuses, names, logos belong to their respective owners.<br><br>
+Online games involve financial risk and may be addictive.  
+Only 18+ users should play. Please play responsibly and follow local laws.
 </div>
 
-<div class="footer">
-© 2026 All Yono App Store. All Rights Reserved.
-</div>
+<div class="footer">© 2026 All Yono App Store</div>
 
 <script>
-let step = 0;
-function handleClick(){
-  const btn = document.getElementById("mainBtn");
-  const social = document.getElementById("socialBox");
-  const apps = document.getElementById("otherApps");
-
-  if(step === 0){
+function clickBtn(btn, link){
+  if(!btn.dataset.step){
+    btn.dataset.step = 1;
     btn.classList.add("red");
     btn.innerText = "⬇ Click Again";
-    social.style.display = "block";
-    step++;
+    btn.closest(".list-card").querySelector(".social").style.display="block";
   }else{
     btn.classList.remove("red");
     btn.classList.add("pink");
-    btn.innerText = "⬇ Download Now";
-    apps.style.display = "block";
-    window.open("https://www.earntp.com/gold/jexzd","_blank");
+    btn.innerText = "⬇ Downloading...";
+    window.open(link,"_blank");
   }
 }
 </script>
 
 </body>
 </html>
+
 
 
 
