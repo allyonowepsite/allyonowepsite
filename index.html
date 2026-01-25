@@ -13,7 +13,7 @@ body{
   background:#f2f6fb;
 }
 
-/* TOP NAV */
+/* NAV */
 .nav{
   display:flex;
   justify-content:center;
@@ -45,7 +45,7 @@ body{
 
 /* CONTAINER */
 .container{
-  max-width:900px;
+  max-width:1100px;
   margin:auto;
   padding:12px;
 }
@@ -54,78 +54,73 @@ body{
 .card{
   background:#fff;
   margin:18px 0;
-  padding:20px;
-  border-radius:24px;
-  box-shadow:0 14px 28px rgba(0,0,0,.15);
+  padding:22px;
+  border-radius:26px;
+  box-shadow:0 14px 30px rgba(0,0,0,.15);
 }
 
-.card-top{
+.top{
   display:flex;
+  gap:16px;
   align-items:center;
-  gap:18px;
 }
 
-.app-img{
+.top img{
   width:90px;
   height:90px;
   border-radius:20px;
 }
 
-.app-info{
+.info{
   flex:1;
 }
-
-.app-info h3{
-  margin:0 0 6px;
+.info h3{
+  margin:0;
   font-size:22px;
   color:#1e2a55;
 }
-
-.tags{
+.info p{
+  margin:6px 0 0;
+  color:#555;
   font-size:15px;
-  color:#444;
 }
 
-/* META ROW */
-.meta{
+/* STATS */
+.stats{
   display:flex;
-  gap:10px;
-  margin-top:14px;
+  gap:12px;
+  margin:14px 0;
+  flex-wrap:wrap;
 }
-
-.meta div{
-  flex:1;
-  background:#f6f8fc;
+.stat{
+  background:#f4f7ff;
+  padding:10px 14px;
   border-radius:14px;
-  padding:10px 6px;
-  text-align:center;
   font-size:13px;
+  font-weight:600;
   color:#333;
 }
 
-/* DOWNLOAD */
-.download-wrap{
-  margin-top:16px;
-  text-align:right;
-}
-
+/* DOWNLOAD BUTTON */
 .download-btn{
-  padding:14px 28px;
-  border-radius:30px;
+  display:inline-block;
+  margin-top:10px;
+  padding:14px 34px;
+  border-radius:40px;
   background:linear-gradient(45deg,#ff512f,#dd2476);
   color:#fff;
-  text-decoration:none;
   font-weight:800;
-  font-size:15px;
-  box-shadow:0 10px 20px rgba(221,36,118,.45);
-  display:inline-block;
-  transition:.3s;
+  text-decoration:none;
+  box-shadow:0 12px 25px rgba(221,36,118,.45);
+  cursor:pointer;
+  position:relative;
+  z-index:10;
 }
 .download-btn:hover{
   transform:translateY(-4px);
 }
 
-/* SOCIAL SMALL */
+/* SOCIAL */
 .social{
   display:flex;
   justify-content:center;
@@ -133,9 +128,9 @@ body{
   margin:30px 0;
 }
 .social a{
-  width:110px;
-  padding:10px;
-  border-radius:18px;
+  width:120px;
+  padding:12px;
+  border-radius:20px;
   text-align:center;
   font-size:13px;
   font-weight:700;
@@ -157,7 +152,7 @@ body{
 
 /* MOBILE */
 @media(max-width:768px){
-  .app-img{width:75px;height:75px}
+  .top img{width:75px;height:75px}
 }
 </style>
 
@@ -190,74 +185,83 @@ function shareSite(){
 
 <!-- APP 1 -->
 <div class="card">
-  <div class="card-top">
-    <img class="app-img" src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-    <div class="app-info">
+  <div class="top">
+    <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+    <div class="info">
       <h3>Teen Patti Master</h3>
-      <div class="tags">🎁 Bonus Available | 🏦 Fast Withdraw</div>
+      <p>🎁 Bonus Available | 🏦 Fast Withdraw</p>
     </div>
   </div>
 
-  <div class="meta">
-    <div>⭐ 4.1<br>Rating</div>
-    <div>📦 58–100 MB</div>
-    <div>🆓 Free</div>
-    <div>🎁 Bonus</div>
+  <div class="stats">
+    <div class="stat">⭐ 4.1 Rating</div>
+    <div class="stat">📦 58–100 MB</div>
+    <div class="stat">🆓 Free</div>
+    <div class="stat">🎁 Bonus</div>
   </div>
 
-  <div class="download-wrap">
-    <a class="download-btn" href="#" target="_blank">Download</a>
-  </div>
+  <a class="download-btn"
+     href="https://www.earntp.com/gold/jexzd"
+     target="_blank"
+     onclick="window.open(this.href,'_blank');return false;">
+     Download
+  </a>
 </div>
 
 <!-- APP 2 -->
 <div class="card">
-  <div class="card-top">
-    <img class="app-img" src="https://i.ibb.co/9mWjVf1m/101z.png">
-    <div class="app-info">
+  <div class="top">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
       <h3>101Z Skill Game</h3>
-      <div class="tags">🎁 ₹10 + ₹692 Bonus | 💰 Real Cash</div>
+      <p>🎁 ₹10 + ₹692 Bonus | 💰 Real Cash</p>
     </div>
   </div>
 
-  <div class="meta">
-    <div>⭐ 4.3</div>
-    <div>📦 65 MB</div>
-    <div>🆓 Free</div>
-    <div>💰 Cash</div>
+  <div class="stats">
+    <div class="stat">⭐ 4.3 Rating</div>
+    <div class="stat">📦 65 MB</div>
+    <div class="stat">🆓 Free</div>
+    <div class="stat">💰 Cash</div>
   </div>
 
-  <div class="download-wrap">
-    <a class="download-btn" href="#" target="_blank">Download</a>
-  </div>
+  <a class="download-btn"
+     href="https://101z2.com/?code=Z9YJW6N9CJ8"
+     target="_blank"
+     onclick="window.open(this.href,'_blank');return false;">
+     Download
+  </a>
 </div>
 
 <!-- APP 3 -->
 <div class="card">
-  <div class="card-top">
-    <img class="app-img" src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    <div class="app-info">
+  <div class="top">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
       <h3>Yono Rummy</h3>
-      <div class="tags">🎁 ₹13+ Bonus | 💸 Cashback</div>
+      <p>🎁 ₹13+ Bonus | 💸 Cashback</p>
     </div>
   </div>
 
-  <div class="meta">
-    <div>⭐ 4.4</div>
-    <div>📦 60 MB</div>
-    <div>🆓 Free</div>
-    <div>💸 Cashback</div>
+  <div class="stats">
+    <div class="stat">⭐ 4.4 Rating</div>
+    <div class="stat">📦 60 MB</div>
+    <div class="stat">🆓 Free</div>
+    <div class="stat">💸 Cashback</div>
   </div>
 
-  <div class="download-wrap">
-    <a class="download-btn" href="#" target="_blank">Download</a>
-  </div>
+  <a class="download-btn"
+     href="https://yonorummy009.com/?code=VIP17W6WRJE"
+     target="_blank"
+     onclick="window.open(this.href,'_blank');return false;">
+     Download
+  </a>
 </div>
 
 <!-- SOCIAL -->
 <div class="social">
-  <a class="telegram" href="#">Telegram</a>
-  <a class="whatsapp" href="#">WhatsApp</a>
+  <a class="telegram" href="https://t.me/YOUR_TELEGRAM" target="_blank">Telegram</a>
+  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
   <a class="share" href="javascript:void(0)" onclick="shareSite()">Share</a>
 </div>
 
@@ -269,6 +273,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
