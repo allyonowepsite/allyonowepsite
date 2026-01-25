@@ -13,44 +13,6 @@ body{
   background:#f2f6fb;
 }
 
-/* ===== TOP MENU ===== */
-.navbar{
-  position:sticky;
-  top:0;
-  z-index:999;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  padding:14px 20px;
-  background:linear-gradient(90deg,#1e6fd9,#00c6ff);
-}
-
-.logo{
-  color:#fff;
-  font-weight:900;
-  font-size:20px;
-}
-
-.menu{
-  display:flex;
-  gap:10px;
-}
-
-.menu button{
-  border:none;
-  padding:8px 16px;
-  border-radius:20px;
-  font-weight:700;
-  cursor:pointer;
-  background:#fff;
-  color:#1e6fd9;
-}
-
-.menu button.active{
-  background:#ff512f;
-  color:#fff;
-}
-
 /* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
@@ -60,10 +22,6 @@ body{
   font-size:26px;
   font-weight:800;
 }
-
-/* SECTIONS */
-.section{display:none;}
-.section.active{display:block;}
 
 /* CONTAINER */
 .container{
@@ -159,21 +117,18 @@ body{
 .hd-whatsapp{background:linear-gradient(135deg,#25D366,#00ff99)}
 .hd-share{background:linear-gradient(135deg,#ff9800,#ff5722)}
 
-/* INFO BOX */
-.info-box{
-  background:#fff;
-  margin:20px;
-  padding:22px;
-  border-radius:22px;
-  box-shadow:0 12px 25px rgba(0,0,0,.15);
-  line-height:1.7;
-  font-size:15px;
-}
-
 /* DISCLAIMER */
 .disclaimer{
+  max-width:1100px;
+  margin:30px auto;
+  padding:18px 20px;
   background:linear-gradient(135deg,#fff1f0,#ffe4d9);
   border-left:6px solid #ff4d4f;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  font-size:14px;
+  color:#333;
+  line-height:1.6;
 }
 
 /* FOOTER */
@@ -186,14 +141,6 @@ body{
 </style>
 
 <script>
-function openTab(id){
-  document.querySelectorAll('.section').forEach(s=>s.classList.remove('active'));
-  document.getElementById(id).classList.add('active');
-  document.querySelectorAll('.menu button').forEach(b=>b.classList.remove('active'));
-  document.getElementById(id+'Btn').classList.add('active');
-  window.scrollTo(0,0);
-}
-
 function shareSite(){
   if(navigator.share){
     navigator.share({
@@ -210,25 +157,11 @@ function shareSite(){
 
 <body>
 
-<!-- TOP MENU -->
-<div class="navbar">
-  <div class="logo">Al Yono</div>
-  <div class="menu">
-    <button id="homeBtn" class="active" onclick="openTab('home')">Home</button>
-    <button id="aboutBtn" onclick="openTab('about')">About</button>
-    <button id="disclaimerBtn" onclick="openTab('disclaimer')">Disclaimer</button>
-    <button id="privacyBtn" onclick="openTab('privacy')">Privacy</button>
-  </div>
-</div>
-
 <div class="header">Al Yono App Store</div>
 
-<!-- HOME -->
-<div id="home" class="section active">
 <div class="container">
 
-<!-- APP CARDS (same as before – unchanged) -->
-<!-- Teen Patti -->
+<!-- APP 1 -->
 <div class="card">
   <div class="top">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
@@ -237,53 +170,90 @@ function shareSite(){
       <div class="desc">🎮 Popular Teen Patti card game with fast cash withdrawal</div>
     </div>
   </div>
+
   <div class="tag-row">
     <div class="tag">⭐ Rating 4.1</div>
     <div class="tag">🆓 Free</div>
     <div class="tag">💰 Login Bonus ₹50</div>
   </div>
+
   <div class="tag-row">
     <div class="tag">📦 58–100 MB</div>
     <div class="tag">🎁 Bonus ₹300</div>
     <div class="tag">🏦 Fast Withdraw</div>
   </div>
+
   <a class="download-btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
 </div>
 
-</div>
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="section">
-  <div class="info-box">
-    <h3>About Us</h3>
-    Al Yono App Store helps users discover popular Indian gaming applications.
-    We do not own or operate any listed apps.
+<!-- APP 2 -->
+<div class="card">
+  <div class="top">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      <div class="desc">🃏 Skill based real cash game with instant rewards</div>
+    </div>
   </div>
-</div>
 
-<!-- DISCLAIMER -->
-<div id="disclaimer" class="section">
-  <div class="info-box disclaimer">
-    <h3>⚠️ Disclaimer</h3>
-    This website does not host or own any games. All trademarks belong to respective owners.
-    Games may involve financial risk. 18+ only.
+  <div class="tag-row">
+    <div class="tag">⭐ Rating 4.3</div>
+    <div class="tag">🆓 Free</div>
+    <div class="tag">💰 Login Bonus ₹10</div>
   </div>
-</div>
 
-<!-- PRIVACY -->
-<div id="privacy" class="section">
-  <div class="info-box">
-    <h3>Privacy Policy</h3>
-    We do not collect personal data. External links are owned by third-party platforms.
+  <div class="tag-row">
+    <div class="tag">📦 65 MB</div>
+    <div class="tag">🎁 Bonus ₹692</div>
+    <div class="tag">🏦 Bank Withdraw</div>
   </div>
+
+  <a class="download-btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
 </div>
 
-<!-- SOCIAL -->
+<!-- APP 3 -->
+<div class="card">
+  <div class="top">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      <div class="desc">🀄 Trusted rummy game with cashback & bonuses</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">⭐ Rating 4.4</div>
+    <div class="tag">🆓 Free</div>
+    <div class="tag">💰 Login Bonus ₹5</div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">📦 60 MB</div>
+    <div class="tag">🎁 Bonus ₹13+</div>
+    <div class="tag">🏦 Secure Withdraw</div>
+  </div>
+
+  <a class="download-btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
+</div>
+
+</div>
+
+<!-- HD 3D MOMENT -->
 <div class="hd-moment">
   <div class="hd-card hd-telegram" onclick="window.open('https://t.me/YOURCHANNEL','_blank')">🚀 Telegram</div>
   <div class="hd-card hd-whatsapp" onclick="window.open('https://wa.me/91XXXXXXXXXX','_blank')">💬 WhatsApp</div>
   <div class="hd-card hd-share" onclick="shareSite()">🔗 Share</div>
+</div>
+
+<!-- ⚠️ DISCLAIMER -->
+<div class="disclaimer">
+<b>⚠️ Disclaimer & Warning:</b><br><br>
+Al Yono App Store does <b>NOT own or operate</b> any gaming applications listed on this website.
+All app names, logos, and trademarks belong to their respective owners.<br><br>
+
+🎮 Online games may involve <b>financial risk</b> and can be addictive. Please play responsibly.<br>
+🔞 This website is strictly intended for <b>18+ users only</b>.<br>
+🏦 Bonus, login rewards, and withdrawals depend entirely on the respective app policies.
 </div>
 
 <div class="footer">
@@ -292,6 +262,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
