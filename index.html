@@ -7,15 +7,12 @@
 <meta name="google-site-verification" content="iryUdDJOsQdUWQro_ONKQXCIzPpUl4V9oJAHTeDGWJs" />
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Al Yono App Store</title>
+<title>Al Yono App Store – Trusted Indian Gaming Apps</title>
 
 <style>
 *{box-sizing:border-box}
-
-html,body{
+body{
   margin:0;
-  padding:0;
-  height:100%;
   font-family:Arial,Helvetica,sans-serif;
   background:#eef1f6;
 }
@@ -34,7 +31,6 @@ html,body{
   border-radius:18px;
   background:#fff;
   font-weight:bold;
-  font-size:14px;
 }
 .nav button.active{
   background:#1abc9c;
@@ -51,39 +47,29 @@ html,body{
   font-weight:bold;
 }
 
-/* MAIN */
-.main{
-  min-height:100vh;
-  padding-bottom:40px;
-}
-
-/* SECTIONS */
+/* SECTION */
 .section{display:none;}
 .section.active{display:block;}
 
-/* CARD */
-.card{
+.card,.box{
   background:#fff;
-  margin:14px;
-  padding:16px;
-  border-radius:20px;
+  margin:16px;
+  padding:22px;
+  border-radius:22px;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  line-height:1.8;
+}
+
+.card{
   display:flex;
   align-items:center;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
 .card img{
   width:70px;
   height:70px;
   border-radius:16px;
 }
-.info{
-  flex:1;
-  margin-left:12px;
-}
-.info h3{
-  margin:0;
-  font-size:16px;
-}
+.info{flex:1;margin-left:12px}
 .btn{
   background:#1e90ff;
   color:#fff;
@@ -91,21 +77,8 @@ html,body{
   border-radius:16px;
   text-decoration:none;
   font-weight:bold;
-  white-space:nowrap;
 }
 
-/* BOX */
-.box{
-  background:#fff;
-  margin:16px;
-  padding:22px;
-  border-radius:22px;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
-  line-height:1.8;
-  font-size:15px;
-}
-
-/* FOOTER */
 .footer{
   text-align:center;
   padding:16px;
@@ -121,7 +94,6 @@ function openTab(tab){
 
   document.querySelectorAll('.nav button').forEach(b=>b.classList.remove('active'));
   document.getElementById(tab+'Btn').classList.add('active');
-
   window.scrollTo(0,0);
 }
 </script>
@@ -134,13 +106,10 @@ function openTab(tab){
   <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
   <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
   <button id="privacyBtn" onclick="openTab('privacy')">🔒 Privacy</button>
-  <button id="termsBtn" onclick="openTab('terms')">📄 Terms</button>
   <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
 <div class="header">Al Yono App Store</div>
-
-<div class="main">
 
 <!-- HOME -->
 <div id="home" class="section active">
@@ -148,8 +117,8 @@ function openTab(tab){
   <div class="card">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
     <div class="info">
-      <h3>Teen Patti Master</h3>
-      🎁 Bonus Available<br>🏦 Fast Withdraw
+      <b>Teen Patti Master</b><br>
+      🎁 Bonus Available | 🏦 Fast Withdraw
     </div>
     <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
@@ -157,19 +126,10 @@ function openTab(tab){
   <div class="card">
     <img src="https://i.ibb.co/9mWjVf1m/101z.png">
     <div class="info">
-      <h3>101Z Skill Game</h3>
-      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
+      <b>101Z Skill Game</b><br>
+      🎁 ₹10 + ₹692 Bonus | 💰 Real Cash
     </div>
     <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
-  </div>
-
-  <div class="card">
-    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    <div class="info">
-      <h3>Yono Rummy</h3>
-      🎁 ₹13+ Bonus<br>💸 Cashback
-    </div>
-    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
   </div>
 
 </div>
@@ -178,8 +138,18 @@ function openTab(tab){
 <div id="about" class="section">
   <div class="box">
     <h3>About Us</h3>
-    Welcome to our platform, created on <b>July 27, 2024</b>, focused on Indian users.
-    We help people discover apps easily with a fast and mobile-friendly experience.
+    <p>
+      <b>Al Yono App Store</b> is an independent online platform created on <b>July 27, 2024</b>
+      to help Indian users discover popular gaming and earning applications easily.
+    </p>
+    <p>
+      We do not own, develop, or operate any apps listed on this website. Our goal is only to
+      share publicly available information and official links.
+    </p>
+    <p>
+      We believe in transparency, user safety, and responsible usage. All content is
+      mobile-friendly and optimized for fast access.
+    </p>
   </div>
 </div>
 
@@ -187,7 +157,21 @@ function openTab(tab){
 <div id="contact" class="section">
   <div class="box">
     <h3>Contact Us</h3>
-    📧 Email: <b>support@example.com</b>
+
+    <p><b>Customer Support Notice:</b></p>
+    <p>
+      Al Yono App Store does <b>NOT</b> provide customer support for listed apps or games.
+      If you face any issue, please contact the official support option inside those apps.
+    </p>
+
+    <h4>Advertisement / Business Queries</h4>
+    <p>
+      If you are a game developer, operator, or advertiser and want to promote your
+      application on our platform, you can contact us for collaboration.
+    </p>
+
+    <p>📧 Email: <b>support@example.com</b></p>
+    <p>📢 Telegram: <b>Not Provided (Security Reason)</b></p>
   </div>
 </div>
 
@@ -195,15 +179,18 @@ function openTab(tab){
 <div id="privacy" class="section">
   <div class="box">
     <h3>Privacy Policy</h3>
-    We do not collect personal data. Contact us for any concerns.
-  </div>
-</div>
-
-<!-- TERMS -->
-<div id="terms" class="section">
-  <div class="box">
-    <h3>Terms & Conditions</h3>
-    We only provide third-party links. Use at your own risk.
+    <p>
+      We respect user privacy. This website does not collect personal data,
+      login credentials, or payment information.
+    </p>
+    <p>
+      Third-party apps linked on this site have their own privacy policies.
+      Users should review them before using any service.
+    </p>
+    <p>
+      If you are a parent or guardian and believe data was shared by a minor,
+      please contact us for removal.
+    </p>
   </div>
 </div>
 
@@ -211,12 +198,16 @@ function openTab(tab){
 <div id="disc" class="section">
   <div class="box">
     <h3>Disclaimer</h3>
-    We do not own any apps.<br>
-    Financial risk possible.<br><br>
-    <b>18+ Only</b>
+    <p>
+      Al Yono App Store is <b>NOT</b> affiliated with any listed games or apps.
+      All trademarks belong to their respective owners.
+    </p>
+    <p>
+      Games may involve financial risk and can be addictive.
+      Please play responsibly.
+    </p>
+    <p><b>🔞 18+ Users Only</b></p>
   </div>
-</div>
-
 </div>
 
 <div class="footer">
@@ -225,6 +216,7 @@ function openTab(tab){
 
 </body>
 </html>
+
 
 
 
