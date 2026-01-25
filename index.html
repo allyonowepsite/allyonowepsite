@@ -19,8 +19,8 @@ body{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
   text-align:center;
-  padding:26px;
-  font-size:26px;
+  padding:22px;
+  font-size:24px;
   font-weight:800;
 }
 
@@ -28,105 +28,92 @@ body{
 .container{
   max-width:1100px;
   margin:auto;
-  padding:14px;
+  padding:12px;
 }
 
-/* CARD */
-.card{
+/* LIST CARD (SCREENSHOT STYLE) */
+.list-card{
   background:#fff;
-  margin:18px 0;
-  padding:22px;
-  border-radius:26px;
-  box-shadow:0 14px 30px rgba(0,0,0,.15);
-}
-
-.top{
+  margin:14px 0;
+  padding:14px;
+  border-radius:14px;
   display:flex;
-  gap:16px;
   align-items:center;
+  box-shadow:0 6px 18px rgba(0,0,0,.12);
 }
 
-.top img{
-  width:90px;
-  height:90px;
-  border-radius:20px;
+.rank{
+  background:#ff9800;
+  color:#fff;
+  font-weight:800;
+  width:28px;
+  height:28px;
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:12px;
 }
 
-.info{flex:1}
-.info h3{
+.icon img{
+  width:60px;
+  height:60px;
+  border-radius:12px;
+}
+
+.details{
+  flex:1;
+  margin-left:12px;
+}
+
+.details h3{
   margin:0;
-  font-size:22px;
-  color:#1e2a55;
+  font-size:18px;
+  color:#222;
 }
-.info .desc{
-  margin:6px 0;
-  color:#555;
+
+.bonus{
+  margin-top:6px;
   font-size:14px;
 }
 
-/* TAG ROWS */
-.tag-row{
-  display:flex;
-  gap:10px;
-  flex-wrap:wrap;
-  margin-top:12px;
+.bonus .gift{
+  color:#e53935;
+  font-weight:700;
 }
 
-.tag{
-  background:#f4f7ff;
-  padding:8px 14px;
-  border-radius:16px;
-  font-size:13px;
-  font-weight:600;
-  color:#333;
+.bonus .withdraw{
+  color:#2e7d32;
+  font-weight:700;
 }
 
-/* DOWNLOAD */
+/* DOWNLOAD BUTTON */
 .download-btn{
-  display:inline-block;
-  margin-top:16px;
-  padding:14px 38px;
-  border-radius:40px;
-  background:linear-gradient(45deg,#ff512f,#dd2476);
+  background:#4a8df6;
   color:#fff;
-  font-weight:800;
-  text-decoration:none;
-  box-shadow:0 12px 25px rgba(221,36,118,.45);
-}
-
-/* HD MOMENT */
-.hd-moment{
-  margin:40px 14px;
-  display:flex;
-  gap:16px;
-  justify-content:center;
-  flex-wrap:wrap;
-}
-
-.hd-card{
-  width:160px;
-  padding:18px;
-  border-radius:24px;
-  color:#fff;
-  text-align:center;
-  font-weight:800;
-  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  border:none;
+  padding:14px 22px;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:700;
   cursor:pointer;
+  display:flex;
+  align-items:center;
+  gap:6px;
 }
 
-.hd-telegram{background:linear-gradient(135deg,#0088cc,#00c6ff)}
-.hd-whatsapp{background:linear-gradient(135deg,#25D366,#00ff99)}
-.hd-share{background:linear-gradient(135deg,#ff9800,#ff5722)}
+.download-btn:hover{
+  background:#2f6fe4;
+}
 
 /* DISCLAIMER */
 .disclaimer{
   max-width:1100px;
   margin:30px auto;
   padding:18px 20px;
-  background:linear-gradient(135deg,#fff1f0,#ffe4d9);
+  background:#fff3e0;
   border-left:6px solid #ff4d4f;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.12);
+  border-radius:14px;
   font-size:14px;
   color:#333;
   line-height:1.6;
@@ -140,20 +127,6 @@ body{
   color:#555;
 }
 </style>
-
-<script>
-function shareSite(){
-  if(navigator.share){
-    navigator.share({
-      title:'Al Yono App Store',
-      text:'Best Indian Gaming Apps',
-      url:window.location.href
-    });
-  }else{
-    alert(window.location.href);
-  }
-}
-</script>
 </head>
 
 <body>
@@ -163,113 +136,66 @@ function shareSite(){
 <div class="container">
 
 <!-- APP 1 -->
-<div class="card">
-  <div class="top">
+<div class="list-card">
+  <div class="rank">2</div>
+  <div class="icon">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-    <div class="info">
-      <h3>Teen Patti Master</h3>
-      <div class="desc">🎮 Popular Teen Patti card game with fast cash withdrawal</div>
+  </div>
+  <div class="details">
+    <h3>Teen Patti Master</h3>
+    <div class="bonus">
+      <div class="gift">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
     </div>
   </div>
-
-  <div class="tag-row">
-    <div class="tag">⭐ Rating 4.1</div>
-    <div class="tag">🆓 Free</div>
-    <div class="tag">💰 Login Bonus ₹50</div>
-  </div>
-
-  <div class="tag-row">
-    <div class="tag">📦 58–100 MB</div>
-    <div class="tag">🎁 Bonus ₹300</div>
-    <div class="tag">🏦 Fast Withdraw</div>
-  </div>
-
-  <a class="download-btn" href="https://www.earntp.com/gold/jexzd" target="_blank" rel="noopener noreferrer">Download</a>
+  <a href="https://www.earntp.com/gold/jexzd" target="_blank" rel="noopener">
+    <button class="download-btn">⬇ Download</button>
+  </a>
 </div>
 
 <!-- APP 2 -->
-<div class="card">
-  <div class="top">
+<div class="list-card">
+  <div class="rank">4</div>
+  <div class="icon">
     <img src="https://i.ibb.co/9mWjVf1m/101z.png">
-    <div class="info">
-      <h3>101Z Skill Game</h3>
-      <div class="desc">🃏 Skill based real cash game with instant rewards</div>
+  </div>
+  <div class="details">
+    <h3>101Z Skill Game</h3>
+    <div class="bonus">
+      <div class="gift">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
     </div>
   </div>
-
-  <div class="tag-row">
-    <div class="tag">⭐ Rating 4.3</div>
-    <div class="tag">🆓 Free</div>
-    <div class="tag">💰 Login Bonus ₹10</div>
-  </div>
-
-  <div class="tag-row">
-    <div class="tag">📦 65 MB</div>
-    <div class="tag">🎁 Bonus ₹692</div>
-    <div class="tag">🏦 Bank Withdraw</div>
-  </div>
-
-  <a class="download-btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank" rel="noopener noreferrer">Download</a>
+  <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank" rel="noopener">
+    <button class="download-btn">⬇ Download</button>
+  </a>
 </div>
 
 <!-- APP 3 -->
-<div class="card">
-  <div class="top">
+<div class="list-card">
+  <div class="rank">6</div>
+  <div class="icon">
     <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    <div class="info">
-      <h3>Yono Rummy</h3>
-      <div class="desc">🀄 Trusted rummy game with cashback & bonuses</div>
+  </div>
+  <div class="details">
+    <h3>Yono Rummy</h3>
+    <div class="bonus">
+      <div class="gift">🎁 Sign Up Bonus ₹550</div>
+      <div class="withdraw">🏦 Min. Withdrawal ₹100</div>
     </div>
   </div>
-
-  <div class="tag-row">
-    <div class="tag">⭐ Rating 4.4</div>
-    <div class="tag">🆓 Free</div>
-    <div class="tag">💰 Login Bonus ₹5</div>
-  </div>
-
-  <div class="tag-row">
-    <div class="tag">📦 60 MB</div>
-    <div class="tag">🎁 Bonus ₹13+</div>
-    <div class="tag">🏦 Secure Withdraw</div>
-  </div>
-
-  <a class="download-btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank" rel="noopener noreferrer">Download</a>
+  <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank" rel="noopener">
+    <button class="download-btn">⬇ Download</button>
+  </a>
 </div>
 
-<!-- 🔥 APP 4 TEMPLATE (COPY FOR MORE APPS) -->
-<!--
-<div class="card">
-  <div class="top">
-    <img src="APP_ICON_URL">
-    <div class="info">
-      <h3>APP NAME</h3>
-      <div class="desc">APP DESCRIPTION</div>
-    </div>
-  </div>
-
-  <div class="tag-row">
-    <div class="tag">⭐ Rating</div>
-    <div class="tag">🆓 Free</div>
-    <div class="tag">💰 Login Bonus</div>
-  </div>
-
-  <a class="download-btn" href="APK_LINK" target="_blank">Download</a>
-</div>
--->
-
-</div>
-
-<div class="hd-moment">
-  <div class="hd-card hd-telegram" onclick="window.open('https://t.me/YOURCHANNEL','_blank')">🚀 Telegram</div>
-  <div class="hd-card hd-whatsapp" onclick="window.open('https://wa.me/91XXXXXXXXXX','_blank')">💬 WhatsApp</div>
-  <div class="hd-card hd-share" onclick="shareSite()">🔗 Share</div>
 </div>
 
 <div class="disclaimer">
 <b>⚠️ Disclaimer:</b><br><br>
-This website does NOT own any apps listed here. All rights belong to respective owners.<br>
-Games involve financial risk. 18+ only. Play responsibly.
+This website does NOT own or operate any gaming apps listed here.  
+All app names, logos, and bonuses belong to their respective owners.<br><br>
+Online games involve financial risk. 🔞 18+ only. Play responsibly.
 </div>
 
 <div class="footer">
@@ -278,6 +204,7 @@ Games involve financial risk. 18+ only. Play responsibly.
 
 </body>
 </html>
+
 
 
 
