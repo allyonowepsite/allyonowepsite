@@ -6,11 +6,14 @@
 <title>All Yono App Store</title>
 
 <style>
+*{box-sizing:border-box}
 body{
   margin:0;
   font-family:Segoe UI,Arial;
   background:#eef2f7;
 }
+
+/* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
@@ -19,11 +22,15 @@ body{
   font-size:22px;
   font-weight:800;
 }
+
+/* CONTAINER */
 .container{
   max-width:1100px;
   margin:auto;
   padding:12px;
 }
+
+/* CARD */
 .list-card{
   background:#fff;
   margin:14px 0;
@@ -31,11 +38,15 @@ body{
   border-radius:16px;
   box-shadow:0 8px 20px rgba(0,0,0,.12);
 }
+
+/* TOP ROW */
 .top{
   display:flex;
-  gap:10px;
   align-items:center;
+  gap:10px;
 }
+
+/* RANK */
 .rank{
   background:#ff9800;
   color:#fff;
@@ -46,71 +57,87 @@ body{
   display:flex;
   align-items:center;
   justify-content:center;
+  font-size:14px;
 }
+
+/* ICON */
 .icon img{
   width:56px;
   height:56px;
   border-radius:12px;
 }
-.details h3{margin:0}
-.tag{font-size:14px;font-weight:700}
-.bonus{color:#e53935}
-.withdraw{color:#2e7d32}
 
-/* BUTTON */
-.download-btn{
-  margin-top:12px;
-  width:70%;
-  padding:10px;
-  border:none;
-  border-radius:14px;
-  font-weight:800;
-  color:#fff;
-  cursor:pointer;
-  background:linear-gradient(135deg,#4facfe,#00c6ff);
-  box-shadow:0 6px 0 #2b5bd7,0 10px 18px rgba(0,0,0,.35);
+/* DETAILS */
+.details{
+  flex:1;
+}
+.details h3{
+  margin:0;
+  font-size:18px;
+  color:#111;
 }
 
-/* RED */
-.red{
-  background:linear-gradient(135deg,#ff5252,#ff1744);
-}
-
-/* PINK */
-.pink{
-  background:linear-gradient(135deg,#ff5fd8,#ff8ccf);
-}
-
-/* SOCIAL */
-.social{
-  display:none;
-  margin-top:12px;
-  text-align:center;
-}
-.social button{
-  margin:6px;
-  padding:10px 18px;
-  border:none;
-  border-radius:14px;
-  color:#fff;
-  font-weight:800;
-  cursor:pointer;
-}
-.telegram{background:#0088cc}
-.share{background:#25d366}
-
-/* OTHER APPS */
-#otherApps{display:none}
-
-/* WARNING */
-.warning{
-  margin:30px;
-  padding:18px;
-  background:#fff3e0;
-  border-left:8px solid #ff4d4f;
-  border-radius:16px;
+/* ONLY 2 LINES */
+.tags{margin-top:4px}
+.tag{
+  display:block;
   font-size:14px;
-  line-height:1.8;
+  font-weight:700;
+  line-height:1.2;
+  white-space:nowrap;
+}
+.tag.bonus{color:#e53935}
+.tag.withdraw{color:#2e7d32}
+
+/* 🔥 SMALL 3D BUTTON – RIGHT SIDE */
+.btn-wrap{
+  display:flex;
+  justify-content:flex-end;
+  margin-top:10px;
+}
+
+.download-btn{
+  background:linear-gradient(135deg,#4facfe,#00c6ff,#6a5cff);
+  color:#fff;
+  border:none;
+  padding:8px 18px;        /* SMALL */
+  border-radius:12px;
+  font-size:13px;
+  font-weight:800;
+  cursor:pointer;
+
+  box-shadow:
+    0 5px 0 #2b5bd7,
+    0 10px 18px rgba(0,0,0,.35);
+
+  transition:all .15s ease;
+}
+
+.download-btn:active{
+  transform:translateY(3px);
+  box-shadow:
+    0 2px 0 #2b5bd7,
+    0 5px 10px rgba(0,0,0,.3);
+}
+
+/* DISCLAIMER */
+.disclaimer{
+  max-width:1100px;
+  margin:26px auto;
+  padding:16px;
+  background:#fff3e0;
+  border-left:6px solid #ff4d4f;
+  border-radius:14px;
+  font-size:14px;
+  line-height:1.6;
+}
+
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:14px;
+  font-size:13px;
+  color:#555;
 }
 </style>
 </head>
@@ -121,70 +148,82 @@ body{
 
 <div class="container">
 
-<!-- MAIN APP -->
+<!-- APP 1 -->
 <div class="list-card">
   <div class="top">
     <div class="rank">1</div>
-    <div class="icon">
-      <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
-    </div>
+    <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
     <div class="details">
       <h3>Teen Patti Master</h3>
-      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+      <div class="tags">
+        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
+        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
+      </div>
     </div>
   </div>
-
-  <button id="mainBtn" class="download-btn" onclick="stepOne()">⬇ Download</button>
-
-  <div class="social" id="socialBox">
-    <button class="telegram" onclick="window.open('https://t.me/YOUR_CHANNEL')">📢 Telegram</button>
-    <button class="share" onclick="navigator.share({title:'Yono App',url:location.href})">🔗 Share</button>
+  <div class="btn-wrap">
+    <a href="https://www.earntp.com/gold/jexzd" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
   </div>
 </div>
 
-<!-- OTHER APPS -->
-<div id="otherApps">
-  <div class="list-card">101Z Skill Game – Download</div>
-  <div class="list-card">Yono Rummy – Download</div>
-  <div class="list-card">OK Rummy – Download</div>
+<!-- APP 2 -->
+<div class="list-card">
+  <div class="top">
+    <div class="rank">2</div>
+    <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
+    <div class="details">
+      <h3>101Z Skill Game</h3>
+      <div class="tags">
+        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
+        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
+  </div>
+</div>
+
+<!-- APP 3 -->
+<div class="list-card">
+  <div class="top">
+    <div class="rank">3</div>
+    <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
+    <div class="details">
+      <h3>Yono Rummy</h3>
+      <div class="tags">
+        <span class="tag bonus">🎁 Sign Up Bonus ₹550</span>
+        <span class="tag withdraw">🏦 Min. Withdrawal ₹100</span>
+      </div>
+    </div>
+  </div>
+  <div class="btn-wrap">
+    <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
+      <button class="download-btn">⬇ Download</button>
+    </a>
+  </div>
 </div>
 
 </div>
 
-<div class="warning">
-⚠️ <b>Important Warning:</b><br><br>
-This website does NOT own or operate any gaming app.  
-Online games involve financial risk.  
-18+ only. Play responsibly.  
-Use at your own risk.
+<div class="disclaimer">
+<b>⚠️ Disclaimer:</b><br><br>
+This website does NOT own or operate any gaming apps listed here.  
+All app names, logos, and bonuses belong to their respective owners.<br><br>
+Online games involve financial risk. 🔞 18+ only. Play responsibly.
 </div>
 
-<script>
-let step = 0;
-function stepOne(){
-  const btn = document.getElementById("mainBtn");
-  const social = document.getElementById("socialBox");
-  const apps = document.getElementById("otherApps");
-
-  if(step === 0){
-    btn.classList.add("red");
-    btn.innerText = "⬇ Click Again";
-    social.style.display = "block";
-    step++;
-  }
-  else{
-    btn.classList.remove("red");
-    btn.classList.add("pink");
-    btn.innerText = "⬇ Download Now";
-    apps.style.display = "block";
-    window.open("https://www.earntp.com/gold/jexzd","_blank");
-  }
-}
-</script>
+<div class="footer">
+© 2026 All Yono App Store. All Rights Reserved.
+</div>
 
 </body>
 </html>
+
 
 
 
