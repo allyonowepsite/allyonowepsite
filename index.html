@@ -15,18 +15,19 @@ body{
 /* NAV */
 .nav{
   display:flex;
+  flex-wrap:wrap;
   gap:8px;
   padding:10px;
   background:#1e6fd9;
 }
 .nav button{
-  flex:1;
+  flex:1 1 30%;
   padding:12px;
   border:none;
   border-radius:16px;
   background:#fff;
   font-weight:bold;
-  font-size:15px;
+  font-size:14px;
 }
 .nav button.active{
   background:#1abc9c;
@@ -116,6 +117,8 @@ function openTab(tab){
   <button id="homeBtn" class="active" onclick="openTab('home')">🏠 Home</button>
   <button id="aboutBtn" onclick="openTab('about')">👤 About</button>
   <button id="contactBtn" onclick="openTab('contact')">✉️ Contact</button>
+  <button id="privacyBtn" onclick="openTab('privacy')">🔒 Privacy</button>
+  <button id="termsBtn" onclick="openTab('terms')">📄 Terms</button>
   <button id="discBtn" onclick="openTab('disc')">⚠️ Disclaimer</button>
 </div>
 
@@ -123,7 +126,6 @@ function openTab(tab){
 
 <!-- HOME -->
 <div id="home" class="section active">
-
   <div class="card">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
     <div class="info">
@@ -132,45 +134,17 @@ function openTab(tab){
     </div>
     <a class="btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
   </div>
-
-  <div class="card">
-    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
-    <div class="info">
-      <h3>101Z Skill Game</h3>
-      🎁 ₹10 + ₹692 Bonus<br>💰 Real Cash
-    </div>
-    <a class="btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
-  </div>
-
-  <div class="card">
-    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
-    <div class="info">
-      <h3>Yono Rummy</h3>
-      🎁 ₹13+ Bonus<br>💸 Cashback
-    </div>
-    <a class="btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
-  </div>
-
 </div>
 
 <!-- ABOUT -->
 <div id="about" class="section">
   <div class="box">
     <h3>About Us</h3>
-    Welcome to our platform, a comprehensive hub created on <b>July 27, 2024</b>,
-    dedicated to enhancing digital experiences for everyone, with a unique
-    focus on Indian users.
+    Welcome to our platform, created on <b>July 27, 2024</b>, dedicated to
+    enhancing digital experiences with a focus on Indian users.
     <br><br>
-    Our journey began with a simple yet powerful vision: to revolutionize the
-    way people discover and download apps. From utility and productivity apps
-    to entertainment and lifestyle options, our platform is a one-stop
-    destination.
-    <br><br>
-    We are not just about providing access to apps; we focus on building a
-    community where knowledge about digital tools is shared and celebrated.
-    <br><br>
-    Join us in exploring, downloading, and staying ahead in the ever-evolving
-    world of apps.
+    Our mission is to help users discover and access a wide range of applications
+    easily with a simple, fast, and mobile-friendly experience.
   </div>
 </div>
 
@@ -180,12 +154,49 @@ function openTab(tab){
     <h3>Contact Us</h3>
     This platform does not provide customer support for listed apps/games.
     <br><br>
-    If you face any problems, please contact the support option inside the
-    respective apps.
-    <br><br>
-    <b>Advertisement / Business Queries</b><br>
-    Email: support@example.com<br>
+    Email: <b>support@example.com</b><br>
     Telegram: Available on request
+  </div>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="privacy" class="section">
+  <div class="box">
+    <h3>Privacy Policy</h3>
+
+    If You are a parent or guardian and You are aware that Your child has provided
+    Us with Personal Data, please contact Us. If We become aware that We have
+    collected Personal Data from anyone under the age of 13 without verification
+    of parental consent, We take steps to remove that information from Our servers.
+    <br><br>
+
+    If We need to rely on consent as a legal basis for processing Your information
+    and Your country requires consent from a parent, We may require Your parent's
+    consent before We collect and use that information.
+    <br><br>
+
+    <b>Links to Other Websites</b><br>
+    Our Service may contain links to other websites that are not operated by Us.
+    We strongly advise You to review the Privacy Policy of every site You visit.
+    We have no control over and assume no responsibility for third-party sites.
+    <br><br>
+
+    <b>Changes to this Privacy Policy</b><br>
+    We may update Our Privacy Policy from time to time. Changes are effective
+    when they are posted on this page.
+    <br><br>
+
+    <b>Contact Us</b><br>
+    If you have any questions about this Privacy Policy, you can contact us.
+  </div>
+</div>
+
+<!-- TERMS -->
+<div id="terms" class="section">
+  <div class="box">
+    <h3>Terms & Conditions</h3>
+    By using this platform, you agree to comply with all applicable laws and
+    regulations. Use apps at your own responsibility.
   </div>
 </div>
 
@@ -193,17 +204,10 @@ function openTab(tab){
 <div id="disc" class="section">
   <div class="box">
     <h3>Disclaimer</h3>
-    This platform acts only as an information and access provider. We do not
-    own, operate, or manage any apps listed here.
+    This platform only provides access to third-party apps and is not involved
+    in their operation or management.
     <br><br>
-    Users interact with these apps at their own discretion and risk. Apps may
-    involve various levels of risk, including financial risk.
-    <br><br>
-    <b>Independent App Disclaimers:</b> Users are advised to read the terms,
-    privacy policy, and disclaimers of each app.
-    <br><br>
-    <b>No Liability:</b> Al Yono App Store assumes no responsibility for losses
-    or damages arising from third-party apps.
+    Apps may involve financial risk. Users must engage at their own discretion.
     <br><br>
     <b>18+ Only.</b> Some games may be restricted in certain Indian states.
   </div>
