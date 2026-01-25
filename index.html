@@ -13,24 +13,7 @@ body{
   background:#f2f6fb;
 }
 
-/* ===== TOP MENU ===== */
-.nav{
-  display:flex;
-  justify-content:center;
-  gap:12px;
-  padding:14px;
-  background:linear-gradient(90deg,#1e6fd9,#00c6ff);
-}
-.nav a{
-  padding:10px 24px;
-  border-radius:30px;
-  background:#fff;
-  font-weight:700;
-  text-decoration:none;
-  color:#000;
-}
-
-/* ===== HEADER ===== */
+/* HEADER */
 .header{
   background:linear-gradient(90deg,#1e6fd9,#00c6ff);
   color:#fff;
@@ -40,17 +23,17 @@ body{
   font-weight:800;
 }
 
-/* ===== CONTAINER ===== */
+/* CONTAINER */
 .container{
   max-width:1100px;
   margin:auto;
   padding:14px;
 }
 
-/* ===== CARD ===== */
+/* CARD */
 .card{
   background:#fff;
-  margin:20px 0;
+  margin:18px 0;
   padding:22px;
   border-radius:26px;
   box-shadow:0 14px 30px rgba(0,0,0,.15);
@@ -61,85 +44,108 @@ body{
   gap:16px;
   align-items:center;
 }
+
 .top img{
   width:90px;
   height:90px;
   border-radius:20px;
+}
+
+.info{
+  flex:1;
 }
 .info h3{
   margin:0;
   font-size:22px;
   color:#1e2a55;
 }
-.info p{
+.info .desc{
   margin:6px 0;
   color:#555;
   font-size:14px;
 }
 
-/* ===== TAG ROWS ===== */
-.row{
+/* TAG ROWS */
+.tag-row{
   display:flex;
   gap:10px;
   flex-wrap:wrap;
-  margin-top:14px;
-}
-.tag{
-  background:#f5f7ff;
-  padding:8px 14px;
-  border-radius:18px;
-  font-size:13px;
-  font-weight:600;
+  margin-top:12px;
 }
 
-/* ===== DOWNLOAD ===== */
-.download{
+.tag{
+  background:#f4f7ff;
+  padding:8px 14px;
+  border-radius:16px;
+  font-size:13px;
+  font-weight:600;
+  color:#333;
+  white-space:nowrap;
+}
+
+/* DOWNLOAD */
+.download-btn{
   display:inline-block;
-  margin-top:18px;
-  padding:14px 40px;
+  margin-top:16px;
+  padding:14px 38px;
   border-radius:40px;
   background:linear-gradient(45deg,#ff512f,#dd2476);
   color:#fff;
   font-weight:800;
   text-decoration:none;
   box-shadow:0 12px 25px rgba(221,36,118,.45);
+  transition:.3s;
+}
+.download-btn:hover{
+  transform:translateY(-4px);
 }
 
-/* ===== SOCIAL ===== */
-.social{
+/* ===== HD 3D MOMENT (NEW) ===== */
+.hd-moment{
+  margin:40px 14px;
   display:flex;
+  gap:16px;
   justify-content:center;
-  gap:12px;
-  margin:30px 0;
+  flex-wrap:wrap;
 }
-.social a{
-  padding:12px 22px;
-  border-radius:20px;
+
+.hd-card{
+  width:160px;
+  padding:18px;
+  border-radius:24px;
   color:#fff;
-  text-decoration:none;
-  font-weight:700;
-}
-.telegram{background:#0088cc}
-.whatsapp{background:#25D366}
-.share{background:#ff9800}
-
-/* ===== WARNING ===== */
-.warning{
-  background:#fff3cd;
-  color:#856404;
-  padding:14px;
-  border-radius:16px;
-  font-size:14px;
-  margin-top:30px;
   text-align:center;
+  font-weight:800;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:.35s;
+  cursor:pointer;
+}
+.hd-card:hover{
+  transform:translateY(-10px) scale(1.05);
 }
 
-/* ===== FOOTER ===== */
+.hd-telegram{
+  background:linear-gradient(135deg,#0088cc,#00c6ff);
+}
+.hd-whatsapp{
+  background:linear-gradient(135deg,#25D366,#00ff99);
+}
+.hd-share{
+  background:linear-gradient(135deg,#ff9800,#ff5722);
+}
+
+/* FOOTER */
 .footer{
   text-align:center;
   padding:16px;
   font-size:13px;
   color:#555;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .top img{width:75px;height:75px}
+  .hd-card{width:140px}
 }
 </style>
 
@@ -160,60 +166,98 @@ function shareSite(){
 
 <body>
 
-<div class="nav">
-  <a href="#">Home</a>
-  <a href="#">About</a>
-  <a href="#">Privacy Policy</a>
-</div>
-
 <div class="header">Al Yono App Store</div>
 
 <div class="container">
 
-<!-- APP -->
+<!-- APP 1 -->
 <div class="card">
   <div class="top">
     <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
     <div class="info">
       <h3>Teen Patti Master</h3>
-      <p>Popular Teen Patti card game with fast withdrawal</p>
+      <div class="desc">🎮 Popular Teen Patti card game with fast cash withdrawal</div>
     </div>
   </div>
 
-  <!-- ROW 1 -->
-  <div class="row">
+  <div class="tag-row">
     <div class="tag">⭐ Rating 4.1</div>
     <div class="tag">🆓 Free</div>
-  </div>
-
-  <!-- ROW 2 -->
-  <div class="row">
     <div class="tag">💰 Login Bonus ₹50</div>
   </div>
 
-  <!-- ROW 3 -->
-  <div class="row">
+  <div class="tag-row">
     <div class="tag">📦 58–100 MB</div>
     <div class="tag">🎁 Bonus ₹300</div>
     <div class="tag">🏦 Fast Withdraw</div>
   </div>
 
-  <a class="download" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
+  <a class="download-btn" href="https://www.earntp.com/gold/jexzd" target="_blank">Download</a>
 </div>
 
-<!-- SOCIAL -->
-<div class="social">
-  <a class="telegram" href="https://t.me/YOURCHANNEL" target="_blank">Telegram</a>
-  <a class="whatsapp" href="https://wa.me/91XXXXXXXXXX" target="_blank">WhatsApp</a>
-  <a class="share" href="javascript:void(0)" onclick="shareSite()">Share</a>
+<!-- APP 2 -->
+<div class="card">
+  <div class="top">
+    <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+    <div class="info">
+      <h3>101Z Skill Game</h3>
+      <div class="desc">🃏 Skill based real cash game with instant rewards</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">⭐ Rating 4.3</div>
+    <div class="tag">🆓 Free</div>
+    <div class="tag">💰 Login Bonus ₹10</div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">📦 65 MB</div>
+    <div class="tag">🎁 Bonus ₹692</div>
+    <div class="tag">🏦 Bank Withdraw</div>
+  </div>
+
+  <a class="download-btn" href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">Download</a>
 </div>
 
-<!-- WARNING -->
-<div class="warning">
-⚠️ This website does not own any apps. Games may involve financial risk and can be addictive.  
-🔞 Only for 18+ users. Please play responsibly.
+<!-- APP 3 -->
+<div class="card">
+  <div class="top">
+    <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+    <div class="info">
+      <h3>Yono Rummy</h3>
+      <div class="desc">🀄 Trusted rummy game with cashback & bonuses</div>
+    </div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">⭐ Rating 4.4</div>
+    <div class="tag">🆓 Free</div>
+    <div class="tag">💰 Login Bonus ₹5</div>
+  </div>
+
+  <div class="tag-row">
+    <div class="tag">📦 60 MB</div>
+    <div class="tag">🎁 Bonus ₹13+</div>
+    <div class="tag">🏦 Secure Withdraw</div>
+  </div>
+
+  <a class="download-btn" href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">Download</a>
 </div>
 
+</div>
+
+<!-- 🔥 HD 3D MOMENT -->
+<div class="hd-moment">
+  <div class="hd-card hd-telegram" onclick="window.open('https://t.me/YOURCHANNEL','_blank')">
+    🚀 Telegram
+  </div>
+  <div class="hd-card hd-whatsapp" onclick="window.open('https://wa.me/91XXXXXXXXXX','_blank')">
+    💬 WhatsApp
+  </div>
+  <div class="hd-card hd-share" onclick="shareSite()">
+    🔗 Share
+  </div>
 </div>
 
 <div class="footer">
@@ -222,6 +266,7 @@ function shareSite(){
 
 </body>
 </html>
+
 
 
 
