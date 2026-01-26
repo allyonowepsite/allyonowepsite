@@ -6,10 +6,9 @@
 
 <title>All Yono App Store</title>
 
-<!-- ✅ ROBOTS / SEO -->
 <meta name="robots" content="index, follow">
 <meta name="description" content="All Yono App Store – Download Teen Patti, Yono Rummy & Skill Games with Bonus.">
-<meta name="keywords" content="All Yono App Store, Teen Patti Master, Yono Rummy APK, Yono Games Download">
+<meta name="keywords" content="All Yono App Store, Teen Patti Master, Yono Rummy APK">
 
 <style>
 *{box-sizing:border-box}
@@ -38,7 +37,6 @@ display:none;
 background:#fff;
 box-shadow:0 10px 30px rgba(0,0,0,.2);
 }
-
 .menu a{
 display:block;
 padding:14px;
@@ -78,20 +76,31 @@ font-weight:900;
 .red{color:#e53935;font-weight:900}
 .green{color:#2e7d32;font-weight:900}
 
-/* BUTTON */
+/* 🔥 NEW SMALL 3D DOWNLOAD BUTTON */
 .btn{
-width:100%;
-padding:16px;
 border:none;
-border-radius:20px;
-font-size:17px;
-font-weight:900;
 cursor:pointer;
+font-weight:900;
+border-radius:16px;
+transition:.2s;
 }
 
 .download{
-background:linear-gradient(180deg,#2e7d32,#1b5e20);
+width:160px;
+padding:10px;
+font-size:14px;
+background:linear-gradient(180deg,#00c853,#009624);
 color:#fff;
+box-shadow:
+0 6px 0 #007a1e,
+0 10px 18px rgba(0,0,0,.35);
+}
+
+.download:active{
+transform:translateY(4px);
+box-shadow:
+0 2px 0 #007a1e,
+0 6px 12px rgba(0,0,0,.3);
 }
 
 /* DETAIL */
@@ -109,22 +118,39 @@ font-weight:700;
 margin:4px;
 }
 
-.main-download{background:#2e7d32;color:#fff;margin-top:14px}
-.telegram{background:#229ED9;color:#fff;margin-top:12px}
+/* 🔥 MAIN DOWNLOAD (DETAIL PAGE) */
+.main-download{
+width:220px;
+padding:14px;
+font-size:16px;
+background:linear-gradient(180deg,#ff3d00,#d50000);
+color:#fff;
+box-shadow:
+0 8px 0 #b71c1c,
+0 14px 24px rgba(0,0,0,.35);
+margin-top:14px;
+}
+
+.main-download:active{
+transform:translateY(5px);
+box-shadow:
+0 3px 0 #b71c1c,
+0 8px 16px rgba(0,0,0,.3);
+}
+
+.telegram{
+width:220px;
+padding:14px;
+font-size:15px;
+background:linear-gradient(180deg,#229ED9,#0d6efd);
+color:#fff;
+margin-top:12px;
+box-shadow:0 8px 18px rgba(0,0,0,.3);
+}
 
 /* RELATED */
 .apps-row{display:flex;gap:12px;overflow-x:auto}
 .apps-row img{width:80px;border-radius:16px;cursor:pointer}
-
-/* TAGS */
-.tags{
-background:#000;
-color:#fff;
-padding:14px;
-border-radius:14px;
-font-size:14px;
-margin-top:14px;
-}
 
 .footer{text-align:center;padding:18px;color:#555;font-weight:900}
 </style>
@@ -132,13 +158,11 @@ margin-top:14px;
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <div>All Yono App Store</div>
   <div class="menu-btn" onclick="toggleMenu()">☰</div>
 </div>
 
-<!-- MENU -->
 <div class="menu" id="menu">
   <a onclick="showPage('home')">🏠 Home</a>
   <a onclick="showPage('about')">ℹ️ About Us</a>
@@ -148,14 +172,13 @@ margin-top:14px;
 
 <div class="container">
 
-<!-- HOME -->
 <div id="home"></div>
 
-<!-- DETAIL -->
 <div id="detail" class="hide">
   <div class="card center">
     <img id="dImg" class="big-icon">
     <h2 id="dName"></h2>
+
     <div>
       <span class="badge">⭐ <span id="dRating"></span></span>
       <span class="badge">⬇ <span id="dSize"></span></span>
@@ -174,40 +197,6 @@ margin-top:14px;
   </div>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="hide">
-  <div class="card">
-    <h2>About Us</h2>
-    <p>All Yono App Store only provides information about Yono & skill-based apps.</p>
-    <div class="tags">
-      Tags: All Yono App Store, Yono Games, Teen Patti, Skill Games
-    </div>
-  </div>
-</div>
-
-<!-- DISCLAIMER -->
-<div id="disclaimer" class="hide">
-  <div class="card">
-    <h2>Disclaimer</h2>
-    <p>We do not own or control any apps listed here. All rights belong to their owners.</p>
-    <div class="tags">
-      Tags: Disclaimer, Yono Games Disclaimer, APK Info
-    </div>
-  </div>
-</div>
-
-<!-- WARNING -->
-<div id="warning" class="hide">
-  <div class="card">
-    <h2>⚠️ Warning</h2>
-    <p>Real money games involve financial risk and can be addictive.</p>
-    <p>Only for 18+ users. Play responsibly.</p>
-    <div class="tags">
-      Tags: 18+ Warning, Gambling Risk, Responsible Play
-    </div>
-  </div>
-</div>
-
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
@@ -219,7 +208,7 @@ function toggleMenu(){
 }
 
 function showPage(id){
- ["home","detail","about","disclaimer","warning"].forEach(p=>{
+ ["home","detail"].forEach(p=>{
   document.getElementById(p).classList.add("hide");
  });
  document.getElementById(id).classList.remove("hide");
@@ -278,13 +267,7 @@ function openApp(i){
  });
  window.scrollTo(0,0);
 }
-
-window.onpopstate=()=>{
- detail.classList.add("hide");
- home.classList.remove("hide");
-};
 </script>
 
 </body>
 </html>
-
