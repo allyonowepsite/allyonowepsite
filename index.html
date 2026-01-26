@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,26 +33,51 @@ body{
   font-weight:900;
 }
 
-/* TOP MENU */
-.menu{
-  display:flex;
-  gap:8px;
-}
-.menu a{
-  background:rgba(255,255,255,.2);
+/* MENU */
+.menu-box{position:relative}
+.menu-btn{
+  background:rgba(255,255,255,.25);
   color:#fff;
-  padding:6px 10px;
-  border-radius:10px;
-  font-size:13px;
-  font-weight:800;
+  padding:8px 14px;
+  border-radius:12px;
+  font-weight:900;
+  cursor:pointer;
+  box-shadow:0 4px 10px rgba(0,0,0,.3);
+}
+.dropdown{
+  position:absolute;
+  right:0;
+  top:45px;
+  background:#fff;
+  border-radius:14px;
+  box-shadow:0 10px 30px rgba(0,0,0,.25);
+  display:none;
+  min-width:200px;
+  overflow:hidden;
+}
+.dropdown a{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:12px 14px;
   text-decoration:none;
-  box-shadow:0 4px 10px rgba(0,0,0,.25);
+  color:#333;
+  font-weight:800;
+  border-bottom:1px solid #eee;
+}
+.dropdown a:last-child{border-bottom:none}
+.tag-best{
+  background:#ff5722;
+  color:#fff;
+  font-size:11px;
+  padding:2px 6px;
+  border-radius:6px;
 }
 
 /* CONTAINER */
 .container{max-width:1100px;margin:auto;padding:14px}
 
-/* CARD */
+/* APP CARD */
 .list-card{
   background:#fff;
   margin:16px 0;
@@ -79,28 +105,18 @@ body{
   box-shadow:0 6px 0 #2b5bd7;
 }
 
-/* SECTION BOX */
+/* INFO BOX */
 .info-box{
   margin:30px auto;
   padding:20px;
-  background:#ffffff;
+  background:#fff;
   border-radius:18px;
   box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
-.info-box h2{
-  margin-top:0;
-  font-size:20px;
-  font-weight:900;
-}
+.info-box h2{margin-top:0;font-size:20px;font-weight:900}
 
 /* FOOTER */
-.footer{
-  text-align:center;
-  padding:16px;
-  font-size:13px;
-  font-weight:700;
-  color:#555;
-}
+.footer{text-align:center;padding:16px;font-size:13px;font-weight:700;color:#555}
 </style>
 </head>
 
@@ -109,133 +125,113 @@ body{
 <!-- HEADER -->
 <div class="header" id="home">
   <h1>All Yono App Store</h1>
-  <div class="menu">
-    <a href="#home">🏠 Home</a>
-    <a href="#about">ℹ️ About</a>
-    <a href="#privacy">🔒 Privacy</a>
-    <a href="#disclaimer">⚠️ Disclaimer</a>
+
+  <div class="menu-box">
+    <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
+    <div class="dropdown" id="menuDrop">
+      <a href="#home">🏠 Home <span class="tag-best">BEST</span></a>
+      <a href="#about">ℹ️ About <span class="tag-best">NEW</span></a>
+      <a href="#privacy">🔒 Privacy <span class="tag-best">SAFE</span></a>
+      <a href="#disclaimer">⚠️ Disclaimer <span class="tag-best">IMPORTANT</span></a>
+    </div>
   </div>
 </div>
 
 <div class="container">
 
-<!-- ====== 7 APPS (UNCHANGED) ====== -->
-
+<!-- ===== 7 APPS (UNCHANGED) ===== -->
 <!-- 1 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">1</div>
+<div class="top"><div class="rank">1</div>
 <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
-<div class="details">
-<h3>Teen Patti Master</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
-</div></div>
+<div class="details"><h3>Teen Patti Master</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">🏦 ₹100 Min</div></div></div>
 <div class="btn-wrap"><a href="https://www.earntp.com/gold/jexzd" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 2 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">2</div>
+<div class="top"><div class="rank">2</div>
 <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
-<div class="details">
-<h3>101Z Skill Game</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
-</div></div>
+<div class="details"><h3>101Z Skill Game</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">🏦 ₹100 Min</div></div></div>
 <div class="btn-wrap"><a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 3 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">3</div>
+<div class="top"><div class="rank">3</div>
 <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
-<div class="details">
-<h3>Yono Rummy</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
-</div></div>
+<div class="details"><h3>Yono Rummy</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">🏦 ₹100 Min</div></div></div>
 <div class="btn-wrap"><a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 4 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">4</div>
+<div class="top"><div class="rank">4</div>
 <div class="icon"><img src="https://i.ibb.co/zWSRGNJD/teenpatti.png"></div>
-<div class="details">
-<h3>Teen Patti Master (New)</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">⚡ Fast Withdrawal</div>
-</div></div>
+<div class="details"><h3>Teen Patti Master (New)</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">⚡ Fast</div></div></div>
 <div class="btn-wrap"><a href="https://www.earntp.com/m/jm9n7r" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 5 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">5</div>
+<div class="top"><div class="rank">5</div>
 <div class="icon"><img src="https://i.ibb.co/CpV12LMX/rummyse.png"></div>
-<div class="details">
-<h3>RummySe</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
-</div></div>
+<div class="details"><h3>RummySe</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">🏦 ₹100 Min</div></div></div>
 <div class="btn-wrap"><a href="https://www.rummyse.com/share/88Guqxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 6 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">6</div>
+<div class="top"><div class="rank">6</div>
 <div class="icon"><img src="https://i.ibb.co/gMpkG28x/rummyse-old.png"></div>
-<div class="details">
-<h3>RummySe (Old)</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
-</div></div>
+<div class="details"><h3>RummySe (Old)</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">🏦 ₹100 Min</div></div></div>
 <div class="btn-wrap"><a href="https://www.rummyse.com/share/88G.xxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 7 -->
 <div class="list-card">
-<div class="top">
-<div class="rank">7</div>
+<div class="top"><div class="rank">7</div>
 <div class="icon"><img src="https://i.ibb.co/F4mzg3fx/goodslots.png"></div>
-<div class="details">
-<h3>Good Slots</h3>
-<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-<div class="tag withdraw">⚡ Instant Payout</div>
-</div></div>
+<div class="details"><h3>Good Slots</h3>
+<div class="tag bonus">🎁 ₹550 Bonus</div>
+<div class="tag withdraw">⚡ Instant</div></div></div>
 <div class="btn-wrap"><a href="https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- ABOUT -->
-<div class="info-box" id="about">
-<h2>ℹ️ About Us</h2>
-<p>We share information about popular real cash games, bonuses, and offers.
-We do not own any app. Our goal is to help users find trusted gaming platforms.</p>
-</div>
+<div class="info-box" id="about"><h2>ℹ️ About</h2>
+<p>We share information about real cash games and offers. We do not own any app.</p></div>
 
 <!-- PRIVACY -->
-<div class="info-box" id="privacy">
-<h2>🔒 Privacy Policy</h2>
-<p>We do not collect personal data. All external apps are owned by their respective developers.
-User safety and privacy are our priority.</p>
-</div>
+<div class="info-box" id="privacy"><h2>🔒 Privacy Policy</h2>
+<p>No personal data is collected. External apps belong to their owners.</p></div>
 
 <!-- DISCLAIMER -->
-<div class="info-box" id="disclaimer">
-<h2>⚠️ Disclaimer</h2>
-<p>This website does NOT own or operate any gaming applications.
-All games involve financial risk. Users must be 18+ and play responsibly.</p>
-</div>
+<div class="info-box" id="disclaimer"><h2>⚠️ Disclaimer</h2>
+<p>Users must be 18+. Play responsibly. We do not operate any games.</p></div>
 
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
+
+<script>
+function toggleMenu(){
+  const m=document.getElementById("menuDrop");
+  m.style.display = m.style.display==="block" ? "none" : "block";
+}
+</script>
 
 </body>
 </html>
