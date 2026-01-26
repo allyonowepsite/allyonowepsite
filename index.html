@@ -72,12 +72,12 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 .footer{text-align:center;padding:16px;color:#555;font-weight:700}
 
-/* 🔥 3D LOADING OVERLAY */
+/* 🔥 3D LOADER */
 .loader-wrap{
   position:fixed;
   inset:0;
-  background:rgba(10,15,40,.85);
-  backdrop-filter:blur(10px);
+  background:rgba(10,15,40,.75);
+  backdrop-filter:blur(8px);
   display:flex;
   align-items:center;
   justify-content:center;
@@ -87,21 +87,21 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 .loader{
   width:90px;height:90px;
   border-radius:50%;
-  background:linear-gradient(145deg,#ff4da6,#6a5cff);
-  box-shadow:0 0 40px #ff4da6;
+  background:linear-gradient(135deg,#ff4da6,#6a5cff);
+  box-shadow:0 0 45px #ff4da6;
   animation:spin 1.2s linear infinite;
+  position:relative;
 }
 
 .loader::after{
   content:"";
   position:absolute;
-  inset:15px;
+  inset:16px;
   background:#0f5cff;
   border-radius:50%;
 }
 
 @keyframes spin{
-  from{transform:rotate(0deg)}
   to{transform:rotate(360deg)}
 }
 </style>
@@ -109,7 +109,7 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <body>
 
-<!-- 🔥 LOADER -->
+<!-- LOADER -->
 <div id="loader" class="loader-wrap hide">
   <div class="loader"></div>
 </div>
@@ -186,6 +186,7 @@ function openApp(i){
 
  setTimeout(()=>{
   history.pushState({page:"detail"},"","#app");
+
   home.classList.add("hide");
   detail.classList.remove("hide");
 
@@ -208,10 +209,11 @@ function openApp(i){
 
   loader.classList.add("hide");
   window.scrollTo(0,0);
- },900);
+ },800);
 }
 
 window.onpopstate=function(){
+ loader.classList.add("hide");
  detail.classList.add("hide");
  home.classList.remove("hide");
 };
