@@ -1,0 +1,30 @@
+<!-- 🤖 YONO Bot HTML -->
+<div id="robot-bot">
+  <div class="robot-btn" onclick="toggleRobot()">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/4712/4712109.png"
+      alt="YONO Bot">
+  </div>
+
+  <div class="robot-box" id="robotBox">
+    <h4>🤖 YONO Bot</h4>
+    <p>
+      👋 Hello!<br>
+      👉 Best Yono Games yahin milenge<br>
+      🎁 Signup bonus & fast download
+    </p>
+
+    <a class="robot-link"
+       href="https://t.me/YOUR_TELEGRAM_LINK"
+       target="_blank">
+      📢 Join Telegram
+    </a>
+  </div>
+</div>
+
+<script>
+function toggleRobot(){
+  var box = document.getElementById("robotBox");
+  box.style.display = (box.style.display === "block") ? "none" : "block";
+}
+</script>
