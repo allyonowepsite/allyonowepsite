@@ -46,12 +46,10 @@ body{
   border-radius:14px;
   box-shadow:0 10px 30px rgba(0,0,0,.25);
   display:none;
-  min-width:230px;
+  min-width:200px;
 }
 .dropdown a{
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
+  display:block;
   padding:12px 14px;
   text-decoration:none;
   color:#333;
@@ -59,19 +57,6 @@ body{
   border-bottom:1px solid #eee;
 }
 .dropdown a:last-child{border-bottom:none}
-
-/* TAGS */
-.tag{
-  font-size:11px;
-  padding:3px 7px;
-  border-radius:6px;
-  color:#fff;
-  font-weight:900;
-}
-.best{background:#ff5722}
-.safe{background:#2e7d32}
-.new{background:#1976d2}
-.important{background:#d32f2f}
 
 /* CONTAINER */
 .container{max-width:1100px;margin:auto;padding:14px}
@@ -127,10 +112,10 @@ body{
   <div class="menu-box">
     <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
     <div class="dropdown" id="menuDrop">
-      <a onclick="go('apps')">🏠 Home <span class="tag best">TOP RANK</span></a>
-      <a onclick="go('about')">ℹ️ About <span class="tag new">TRUSTED</span></a>
-      <a onclick="go('privacy')">🔒 Privacy <span class="tag safe">GOOGLE SAFE</span></a>
-      <a onclick="go('disclaimer')">⚠️ Disclaimer <span class="tag important">IMPORTANT</span></a>
+      <a onclick="go('apps')">🏠 Home</a>
+      <a onclick="go('about')">ℹ️ About</a>
+      <a onclick="go('privacy')">🔒 Privacy</a>
+      <a onclick="go('disclaimer')">⚠️ Disclaimer</a>
     </div>
   </div>
 </div>
@@ -216,6 +201,7 @@ function go(id){
 
 </body>
 </html>
+
 
 
 
