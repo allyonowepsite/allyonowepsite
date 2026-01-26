@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -76,33 +77,23 @@ body{
   cursor:pointer;
   box-shadow:0 6px 0 #2b5bd7,0 14px 25px rgba(0,0,0,.35);
 }
-.download-btn:active{
-  transform:translateY(4px);
-  box-shadow:0 2px 0 #2b5bd7,0 6px 12px rgba(0,0,0,.35);
-}
 
-/* TELEGRAM + SHARE */
-.social-box{
-  max-width:1100px;
-  margin:30px auto;
-  display:flex;
-  gap:16px;
-  flex-wrap:wrap;
-  justify-content:center;
-}
-.social-btn{
-  min-width:220px;
+/* TELEGRAM */
+.telegram-box{
   text-align:center;
-  padding:16px 24px;
-  border-radius:20px;
+  margin:30px 0;
+}
+.telegram-btn{
+  display:inline-block;
+  padding:16px 30px;
+  border-radius:22px;
   font-size:16px;
   font-weight:900;
   color:#fff;
+  background:linear-gradient(135deg,#0088cc,#00c6ff);
   text-decoration:none;
   box-shadow:0 8px 0 rgba(0,0,0,.25),0 16px 30px rgba(0,0,0,.35);
 }
-.telegram{background:linear-gradient(135deg,#0088cc,#00c6ff)}
-.share{background:linear-gradient(135deg,#25d366,#128c7e)}
 
 /* DISCLAIMER */
 .disclaimer{
@@ -124,7 +115,7 @@ body{
   color:#555;
 }
 
-/* 🔥 FAST DOWNLOAD LAYER */
+/* FAST LOADER */
 #fastLayer{
   display:none;
   position:fixed;
@@ -145,10 +136,7 @@ body{
   border-radius:50%;
   animation:spin 1s linear infinite;
 }
-@keyframes spin{
-  from{transform:rotate(0deg)}
-  to{transform:rotate(360deg)}
-}
+@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 </style>
 </head>
 
@@ -158,7 +146,7 @@ body{
 
 <div class="container">
 
-<!-- Example App (बाकी सभी में same onclick use होगा) -->
+<!-- APP 1 -->
 <div class="list-card">
 <div class="top">
 <div class="rank">1</div>
@@ -169,18 +157,44 @@ body{
 <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
 </div></div>
 <div class="btn-wrap">
-<button class="download-btn"
-onclick="openFast('https://www.earntp.com/gold/jexzd')">
-⬇ Download
-</button>
+<button class="download-btn" onclick="openFast('https://www.earntp.com/gold/jexzd')">⬇ Download</button>
+</div>
+</div>
+
+<!-- APP 2 -->
+<div class="list-card">
+<div class="top">
+<div class="rank">2</div>
+<div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
+<div class="details">
+<h3>101Z Skill Game</h3>
+<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+<div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+</div></div>
+<div class="btn-wrap">
+<button class="download-btn" onclick="openFast('https://101z2.com/?code=Z9YJW6N9CJ8')">⬇ Download</button>
+</div>
+</div>
+
+<!-- APP 3 -->
+<div class="list-card">
+<div class="top">
+<div class="rank">3</div>
+<div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
+<div class="details">
+<h3>Yono Rummy</h3>
+<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+<div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+</div></div>
+<div class="btn-wrap">
+<button class="download-btn" onclick="openFast('https://yonorummy009.com/?code=VIP17W6WRJE')">⬇ Download</button>
 </div>
 </div>
 
 </div>
 
-<div class="social-box">
-<a class="social-btn telegram" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">📢 Join Telegram Channel</a>
-<a class="social-btn share" href="https://wa.me/?text=🔥 Best Yono Games 👉 https://YOUR_SITE_LINK" target="_blank">🔗 Share with Friends</a>
+<div class="telegram-box">
+<a class="telegram-btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">📢 Join Telegram Channel</a>
 </div>
 
 <div class="disclaimer">
@@ -191,11 +205,11 @@ onclick="openFast('https://www.earntp.com/gold/jexzd')">
 © 2026 All Yono App Store. All Rights Reserved.
 </div>
 
-<!-- FAST DOWNLOAD SCREEN -->
+<!-- FAST LAYER -->
 <div id="fastLayer">
-  <div style="font-size:22px;font-weight:900;">⬇ Preparing Download...</div>
-  <div class="loader"></div>
-  <div style="font-size:14px;">Opening app page…</div>
+<div style="font-size:22px;font-weight:900;">⬇ Downloading…</div>
+<div class="loader"></div>
+<div id="doneText" style="display:none;font-size:18px;">✅ Download Successful</div>
 </div>
 
 <!-- ROBOT -->
@@ -204,7 +218,10 @@ onclick="openFast('https://www.earntp.com/gold/jexzd')">
 <script>
 function openFast(link){
   document.getElementById("fastLayer").style.display="block";
-  setTimeout(function(){
+  setTimeout(()=>{
+    document.getElementById("doneText").style.display="block";
+  },700);
+  setTimeout(()=>{
     window.location.href = link;
   },1200);
 }
