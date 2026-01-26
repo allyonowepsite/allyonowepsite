@@ -3,201 +3,240 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Yono App Store</title>
+<title>Download App – All Yono App Store</title>
 
 <style>
 *{box-sizing:border-box}
-html{scroll-behavior:smooth}
 body{
   margin:0;
   font-family:Segoe UI,Arial;
-  background:linear-gradient(180deg,#eaf1ff,#f7f9ff);
+  background:linear-gradient(180deg,#eef4ff,#ffffff);
 }
 
 /* HEADER */
 .header{
-  position:sticky;
-  top:0;
-  z-index:1000;
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
   color:#fff;
-  padding:14px 16px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
+  padding:16px;
+  text-align:center;
+  font-size:20px;
+  font-weight:900;
 }
-.header h1{margin:0;font-size:20px;font-weight:900}
 
-/* MENU */
-.menu-box{position:relative}
-.menu-btn{
-  background:rgba(255,255,255,.25);
-  padding:8px 14px;
+/* MAIN CARD */
+.main-card{
+  max-width:520px;
+  margin:20px auto;
+  background:#fff;
+  border-radius:18px;
+  padding:20px;
+  box-shadow:0 10px 30px rgba(0,0,0,.2);
+  text-align:center;
+}
+.main-card img{
+  width:90px;
+  height:90px;
+  border-radius:20px;
+}
+.main-card h2{
+  margin:12px 0 6px;
+  font-size:22px;
+  font-weight:900;
+}
+.tag{
+  font-weight:800;
+  margin:4px 0;
+}
+.bonus{color:#e53935}
+.withdraw{color:#2e7d32}
+
+.final-btn{
+  margin-top:16px;
+  background:linear-gradient(135deg,#00c853,#43a047);
+  color:#fff;
+  border:none;
+  padding:14px 28px;
+  font-size:18px;
+  font-weight:900;
+  border-radius:16px;
+  box-shadow:0 6px 0 #1b5e20;
+}
+
+/* OTHER APPS */
+.section{
+  max-width:1100px;
+  margin:30px auto;
+  padding:0 14px;
+}
+.section h3{
+  font-size:20px;
+  font-weight:900;
+  margin-bottom:12px;
+}
+
+.app{
+  background:#fff;
+  margin:14px 0;
+  padding:14px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+.app img{
+  width:56px;
+  height:56px;
+  border-radius:14px;
+}
+.app h4{margin:0;font-size:16px;font-weight:900}
+.small{font-size:13px;font-weight:800}
+.green{color:#2e7d32}
+.red{color:#e53935}
+
+.app a button{
+  margin-left:auto;
+  background:#2979ff;
+  color:#fff;
+  border:none;
+  padding:10px 18px;
   border-radius:12px;
   font-weight:900;
-  cursor:pointer;
-}
-.dropdown{
-  position:absolute;
-  right:0;
-  top:45px;
-  background:#fff;
-  border-radius:14px;
-  box-shadow:0 10px 30px rgba(0,0,0,.25);
-  display:none;
-  min-width:200px;
-}
-.dropdown a{
-  display:block;
-  padding:12px 14px;
-  text-decoration:none;
-  color:#333;
-  font-weight:800;
-  border-bottom:1px solid #eee;
-}
-.dropdown a:last-child{border-bottom:none}
-
-/* CONTAINER */
-.container{max-width:1100px;margin:auto;padding:14px}
-
-/* APP CARD */
-.list-card{
-  background:#fff;
-  margin:16px 0;
-  padding:16px;
-  border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
-}
-.top{display:flex;align-items:center;gap:12px}
-.rank{
-  background:#ff7a00;color:#fff;
-  width:30px;height:30px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
-  font-weight:900;
-}
-.icon img{width:58px;height:58px;border-radius:14px}
-.details{flex:1}
-.details h3{margin:0;font-size:18px;font-weight:900}
-.bonus{color:#e53935;font-weight:800}
-.withdraw{color:#2e7d32;font-weight:800}
-.btn-wrap{text-align:right;margin-top:12px}
-.download-btn{
-  background:linear-gradient(135deg,#00c6ff,#6a5cff);
-  color:#fff;border:none;padding:10px 22px;
-  border-radius:14px;font-weight:900;
 }
 
-/* INFO BOX */
-.info-box{
+/* TELEGRAM */
+.telegram{
+  max-width:520px;
   margin:30px auto;
-  padding:20px;
-  background:#fff;
-  border-radius:18px;
-  box-shadow:0 10px 25px rgba(0,0,0,.15);
+  text-align:center;
 }
-.info-box h2{margin-top:0;font-weight:900}
+.telegram a{
+  display:inline-block;
+  background:linear-gradient(135deg,#0088cc,#00bfff);
+  color:#fff;
+  padding:12px 26px;
+  border-radius:16px;
+  font-weight:900;
+  text-decoration:none;
+}
 
-/* FOOTER */
-.footer{text-align:center;padding:16px;color:#555;font-weight:700}
+/* WARNING */
+.warning{
+  max-width:900px;
+  margin:30px auto;
+  background:#fff3cd;
+  border-left:6px solid #ff9800;
+  padding:16px;
+  border-radius:14px;
+  font-size:14px;
+  font-weight:700;
+}
+
+.footer{
+  text-align:center;
+  padding:16px;
+  font-size:13px;
+  color:#555;
+  font-weight:700;
+}
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
-<div class="header" id="home">
-  <h1>All Yono App Store</h1>
+<div class="header">All Yono App Store</div>
 
-  <div class="menu-box">
-    <div class="menu-btn" onclick="toggleMenu()">☰ Menu</div>
-    <div class="dropdown" id="menuDrop">
-      <a onclick="go('apps')">🏠 Home</a>
-      <a onclick="go('about')">ℹ️ About</a>
-      <a onclick="go('privacy')">🔒 Privacy</a>
-      <a onclick="go('disclaimer')">⚠️ Disclaimer</a>
-    </div>
-  </div>
+<!-- MAIN DOWNLOAD -->
+<div class="main-card">
+  <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+  <h2>Teen Patti Master</h2>
+  <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+  <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
+
+  <!-- FINAL DOWNLOAD LINK -->
+  <a href="https://www.earntp.com/gold/jexzd" target="_blank">
+    <button class="final-btn">⬇ FINAL DOWNLOAD</button>
+  </a>
 </div>
 
-<div class="container" id="apps">
+<!-- OTHER APPS -->
+<div class="section">
+<h3>🔥 Other Popular Apps</h3>
 
-<!-- ===== 7 APPS ===== -->
-<div class="list-card"><div class="top"><div class="rank">1</div>
-<div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
-<div class="details"><h3>Teen Patti Master</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">🏦 ₹100 Min</div></div></div>
-<div class="btn-wrap"><a href="https://www.earntp.com/gold/jexzd" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/9mWjVf1m/101z.png">
+<div>
+<h4>101Z Skill Game</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">₹100 Min</div>
+</div>
+<a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">2</div>
-<div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
-<div class="details"><h3>101Z Skill Game</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">🏦 ₹100 Min</div></div></div>
-<div class="btn-wrap"><a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+<div>
+<h4>Yono Rummy</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">₹100 Min</div>
+</div>
+<a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">3</div>
-<div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
-<div class="details"><h3>Yono Rummy</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">🏦 ₹100 Min</div></div></div>
-<div class="btn-wrap"><a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/zWSRGNJD/teenpatti.png">
+<div>
+<h4>Teen Patti Master (New)</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">Fast</div>
+</div>
+<a href="https://www.earntp.com/m/jm9n7r" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">4</div>
-<div class="icon"><img src="https://i.ibb.co/zWSRGNJD/teenpatti.png"></div>
-<div class="details"><h3>Teen Patti Master (New)</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">⚡ Fast</div></div></div>
-<div class="btn-wrap"><a href="https://www.earntp.com/m/jm9n7r" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/CpV12LMX/rummyse.png">
+<div>
+<h4>RummySe</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">₹100 Min</div>
+</div>
+<a href="https://www.rummyse.com/share/88Guqxy" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">5</div>
-<div class="icon"><img src="https://i.ibb.co/CpV12LMX/rummyse.png"></div>
-<div class="details"><h3>RummySe</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">🏦 ₹100 Min</div></div></div>
-<div class="btn-wrap"><a href="https://www.rummyse.com/share/88Guqxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/gMpkG28x/rummyse-old.png">
+<div>
+<h4>RummySe (Old)</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">₹100 Min</div>
+</div>
+<a href="https://www.rummyse.com/share/88G.xxy" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">6</div>
-<div class="icon"><img src="https://i.ibb.co/gMpkG28x/rummyse-old.png"></div>
-<div class="details"><h3>RummySe (Old)</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">🏦 ₹100 Min</div></div></div>
-<div class="btn-wrap"><a href="https://www.rummyse.com/share/88G.xxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+<div class="app">
+<img src="https://i.ibb.co/F4mzg3fx/goodslots.png">
+<div>
+<h4>Good Slots</h4>
+<div class="small red">₹550 Bonus</div>
+<div class="small green">Instant</div>
+</div>
+<a href="https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app" target="_blank"><button>Download</button></a>
+</div>
 
-<div class="list-card"><div class="top"><div class="rank">7</div>
-<div class="icon"><img src="https://i.ibb.co/F4mzg3fx/goodslots.png"></div>
-<div class="details"><h3>Good Slots</h3>
-<div class="bonus">🎁 ₹550 Bonus</div>
-<div class="withdraw">⚡ Instant</div></div></div>
-<div class="btn-wrap"><a href="https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app" target="_blank"><button class="download-btn">⬇ Download</button></a></div></div>
+</div>
 
-<!-- ABOUT -->
-<div class="info-box" id="about"><h2>ℹ️ About</h2>
-<p>We share information about real cash games and offers. We do not own any app.</p></div>
+<!-- TELEGRAM -->
+<div class="telegram">
+<a href="https://t.me/yourchannel" target="_blank">📢 Join Telegram Channel</a>
+</div>
 
-<!-- PRIVACY -->
-<div class="info-box" id="privacy"><h2>🔒 Privacy Policy</h2>
-<p>No personal data is collected. External apps belong to their owners.</p></div>
-
-<!-- DISCLAIMER -->
-<div class="info-box" id="disclaimer"><h2>⚠️ Disclaimer</h2>
-<p>Users must be 18+. Play responsibly. We do not operate any games.</p></div>
-
+<!-- WARNING -->
+<div class="warning">
+⚠️ This website does NOT own or operate any gaming apps. All apps belong to their respective owners.
+Users must be 18+ and play responsibly.
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
-
-<script>
-function toggleMenu(){
-  const m=document.getElementById("menuDrop");
-  m.style.display = m.style.display==="block" ? "none" : "block";
-}
-function go(id){
-  document.getElementById(id).scrollIntoView({behavior:"smooth"});
-  document.getElementById("menuDrop").style.display="none";
-}
-</script>
 
 </body>
 </html>
