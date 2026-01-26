@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,7 +28,7 @@ body{
 
 .container{max-width:1100px;margin:auto;padding:14px}
 
-/* OLD CARD LOOK */
+/* CARD */
 .card{
   background:#fff;
   margin:18px 0;
@@ -70,13 +71,11 @@ body{
 .download{
   background:linear-gradient(180deg,#2e7d32,#1b5e20);
   color:#fff;
-  box-shadow:0 8px 18px rgba(0,0,0,.25);
 }
 
 .download-pink{
   background:linear-gradient(90deg,#ff4da6,#ff2f92);
   color:#fff;
-  box-shadow:0 8px 18px rgba(0,0,0,.25);
 }
 
 .telegram{
@@ -134,12 +133,30 @@ body{
   animation:spin 1s linear infinite;
 }
 
-.loader span{margin-top:16px;color:#fff;font-weight:900}
-
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 
-/* LAST SHARE */
+/* TAGS */
+.tags-box{
+  background:#000;
+  color:#fff;
+  padding:18px;
+  border-radius:20px;
+  margin:30px 0;
+}
+
+.tags-box h3{margin-top:0;color:#ffcc00}
+
+.tag{
+  display:inline-block;
+  background:#222;
+  padding:6px 12px;
+  margin:6px;
+  border-radius:14px;
+  font-size:13px;
+}
+
+/* SHARE */
 .last-box{
   margin:30px 0;
   background:#fff;
@@ -171,46 +188,34 @@ body{
 
 <div class="header">All Yono App Store</div>
 
-<!-- LOADER -->
 <div class="loader" id="loader">
   <img id="loaderImg">
   <div class="ring"></div>
-  <span>Loading App...</span>
 </div>
 
 <div class="container">
-
 <div id="home"></div>
 
-<div id="detail" class="hide">
-  <div class="card center">
-    <img id="dImg" class="big-icon">
-    <h2 id="dName"></h2>
-
-    <div class="info">
-      <div>⭐ <span id="dRating"></span></div>
-      <div>⬇ <span id="dSize"></span></div>
-      <div>🛒 Free</div>
-      <div>Bonus ₹<span id="dBonus"></span></div>
-    </div>
-
-    <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
-    <button class="btn telegram" onclick="window.open('https://t.me/yonoupdatestore','_blank')">
-      📢 Join Telegram for Bonus
-    </button>
-  </div>
-
-  <div class="card">
-    <h3>Other Related Apps</h3>
-    <div class="apps-row" id="related"></div>
-  </div>
+<!-- TAGS SECTION -->
+<div class="tags-box">
+<h3>Tags:</h3>
+<span class="tag">Teen Patti Master</span>
+<span class="tag">Teen Patti Master APK</span>
+<span class="tag">Teen Patti Bonus</span>
+<span class="tag">Yono Rummy App</span>
+<span class="tag">101Z Skill Game</span>
+<span class="tag">RummySe App</span>
+<span class="tag">Real Cash Games</span>
+<span class="tag">Yono Games Download</span>
+<span class="tag">Bonus App</span>
+<span class="tag">Rummy App India</span>
 </div>
 
-<!-- LAST SHARE SECTION -->
+<!-- SHARE -->
 <div class="last-box">
-  <a class="last-btn tg" href="https://t.me/yonoupdatestore" target="_blank">📢 Join Telegram</a>
-  <a class="last-btn ws" href="https://wa.me/?text=Check%20this%20All%20Yono%20App%20Store" target="_blank">💬 Share on WhatsApp</a>
-  <a class="last-btn share" href="https://t.me/yonoupdatestore" target="_blank">🔗 Share with Friends</a>
+  <a class="last-btn tg" href="https://t.me/yonoupdatestore">📢 Join Telegram</a>
+  <a class="last-btn ws" href="https://wa.me/?text=Check%20All%20Yono%20App%20Store">💬 Share WhatsApp</a>
+  <a class="last-btn share" href="#">🔗 Share With Friends</a>
 </div>
 
 </div>
@@ -219,20 +224,16 @@ body{
 
 <script>
 const apps=[
- {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
- {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
- {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.0",size:"30MB",bonus:"27",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
- {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
- {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
- {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
- {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",bonus:"43"},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",bonus:"50"},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",bonus:"27"},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",bonus:"35"},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",bonus:"30"},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",bonus:"25"},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",bonus:"45"}
 ];
 
 const home=document.getElementById("home");
-const detail=document.getElementById("detail");
-const loader=document.getElementById("loader");
-const loaderImg=document.getElementById("loaderImg");
-
 apps.forEach((a,i)=>{
  home.innerHTML+=`
  <div class="card">
@@ -245,47 +246,11 @@ apps.forEach((a,i)=>{
     <div class="green">Min Withdraw ₹100</div>
    </div>
   </div><br>
-  <button class="btn download" onclick="openApp(${i})">⬇ Download</button>
+  <button class="btn download">⬇ Download</button>
  </div>`;
 });
-
-function openApp(i){
- history.pushState({page:"detail"},"","#app");
- loaderImg.src=apps[i].img;
- loader.style.display="flex";
-
- setTimeout(()=>{
-  loader.style.display="none";
-  home.classList.add("hide");
-  detail.classList.remove("hide");
-
-  dImg.src=apps[i].img;
-  dName.innerText=apps[i].name;
-  dRating.innerText=apps[i].rating;
-  dSize.innerText=apps[i].size;
-  dBonus.innerText=apps[i].bonus;
-  dLink.onclick=()=>window.location.href=apps[i].link;
-
-  related.innerHTML="";
-  apps.forEach((a,j)=>{
-    if(i!==j){
-      const im=document.createElement("img");
-      im.src=a.img;
-      im.onclick=()=>openApp(j);
-      related.appendChild(im);
-    }
-  });
-  window.scrollTo(0,0);
- },800);
-}
-
-window.onpopstate=()=>{
- detail.classList.add("hide");
- home.classList.remove("hide");
-};
 </script>
 
 </body>
 </html>
-
 
