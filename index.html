@@ -9,98 +9,75 @@
 *{box-sizing:border-box}
 body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
-/* HEADER */
 .header{
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
   color:#fff;padding:14px;
   font-size:20px;font-weight:900;
-  position:sticky;top:0;z-index:1000;
+  text-align:center;
 }
 
 .container{max-width:1100px;margin:auto;padding:14px}
 
-/* CARD */
 .card{
-  background:#fff;margin:16px 0;padding:16px;
+  background:#fff;margin:14px 0;padding:16px;
   border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,.15);
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
 }
 
 .list{display:flex;gap:12px;align-items:center}
 
 .rank{
   background:#ff7a00;color:#fff;
-  width:30px;height:30px;border-radius:8px;
+  width:28px;height:28px;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   font-weight:900;
 }
 
-.icon img{width:60px;height:60px;border-radius:16px}
+.icon img{width:55px;height:55px;border-radius:14px}
 
-.details h3{margin:0;font-size:18px}
+.details h3{margin:0;font-size:17px}
 .red{color:#e53935;font-weight:800}
 .green{color:#2e7d32;font-weight:800}
 
-/* BUTTONS */
 .btn{
   width:100%;border:none;
-  padding:14px;border-radius:16px;
+  padding:13px;border-radius:16px;
   font-size:16px;font-weight:900;
   cursor:pointer;
 }
 
 .download{background:#2e7d32;color:#fff}
-.download-pink{
-  background:linear-gradient(90deg,#ff4da6,#ff2f92);
+
+/* 🔻 LAST SECTION */
+.last-box{
+  margin-top:24px;
+  background:#fff;
+  padding:18px;
+  border-radius:18px;
+  box-shadow:0 8px 22px rgba(0,0,0,.15);
+}
+
+.last-btn{
+  display:block;
+  text-align:center;
+  padding:14px;
+  border-radius:16px;
+  font-weight:900;
+  text-decoration:none;
+  margin-bottom:12px;
   color:#fff;
 }
-.telegram{background:#229ED9;color:#fff;margin-top:10px}
 
-/* DETAIL */
-.hide{display:none}
-.center{text-align:center}
+.telegram{background:#229ED9}
+.share{background:#2e7d32}
+.whatsapp{background:#25D366}
 
-.big-icon{
-  width:120px;height:120px;
-  border-radius:28px;margin:10px auto;
+.footer{
+  text-align:center;
+  padding:14px;
+  color:#555;
+  font-weight:700;
 }
-
-.info{
-  display:flex;justify-content:space-around;
-  margin:14px 0;font-weight:800;
-}
-
-.apps-row{display:flex;gap:10px;overflow-x:auto}
-.apps-row img{width:80px;border-radius:14px;cursor:pointer}
-
-/* FOOTER */
-.footer{text-align:center;padding:16px;color:#555;font-weight:700}
-
-/* 3D LOADER */
-.loader{
-  position:fixed;inset:0;
-  background:radial-gradient(circle,#111,#000);
-  display:none;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  z-index:9999;
-}
-.loader img{
-  width:90px;border-radius:22px;
-  animation:pop 1.5s infinite ease-in-out;
-}
-.loader .ring{
-  width:90px;height:90px;border-radius:50%;
-  border:5px solid rgba(255,255,255,.15);
-  border-top:5px solid #ff4da6;
-  margin-top:18px;
-  animation:spin 1s linear infinite;
-}
-.loader span{margin-top:16px;color:#fff;font-weight:900}
-
-@keyframes spin{to{transform:rotate(360deg)}}
-@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 </style>
 </head>
 
@@ -108,76 +85,47 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <div class="header">All Yono App Store</div>
 
-<!-- LOADER -->
-<div class="loader" id="loader">
-  <img id="loaderImg">
-  <div class="ring"></div>
-  <span>Loading App...</span>
-</div>
+<div class="container" id="home"></div>
 
+<!-- 🔻 LAST WEBSITE SECTION -->
 <div class="container">
+  <div class="last-box">
 
-<!-- HOME PAGE -->
-<div id="home"></div>
+    <a class="last-btn telegram"
+      href="https://t.me/yonoupdatestore"
+      target="_blank">
+      📢 Join Telegram Channel
+    </a>
 
-<!-- DETAIL PAGE -->
-<div id="detail" class="hide">
+    <a class="last-btn share"
+      href="https://t.me/share/url?url=https://yourwebsite.com&text=Check%20All%20Yono%20App%20Store"
+      target="_blank">
+      🔗 Share with Friends (Telegram)
+    </a>
 
-<!-- GO HOME BUTTON -->
-<a href="javascript:void(0)" onclick="goHome()" class="btn" style="background:#00b09b;color:#fff;margin-bottom:12px">
-🏠 Click Here Go To Home
-</a>
+    <a class="last-btn whatsapp"
+      href="https://wa.me/?text=Check%20All%20Yono%20App%20Store%20https://yourwebsite.com"
+      target="_blank">
+      🟢 Share on WhatsApp
+    </a>
 
-  <div class="card center">
-    <img id="dImg" class="big-icon">
-    <h2 id="dName"></h2>
-
-    <div class="info">
-      <div>⭐ <span id="dRating"></span></div>
-      <div>⬇ <span id="dSize"></span></div>
-      <div>🛒 Free</div>
-      <div>Bonus ₹<span id="dBonus"></span></div>
-    </div>
-
-    <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
-
-    <button class="btn telegram"
-      onclick="window.open('https://t.me/yonoupdatestore','_blank')">
-      📢 Join Telegram for Bonus
-    </button>
   </div>
-
-  <div class="card">
-    <h3>Other Related Apps</h3>
-    <div class="apps-row" id="related"></div>
-  </div>
-
-<!-- ⚠️ WARNING -->
-<div class="card" style="background:#ffebee;border:2px solid red">
-<b>⚠️ WARNING:</b> Online rummy & betting apps involve financial risk.  
-This website is for information only. <b>18+ only.</b>
-</div>
-
-</div>
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
 <script>
 const apps=[
- {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
- {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
- {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.0",size:"30MB",bonus:"27",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
- {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
- {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
- {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
- {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",bonus:"43"},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",bonus:"50"},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",bonus:"27"},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",bonus:"35"},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",bonus:"30"},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",bonus:"25"},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",bonus:"45"}
 ];
 
 const home=document.getElementById("home");
-const detail=document.getElementById("detail");
-const loader=document.getElementById("loader");
-const loaderImg=document.getElementById("loaderImg");
 
 apps.forEach((a,i)=>{
  home.innerHTML+=`
@@ -191,51 +139,11 @@ apps.forEach((a,i)=>{
     <div class="green">Min Withdraw ₹100</div>
    </div>
   </div><br>
-  <button class="btn download" onclick="openApp(${i})">⬇ Download</button>
+  <button class="btn download">⬇ Download</button>
  </div>`;
 });
-
-function openApp(i){
- history.pushState({page:"detail"},"","#app");
- loaderImg.src=apps[i].img;
- loader.style.display="flex";
-
- setTimeout(()=>{
-  loader.style.display="none";
-  home.classList.add("hide");
-  detail.classList.remove("hide");
-
-  dImg.src=apps[i].img;
-  dName.innerText=apps[i].name;
-  dRating.innerText=apps[i].rating;
-  dSize.innerText=apps[i].size;
-  dBonus.innerText=apps[i].bonus;
-  dLink.onclick=()=>window.location.href=apps[i].link;
-
-  related.innerHTML="";
-  apps.forEach((a,j)=>{
-   if(i!==j){
-    const im=document.createElement("img");
-    im.src=a.img;
-    im.onclick=()=>openApp(j);
-    related.appendChild(im);
-   }
-  });
- },800);
-}
-
-function goHome(){
- history.pushState({},"",location.pathname);
- detail.classList.add("hide");
- home.classList.remove("hide");
- window.scrollTo(0,0);
-}
-
-window.onpopstate=function(){
- detail.classList.add("hide");
- home.classList.remove("hide");
-};
 </script>
 
 </body>
 </html>
+
