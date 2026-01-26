@@ -117,35 +117,33 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 <div class="header">All Yono App Store</div>
 
 <div class="container">
+  <div id="home"></div>
 
-<div id="home"></div>
+  <div id="detail" class="hide">
+    <div class="card center">
+      <img id="dImg" class="big-icon">
+      <h2 id="dName"></h2>
 
-<div id="detail" class="hide">
-  <div class="card center">
-    <img id="dImg" class="big-icon">
-    <h2 id="dName"></h2>
+      <div class="info">
+        <div>⭐ <span id="dRating"></span></div>
+        <div>⬇ <span id="dSize"></span></div>
+        <div>🛒 Free</div>
+        <div>Bonus ₹<span id="dBonus"></span></div>
+      </div>
 
-    <div class="info">
-      <div>⭐ <span id="dRating"></span></div>
-      <div>⬇ <span id="dSize"></span></div>
-      <div>🛒 Free</div>
-      <div>Bonus ₹<span id="dBonus"></span></div>
+      <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
+
+      <button class="btn telegram"
+        onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
+        📢 Join Telegram for Bonus
+      </button>
     </div>
 
-    <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
-
-    <button class="btn telegram"
-      onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
-      📢 Join Telegram for Bonus
-    </button>
+    <div class="card">
+      <h3>Other Related Apps</h3>
+      <div class="apps-row" id="related"></div>
+    </div>
   </div>
-
-  <div class="card">
-    <h3>Other Related Apps</h3>
-    <div class="apps-row" id="related"></div>
-  </div>
-</div>
-
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
@@ -165,6 +163,8 @@ const home=document.getElementById("home");
 const detail=document.getElementById("detail");
 const loader=document.getElementById("loader");
 
+let isLoading=false;
+
 apps.forEach((a,i)=>{
  home.innerHTML+=`
  <div class="card">
@@ -182,6 +182,9 @@ apps.forEach((a,i)=>{
 });
 
 function openApp(i){
+ if(isLoading) return;
+ isLoading=true;
+
  loader.classList.remove("hide");
 
  setTimeout(()=>{
@@ -208,14 +211,20 @@ function openApp(i){
   });
 
   loader.classList.add("hide");
+  isLoading=false;
   window.scrollTo(0,0);
- },800);
+ },700);
 }
 
+/* FAIL-SAFE: loader kabhi bhi atke to */
+setTimeout(()=>loader.classList.add("hide"),3000);
+
+/* BACK */
 window.onpopstate=function(){
  loader.classList.add("hide");
  detail.classList.add("hide");
  home.classList.remove("hide");
+ isLoading=false;
 };
 </script>
 
