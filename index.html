@@ -46,15 +46,11 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   cursor:pointer;
 }
 
-/* HOME download button */
 .download{background:#2e7d32;color:#fff}
-
-/* DETAIL page PINK download */
 .download-pink{
   background:linear-gradient(90deg,#ff4da6,#ff2f92);
   color:#fff;
 }
-
 .telegram{background:#229ED9;color:#fff;margin-top:10px}
 
 .hide{display:none}
@@ -97,7 +93,6 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
       <div>Bonus ₹<span id="dBonus"></span></div>
     </div>
 
-    <!-- PINK DOWNLOAD BUTTON -->
     <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
 
     <button class="btn telegram"
@@ -128,6 +123,8 @@ const apps=[
 ];
 
 const home=document.getElementById("home");
+const detail=document.getElementById("detail");
+
 apps.forEach((a,i)=>{
  home.innerHTML+=`
  <div class="card">
@@ -145,6 +142,8 @@ apps.forEach((a,i)=>{
 });
 
 function openApp(i){
+ history.pushState({page:"detail"}, "", "#app");
+
  home.classList.add("hide");
  detail.classList.remove("hide");
 
@@ -164,8 +163,15 @@ function openApp(i){
    related.appendChild(im);
   }
  });
+
  window.scrollTo(0,0);
 }
+
+/* 🔙 BACK BUTTON CONTROL */
+window.onpopstate=function(){
+ detail.classList.add("hide");
+ home.classList.remove("hide");
+};
 </script>
 
 </body>
