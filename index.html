@@ -24,14 +24,11 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.list{
-  display:flex;align-items:center;gap:12px;
-}
+.list{display:flex;align-items:center;gap:12px}
 
 .rank{
   background:#ff7a00;color:#fff;
-  width:30px;height:30px;
-  border-radius:8px;
+  width:30px;height:30px;border-radius:8px;
   display:flex;align-items:center;justify-content:center;
   font-weight:900;
 }
@@ -40,8 +37,8 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 .details h3{margin:0;font-size:18px}
 
-.green{color:#2e7d32;font-weight:800}
 .red{color:#e53935;font-weight:800}
+.green{color:#2e7d32;font-weight:800}
 
 .btn{
   width:100%;border:none;
@@ -54,13 +51,11 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 .telegram{background:#229ED9;color:#fff;margin-top:10px}
 
 .hide{display:none}
-
 .center{text-align:center}
 
 .big-icon{
   width:120px;height:120px;
-  border-radius:28px;
-  margin:10px auto;
+  border-radius:28px;margin:10px auto;
 }
 
 .info{
@@ -68,19 +63,10 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   margin:14px 0;font-weight:800;
 }
 
-.apps-row{
-  display:flex;gap:10px;
-  overflow-x:auto;
-}
+.apps-row{display:flex;gap:10px;overflow-x:auto}
+.apps-row img{width:80px;border-radius:14px;cursor:pointer}
 
-.apps-row img{
-  width:80px;border-radius:14px;cursor:pointer;
-}
-
-.footer{
-  text-align:center;padding:16px;
-  color:#555;font-weight:700;
-}
+.footer{text-align:center;padding:16px;color:#555;font-weight:700}
 </style>
 </head>
 
@@ -104,7 +90,7 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
       <div>⭐ <span id="dRating"></span></div>
       <div>⬇ <span id="dSize"></span></div>
       <div>🛒 Free</div>
-      <div>🎁 ₹<span id="dBonus"></span></div>
+      <div>Bonus ₹<span id="dBonus"></span></div>
     </div>
 
     <button class="btn download" id="dLink">⬇ DOWNLOAD APK</button>
@@ -171,8 +157,8 @@ apps.forEach((a,i)=>{
    <div class="icon"><img src="${a.img}"></div>
    <div class="details">
     <h3>${a.name}</h3>
-    <div class="red">🎁 ₹${a.bonus} Bonus</div>
-    <div class="green">🏦 Min Withdraw ₹100</div>
+    <div class="red">Bonus ₹${a.bonus}</div>
+    <div class="green">Min Withdraw ₹100</div>
    </div>
   </div><br>
   <button class="btn download" onclick="openApp(${i})">⬇ Download</button>
@@ -181,8 +167,8 @@ apps.forEach((a,i)=>{
 
 // OPEN DETAIL
 function openApp(i){
- document.getElementById("home").classList.add("hide");
- document.getElementById("detail").classList.remove("hide");
+ home.classList.add("hide");
+ detail.classList.remove("hide");
 
  dImg.src=apps[i].img;
  dName.innerText=apps[i].name;
@@ -195,7 +181,7 @@ function openApp(i){
  related.innerHTML="";
  apps.forEach((a,j)=>{
   if(i!==j){
-   let im=document.createElement("img");
+   const im=document.createElement("img");
    im.src=a.img;
    im.onclick=()=>openApp(j);
    related.appendChild(im);
@@ -208,8 +194,3 @@ function openApp(i){
 
 </body>
 </html>
-
-
-
-
-
