@@ -7,77 +7,163 @@
 
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
+body{
+  margin:0;
+  font-family:Segoe UI,Arial;
+  background:linear-gradient(#eef3ff,#f7f9ff);
+}
 
+/* HEADER */
 .header{
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
-  color:#fff;padding:14px;
-  font-size:20px;font-weight:900;
-  text-align:center;
+  color:#fff;
+  padding:14px;
+  font-size:20px;
+  font-weight:900;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
 
 .container{max-width:1100px;margin:auto;padding:14px}
 
+/* OLD CARD LOOK */
 .card{
-  background:#fff;margin:14px 0;padding:16px;
-  border-radius:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,.15);
+  background:#fff;
+  margin:18px 0;
+  padding:18px;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,.18);
 }
 
-.list{display:flex;gap:12px;align-items:center}
+.list{display:flex;gap:14px;align-items:center}
 
 .rank{
-  background:#ff7a00;color:#fff;
-  width:28px;height:28px;border-radius:8px;
-  display:flex;align-items:center;justify-content:center;
+  background:#ff8a00;
+  color:#fff;
+  width:34px;
+  height:34px;
+  border-radius:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-weight:900;
 }
 
-.icon img{width:55px;height:55px;border-radius:14px}
+.icon img{width:62px;height:62px;border-radius:18px}
 
-.details h3{margin:0;font-size:17px}
-.red{color:#e53935;font-weight:800}
-.green{color:#2e7d32;font-weight:800}
+.details h3{margin:0;font-size:18px;font-weight:900}
+.red{color:#e53935;font-weight:900}
+.green{color:#2e7d32;font-weight:900}
 
+/* BUTTONS */
 .btn{
-  width:100%;border:none;
-  padding:13px;border-radius:16px;
-  font-size:16px;font-weight:900;
+  width:100%;
+  border:none;
+  padding:15px;
+  border-radius:20px;
+  font-size:17px;
+  font-weight:900;
   cursor:pointer;
 }
 
-.download{background:#2e7d32;color:#fff}
+.download{
+  background:linear-gradient(180deg,#2e7d32,#1b5e20);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
 
-/* 🔻 LAST SECTION */
+.download-pink{
+  background:linear-gradient(90deg,#ff4da6,#ff2f92);
+  color:#fff;
+  box-shadow:0 8px 18px rgba(0,0,0,.25);
+}
+
+.telegram{
+  background:#229ED9;
+  color:#fff;
+  margin-top:12px;
+}
+
+/* DETAIL */
+.hide{display:none}
+.center{text-align:center}
+
+.big-icon{
+  width:120px;
+  height:120px;
+  border-radius:28px;
+  margin:10px auto;
+}
+
+.info{
+  display:flex;
+  justify-content:space-around;
+  margin:14px 0;
+  font-weight:900;
+}
+
+.apps-row{display:flex;gap:12px;overflow-x:auto}
+.apps-row img{width:82px;border-radius:16px;cursor:pointer}
+
+/* LOADER */
+.loader{
+  position:fixed;
+  inset:0;
+  background:radial-gradient(circle,#111,#000);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+
+.loader img{
+  width:90px;
+  border-radius:22px;
+  animation:pop 1.5s infinite ease-in-out;
+}
+
+.loader .ring{
+  width:90px;
+  height:90px;
+  border-radius:50%;
+  border:5px solid rgba(255,255,255,.15);
+  border-top:5px solid #ff4da6;
+  margin-top:20px;
+  animation:spin 1s linear infinite;
+}
+
+.loader span{margin-top:16px;color:#fff;font-weight:900}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+
+/* LAST SHARE */
 .last-box{
-  margin-top:24px;
+  margin:30px 0;
   background:#fff;
-  padding:18px;
-  border-radius:18px;
-  box-shadow:0 8px 22px rgba(0,0,0,.15);
+  padding:20px;
+  border-radius:22px;
+  box-shadow:0 12px 30px rgba(0,0,0,.2);
 }
 
 .last-btn{
   display:block;
   text-align:center;
-  padding:14px;
-  border-radius:16px;
+  padding:15px;
+  border-radius:18px;
   font-weight:900;
   text-decoration:none;
-  margin-bottom:12px;
+  margin-bottom:14px;
   color:#fff;
 }
 
-.telegram{background:#229ED9}
+.tg{background:#229ED9}
+.ws{background:#25D366}
 .share{background:#2e7d32}
-.whatsapp{background:#25D366}
 
-.footer{
-  text-align:center;
-  padding:14px;
-  color:#555;
-  font-weight:700;
-}
+.footer{text-align:center;padding:18px;color:#555;font-weight:900}
 </style>
 </head>
 
@@ -85,47 +171,67 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <div class="header">All Yono App Store</div>
 
-<div class="container" id="home"></div>
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <img id="loaderImg">
+  <div class="ring"></div>
+  <span>Loading App...</span>
+</div>
 
-<!-- 🔻 LAST WEBSITE SECTION -->
 <div class="container">
-  <div class="last-box">
 
-    <a class="last-btn telegram"
-      href="https://t.me/yonoupdatestore"
-      target="_blank">
-      📢 Join Telegram Channel
-    </a>
+<div id="home"></div>
 
-    <a class="last-btn share"
-      href="https://t.me/share/url?url=https://yourwebsite.com&text=Check%20All%20Yono%20App%20Store"
-      target="_blank">
-      🔗 Share with Friends (Telegram)
-    </a>
+<div id="detail" class="hide">
+  <div class="card center">
+    <img id="dImg" class="big-icon">
+    <h2 id="dName"></h2>
 
-    <a class="last-btn whatsapp"
-      href="https://wa.me/?text=Check%20All%20Yono%20App%20Store%20https://yourwebsite.com"
-      target="_blank">
-      🟢 Share on WhatsApp
-    </a>
+    <div class="info">
+      <div>⭐ <span id="dRating"></span></div>
+      <div>⬇ <span id="dSize"></span></div>
+      <div>🛒 Free</div>
+      <div>Bonus ₹<span id="dBonus"></span></div>
+    </div>
 
+    <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
+    <button class="btn telegram" onclick="window.open('https://t.me/yonoupdatestore','_blank')">
+      📢 Join Telegram for Bonus
+    </button>
   </div>
+
+  <div class="card">
+    <h3>Other Related Apps</h3>
+    <div class="apps-row" id="related"></div>
+  </div>
+</div>
+
+<!-- LAST SHARE SECTION -->
+<div class="last-box">
+  <a class="last-btn tg" href="https://t.me/yonoupdatestore" target="_blank">📢 Join Telegram</a>
+  <a class="last-btn ws" href="https://wa.me/?text=Check%20this%20All%20Yono%20App%20Store" target="_blank">💬 Share on WhatsApp</a>
+  <a class="last-btn share" href="https://t.me/yonoupdatestore" target="_blank">🔗 Share with Friends</a>
+</div>
+
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
 <script>
 const apps=[
- {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",bonus:"43"},
- {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",bonus:"50"},
- {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",bonus:"27"},
- {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",bonus:"35"},
- {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",bonus:"30"},
- {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",bonus:"25"},
- {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",bonus:"45"}
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.0",size:"30MB",bonus:"27",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
 ];
 
 const home=document.getElementById("home");
+const detail=document.getElementById("detail");
+const loader=document.getElementById("loader");
+const loaderImg=document.getElementById("loaderImg");
 
 apps.forEach((a,i)=>{
  home.innerHTML+=`
@@ -139,11 +245,47 @@ apps.forEach((a,i)=>{
     <div class="green">Min Withdraw ₹100</div>
    </div>
   </div><br>
-  <button class="btn download">⬇ Download</button>
+  <button class="btn download" onclick="openApp(${i})">⬇ Download</button>
  </div>`;
 });
+
+function openApp(i){
+ history.pushState({page:"detail"},"","#app");
+ loaderImg.src=apps[i].img;
+ loader.style.display="flex";
+
+ setTimeout(()=>{
+  loader.style.display="none";
+  home.classList.add("hide");
+  detail.classList.remove("hide");
+
+  dImg.src=apps[i].img;
+  dName.innerText=apps[i].name;
+  dRating.innerText=apps[i].rating;
+  dSize.innerText=apps[i].size;
+  dBonus.innerText=apps[i].bonus;
+  dLink.onclick=()=>window.location.href=apps[i].link;
+
+  related.innerHTML="";
+  apps.forEach((a,j)=>{
+    if(i!==j){
+      const im=document.createElement("img");
+      im.src=a.img;
+      im.onclick=()=>openApp(j);
+      related.appendChild(im);
+    }
+  });
+  window.scrollTo(0,0);
+ },800);
+}
+
+window.onpopstate=()=>{
+ detail.classList.add("hide");
+ home.classList.remove("hide");
+};
 </script>
 
 </body>
 </html>
+
 
