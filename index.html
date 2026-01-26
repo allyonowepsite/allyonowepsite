@@ -15,7 +15,7 @@ body{
 
 /* HEADER */
 .header{
-  background:confirm linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
+  background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
   color:#fff;
   padding:14px;
   font-size:20px;
@@ -55,7 +55,7 @@ body{
 .red{color:#e53935;font-weight:900}
 .green{color:#2e7d32;font-weight:900}
 
-/* BUTTON */
+/* BUTTONS */
 .btn{
   width:100%;
   padding:16px;
@@ -102,6 +102,14 @@ body{
   margin-top:12px;
 }
 
+/* RELATED */
+.apps-row{display:flex;gap:12px;overflow-x:auto}
+.apps-row img{
+  width:80px;
+  border-radius:16px;
+  cursor:pointer;
+}
+
 .footer{
   text-align:center;
   padding:18px;
@@ -127,19 +135,24 @@ body{
     <h2 id="dName"></h2>
 
     <div>
-      <span class="badge">⭐ <span id="dRating"></span> Rating</span>
+      <span class="badge">⭐ <span id="dRating"></span></span>
       <span class="badge">⬇ <span id="dSize"></span></span>
       <span class="badge">🎁 Bonus ₹<span id="dBonus"></span></span>
     </div>
 
     <button class="btn main-download" id="dDownload">
-      ⬇ DOWNLOAD <span id="dNameBtn"></span> APK
+      ⬇ DOWNLOAD APK
     </button>
 
     <button class="btn telegram"
       onclick="window.open('https://t.me/yonoupdatestore','_blank')">
       📢 Join Telegram for Bonus
     </button>
+  </div>
+
+  <div class="card">
+    <h3>Other Related Apps</h3>
+    <div class="apps-row" id="related"></div>
   </div>
 </div>
 
@@ -149,30 +162,13 @@ body{
 
 <script>
 const apps=[
- {
-  name:"Teen Patti Master",
-  img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",
-  rating:"4.1",
-  size:"58–100MB",
-  bonus:"43",
-  link:"https://www.earntp.com/gold/jexzd"
- },
- {
-  name:"101Z Skill Game",
-  img:"https://i.ibb.co/9mWjVf1m/101z.png",
-  rating:"4.2",
-  size:"25MB",
-  bonus:"50",
-  link:"https://101z2.com/?code=Z9YJW6N9CJ8"
- },
- {
-  name:"Yono Rummy",
-  img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",
-  rating:"4.5",
-  size:"61MB",
-  bonus:"50",
-  link:"https://yonorummy009.com/?code=VIP17W6WRJE"
- }
+ {rank:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
+ {rank:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+ {rank:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+ {rank:4,name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+ {rank:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+ {rank:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
+ {rank:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
 ];
 
 const home=document.getElementById("home");
@@ -182,7 +178,7 @@ apps.forEach((a,i)=>{
  home.innerHTML+=`
  <div class="card">
   <div class="list">
-   <div class="rank">${i+1}</div>
+   <div class="rank">${a.rank}</div>
    <div class="icon"><img src="${a.img}"></div>
    <div class="details">
     <h3>${a.name}</h3>
@@ -205,11 +201,18 @@ function openApp(i){
  dRating.innerText=apps[i].rating;
  dSize.innerText=apps[i].size;
  dBonus.innerText=apps[i].bonus;
- dNameBtn.innerText=apps[i].name;
 
- dDownload.onclick=()=>{
-  window.location.href=apps[i].link;
- };
+ dDownload.onclick=()=>window.location.href=apps[i].link;
+
+ related.innerHTML="";
+ apps.forEach((a,j)=>{
+  if(i!==j){
+    const im=document.createElement("img");
+    im.src=a.img;
+    im.onclick=()=>openApp(j);
+    related.appendChild(im);
+  }
+ });
 
  window.scrollTo(0,0);
 }
@@ -222,5 +225,3 @@ window.onpopstate=()=>{
 
 </body>
 </html>
-
-
