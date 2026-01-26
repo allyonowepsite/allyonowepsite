@@ -1,3 +1,4 @@
+ 
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -24,7 +25,7 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   box-shadow:0 8px 25px rgba(0,0,0,.15);
 }
 
-.list{display:flex;align-items:center;gap:12px}
+.list{display:flex;gap:12px;align-items:center}
 
 .rank{
   background:#ff7a00;color:#fff;
@@ -36,7 +37,6 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 .icon img{width:60px;height:60px;border-radius:16px}
 
 .details h3{margin:0;font-size:18px}
-
 .red{color:#e53935;font-weight:800}
 .green{color:#2e7d32;font-weight:800}
 
@@ -76,12 +76,9 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <div class="container">
 
-<!-- HOME -->
 <div id="home"></div>
 
-<!-- DETAIL PAGE -->
 <div id="detail" class="hide">
-
   <div class="card center">
     <img id="dImg" class="big-icon">
     <h2 id="dName"></h2>
@@ -104,7 +101,6 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
     <h3>Other Related Apps</h3>
     <div class="apps-row" id="related"></div>
   </div>
-
 </div>
 
 </div>
@@ -113,41 +109,15 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <script>
 const apps=[
- {
-  name:"Teen Patti Master",
-  img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",
-  rating:"4.1",
-  size:"58–100MB",
-  bonus:"43",
-  link:"https://www.earntp.com/gold/jexzd"
- },
- {
-  name:"101Z Skill Game",
-  img:"https://i.ibb.co/9mWjVf1m/101z.png",
-  rating:"4.2",
-  size:"25MB",
-  bonus:"50",
-  link:"https://101z2.com/?code=Z9YJW6N9CJ8"
- },
- {
-  name:"Yono Rummy",
-  img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",
-  rating:"4.0",
-  size:"30MB",
-  bonus:"27",
-  link:"https://yonorummy009.com/?code=VIP17W6WRJE"
- },
- {
-  name:"Good Slots",
-  img:"https://i.ibb.co/F4mzg3fx/goodslots.png",
-  rating:"4.2",
-  size:"10MB",
-  bonus:"45",
-  link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"
- }
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.0",size:"30MB",bonus:"27",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
 ];
 
-// HOME LIST
 const home=document.getElementById("home");
 apps.forEach((a,i)=>{
  home.innerHTML+=`
@@ -165,7 +135,6 @@ apps.forEach((a,i)=>{
  </div>`;
 });
 
-// OPEN DETAIL
 function openApp(i){
  home.classList.add("hide");
  detail.classList.remove("hide");
@@ -175,7 +144,6 @@ function openApp(i){
  dRating.innerText=apps[i].rating;
  dSize.innerText=apps[i].size;
  dBonus.innerText=apps[i].bonus;
-
  dLink.onclick=()=>window.location.href=apps[i].link;
 
  related.innerHTML="";
@@ -187,7 +155,6 @@ function openApp(i){
    related.appendChild(im);
   }
  });
-
  window.scrollTo(0,0);
 }
 </script>
