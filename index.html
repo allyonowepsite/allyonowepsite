@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -40,10 +41,20 @@ body{
   box-shadow:0 10px 30px rgba(0,0,0,.15);
 }
 
+/* ROW */
 .top{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:12px;
+}
+
+/* LEFT SIDE */
+.left{
   display:flex;
   align-items:center;
   gap:12px;
+  flex:1;
 }
 
 .rank{
@@ -58,29 +69,35 @@ body{
   justify-content:center;
 }
 
-.icon img{
-  width:58px;
-  height:58px;
-  border-radius:14px;
-}
-
-.details{flex:1}
 .details h3{
   margin:0;
   font-size:18px;
   font-weight:900;
 }
 
-.tag{font-size:14px;font-weight:800}
+.tag{
+  font-size:14px;
+  font-weight:800;
+}
 .tag.bonus{color:#e53935}
 .tag.withdraw{color:#2e7d32}
 
-.btn-wrap{
+/* RIGHT SIDE */
+.right{
   display:flex;
-  justify-content:flex-end;
-  margin-top:12px;
+  flex-direction:column;
+  align-items:center;
+  gap:8px;
 }
 
+.right img{
+  width:58px;
+  height:58px;
+  border-radius:14px;
+  box-shadow:0 6px 14px rgba(0,0,0,.25);
+}
+
+/* DOWNLOAD BUTTON */
 .download-btn{
   background:linear-gradient(135deg,#00c6ff,#4facfe,#6a5cff);
   color:#fff;
@@ -110,6 +127,7 @@ body{
   line-height:1.9;
 }
 
+/* FOOTER */
 .footer{
   text-align:center;
   padding:16px;
@@ -129,54 +147,60 @@ body{
 <!-- APP 1 -->
 <div class="list-card">
   <div class="top">
-    <div class="rank">1</div>
-    <div class="icon"><img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png"></div>
-    <div class="details">
-      <h3>Teen Patti Master</h3>
-      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+    <div class="left">
+      <div class="rank">1</div>
+      <div class="details">
+        <h3>Teen Patti Master</h3>
+        <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+        <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+      </div>
     </div>
-  </div>
-  <div class="btn-wrap">
-    <a href="https://www.earntp.com/gold/jexzd" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
+    <div class="right">
+      <img src="https://i.ibb.co/mCp6Tc87/teen-patti-master.png">
+      <a href="https://www.earntp.com/gold/jexzd" target="_blank">
+        <button class="download-btn">⬇ Download</button>
+      </a>
+    </div>
   </div>
 </div>
 
 <!-- APP 2 -->
 <div class="list-card">
   <div class="top">
-    <div class="rank">2</div>
-    <div class="icon"><img src="https://i.ibb.co/9mWjVf1m/101z.png"></div>
-    <div class="details">
-      <h3>101Z Skill Game</h3>
-      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+    <div class="left">
+      <div class="rank">2</div>
+      <div class="details">
+        <h3>101Z Skill Game</h3>
+        <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+        <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+      </div>
     </div>
-  </div>
-  <div class="btn-wrap">
-    <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
+    <div class="right">
+      <img src="https://i.ibb.co/9mWjVf1m/101z.png">
+      <a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
+        <button class="download-btn">⬇ Download</button>
+      </a>
+    </div>
   </div>
 </div>
 
 <!-- APP 3 -->
 <div class="list-card">
   <div class="top">
-    <div class="rank">3</div>
-    <div class="icon"><img src="https://i.ibb.co/xSW9DRBr/yonorummy.png"></div>
-    <div class="details">
-      <h3>Yono Rummy</h3>
-      <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
-      <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+    <div class="left">
+      <div class="rank">3</div>
+      <div class="details">
+        <h3>Yono Rummy</h3>
+        <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+        <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
+      </div>
     </div>
-  </div>
-  <div class="btn-wrap">
-    <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
-      <button class="download-btn">⬇ Download</button>
-    </a>
+    <div class="right">
+      <img src="https://i.ibb.co/xSW9DRBr/yonorummy.png">
+      <a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
+        <button class="download-btn">⬇ Download</button>
+      </a>
+    </div>
   </div>
 </div>
 
@@ -194,13 +218,10 @@ Users must be 18+ and play responsibly.
 
 <!-- 🤖 ROBOT BOT LOAD -->
 <div id="robot-load"></div>
-
 <script>
 fetch("robot.html")
   .then(res => res.text())
-  .then(data => {
-    document.getElementById("robot-load").innerHTML = data;
-  });
+  .then(data => document.getElementById("robot-load").innerHTML = data);
 </script>
 
 </body>
