@@ -12,15 +12,46 @@ body{
   font-family:Segoe UI,Arial;
   background:linear-gradient(180deg,#eaf1ff,#f7f9ff);
 }
+
+/* HEADER */
 .header{
+  position:sticky;
+  top:0;
+  z-index:1000;
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
   color:#fff;
-  text-align:center;
-  padding:18px;
-  font-size:22px;
+  padding:14px 16px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  box-shadow:0 6px 20px rgba(0,0,0,.25);
+}
+.header h1{
+  font-size:20px;
+  margin:0;
   font-weight:900;
 }
+
+/* TOP MENU */
+.menu{
+  display:flex;
+  gap:8px;
+}
+.menu a{
+  background:rgba(255,255,255,.2);
+  color:#fff;
+  padding:6px 10px;
+  border-radius:10px;
+  font-size:13px;
+  font-weight:800;
+  text-decoration:none;
+  box-shadow:0 4px 10px rgba(0,0,0,.25);
+}
+
+/* CONTAINER */
 .container{max-width:1100px;margin:auto;padding:14px}
+
+/* CARD */
 .list-card{
   background:#fff;
   margin:16px 0;
@@ -45,42 +76,52 @@ body{
   background:linear-gradient(135deg,#00c6ff,#6a5cff);
   color:#fff;border:none;padding:10px 22px;
   border-radius:14px;font-weight:900;
+  box-shadow:0 6px 0 #2b5bd7;
 }
 
-/* TOGGLE BUTTON */
-.toggle-btn{
-  margin:25px auto 10px;
-  background:#2ecc71;
-  color:#fff;
-  padding:14px;
-  text-align:center;
-  border-radius:14px;
+/* SECTION BOX */
+.info-box{
+  margin:30px auto;
+  padding:20px;
+  background:#ffffff;
+  border-radius:18px;
+  box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+.info-box h2{
+  margin-top:0;
+  font-size:20px;
   font-weight:900;
-  cursor:pointer;
-  max-width:400px;
 }
 
-/* HIDDEN APPS */
-#moreApps{
-  display:none;
+/* FOOTER */
+.footer{
+  text-align:center;
+  padding:16px;
+  font-size:13px;
+  font-weight:700;
+  color:#555;
 }
-
-.disclaimer{
-  margin:30px auto;padding:20px;
-  background:#ffe9c6;border-left:6px solid #ff4d4f;
-  border-radius:14px;font-size:14px;
-}
-.footer{text-align:center;padding:16px;color:#555}
 </style>
 </head>
 
 <body>
 
-<div class="header">All Yono App Store</div>
+<!-- HEADER -->
+<div class="header" id="home">
+  <h1>All Yono App Store</h1>
+  <div class="menu">
+    <a href="#home">🏠 Home</a>
+    <a href="#about">ℹ️ About</a>
+    <a href="#privacy">🔒 Privacy</a>
+    <a href="#disclaimer">⚠️ Disclaimer</a>
+  </div>
+</div>
 
 <div class="container">
 
-<!-- APP 1 -->
+<!-- ====== 7 APPS (UNCHANGED) ====== -->
+
+<!-- 1 -->
 <div class="list-card">
 <div class="top">
 <div class="rank">1</div>
@@ -90,13 +131,10 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://www.earntp.com/gold/jexzd" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://www.earntp.com/gold/jexzd" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
-<!-- APP 2 -->
+<!-- 2 -->
 <div class="list-card">
 <div class="top">
 <div class="rank">2</div>
@@ -106,13 +144,10 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://101z2.com/?code=Z9YJW6N9CJ8" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
-<!-- APP 3 -->
+<!-- 3 -->
 <div class="list-card">
 <div class="top">
 <div class="rank">3</div>
@@ -122,19 +157,8 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
+<div class="btn-wrap"><a href="https://yonorummy009.com/?code=VIP17W6WRJE" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
-</div>
-
-<!-- TOGGLE BUTTON -->
-<div class="toggle-btn" onclick="toggleApps()">
-✅ Other Related Apps (Tap Here)
-</div>
-
-<!-- HIDDEN APPS -->
-<div id="moreApps">
 
 <!-- 4 -->
 <div class="list-card">
@@ -146,10 +170,7 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">⚡ Fast Withdrawal</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://www.earntp.com/m/jm9n7r" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://www.earntp.com/m/jm9n7r" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 5 -->
@@ -162,10 +183,7 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://www.rummyse.com/share/88Guqxy" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://www.rummyse.com/share/88Guqxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 6 -->
@@ -178,10 +196,7 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min Withdrawal ₹100</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://www.rummyse.com/share/88G.xxy" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://www.rummyse.com/share/88G.xxy" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
 <!-- 7 -->
@@ -194,29 +209,36 @@ body{
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">⚡ Instant Payout</div>
 </div></div>
-<div class="btn-wrap">
-<a href="https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app" target="_blank">
-<button class="download-btn">⬇ Download</button></a>
-</div>
+<div class="btn-wrap"><a href="https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app" target="_blank"><button class="download-btn">⬇ Download</button></a></div>
 </div>
 
-</div>
+<!-- ABOUT -->
+<div class="info-box" id="about">
+<h2>ℹ️ About Us</h2>
+<p>We share information about popular real cash games, bonuses, and offers.
+We do not own any app. Our goal is to help users find trusted gaming platforms.</p>
 </div>
 
-<div class="disclaimer">
-⚠️ This website does NOT own or operate any gaming apps. Users must be 18+.
+<!-- PRIVACY -->
+<div class="info-box" id="privacy">
+<h2>🔒 Privacy Policy</h2>
+<p>We do not collect personal data. All external apps are owned by their respective developers.
+User safety and privacy are our priority.</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div class="info-box" id="disclaimer">
+<h2>⚠️ Disclaimer</h2>
+<p>This website does NOT own or operate any gaming applications.
+All games involve financial risk. Users must be 18+ and play responsibly.</p>
+</div>
+
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
-<script>
-function toggleApps(){
-  const box = document.getElementById("moreApps");
-  box.style.display = box.style.display === "block" ? "none" : "block";
-}
-</script>
-
 </body>
 </html>
+
 
 
