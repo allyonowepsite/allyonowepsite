@@ -1,131 +1,241 @@
-<!-- 🔔 IMPORTANT NOTICE SECTION -->
-<div style="
-max-width:1100px;
-margin:20px auto;
-padding:16px;
-">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Yono App Store</title>
+
+<style>
+*{box-sizing:border-box}
+body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
+
+/* HEADER */
+.header{
+  background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
+  color:#fff;padding:14px;
+  font-size:20px;font-weight:900;
+  position:sticky;top:0;z-index:1000;
+}
+
+.container{max-width:1100px;margin:auto;padding:14px}
+
+/* CARD */
+.card{
+  background:#fff;margin:16px 0;padding:16px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.15);
+}
+
+.list{display:flex;gap:12px;align-items:center}
+
+.rank{
+  background:#ff7a00;color:#fff;
+  width:30px;height:30px;border-radius:8px;
+  display:flex;align-items:center;justify-content:center;
+  font-weight:900;
+}
+
+.icon img{width:60px;height:60px;border-radius:16px}
+
+.details h3{margin:0;font-size:18px}
+.red{color:#e53935;font-weight:800}
+.green{color:#2e7d32;font-weight:800}
+
+/* BUTTONS */
+.btn{
+  width:100%;border:none;
+  padding:14px;border-radius:16px;
+  font-size:16px;font-weight:900;
+  cursor:pointer;
+}
+
+.download{background:#2e7d32;color:#fff}
+.download-pink{
+  background:linear-gradient(90deg,#ff4da6,#ff2f92);
+  color:#fff;
+}
+.telegram{background:#229ED9;color:#fff;margin-top:10px}
+
+/* DETAIL */
+.hide{display:none}
+.center{text-align:center}
+
+.big-icon{
+  width:120px;height:120px;
+  border-radius:28px;margin:10px auto;
+}
+
+.info{
+  display:flex;justify-content:space-around;
+  margin:14px 0;font-weight:800;
+}
+
+.apps-row{display:flex;gap:10px;overflow-x:auto}
+.apps-row img{width:80px;border-radius:14px;cursor:pointer}
+
+/* FOOTER */
+.footer{text-align:center;padding:16px;color:#555;font-weight:700}
+
+/* 3D LOADER */
+.loader{
+  position:fixed;inset:0;
+  background:radial-gradient(circle,#111,#000);
+  display:none;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  z-index:9999;
+}
+.loader img{
+  width:90px;border-radius:22px;
+  animation:pop 1.5s infinite ease-in-out;
+}
+.loader .ring{
+  width:90px;height:90px;border-radius:50%;
+  border:5px solid rgba(255,255,255,.15);
+  border-top:5px solid #ff4da6;
+  margin-top:18px;
+  animation:spin 1s linear infinite;
+}
+.loader span{margin-top:16px;color:#fff;font-weight:900}
+
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
+</style>
+</head>
+
+<body>
+
+<div class="header">All Yono App Store</div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <img id="loaderImg">
+  <div class="ring"></div>
+  <span>Loading App...</span>
+</div>
+
+<div class="container">
+
+<!-- HOME PAGE -->
+<div id="home"></div>
+
+<!-- DETAIL PAGE -->
+<div id="detail" class="hide">
 
 <!-- GO HOME BUTTON -->
-<a href="#home" onclick="history.back()" style="
-display:block;
-text-align:center;
-background:linear-gradient(90deg,#00b09b,#96c93d);
-color:#fff;
-font-weight:900;
-padding:14px;
-border-radius:14px;
-text-decoration:none;
-box-shadow:0 6px 18px rgba(0,0,0,.25);
-margin-bottom:16px;
-">
+<a href="javascript:void(0)" onclick="goHome()" class="btn" style="background:#00b09b;color:#fff;margin-bottom:12px">
 🏠 Click Here Go To Home
 </a>
 
-<!-- NOTICE CARD -->
-<div style="
-background:linear-gradient(180deg,#fff5f5,#ffecec);
-border:3px solid #ff4d4d;
-border-radius:18px;
-padding:18px;
-box-shadow:0 12px 35px rgba(0,0,0,.35);
-">
+  <div class="card center">
+    <img id="dImg" class="big-icon">
+    <h2 id="dName"></h2>
 
-<h2 style="margin-top:0;color:#000;text-align:center;">
-⚠️ Important Notice
-</h2>
+    <div class="info">
+      <div>⭐ <span id="dRating"></span></div>
+      <div>⬇ <span id="dSize"></span></div>
+      <div>🛒 Free</div>
+      <div>Bonus ₹<span id="dBonus"></span></div>
+    </div>
 
-<p style="font-size:15px;line-height:1.7;color:#000;">
-<b>AllYonoStore.com</b> does <b>NOT</b> run, control, or own any apps listed here.
-Rummy & card-based apps can be <b>addictive</b> and <b>financially risky</b>.
-Please use responsibly.
-<br><br>
-<b>Strictly for 18+ users only.</b>
-</p>
+    <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
 
-<p style="font-size:15px;color:#000;">
-Please read our <b>Disclaimer</b> page and the specific disclaimer for each app.
-</p>
+    <button class="btn telegram"
+      onclick="window.open('https://t.me/yonoupdatestore','_blank')">
+      📢 Join Telegram for Bonus
+    </button>
+  </div>
 
-<p style="font-size:15px;color:#000;">
-<b>Alert:</b> Rummy (skill-based game) is banned by the government in
-<b>Andhra Pradesh, Sikkim, Nagaland, Assam, Arunachal Pradesh,
-Tamil Nadu, Odisha, and Telangana.</b>
-</p>
+  <div class="card">
+    <h3>Other Related Apps</h3>
+    <div class="apps-row" id="related"></div>
+  </div>
 
-<p style="text-align:center;font-weight:900;color:#0a8f08;">
-Thanks For Reading Till…
-</p>
-
-</div>
-
-<!-- TAGS -->
-<div style="
-margin-top:20px;
-background:linear-gradient(180deg,#000,#1a1a1a);
-color:#fff;
-padding:14px;
-border-radius:14px;
-box-shadow:0 6px 22px rgba(0,0,0,.4);
-">
-
-<b style="color:#ffcc00;">Tags:</b>
-<span style="font-size:14px;">
-Teen Patti Master, Teen Patti Master apk, Teen Patti Master bonus,
-Teen Patti Master app download, Teen Patti Master withdrawal,
-Teen Patti Master refer, Teen Patti Master deposit,
-Teen Patti Master new version, Teen Patti Master 777,
-Teen patti, bingo, bonus app, new bingo app
-</span>
-
-</div>
-
-<!-- TELEGRAM + SHARE -->
-<div style="margin-top:18px;display:grid;gap:12px;">
-
-<a href="https://t.me/yonoupdatestore" target="_blank" style="
-background:#229ED9;
-color:#fff;
-padding:14px;
-border-radius:14px;
-font-weight:900;
-text-align:center;
-text-decoration:none;
-box-shadow:0 6px 20px rgba(0,0,0,.25);
-">
-📢 Join Our Telegram Channel
-</a>
-
-<a href="https://wa.me/?text=Check%20this%20All%20Yono%20App%20Store"
-target="_blank" style="
-background:#2e7d32;
-color:#fff;
-padding:14px;
-border-radius:14px;
-font-weight:900;
-text-align:center;
-text-decoration:none;
-">
-🔗 Share With Friends
-</a>
-
-</div>
-
-<!-- 🔴 FINAL WARNING (LAST) -->
-<div style="
-margin-top:22px;
-background:linear-gradient(90deg,#ff0000,#b00000);
-color:#fff;
-padding:16px;
-border-radius:16px;
-text-align:center;
-font-weight:900;
-box-shadow:0 10px 30px rgba(0,0,0,.45);
-">
-⚠️ WARNING: Online rummy & betting apps involve financial risk.
-Play responsibly. This website is for information only.
-We are NOT responsible for any loss.
+<!-- ⚠️ WARNING -->
+<div class="card" style="background:#ffebee;border:2px solid red">
+<b>⚠️ WARNING:</b> Online rummy & betting apps involve financial risk.  
+This website is for information only. <b>18+ only.</b>
 </div>
 
 </div>
+</div>
 
+<div class="footer">© 2026 All Yono App Store</div>
 
+<script>
+const apps=[
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.0",size:"30MB",bonus:"27",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
+];
+
+const home=document.getElementById("home");
+const detail=document.getElementById("detail");
+const loader=document.getElementById("loader");
+const loaderImg=document.getElementById("loaderImg");
+
+apps.forEach((a,i)=>{
+ home.innerHTML+=`
+ <div class="card">
+  <div class="list">
+   <div class="rank">${i+1}</div>
+   <div class="icon"><img src="${a.img}"></div>
+   <div class="details">
+    <h3>${a.name}</h3>
+    <div class="red">Bonus ₹${a.bonus}</div>
+    <div class="green">Min Withdraw ₹100</div>
+   </div>
+  </div><br>
+  <button class="btn download" onclick="openApp(${i})">⬇ Download</button>
+ </div>`;
+});
+
+function openApp(i){
+ history.pushState({page:"detail"},"","#app");
+ loaderImg.src=apps[i].img;
+ loader.style.display="flex";
+
+ setTimeout(()=>{
+  loader.style.display="none";
+  home.classList.add("hide");
+  detail.classList.remove("hide");
+
+  dImg.src=apps[i].img;
+  dName.innerText=apps[i].name;
+  dRating.innerText=apps[i].rating;
+  dSize.innerText=apps[i].size;
+  dBonus.innerText=apps[i].bonus;
+  dLink.onclick=()=>window.location.href=apps[i].link;
+
+  related.innerHTML="";
+  apps.forEach((a,j)=>{
+   if(i!==j){
+    const im=document.createElement("img");
+    im.src=a.img;
+    im.onclick=()=>openApp(j);
+    related.appendChild(im);
+   }
+  });
+ },800);
+}
+
+function goHome(){
+ history.pushState({},"",location.pathname);
+ detail.classList.add("hide");
+ home.classList.remove("hide");
+ window.scrollTo(0,0);
+}
+
+window.onpopstate=function(){
+ detail.classList.add("hide");
+ home.classList.remove("hide");
+};
+</script>
+
+</body>
+</html>
