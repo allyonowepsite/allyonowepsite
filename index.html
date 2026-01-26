@@ -11,7 +11,7 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 .header{
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
   color:#fff;padding:14px;font-size:20px;font-weight:900;
-  position:sticky;top:0;z-index:1000
+  position:sticky;top:0
 }
 .container{max-width:1100px;margin:auto;padding:14px}
 .card{
@@ -24,18 +24,29 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   border-radius:8px;display:flex;align-items:center;justify-content:center;
   font-weight:900
 }
-.icon img{width:58px;height:58px;border-radius:14px}
-.details h3{margin:0;font-size:18px}
-.bonus{color:#e53935;font-weight:800}
-.withdraw{color:#2e7d32;font-weight:800}
+.icon img{width:60px;height:60px;border-radius:14px}
+.details h3{margin:0}
+.tag{
+  display:inline-block;
+  background:#e8f0ff;
+  color:#0f5cff;
+  padding:4px 10px;
+  border-radius:20px;
+  font-size:12px;
+  font-weight:800;
+  margin:3px 4px 0 0
+}
 .download-btn{
   background:#2e7d32;color:#fff;border:none;
-  padding:12px 20px;border-radius:14px;
-  font-size:16px;font-weight:900;width:100%
+  padding:12px;border-radius:14px;
+  font-size:16px;font-weight:900;width:100%;margin-top:10px
 }
-.hide{display:none}
-.apps-row{display:flex;gap:10px;overflow-x:auto}
-.apps-row img{width:80px;border-radius:14px;cursor:pointer}
+.telegram-btn{
+  background:#229ED9;color:#fff;
+  padding:10px;border-radius:14px;
+  text-align:center;font-weight:900;
+  margin-top:8px
+}
 .footer{text-align:center;padding:16px;color:#555;font-weight:700}
 </style>
 </head>
@@ -43,21 +54,26 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 <body>
 
 <div class="header">All Yono App Store</div>
-
 <div class="container">
 
-<!-- HOME LIST -->
-<div id="home">
-
 <script>
+const telegram="https://t.me/YOUR_TELEGRAM";
+
 const apps=[
- {name:"Teen Patti Master",bonus:"₹550",link:"https://www.earntp.com/gold/jexzd",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png"},
- {name:"101Z Skill Game",bonus:"₹550",link:"https://101z2.com/?code=Z9YJW6N9CJ8",img:"https://i.ibb.co/9mWjVf1m/101z.png"},
- {name:"Yono Rummy",bonus:"₹550",link:"https://yonorummy009.com/?code=VIP17W6WRJE",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png"},
- {name:"Teen Patti New",bonus:"₹550",link:"https://www.earntp.com/m/jm9n7r",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png"},
- {name:"RummySe",bonus:"₹550",link:"https://www.rummyse.com/share/88Guqxy",img:"https://i.ibb.co/CpV12LMX/rummyse.png"},
- {name:"RummySe Old",bonus:"₹550",link:"https://www.rummyse.com/share/88G.xxy",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png"},
- {name:"Good Slots",bonus:"₹550",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app",img:"https://i.ibb.co/F4mzg3fx/goodslots.png"}
+ {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",link:"https://www.earntp.com/gold/jexzd",
+ tags:["A-Best","Top Rank","Fast Withdraw","Trusted","18+"]},
+ {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",link:"https://101z2.com/?code=Z9YJW6N9CJ8",
+ tags:["B-Best","Skill Game","Daily Bonus","Secure"]},
+ {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",link:"https://yonorummy009.com/?code=VIP17W6WRJE",
+ tags:["C-Best","Popular","Instant Pay","Trusted"]},
+ {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",link:"https://www.earntp.com/m/jm9n7r",
+ tags:["D-Best","New Launch","Fast Game"]},
+ {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",link:"https://www.rummyse.com/share/88Guqxy",
+ tags:["E-Best","Safe App","High Bonus"]},
+ {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",link:"https://www.rummyse.com/share/88G.xxy",
+ tags:["F-Best","Old User Fav","Low Risk"]},
+ {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app",
+ tags:["G-Best","Slots","Instant Withdraw","Top Rated"]}
 ];
 
 apps.forEach((a,i)=>{
@@ -68,59 +84,35 @@ apps.forEach((a,i)=>{
    <div class="icon"><img src="${a.img}"></div>
    <div class="details">
     <h3>${a.name}</h3>
-    <div class="bonus">🎁 ${a.bonus} Bonus</div>
-    <div class="withdraw">🏦 ₹100 Min</div>
+    ${a.tags.map(t=>`<span class="tag">${t}</span>`).join("")}
    </div>
   </div>
-  <br>
-  <button class="download-btn" onclick="openApp(${i})">⬇ Download</button>
+
+  <button class="download-btn" onclick="location.href='${a.link}'">⬇ Download</button>
+  <div class="telegram-btn" onclick="location.href='${telegram}'">📢 Join Telegram for Bonus</div>
  </div>
  `);
 });
 </script>
 
-</div>
-
-<!-- DOWNLOAD PAGE -->
-<div id="downloadPage" class="hide">
-
+<!-- BEST RANK SECTION -->
 <div class="card">
-  <h2 id="appTitle"></h2>
-  <p>100K+ Downloads • 10MB • Android 5.0+</p>
-  <button class="download-btn" id="realDownload">⬇ DOWNLOAD</button>
-</div>
-
-<div class="card">
-  <h3>You may also like</h3>
-  <div class="apps-row" id="related"></div>
-</div>
-
+<h3>🔥 Best Ranked Games (A–Z)</h3>
+<p>
+A-Best Teen Patti • B-Best Skill Games • C-Best Rummy • D-Best New Launch •  
+E-Best Safe App • F-Best Old Trusted • G-Best Slots • H-High Bonus •  
+I-Instant Withdraw • J-Jackpot Games • K-King Rummy • L-Lucky Games •  
+M-Mega Bonus • N-New Users • O-Online Play • P-Popular App •  
+Q-Quick Pay • R-Real Cash • S-Secure App • T-Top Rank •  
+U-User Choice • V-Verified • W-Winning App • X-Extra Bonus •  
+Y-Yono Special • Z-Zero Risk
+</p>
 </div>
 
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
-<script>
-function openApp(i){
- document.getElementById("home").classList.add("hide");
- document.getElementById("downloadPage").classList.remove("hide");
- document.getElementById("appTitle").innerText = apps[i].name;
- document.getElementById("realDownload").onclick=()=>window.location.href=apps[i].link;
-
- const r=document.getElementById("related");
- r.innerHTML="";
- apps.forEach((a,j)=>{
-  if(i!==j){
-   const img=document.createElement("img");
-   img.src=a.img;
-   img.onclick=()=>openApp(j);
-   r.appendChild(img);
-  }
- });
- window.scrollTo(0,0);
-}
-</script>
-
 </body>
 </html>
+
