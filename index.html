@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,18 +10,17 @@
 body{
   margin:0;
   font-family:Segoe UI,Arial;
-  background:linear-gradient(180deg,#eaf1ff,#f7f9ff);
+  background:#f2f6ff;
 }
 
 /* HEADER */
 .header{
-  background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
+  background:linear-gradient(90deg,#0f5cff,#00c6ff);
   color:#fff;
   text-align:center;
   padding:18px;
   font-size:22px;
   font-weight:900;
-  box-shadow:0 6px 20px rgba(0,0,0,.25);
 }
 
 /* CONTAINER */
@@ -34,28 +32,36 @@ body{
 
 /* CARD */
 .list-card{
-  background:linear-gradient(180deg,#ffffff,#f3f6ff);
+  background:#fff;
   margin:16px 0;
   padding:16px;
   border-radius:18px;
-  box-shadow:0 10px 30px rgba(0,0,0,.15);
+  box-shadow:0 8px 25px rgba(0,0,0,.12);
 }
 
-.top{display:flex;align-items:center;gap:12px}
+.top{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
 
 .rank{
-  background:linear-gradient(135deg,#ff9800,#ff5722);
+  background:#ff7a00;
   color:#fff;
   font-weight:900;
-  width:30px;
-  height:30px;
+  width:32px;
+  height:32px;
   border-radius:8px;
   display:flex;
   align-items:center;
   justify-content:center;
 }
 
-.icon img{width:58px;height:58px;border-radius:14px}
+.icon img{
+  width:60px;
+  height:60px;
+  border-radius:14px;
+}
 
 .details{flex:1}
 .details h3{margin:0;font-size:18px;font-weight:900}
@@ -64,19 +70,22 @@ body{
 .tag.bonus{color:#e53935}
 .tag.withdraw{color:#2e7d32}
 
-.btn-wrap{display:flex;justify-content:flex-end;margin-top:12px}
+.btn-wrap{
+  margin-top:12px;
+  text-align:right;
+}
 
 .download-btn{
-  background:linear-gradient(135deg,#00c6ff,#4facfe,#6a5cff);
+  background:linear-gradient(135deg,#1da1ff,#5f7cff);
   color:#fff;
   border:none;
-  padding:9px 20px;
-  border-radius:14px;
-  font-size:13px;
+  padding:12px 26px;
+  border-radius:30px;
+  font-size:15px;
   font-weight:900;
   cursor:pointer;
-  box-shadow:0 6px 0 #2b5bd7,0 14px 25px rgba(0,0,0,.35);
 }
+.download-btn:active{transform:scale(.96)}
 
 /* TELEGRAM */
 .telegram-box{
@@ -85,58 +94,32 @@ body{
 }
 .telegram-btn{
   display:inline-block;
-  padding:16px 30px;
-  border-radius:22px;
-  font-size:16px;
-  font-weight:900;
-  color:#fff;
   background:linear-gradient(135deg,#0088cc,#00c6ff);
+  color:#fff;
+  padding:16px 34px;
+  border-radius:30px;
+  font-weight:900;
   text-decoration:none;
-  box-shadow:0 8px 0 rgba(0,0,0,.25),0 16px 30px rgba(0,0,0,.35);
 }
 
-/* DISCLAIMER */
-.disclaimer{
-  max-width:1100px;
-  margin:30px auto;
-  padding:20px;
-  background:linear-gradient(180deg,#fff3e0,#ffe0b2);
-  border-left:8px solid #ff4d4f;
-  border-radius:18px;
-  font-size:14px;
-  line-height:1.9;
+/* RELATED APPS */
+.related-title{
+  margin:30px 0 10px;
+  background:#22b573;
+  color:#fff;
+  padding:12px;
+  border-radius:10px;
+  font-weight:900;
+  text-align:center;
 }
 
+/* FOOTER */
 .footer{
   text-align:center;
-  padding:16px;
+  padding:18px;
   font-size:13px;
-  font-weight:700;
   color:#555;
 }
-
-/* FAST LOADER */
-#fastLayer{
-  display:none;
-  position:fixed;
-  top:0;left:0;
-  width:100%;
-  height:100%;
-  background:linear-gradient(135deg,#0f5cff,#00c6ff);
-  z-index:9999;
-  color:#fff;
-  text-align:center;
-  padding-top:35%;
-}
-.loader{
-  margin:20px auto;
-  width:60px;height:60px;
-  border:6px solid rgba(255,255,255,.3);
-  border-top:6px solid #fff;
-  border-radius:50%;
-  animation:spin 1s linear infinite;
-}
-@keyframes spin{from{transform:rotate(0)}to{transform:rotate(360deg)}}
 </style>
 </head>
 
@@ -155,9 +138,10 @@ body{
 <h3>Teen Patti Master</h3>
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
-</div></div>
+</div>
+</div>
 <div class="btn-wrap">
-<button class="download-btn" onclick="openFast('https://www.earntp.com/gold/jexzd')">⬇ Download</button>
+<button class="download-btn" onclick="go('https://www.earntp.com/gold/jexzd')">⬇ Download</button>
 </div>
 </div>
 
@@ -170,9 +154,10 @@ body{
 <h3>101Z Skill Game</h3>
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
-</div></div>
+</div>
+</div>
 <div class="btn-wrap">
-<button class="download-btn" onclick="openFast('https://101z2.com/?code=Z9YJW6N9CJ8')">⬇ Download</button>
+<button class="download-btn" onclick="go('https://101z2.com/?code=Z9YJW6N9CJ8')">⬇ Download</button>
 </div>
 </div>
 
@@ -185,51 +170,51 @@ body{
 <h3>Yono Rummy</h3>
 <div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
 <div class="tag withdraw">🏦 Min. Withdrawal ₹100</div>
-</div></div>
+</div>
+</div>
 <div class="btn-wrap">
-<button class="download-btn" onclick="openFast('https://yonorummy009.com/?code=VIP17W6WRJE')">⬇ Download</button>
+<button class="download-btn" onclick="go('https://yonorummy009.com/?code=VIP17W6WRJE')">⬇ Download</button>
+</div>
+</div>
+
+<!-- RELATED -->
+<div class="related-title">✔ Other Related Apps</div>
+
+<!-- APP 4 -->
+<div class="list-card">
+<div class="top">
+<div class="rank">4</div>
+<div class="icon"><img src="https://i.ibb.co/zWSRGNJD/teenpatti.png"></div>
+<div class="details">
+<h3>Teen Patti Master (New)</h3>
+<div class="tag bonus">🎁 Sign Up Bonus ₹550</div>
+<div class="tag withdraw">🏦 Fast Withdrawal</div>
+</div>
+</div>
+<div class="btn-wrap">
+<button class="download-btn" onclick="go('https://www.earntp.com/m/jm9n7r')">⬇ Download</button>
 </div>
 </div>
 
 </div>
 
 <div class="telegram-box">
-<a class="telegram-btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">📢 Join Telegram Channel</a>
-</div>
-
-<div class="disclaimer">
-⚠️ This website does NOT own or operate any gaming apps. Users must be 18+.
+<a class="telegram-btn" href="https://t.me/YOUR_TELEGRAM_LINK" target="_blank">
+📢 Join Telegram Channel
+</a>
 </div>
 
 <div class="footer">
-© 2026 All Yono App Store. All Rights Reserved.
+⚠️ This website does NOT own or operate any gaming apps. 18+ only.<br>
+© 2026 All Yono App Store
 </div>
-
-<!-- FAST LAYER -->
-<div id="fastLayer">
-<div style="font-size:22px;font-weight:900;">⬇ Downloading…</div>
-<div class="loader"></div>
-<div id="doneText" style="display:none;font-size:18px;">✅ Download Successful</div>
-</div>
-
-<!-- ROBOT -->
-<div id="robot-load"></div>
 
 <script>
-function openFast(link){
-  document.getElementById("fastLayer").style.display="block";
-  setTimeout(()=>{
-    document.getElementById("doneText").style.display="block";
-  },700);
-  setTimeout(()=>{
-    window.location.href = link;
-  },1200);
+function go(url){
+  window.location.href = url; // FAST DIRECT OPEN
 }
-
-fetch("robot.html")
-.then(r=>r.text())
-.then(d=>document.getElementById("robot-load").innerHTML=d);
 </script>
 
 </body>
 </html>
+
