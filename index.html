@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -77,16 +78,15 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 .footer{text-align:center;padding:16px;color:#555;font-weight:700}
 
-/* 🔥 3D LOADING OVERLAY 🔥 */
+/* 🔥 3D LOADER */
 .loader{
   position:fixed;inset:0;
   background:radial-gradient(circle,#111,#000);
-  display:flex;
+  display:none;
   flex-direction:column;
   align-items:center;
   justify-content:center;
   z-index:9999;
-  display:none;
 }
 
 .loader img{
@@ -108,17 +108,10 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
   margin-top:18px;
   color:#fff;
   font-weight:800;
-  letter-spacing:1px;
 }
 
-@keyframes spin{
-  to{transform:rotate(360deg)}
-}
-
-@keyframes pop{
-  0%,100%{transform:scale(1)}
-  50%{transform:scale(1.15)}
-}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{0%,100%{transform:scale(1)}50%{transform:scale(1.15)}}
 </style>
 </head>
 
@@ -126,7 +119,7 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <div class="header">All Yono App Store</div>
 
-<!-- 🔥 LOADER -->
+<!-- LOADER -->
 <div class="loader" id="loader">
   <img id="loaderImg">
   <div class="ring"></div>
@@ -151,8 +144,9 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
     <button class="btn download-pink" id="dLink">⬇ DOWNLOAD APK</button>
 
+    <!-- ✅ TELEGRAM LINK UPDATED -->
     <button class="btn telegram"
-      onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
+      onclick="window.open('https://t.me/yonoupdatestore','_blank')">
       📢 Join Telegram for Bonus
     </button>
   </div>
@@ -200,7 +194,7 @@ apps.forEach((a,i)=>{
 });
 
 function openApp(i){
- history.pushState({page:"detail"}, "", "#app");
+ history.pushState({page:"detail"},"","#app");
 
  loaderImg.src=apps[i].img;
  loader.style.display="flex";
@@ -229,10 +223,9 @@ function openApp(i){
   });
 
   window.scrollTo(0,0);
- },900); // ⏱ loader time
+ },900);
 }
 
-/* BACK BUTTON */
 window.onpopstate=function(){
  detail.classList.add("hide");
  home.classList.remove("hide");
@@ -241,4 +234,3 @@ window.onpopstate=function(){
 
 </body>
 </html>
-
