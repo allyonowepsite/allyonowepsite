@@ -1,4 +1,4 @@
-PE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -11,21 +11,15 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 .header{
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
-  color:#fff;
-  padding:14px;
-  font-size:20px;
-  font-weight:900;
-  position:sticky;
-  top:0;
-  z-index:1000;
+  color:#fff;padding:14px;
+  font-size:20px;font-weight:900;
+  position:sticky;top:0;z-index:1000
 }
 
 .container{max-width:1100px;margin:auto;padding:14px}
 
 .card{
-  background:#fff;
-  margin:16px 0;
-  padding:16px;
+  background:#fff;margin:16px 0;padding:16px;
   border-radius:18px;
   box-shadow:0 8px 25px rgba(0,0,0,.15)
 }
@@ -33,81 +27,57 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 .top{display:flex;gap:12px;align-items:center}
 
 .rank{
-  background:#ff7a00;
-  color:#fff;
-  width:30px;
-  height:30px;
+  background:#ff7a00;color:#fff;
+  width:30px;height:30px;
   border-radius:8px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
+  display:flex;align-items:center;justify-content:center;
   font-weight:900
 }
 
 .icon img{width:58px;height:58px;border-radius:14px}
 
 .details h3{margin:0;font-size:18px}
-
 .bonus{color:#e53935;font-weight:800}
 .withdraw{color:#2e7d32;font-weight:800}
+
+.download-btn{
+  background:#2e7d32;color:#fff;
+  border:none;padding:12px;
+  border-radius:14px;
+  font-size:16px;font-weight:900;
+  width:100%;cursor:pointer
+}
+
+.telegram-btn{
+  background:#229ED9;color:#fff;
+  border:none;padding:12px;
+  border-radius:14px;
+  font-size:15px;font-weight:900;
+  width:100%;margin-top:10px;
+  cursor:pointer
+}
 
 .tags span{
   display:inline-block;
   background:#eaf1ff;
   color:#0f5cff;
-  padding:4px 10px;
+  padding:5px 12px;
   border-radius:20px;
   font-size:12px;
   font-weight:700;
   margin:4px 4px 0 0;
 }
 
-.download-btn{
-  background:#2e7d32;
-  color:#fff;
-  border:none;
-  padding:12px 20px;
-  border-radius:14px;
-  font-size:16px;
-  font-weight:900;
-  width:100%;
-  cursor:pointer;
+.apps-row{
+  display:flex;gap:10px;
+  overflow-x:auto
 }
-
-.telegram-btn{
-  background:#229ED9;
-  color:#fff;
-  border:none;
-  padding:12px 20px;
-  border-radius:14px;
-  font-size:15px;
-  font-weight:900;
-  width:100%;
-  margin-top:10px;
-  cursor:pointer;
+.apps-row img{
+  width:80px;border-radius:14px;cursor:pointer
 }
 
 .hide{display:none}
-
-.apps-row{
-  display:flex;
-  gap:10px;
-  overflow-x:auto;
-  padding-bottom:5px;
-}
-
-.apps-row img{
-  width:80px;
-  border-radius:14px;
-  cursor:pointer;
-}
-
-.footer{
-  text-align:center;
-  padding:16px;
-  color:#555;
-  font-weight:700
-}
+.footer{text-align:center;padding:16px;color:#555;font-weight:700}
 </style>
 </head>
 
@@ -117,20 +87,25 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <div class="container">
 
-<!-- HOME PAGE -->
+<!-- HOME -->
 <div id="home"></div>
 
-<!-- DOWNLOAD PAGE -->
+<!-- DETAIL PAGE -->
 <div id="downloadPage" class="hide">
 
-  <div class="card">
+  <div class="card" style="text-align:center">
+    <!-- 🔥 APP PHOTO -->
+    <img id="detailImg" src="" style="width:120px;border-radius:24px;margin-bottom:10px">
+
     <h2 id="appTitle"></h2>
     <div class="tags" id="appTags"></div>
+
     <p>100K+ Downloads • 10MB • Android 5.0+</p>
 
     <button class="download-btn" id="realDownload">⬇ DOWNLOAD</button>
 
-    <button class="telegram-btn" onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
+    <button class="telegram-btn"
+      onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
       📢 Join Telegram for Bonus
     </button>
   </div>
@@ -148,31 +123,31 @@ body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
 
 <script>
 const apps=[
- {name:"Teen Patti Master",bonus:"₹550",tags:["A-Best","Top Rank","Fast Withdraw","Trusted","18+"],
+ {name:"Teen Patti Master",tags:["A-Best","Top Rank","Fast Withdraw","Trusted","18+"],
   link:"https://www.earntp.com/gold/jexzd",
   img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png"},
 
- {name:"101Z Skill Game",bonus:"₹550",tags:["B-Best","Skill Game","Daily Bonus","Secure"],
+ {name:"101Z Skill Game",tags:["B-Best","Skill Game","Daily Bonus","Secure"],
   link:"https://101z2.com/?code=Z9YJW6N9CJ8",
   img:"https://i.ibb.co/9mWjVf1m/101z.png"},
 
- {name:"Yono Rummy",bonus:"₹550",tags:["C-Best","Popular","Instant Pay","Trusted"],
+ {name:"Yono Rummy",tags:["C-Best","Popular","Instant Pay","Trusted"],
   link:"https://yonorummy009.com/?code=VIP17W6WRJE",
   img:"https://i.ibb.co/xSW9DRBr/yonorummy.png"},
 
- {name:"Teen Patti New",bonus:"₹550",tags:["New","Fast","Trending"],
+ {name:"Teen Patti New",tags:["New","Trending","Fast"],
   link:"https://www.earntp.com/m/jm9n7r",
   img:"https://i.ibb.co/zWSRGNJD/teenpatti.png"},
 
- {name:"RummySe",bonus:"₹550",tags:["Trusted","Popular"],
+ {name:"RummySe",tags:["Trusted","Popular"],
   link:"https://www.rummyse.com/share/88Guqxy",
   img:"https://i.ibb.co/CpV12LMX/rummyse.png"},
 
- {name:"RummySe Old",bonus:"₹550",tags:["Classic","Stable"],
+ {name:"RummySe Old",tags:["Classic","Stable"],
   link:"https://www.rummyse.com/share/88G.xxy",
   img:"https://i.ibb.co/gMpkG28x/rummyse-old.png"},
 
- {name:"Good Slots",bonus:"₹550",tags:["Slots","Instant","High Bonus"],
+ {name:"Good Slots",tags:["Slots","Instant","High Bonus"],
   link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app",
   img:"https://i.ibb.co/F4mzg3fx/goodslots.png"}
 ];
@@ -187,7 +162,7 @@ apps.forEach((a,i)=>{
    <div class="icon"><img src="${a.img}"></div>
    <div class="details">
     <h3>${a.name}</h3>
-    <div class="bonus">🎁 ${a.bonus} Bonus</div>
+    <div class="bonus">🎁 ₹550 Bonus</div>
     <div class="withdraw">🏦 ₹100 Min</div>
    </div>
   </div>
@@ -201,7 +176,8 @@ function openApp(i){
  home.classList.add("hide");
  document.getElementById("downloadPage").classList.remove("hide");
 
- document.getElementById("appTitle").innerText=apps[i].name;
+ document.getElementById("appTitle").innerText = apps[i].name;
+ document.getElementById("detailImg").src = apps[i].img;
 
  const tagBox=document.getElementById("appTags");
  tagBox.innerHTML="";
@@ -230,6 +206,7 @@ function openApp(i){
 
 </body>
 </html>
+
 
 
 
