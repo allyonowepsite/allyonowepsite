@@ -26,6 +26,8 @@ justify-content:space-between;
 align-items:center;
 }
 
+.menu-btn{font-size:22px;cursor:pointer}
+
 .container{max-width:1100px;margin:auto;padding:14px}
 
 /* CARD */
@@ -50,7 +52,11 @@ justify-content:center;
 font-weight:900;
 }
 
-.icon img{width:64px;height:64px;border-radius:18px}
+.icon img{
+width:64px;
+height:64px;
+border-radius:18px;
+}
 
 .details h3{margin:0;font-size:18px;font-weight:900}
 .red{color:#e53935;font-weight:900}
@@ -73,16 +79,18 @@ background:linear-gradient(180deg,#00c853,#009624);
 color:#fff;
 box-shadow:0 6px 0 #007a1e;
 }
+
 .download:active{transform:translateY(3px)}
 
-.main-download{
-width:240px;
-padding:14px;
-font-size:16px;
-background:linear-gradient(180deg,#ff3d00,#d50000);
-color:#fff;
-box-shadow:0 8px 0 #b71c1c;
-margin-top:14px;
+/* DETAIL PAGE */
+.hide{display:none}
+.center{text-align:center}
+
+.big-icon{
+width:120px;
+height:120px;
+border-radius:28px;
+margin:10px auto;
 }
 
 .badge{
@@ -94,18 +102,28 @@ font-weight:700;
 margin:4px;
 }
 
-.bonus-tag{
-display:inline-block;
-background:linear-gradient(90deg,#ff9800,#ff5722);
+.main-download{
+width:220px;
+padding:14px;
+font-size:16px;
+background:linear-gradient(180deg,#ff3d00,#d50000);
 color:#fff;
-padding:6px 14px;
-border-radius:20px;
-font-weight:900;
-margin-top:10px;
+box-shadow:0 8px 0 #b71c1c;
+margin-top:14px;
 }
 
-.hide{display:none}
-.center{text-align:center}
+.telegram{
+width:220px;
+padding:14px;
+font-size:15px;
+background:#229ED9;
+color:#fff;
+margin-top:12px;
+}
+
+/* RELATED */
+.apps-row{display:flex;gap:12px;overflow-x:auto}
+.apps-row img{width:80px;border-radius:16px;cursor:pointer}
 
 .footer{text-align:center;padding:18px;color:#555;font-weight:900}
 </style>
@@ -113,31 +131,37 @@ margin-top:10px;
 
 <body>
 
-<div class="header">All Yono App Store</div>
+<div class="header">
+  <div>All Yono App Store</div>
+  <div class="menu-btn">☰</div>
+</div>
 
 <div class="container">
 
 <!-- HOME -->
 <div id="home"></div>
 
-<!-- DOWNLOAD PAGE -->
-<div id="downloadPage" class="hide">
+<!-- DETAIL -->
+<div id="detail" class="hide">
   <div class="card center">
-    <img id="pImg" style="width:120px;border-radius:28px">
-    <h2 id="pName"></h2>
+    <img id="dImg" class="big-icon">
+    <h2 id="dName"></h2>
 
-    <div class="bonus-tag">
-      🎁 Signup Bonus ₹<span id="pBonus"></span>
+    <div>
+      <span class="badge">⭐ <span id="dRating"></span></span>
+      <span class="badge">⬇ <span id="dSize"></span></span>
+      <span class="badge">🎁 ₹<span id="dBonus"></span></span>
     </div>
 
-    <div style="margin-top:10px">
-      <span class="badge">⭐ <span id="pRating"></span></span>
-      <span class="badge">⬇ <span id="pSize"></span></span>
-    </div>
-
-    <button class="btn main-download" id="apkBtn">
-      ⬇ DOWNLOAD APK
+    <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
+    <button class="btn telegram" onclick="window.open('https://t.me/yonoupdatestore','_blank')">
+      📢 Join Telegram
     </button>
+  </div>
+
+  <div class="card">
+    <h3>Other Related Apps</h3>
+    <div class="apps-row" id="related"></div>
   </div>
 </div>
 
@@ -145,7 +169,7 @@ margin-top:10px;
 
 <div class="footer">© 2026 All Yono App Store</div>
 
-<script>
+<script defer>
 const apps=[
  {id:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
  {id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
@@ -157,7 +181,7 @@ const apps=[
 ];
 
 const home=document.getElementById("home");
-const page=document.getElementById("downloadPage");
+const detail=document.getElementById("detail");
 
 apps.forEach((a,i)=>{
  home.innerHTML+=`
@@ -171,34 +195,33 @@ apps.forEach((a,i)=>{
     <div class="green">Min Withdraw ₹100</div>
    </div>
   </div><br>
-  <button class="btn download" onclick="goDownload(${a.id})">⬇ Download</button>
+  <button class="btn download" onclick="openApp(${a.id})">⬇ Download</button>
  </div>`;
 });
 
-function goDownload(id){
- location.href = location.pathname + "?app=" + id;
-}
-
-function loadDownload(){
- const q=new URLSearchParams(location.search);
- const id=q.get("app");
- if(!id) return;
-
- const app=apps.find(x=>x.id==id);
- if(!app) return;
+function openApp(id){
+ const app=apps.find(x=>x.id===id);
 
  home.classList.add("hide");
- page.classList.remove("hide");
+ detail.classList.remove("hide");
 
- pImg.src=app.img;
- pName.innerText=app.name + " APK";
- pBonus.innerText=app.bonus;
- pRating.innerText=app.rating;
- pSize.innerText=app.size;
- apkBtn.onclick=()=>window.location.href=app.link;
+ dImg.src=app.img;
+ dName.innerText=app.name;
+ dRating.innerText=app.rating;
+ dSize.innerText=app.size;
+ dBonus.innerText=app.bonus;
+ dDownload.onclick=()=>window.location.href=app.link;
+
+ related.innerHTML="";
+ apps.filter(x=>x.id!==id).forEach(r=>{
+  const im=document.createElement("img");
+  im.src=r.img;
+  im.onclick=()=>openApp(r.id);
+  related.appendChild(im);
+ });
+
+ window.scrollTo(0,0);
 }
-
-loadDownload();
 </script>
 
 </body>
