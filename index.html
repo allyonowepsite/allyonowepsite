@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+><!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -8,111 +8,227 @@
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Segoe UI,Arial;background:#f3f6ff}
+
 .header{
   background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
-  color:#fff;padding:14px;font-size:20px;font-weight:900;
-  position:sticky;top:0
+  color:#fff;
+  padding:14px;
+  font-size:20px;
+  font-weight:900;
+  position:sticky;
+  top:0;
+  z-index:1000;
 }
+
 .container{max-width:1100px;margin:auto;padding:14px}
+
 .card{
-  background:#fff;margin:16px 0;padding:16px;
-  border-radius:18px;box-shadow:0 8px 25px rgba(0,0,0,.15)
+  background:#fff;
+  margin:16px 0;
+  padding:16px;
+  border-radius:18px;
+  box-shadow:0 8px 25px rgba(0,0,0,.15)
 }
+
 .top{display:flex;gap:12px;align-items:center}
+
 .rank{
-  background:#ff7a00;color:#fff;width:30px;height:30px;
-  border-radius:8px;display:flex;align-items:center;justify-content:center;
+  background:#ff7a00;
+  color:#fff;
+  width:30px;
+  height:30px;
+  border-radius:8px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
   font-weight:900
 }
-.icon img{width:60px;height:60px;border-radius:14px}
-.details h3{margin:0}
-.tag{
+
+.icon img{width:58px;height:58px;border-radius:14px}
+
+.details h3{margin:0;font-size:18px}
+
+.bonus{color:#e53935;font-weight:800}
+.withdraw{color:#2e7d32;font-weight:800}
+
+.tags span{
   display:inline-block;
-  background:#e8f0ff;
+  background:#eaf1ff;
   color:#0f5cff;
   padding:4px 10px;
   border-radius:20px;
   font-size:12px;
-  font-weight:800;
-  margin:3px 4px 0 0
+  font-weight:700;
+  margin:4px 4px 0 0;
 }
+
 .download-btn{
-  background:#2e7d32;color:#fff;border:none;
-  padding:12px;border-radius:14px;
-  font-size:16px;font-weight:900;width:100%;margin-top:10px
+  background:#2e7d32;
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:14px;
+  font-size:16px;
+  font-weight:900;
+  width:100%;
+  cursor:pointer;
 }
+
 .telegram-btn{
-  background:#229ED9;color:#fff;
-  padding:10px;border-radius:14px;
-  text-align:center;font-weight:900;
-  margin-top:8px
+  background:#229ED9;
+  color:#fff;
+  border:none;
+  padding:12px 20px;
+  border-radius:14px;
+  font-size:15px;
+  font-weight:900;
+  width:100%;
+  margin-top:10px;
+  cursor:pointer;
 }
-.footer{text-align:center;padding:16px;color:#555;font-weight:700}
+
+.hide{display:none}
+
+.apps-row{
+  display:flex;
+  gap:10px;
+  overflow-x:auto;
+  padding-bottom:5px;
+}
+
+.apps-row img{
+  width:80px;
+  border-radius:14px;
+  cursor:pointer;
+}
+
+.footer{
+  text-align:center;
+  padding:16px;
+  color:#555;
+  font-weight:700
+}
 </style>
 </head>
 
 <body>
 
 <div class="header">All Yono App Store</div>
+
 <div class="container">
 
-<script>
-const telegram="https://t.me/YOUR_TELEGRAM";
+<!-- HOME PAGE -->
+<div id="home"></div>
 
-const apps=[
- {name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",link:"https://www.earntp.com/gold/jexzd",
- tags:["A-Best","Top Rank","Fast Withdraw","Trusted","18+"]},
- {name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",link:"https://101z2.com/?code=Z9YJW6N9CJ8",
- tags:["B-Best","Skill Game","Daily Bonus","Secure"]},
- {name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",link:"https://yonorummy009.com/?code=VIP17W6WRJE",
- tags:["C-Best","Popular","Instant Pay","Trusted"]},
- {name:"Teen Patti New",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",link:"https://www.earntp.com/m/jm9n7r",
- tags:["D-Best","New Launch","Fast Game"]},
- {name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",link:"https://www.rummyse.com/share/88Guqxy",
- tags:["E-Best","Safe App","High Bonus"]},
- {name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",link:"https://www.rummyse.com/share/88G.xxy",
- tags:["F-Best","Old User Fav","Low Risk"]},
- {name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app",
- tags:["G-Best","Slots","Instant Withdraw","Top Rated"]}
-];
+<!-- DOWNLOAD PAGE -->
+<div id="downloadPage" class="hide">
 
-apps.forEach((a,i)=>{
- document.write(`
- <div class="card">
-  <div class="top">
-   <div class="rank">${i+1}</div>
-   <div class="icon"><img src="${a.img}"></div>
-   <div class="details">
-    <h3>${a.name}</h3>
-    ${a.tags.map(t=>`<span class="tag">${t}</span>`).join("")}
-   </div>
+  <div class="card">
+    <h2 id="appTitle"></h2>
+    <div class="tags" id="appTags"></div>
+    <p>100K+ Downloads • 10MB • Android 5.0+</p>
+
+    <button class="download-btn" id="realDownload">⬇ DOWNLOAD</button>
+
+    <button class="telegram-btn" onclick="window.open('https://t.me/YourTelegramChannel','_blank')">
+      📢 Join Telegram for Bonus
+    </button>
   </div>
 
-  <button class="download-btn" onclick="location.href='${a.link}'">⬇ Download</button>
-  <div class="telegram-btn" onclick="location.href='${telegram}'">📢 Join Telegram for Bonus</div>
- </div>
- `);
-});
-</script>
+  <div class="card">
+    <h3>You may also like</h3>
+    <div class="apps-row" id="related"></div>
+  </div>
 
-<!-- BEST RANK SECTION -->
-<div class="card">
-<h3>🔥 Best Ranked Games (A–Z)</h3>
-<p>
-A-Best Teen Patti • B-Best Skill Games • C-Best Rummy • D-Best New Launch •  
-E-Best Safe App • F-Best Old Trusted • G-Best Slots • H-High Bonus •  
-I-Instant Withdraw • J-Jackpot Games • K-King Rummy • L-Lucky Games •  
-M-Mega Bonus • N-New Users • O-Online Play • P-Popular App •  
-Q-Quick Pay • R-Real Cash • S-Secure App • T-Top Rank •  
-U-User Choice • V-Verified • W-Winning App • X-Extra Bonus •  
-Y-Yono Special • Z-Zero Risk
-</p>
 </div>
 
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
+<script>
+const apps=[
+ {name:"Teen Patti Master",bonus:"₹550",tags:["A-Best","Top Rank","Fast Withdraw","Trusted","18+"],
+  link:"https://www.earntp.com/gold/jexzd",
+  img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png"},
+
+ {name:"101Z Skill Game",bonus:"₹550",tags:["B-Best","Skill Game","Daily Bonus","Secure"],
+  link:"https://101z2.com/?code=Z9YJW6N9CJ8",
+  img:"https://i.ibb.co/9mWjVf1m/101z.png"},
+
+ {name:"Yono Rummy",bonus:"₹550",tags:["C-Best","Popular","Instant Pay","Trusted"],
+  link:"https://yonorummy009.com/?code=VIP17W6WRJE",
+  img:"https://i.ibb.co/xSW9DRBr/yonorummy.png"},
+
+ {name:"Teen Patti New",bonus:"₹550",tags:["New","Fast","Trending"],
+  link:"https://www.earntp.com/m/jm9n7r",
+  img:"https://i.ibb.co/zWSRGNJD/teenpatti.png"},
+
+ {name:"RummySe",bonus:"₹550",tags:["Trusted","Popular"],
+  link:"https://www.rummyse.com/share/88Guqxy",
+  img:"https://i.ibb.co/CpV12LMX/rummyse.png"},
+
+ {name:"RummySe Old",bonus:"₹550",tags:["Classic","Stable"],
+  link:"https://www.rummyse.com/share/88G.xxy",
+  img:"https://i.ibb.co/gMpkG28x/rummyse-old.png"},
+
+ {name:"Good Slots",bonus:"₹550",tags:["Slots","Instant","High Bonus"],
+  link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app",
+  img:"https://i.ibb.co/F4mzg3fx/goodslots.png"}
+];
+
+// HOME LIST
+const home=document.getElementById("home");
+apps.forEach((a,i)=>{
+ home.innerHTML+=`
+ <div class="card">
+  <div class="top">
+   <div class="rank">${i+1}</div>
+   <div class="icon"><img src="${a.img}"></div>
+   <div class="details">
+    <h3>${a.name}</h3>
+    <div class="bonus">🎁 ${a.bonus} Bonus</div>
+    <div class="withdraw">🏦 ₹100 Min</div>
+   </div>
+  </div>
+  <br>
+  <button class="download-btn" onclick="openApp(${i})">⬇ Download</button>
+ </div>`;
+});
+
+// OPEN DETAIL PAGE
+function openApp(i){
+ home.classList.add("hide");
+ document.getElementById("downloadPage").classList.remove("hide");
+
+ document.getElementById("appTitle").innerText=apps[i].name;
+
+ const tagBox=document.getElementById("appTags");
+ tagBox.innerHTML="";
+ apps[i].tags.forEach(t=>{
+   tagBox.innerHTML+=`<span>${t}</span>`;
+ });
+
+ document.getElementById("realDownload").onclick=()=>{
+   window.location.href=apps[i].link;
+ };
+
+ const r=document.getElementById("related");
+ r.innerHTML="";
+ apps.forEach((a,j)=>{
+  if(i!==j){
+   const img=document.createElement("img");
+   img.src=a.img;
+   img.onclick=()=>openApp(j);
+   r.appendChild(img);
+  }
+ });
+
+ window.scrollTo(0,0);
+}
+</script>
+
 </body>
 </html>
+
 
