@@ -88,7 +88,7 @@ font-weight:900;color:#7a1c00;line-height:1.6;
 <div class="header">
   All Yono App Store
   <div class="menu">
-    <a href="#">Home</a>
+    <a href="#" onclick="goHome()">Home</a>
     <a href="#">About</a>
     <a href="#">Privacy Policy</a>
     <a href="#">Disclaimer</a>
@@ -112,7 +112,6 @@ font-weight:900;color:#7a1c00;line-height:1.6;
     <div class="badge" id="dBonus"></div>
 
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
-
     <button class="btn share" onclick="shareApp()">📤 Share with Friends</button>
   </div>
 
@@ -129,9 +128,7 @@ font-weight:900;color:#7a1c00;line-height:1.6;
 <br><br>
 • This website is strictly for **18+ users only**  
 • All apps are **real money games** and involve financial risk  
-• You may lose money – play **responsibly**  
 • We do **NOT host any APK files**  
-• Downloads redirect to official / third-party websites  
 • User is fully responsible for any profit or loss
 </div>
 
@@ -189,6 +186,10 @@ allApps.innerHTML+=`
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
+
+// 🔥 HISTORY ADD
+history.pushState({page:"detail"}, "", "#app-"+id);
+
 home.style.display="none";
 detail.style.display="block";
 
@@ -202,6 +203,20 @@ dDownload.onclick=()=>window.open(app.link,"_blank");
 renderAllApps();
 window.scrollTo(0,0);
 }
+
+function goHome(){
+history.pushState({page:"home"}, "", "#home");
+detail.style.display="none";
+home.style.display="block";
+window.scrollTo(0,0);
+}
+
+// 🔙 BACK BUTTON FIX
+window.addEventListener("popstate", function(){
+detail.style.display="none";
+home.style.display="block";
+window.scrollTo(0,0);
+});
 
 function shareApp(){
 const msg="🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 "+location.href;
