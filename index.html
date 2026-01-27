@@ -5,79 +5,50 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Yono App Store</title>
 
-<meta name="robots" content="index, follow">
-<meta name="description" content="All Yono App Store – Download trusted Yono, Teen Patti & Rummy APK with signup bonus.">
+<meta name="description" content="Download Teen Patti Master & Yono Rummy APK Latest Version with Signup Bonus">
 
 <style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Segoe UI,Arial;background:#eef3ff}
-
-/* HEADER */
+body{margin:0;font-family:Arial;background:#eef3ff}
 .header{
-background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
-color:#fff;padding:14px;font-size:20px;font-weight:900;
-position:sticky;top:0;z-index:999;
+background:linear-gradient(90deg,#0f5cff,#00c6ff);
+color:#fff;padding:15px;font-size:20px;font-weight:900;
+text-align:center;position:sticky;top:0
 }
-
-/* CARD */
-.container{max-width:1100px;margin:auto;padding:14px}
+.container{max-width:600px;margin:auto;padding:12px}
 .card{
-background:#fff;margin:18px 0;padding:18px;
-border-radius:22px;
-box-shadow:0 10px 25px rgba(0,0,0,.15);
+background:#fff;padding:15px;margin:15px 0;
+border-radius:18px;
+box-shadow:0 8px 20px rgba(0,0,0,.15)
 }
-.list{display:flex;gap:14px;align-items:center}
-.rank{
-background:#ff8a00;color:#fff;width:34px;height:34px;
-border-radius:10px;display:flex;align-items:center;
-justify-content:center;font-weight:900;
-}
-.icon img{width:64px;height:64px;border-radius:18px}
-.details h3{margin:0;font-size:18px;font-weight:900}
+.list{display:flex;gap:12px;align-items:center}
+.icon img{width:64px;height:64px;border-radius:14px}
+.details h3{margin:0}
 .red{color:#e53935;font-weight:900}
 .green{color:#2e7d32;font-weight:900}
-
-/* BUTTON */
-.btn{border:none;cursor:pointer;font-weight:900;border-radius:16px}
-.download{
-width:160px;padding:10px;font-size:14px;
-background:linear-gradient(180deg,#00c853,#009624);
-color:#fff;box-shadow:0 6px 0 #007a1e;
+.btn{
+border:none;border-radius:14px;
+font-weight:900;cursor:pointer
 }
-.download:active{transform:translateY(3px)}
-
+.download{
+width:100%;padding:12px;
+background:linear-gradient(#00c853,#009624);
+color:#fff;font-size:15px;margin-top:10px
+}
+.main-download{
+width:100%;padding:15px;
+background:linear-gradient(#ff3d00,#d50000);
+color:#fff;font-size:17px
+}
 .hide{display:none}
 .center{text-align:center}
-.big-icon{width:120px;height:120px;border-radius:28px;margin:10px auto}
-
+.big-icon{width:120px;height:120px;border-radius:26px}
 .badge{
-display:inline-block;background:#eaf1ff;
-padding:6px 14px;border-radius:20px;
-font-weight:800;margin:6px;
+display:inline-block;
+background:#eaf1ff;
+padding:6px 14px;
+border-radius:20px;
+margin:6px;font-weight:800
 }
-
-.main-download{
-width:240px;padding:14px;font-size:16px;
-background:linear-gradient(180deg,#ff3d00,#d50000);
-color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
-}
-
-.telegram{
-width:240px;padding:14px;font-size:15px;
-background:#229ED9;color:#fff;margin-top:10px;
-}
-
-.site-warning{
-background:#fff3cd;
-border-left:6px solid #ff9800;
-padding:16px;
-margin:20px;
-border-radius:14px;
-font-weight:800;
-color:#8a5a00;
-}
-
-.footer{text-align:center;padding:18px;color:#555;font-weight:900}
 </style>
 </head>
 
@@ -92,55 +63,50 @@ color:#8a5a00;
 
 <!-- DETAIL PAGE -->
 <div id="detail" class="hide">
-  <div class="card center">
-    <img id="dImg" class="big-icon">
+ <div class="card center">
+  <img id="dImg" class="big-icon"><br><br>
+  <h2 id="dTitle"></h2>
 
-    <!-- FIXED TITLE -->
-    <h2 id="dTitle"></h2>
-
-    <div>
-      <span class="badge">⭐ <span id="dRating"></span></span>
-      <span class="badge">⬇ <span id="dSize"></span></span>
-    </div>
-
-    <!-- BONUS ALAG -->
-    <div class="badge" id="dBonus"></div>
-
-    <!-- DOWNLOAD ONLY -->
-    <button class="btn main-download" id="dDownload">⬇ DOWNLOAD</button>
-
-    <button class="btn telegram"
-      onclick="window.open('https://t.me/yonoupdatestore','_blank')">
-      📢 Join Telegram
-    </button>
+  <div>
+   <span class="badge">⭐ <span id="dRating"></span></span>
+   <span class="badge">⬇ <span id="dSize"></span></span>
   </div>
 
-  <!-- ALL APPS AGAIN -->
-  <div class="card">
-    <h3>All Available Apps</h3>
-    <div id="allApps"></div>
-  </div>
+  <div class="badge" id="dBonus"></div>
+
+  <button class="btn main-download" id="dDownload">
+   ⬇ FAST DOWNLOAD APK
+  </button>
+ </div>
+
+ <div class="card">
+  <h3>Recommended Apps</h3>
+  <div id="allApps"></div>
+ </div>
 </div>
 
 </div>
-
-<!-- GLOBAL WARNING -->
-<div class="site-warning">
-⚠️ Warning: 18+ only. Real money games involve financial risk.
-Play responsibly. This website does not host any APK files.
-</div>
-
-<div class="footer">© 2026 All Yono App Store</div>
 
 <script>
 const apps=[
-{id:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
-{id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
-{id:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
-{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
-{id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
-{id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
-{id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz"}
+{
+id:1,
+name:"Teen Patti Master",
+img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",
+rating:"4.2",
+size:"98 MB",
+bonus:"₹43",
+link:"https://www.earntp.com/gold/jexzd"
+},
+{
+id:2,
+name:"Yono Rummy",
+img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",
+rating:"4.8",
+size:"61 MB",
+bonus:"₹50",
+link:"https://yonorummy009.com/?code=VIP17W6WRJE"
+}
 ];
 
 const home=document.getElementById("home");
@@ -149,33 +115,32 @@ const allApps=document.getElementById("allApps");
 
 function renderHome(){
 home.innerHTML="";
-apps.forEach((a,i)=>{
+apps.forEach(a=>{
 home.innerHTML+=`
 <div class="card">
  <div class="list">
-  <div class="rank">${i+1}</div>
   <div class="icon"><img src="${a.img}"></div>
   <div class="details">
    <h3>${a.name}</h3>
-   <div class="red">Bonus ₹${a.bonus}</div>
+   <div class="red">Signup Bonus ${a.bonus}</div>
    <div class="green">Min Withdraw ₹100</div>
   </div>
- </div><br>
- <button class="btn download" onclick="openApp(${a.id})">⬇ Download</button>
+ </div>
+ <button class="btn download" onclick="openApp(${a.id})">
+  ⬇ Download APK
+ </button>
 </div>`;
 });
 }
 
 function renderAllApps(){
 allApps.innerHTML="";
-apps.forEach((a,i)=>{
+apps.forEach(a=>{
 allApps.innerHTML+=`
-<div class="list" style="margin-bottom:14px">
- <div class="rank">${i+1}</div>
+<div class="list" style="margin-bottom:10px">
  <div class="icon"><img src="${a.img}"></div>
  <div class="details">
-  <h3>${a.name}</h3>
-  <div class="red">Bonus ₹${a.bonus}</div>
+  <h4>${a.name}</h4>
  </div>
  <button class="btn download" onclick="openApp(${a.id})">⬇</button>
 </div>`;
@@ -184,15 +149,14 @@ allApps.innerHTML+=`
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
-
 home.style.display="none";
 detail.style.display="block";
 
 dImg.src=app.img;
-dTitle.innerText=app.name+" New Update APK";
+dTitle.innerText=app.name+" Latest APK";
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
-dBonus.innerText="🎁 Signup Bonus ₹"+app.bonus;
+dBonus.innerText="🎁 Signup Bonus "+app.bonus;
 
 dDownload.onclick=()=>window.open(app.link,"_blank");
 
