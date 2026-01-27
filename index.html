@@ -19,7 +19,6 @@ color:#fff;padding:14px;font-size:20px;font-weight:900;
 position:sticky;top:0;z-index:999;
 display:flex;justify-content:space-between;align-items:center;
 }
-.menu-btn{font-size:22px;cursor:pointer}
 
 /* CARD */
 .container{max-width:1100px;margin:auto;padding:14px}
@@ -55,18 +54,18 @@ color:#fff;box-shadow:0 6px 0 #007a1e;
 .badge{
 display:inline-block;background:#eaf1ff;
 padding:6px 12px;border-radius:20px;
-font-weight:700;margin:4px;
+font-weight:700;margin:6px;
 }
 
 .main-download{
-width:220px;padding:14px;font-size:16px;
+width:260px;padding:14px;font-size:15px;
 background:linear-gradient(180deg,#ff3d00,#d50000);
 color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
 }
 
 .telegram{
-width:220px;padding:14px;font-size:15px;
-background:#229ED9;color:#fff;margin-top:12px;
+width:260px;padding:14px;font-size:15px;
+background:#229ED9;color:#fff;margin-top:10px;
 }
 
 .warning{
@@ -83,7 +82,6 @@ font-weight:700;color:#8a5a00;
 
 <div class="header">
   <div>All Yono App Store</div>
-  <div class="menu-btn">☰</div>
 </div>
 
 <div class="container">
@@ -100,11 +98,16 @@ font-weight:700;color:#8a5a00;
     <div>
       <span class="badge">⭐ <span id="dRating"></span></span>
       <span class="badge">⬇ <span id="dSize"></span></span>
-      <span class="badge">🎁 Signup Bonus ₹<span id="dBonus"></span></span>
     </div>
 
-    <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
-    <button class="btn telegram" onclick="window.open('https://t.me/yonoupdatestore','_blank')">
+    <div class="badge" id="dBonusText"></div>
+
+    <button class="btn main-download" id="dDownload">
+      ⬇ DOWNLOAD APK
+    </button>
+
+    <button class="btn telegram"
+      onclick="window.open('https://t.me/yonoupdatestore','_blank')">
       📢 Join Telegram
     </button>
 
@@ -113,7 +116,7 @@ font-weight:700;color:#8a5a00;
     </div>
   </div>
 
-  <!-- FULL APP LIST AGAIN -->
+  <!-- ALL APPS AGAIN -->
   <div class="card">
     <h3>All Available Apps</h3>
     <div id="allApps"></div>
@@ -176,6 +179,7 @@ allApps.innerHTML+=`
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
+
 home.style.display="none";
 detail.style.display="block";
 
@@ -183,8 +187,11 @@ dImg.src=app.img;
 dName.innerText=app.name;
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
-dBonus.innerText=app.bonus;
-dDownload.onclick=()=>window.location.href=app.link;
+
+dBonusText.innerText="🎁 Signup Bonus ₹"+app.bonus;
+
+dDownload.innerText="⬇ DOWNLOAD "+app.name+" New Update APK";
+dDownload.onclick=()=>window.open(app.link,"_blank");
 
 renderAllApps();
 window.scrollTo(0,0);
@@ -195,5 +202,4 @@ renderHome();
 
 </body>
 </html>
-
 
