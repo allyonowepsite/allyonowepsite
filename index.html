@@ -7,7 +7,6 @@
 
 <meta name="robots" content="index, follow">
 <meta name="description" content="All Yono App Store – Download trusted Yono, Teen Patti & Rummy APK with signup bonus.">
-<meta name="keywords" content="All Yono App Store, Teen Patti APK, Yono Rummy APK, Rummy Games">
 
 <style>
 *{box-sizing:border-box}
@@ -22,18 +21,12 @@ display:flex;justify-content:space-between;align-items:center;
 }
 .menu-btn{font-size:22px;cursor:pointer}
 
-/* MENU */
-.menu{display:none;background:#fff;box-shadow:0 10px 30px rgba(0,0,0,.2)}
-.menu a{
-display:block;padding:14px;font-weight:900;
-color:#000;text-decoration:none;border-bottom:1px solid #eee;
-}
-
 /* CARD */
 .container{max-width:1100px;margin:auto;padding:14px}
 .card{
 background:#fff;margin:18px 0;padding:18px;
-border-radius:22px;box-shadow:0 10px 25px rgba(0,0,0,.15);
+border-radius:22px;
+box-shadow:0 10px 25px rgba(0,0,0,.15);
 }
 .list{display:flex;gap:14px;align-items:center}
 .rank{
@@ -55,52 +48,34 @@ color:#fff;box-shadow:0 6px 0 #007a1e;
 }
 .download:active{transform:translateY(3px)}
 
-/* DETAIL */
 .hide{display:none}
 .center{text-align:center}
 .big-icon{width:120px;height:120px;border-radius:28px;margin:10px auto}
+
 .badge{
 display:inline-block;background:#eaf1ff;
 padding:6px 12px;border-radius:20px;
 font-weight:700;margin:4px;
 }
+
 .main-download{
 width:220px;padding:14px;font-size:16px;
 background:linear-gradient(180deg,#ff3d00,#d50000);
 color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
 }
+
 .telegram{
 width:220px;padding:14px;font-size:15px;
 background:#229ED9;color:#fff;margin-top:12px;
 }
-.share{
-width:220px;padding:14px;font-size:15px;
-background:#00a884;color:#fff;margin-top:10px;
-}
 
-/* WARNING */
 .warning{
 background:#fff3cd;border-left:6px solid #ff9800;
-padding:14px;border-radius:16px;
-font-weight:800;color:#8a5a00;
-margin:18px;
+padding:12px;margin-top:14px;border-radius:14px;
+font-weight:700;color:#8a5a00;
 }
 
-/* RELATED */
-.apps-row{display:flex;gap:12px;overflow-x:auto}
-.apps-row img{width:80px;border-radius:16px;cursor:pointer}
-
-/* FOOTER */
-.footer{text-align:center;padding:18px;color:#fff;font-weight:900;
-background:#1f2a44}
-.footer-btn{
-display:inline-block;margin:8px;
-padding:12px 18px;border-radius:14px;
-font-weight:900;color:#fff;text-decoration:none;
-}
-.footer-telegram{background:#229ED9}
-.footer-whatsapp{background:#25D366}
-.footer-share{background:#00a884}
+.footer{text-align:center;padding:18px;color:#555;font-weight:900}
 </style>
 </head>
 
@@ -108,19 +83,15 @@ font-weight:900;color:#fff;text-decoration:none;
 
 <div class="header">
   <div>All Yono App Store</div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
-
-<div class="menu" id="menu">
-  <a onclick="showPage('home')">🏠 Home</a>
-  <a onclick="showPage('about')">ℹ️ About</a>
-  <a onclick="showPage('disclaimer')">⚠️ Disclaimer</a>
+  <div class="menu-btn">☰</div>
 </div>
 
 <div class="container">
 
+<!-- HOME -->
 <div id="home"></div>
 
+<!-- DETAIL -->
 <div id="detail" class="hide">
   <div class="card center">
     <img id="dImg" class="big-icon">
@@ -133,14 +104,8 @@ font-weight:900;color:#fff;text-decoration:none;
     </div>
 
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
-
     <button class="btn telegram" onclick="window.open('https://t.me/yonoupdatestore','_blank')">
       📢 Join Telegram
-    </button>
-
-    <button class="btn share"
-     onclick="navigator.share({title:dName.innerText,url:location.href})">
-      🔗 Share with Friends
     </button>
 
     <div class="warning">
@@ -148,49 +113,16 @@ font-weight:900;color:#fff;text-decoration:none;
     </div>
   </div>
 
+  <!-- FULL APP LIST AGAIN -->
   <div class="card">
-    <h3>Recommended Apps</h3>
-    <div class="apps-row" id="related"></div>
-  </div>
-</div>
-
-<div id="about" class="hide">
-  <div class="card">
-    <h2>About</h2>
-    <p>Public information platform for skill-based gaming apps.</p>
-  </div>
-</div>
-
-<div id="disclaimer" class="hide">
-  <div class="card">
-    <h2>Disclaimer</h2>
-    <p>We do not own or host any APK files. All links are official.</p>
+    <h3>All Available Apps</h3>
+    <div id="allApps"></div>
   </div>
 </div>
 
 </div>
 
-<!-- FOOTER -->
-<div class="footer">
-  ⚠️ 18+ Only | Play Responsibly<br><br>
-
-  <a class="footer-btn footer-telegram" href="https://t.me/yonoupdatestore" target="_blank">
-    📢 Join Telegram
-  </a>
-
-  <a class="footer-btn footer-whatsapp"
-   href="https://wa.me/?text=Download%20Yono%20Apps%20👉%20https://epsite.github.io"
-   target="_blank">
-   🟢 WhatsApp Share
-  </a>
-
-  <a class="footer-btn footer-share"
-   onclick="navigator.share({title:'All Yono App Store',url:location.href})">
-   🔗 Share with Friends
-  </a>
-
-  <br><br>© 2026 All Yono App Store
-</div>
+<div class="footer">© 2026 All Yono App Store</div>
 
 <script>
 const apps=[
@@ -205,13 +137,16 @@ const apps=[
 
 const home=document.getElementById("home");
 const detail=document.getElementById("detail");
+const allApps=document.getElementById("allApps");
 
+function renderHome(){
+home.innerHTML="";
 apps.forEach((a,i)=>{
 home.innerHTML+=`
 <div class="card">
  <div class="list">
   <div class="rank">${i+1}</div>
-  <div class="icon"><img loading="lazy" src="${a.img}"></div>
+  <div class="icon"><img src="${a.img}"></div>
   <div class="details">
    <h3>${a.name}</h3>
    <div class="red">Bonus ₹${a.bonus}</div>
@@ -221,40 +156,44 @@ home.innerHTML+=`
  <button class="btn download" onclick="openApp(${a.id})">⬇ Download</button>
 </div>`;
 });
+}
+
+function renderAllApps(){
+allApps.innerHTML="";
+apps.forEach((a,i)=>{
+allApps.innerHTML+=`
+<div class="list" style="margin-bottom:14px">
+ <div class="rank">${i+1}</div>
+ <div class="icon"><img src="${a.img}"></div>
+ <div class="details">
+  <h3>${a.name}</h3>
+  <div class="red">Bonus ₹${a.bonus}</div>
+ </div>
+ <button class="btn download" onclick="openApp(${a.id})">⬇</button>
+</div>`;
+});
+}
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
-home.classList.add("hide");
-detail.classList.remove("hide");
+home.style.display="none";
+detail.style.display="block";
+
 dImg.src=app.img;
 dName.innerText=app.name;
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
 dBonus.innerText=app.bonus;
 dDownload.onclick=()=>window.location.href=app.link;
-related.innerHTML="";
-apps.filter(x=>x.id!==id).forEach(r=>{
- const im=document.createElement("img");
- im.src=r.img;
- im.onclick=()=>openApp(r.id);
- related.appendChild(im);
-});
+
+renderAllApps();
 window.scrollTo(0,0);
 }
 
-function toggleMenu(){
-const m=document.getElementById("menu");
-m.style.display=m.style.display==="block"?"none":"block";
-}
-function showPage(id){
-["home","detail","about","disclaimer"].forEach(p=>{
- document.getElementById(p).classList.add("hide");
-});
-document.getElementById(id).classList.remove("hide");
-document.getElementById("menu").style.display="none";
-}
+renderHome();
 </script>
 
 </body>
 </html>
+
 
