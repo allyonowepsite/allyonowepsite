@@ -17,7 +17,6 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef3ff}
 background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
 color:#fff;padding:14px;font-size:20px;font-weight:900;
 position:sticky;top:0;z-index:999;
-display:flex;justify-content:space-between;align-items:center;
 }
 
 /* CARD */
@@ -53,25 +52,29 @@ color:#fff;box-shadow:0 6px 0 #007a1e;
 
 .badge{
 display:inline-block;background:#eaf1ff;
-padding:6px 12px;border-radius:20px;
-font-weight:700;margin:6px;
+padding:6px 14px;border-radius:20px;
+font-weight:800;margin:6px;
 }
 
 .main-download{
-width:260px;padding:14px;font-size:15px;
+width:240px;padding:14px;font-size:16px;
 background:linear-gradient(180deg,#ff3d00,#d50000);
 color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
 }
 
 .telegram{
-width:260px;padding:14px;font-size:15px;
+width:240px;padding:14px;font-size:15px;
 background:#229ED9;color:#fff;margin-top:10px;
 }
 
-.warning{
-background:#fff3cd;border-left:6px solid #ff9800;
-padding:12px;margin-top:14px;border-radius:14px;
-font-weight:700;color:#8a5a00;
+.site-warning{
+background:#fff3cd;
+border-left:6px solid #ff9800;
+padding:16px;
+margin:20px;
+border-radius:14px;
+font-weight:800;
+color:#8a5a00;
 }
 
 .footer{text-align:center;padding:18px;color:#555;font-weight:900}
@@ -80,40 +83,36 @@ font-weight:700;color:#8a5a00;
 
 <body>
 
-<div class="header">
-  <div>All Yono App Store</div>
-</div>
+<div class="header">All Yono App Store</div>
 
 <div class="container">
 
 <!-- HOME -->
 <div id="home"></div>
 
-<!-- DETAIL -->
+<!-- DETAIL PAGE -->
 <div id="detail" class="hide">
   <div class="card center">
     <img id="dImg" class="big-icon">
-    <h2 id="dName"></h2>
+
+    <!-- FIXED TITLE -->
+    <h2 id="dTitle"></h2>
 
     <div>
       <span class="badge">⭐ <span id="dRating"></span></span>
       <span class="badge">⬇ <span id="dSize"></span></span>
     </div>
 
-    <div class="badge" id="dBonusText"></div>
+    <!-- BONUS ALAG -->
+    <div class="badge" id="dBonus"></div>
 
-    <button class="btn main-download" id="dDownload">
-      ⬇ DOWNLOAD APK
-    </button>
+    <!-- DOWNLOAD ONLY -->
+    <button class="btn main-download" id="dDownload">⬇ DOWNLOAD</button>
 
     <button class="btn telegram"
       onclick="window.open('https://t.me/yonoupdatestore','_blank')">
       📢 Join Telegram
     </button>
-
-    <div class="warning">
-      ⚠️ Warning: 18+ only. Real money games involve financial risk. Play responsibly.
-    </div>
   </div>
 
   <!-- ALL APPS AGAIN -->
@@ -123,6 +122,12 @@ font-weight:700;color:#8a5a00;
   </div>
 </div>
 
+</div>
+
+<!-- GLOBAL WARNING -->
+<div class="site-warning">
+⚠️ Warning: 18+ only. Real money games involve financial risk.
+Play responsibly. This website does not host any APK files.
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
@@ -135,7 +140,7 @@ const apps=[
 {id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
 {id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
 {id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
-{id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz?pid=458075709&pkg=com.goodslots.app"}
+{id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz"}
 ];
 
 const home=document.getElementById("home");
@@ -184,13 +189,11 @@ home.style.display="none";
 detail.style.display="block";
 
 dImg.src=app.img;
-dName.innerText=app.name;
+dTitle.innerText=app.name+" New Update APK";
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
+dBonus.innerText="🎁 Signup Bonus ₹"+app.bonus;
 
-dBonusText.innerText="🎁 Signup Bonus ₹"+app.bonus;
-
-dDownload.innerText="⬇ DOWNLOAD "+app.name+" New Update APK";
 dDownload.onclick=()=>window.open(app.link,"_blank");
 
 renderAllApps();
@@ -202,4 +205,3 @@ renderHome();
 
 </body>
 </html>
-
