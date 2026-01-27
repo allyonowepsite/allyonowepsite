@@ -3,12 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>All Yono App Store</title>
 
 <meta name="robots" content="index, follow">
-<meta name="description" content="All Yono App Store – Download Yono, Teen Patti, Rummy & Slot games APK with signup bonus.">
-<meta name="keywords" content="Yono App, Teen Patti APK, Rummy APK, Yono Rummy, Slot Game APK">
+<meta name="description" content="All Yono App Store – Download trusted Yono, Teen Patti & Rummy APK with signup bonus.">
 
 <style>
 *{box-sizing:border-box}
@@ -17,21 +15,8 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef3ff}
 /* HEADER */
 .header{
 background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
-color:#fff;padding:14px 18px;font-size:20px;font-weight:900;
-display:flex;justify-content:space-between;align-items:center;
+color:#fff;padding:14px;font-size:20px;font-weight:900;
 position:sticky;top:0;z-index:999;
-}
-.menu-btn{font-size:26px;cursor:pointer}
-
-/* MENU */
-.menu{
-display:none;background:#fff;
-box-shadow:0 10px 25px rgba(0,0,0,.2);
-}
-.menu a{
-display:block;padding:14px 18px;
-text-decoration:none;color:#000;
-font-weight:800;border-bottom:1px solid #eee;
 }
 
 /* CARD */
@@ -55,7 +40,7 @@ justify-content:center;font-weight:900;
 /* BUTTON */
 .btn{border:none;cursor:pointer;font-weight:900;border-radius:16px}
 .download{
-width:160px;padding:10px;
+width:160px;padding:10px;font-size:14px;
 background:linear-gradient(180deg,#00c853,#009624);
 color:#fff;box-shadow:0 6px 0 #007a1e;
 }
@@ -78,14 +63,18 @@ color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
 }
 
 .telegram{
-width:240px;padding:14px;
+width:240px;padding:14px;font-size:15px;
 background:#229ED9;color:#fff;margin-top:10px;
 }
 
 .site-warning{
-background:#fff3cd;border-left:6px solid #ff9800;
-padding:16px;margin:20px;border-radius:14px;
-font-weight:800;color:#8a5a00;
+background:#fff3cd;
+border-left:6px solid #ff9800;
+padding:16px;
+margin:20px;
+border-radius:14px;
+font-weight:800;
+color:#8a5a00;
 }
 
 .footer{text-align:center;padding:18px;color:#555;font-weight:900}
@@ -94,29 +83,19 @@ font-weight:800;color:#8a5a00;
 
 <body>
 
-<!-- HEADER -->
-<div class="header">
-  <div>All Yono App Store</div>
-  <div class="menu-btn" onclick="toggleMenu()">☰</div>
-</div>
-
-<!-- MENU -->
-<div class="menu" id="menu">
-  <a onclick="showPage('home')">🏠 Home</a>
-  <a onclick="showPage('about')">ℹ️ About</a>
-  <a onclick="showPage('disclaimer')">⚠️ Disclaimer</a>
-  <a onclick="showPage('privacy')">🔐 Privacy Policy</a>
-</div>
+<div class="header">All Yono App Store</div>
 
 <div class="container">
 
 <!-- HOME -->
 <div id="home"></div>
 
-<!-- DETAIL -->
+<!-- DETAIL PAGE -->
 <div id="detail" class="hide">
   <div class="card center">
     <img id="dImg" class="big-icon">
+
+    <!-- FIXED TITLE -->
     <h2 id="dTitle"></h2>
 
     <div>
@@ -124,8 +103,10 @@ font-weight:800;color:#8a5a00;
       <span class="badge">⬇ <span id="dSize"></span></span>
     </div>
 
+    <!-- BONUS ALAG -->
     <div class="badge" id="dBonus"></div>
 
+    <!-- DOWNLOAD ONLY -->
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD</button>
 
     <button class="btn telegram"
@@ -134,40 +115,16 @@ font-weight:800;color:#8a5a00;
     </button>
   </div>
 
+  <!-- ALL APPS AGAIN -->
   <div class="card">
     <h3>All Available Apps</h3>
     <div id="allApps"></div>
   </div>
 </div>
 
-<!-- ABOUT -->
-<div id="about" class="hide">
-  <div class="card">
-    <h2>About Us</h2>
-    <p>This website shares public information about skill-based gaming apps.
-    We do not own or host any APK files.</p>
-  </div>
 </div>
 
-<!-- DISCLAIMER -->
-<div id="disclaimer" class="hide">
-  <div class="card">
-    <h2>Disclaimer</h2>
-    <p>All trademarks belong to their respective owners.
-    This site does not promote gambling.</p>
-  </div>
-</div>
-
-<!-- PRIVACY -->
-<div id="privacy" class="hide">
-  <div class="card">
-    <h2>Privacy Policy</h2>
-    <p>We do not collect personal data. External links are owned by third parties.</p>
-  </div>
-</div>
-
-</div>
-
+<!-- GLOBAL WARNING -->
 <div class="site-warning">
 ⚠️ Warning: 18+ only. Real money games involve financial risk.
 Play responsibly. This website does not host any APK files.
@@ -178,30 +135,17 @@ Play responsibly. This website does not host any APK files.
 <script>
 const apps=[
 {id:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
-{id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"300",link:"https://101z2.com"},
-{id:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com"},
-{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com"},
-{id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com"},
-{id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com"},
+{id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+{id:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+{id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+{id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
 {id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz"}
 ];
 
 const home=document.getElementById("home");
 const detail=document.getElementById("detail");
 const allApps=document.getElementById("allApps");
-
-function toggleMenu(){
-const m=document.getElementById("menu");
-m.style.display=m.style.display==="block"?"none":"block";
-}
-
-function showPage(id){
-["home","detail","about","disclaimer","privacy"].forEach(p=>{
-document.getElementById(p).classList.add("hide");
-});
-document.getElementById(id).classList.remove("hide");
-menu.style.display="none";
-}
 
 function renderHome(){
 home.innerHTML="";
@@ -213,7 +157,7 @@ home.innerHTML+=`
   <div class="icon"><img src="${a.img}"></div>
   <div class="details">
    <h3>${a.name}</h3>
-   <div class="red">Signup Bonus ₹${a.bonus}</div>
+   <div class="red">Bonus ₹${a.bonus}</div>
    <div class="green">Min Withdraw ₹100</div>
   </div>
  </div><br>
@@ -240,14 +184,16 @@ allApps.innerHTML+=`
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
-home.classList.add("hide");
-detail.classList.remove("hide");
+
+home.style.display="none";
+detail.style.display="block";
 
 dImg.src=app.img;
 dTitle.innerText=app.name+" New Update APK";
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
 dBonus.innerText="🎁 Signup Bonus ₹"+app.bonus;
+
 dDownload.onclick=()=>window.open(app.link,"_blank");
 
 renderAllApps();
