@@ -16,8 +16,13 @@ body{margin:0;font-family:Segoe UI,Arial;background:#eef3ff}
 .header{
 background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
 color:#fff;padding:14px;font-size:20px;font-weight:900;
-position:sticky;top:0;z-index:999;text-align:center;
+position:sticky;top:0;z-index:999;
 }
+.menu{
+display:flex;gap:16px;justify-content:center;
+font-size:14px;margin-top:6px;
+}
+.menu a{color:#fff;text-decoration:none;font-weight:700}
 
 /* CARD */
 .container{max-width:1100px;margin:auto;padding:14px}
@@ -46,40 +51,32 @@ color:#fff;box-shadow:0 6px 0 #007a1e;
 }
 .download:active{transform:translateY(3px)}
 
-.main-download{
-width:240px;padding:14px;font-size:16px;
-background:linear-gradient(180deg,#ff3d00,#d50000);
-color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
-}
-
-/* SHARE */
-.share{
-width:240px;padding:14px;font-size:15px;
-background:#229ED9;color:#fff;margin-top:10px;
-}
-
-/* DETAIL */
 .hide{display:none}
 .center{text-align:center}
 .big-icon{width:120px;height:120px;border-radius:28px;margin:10px auto}
 
-/* BADGE */
 .badge{
 display:inline-block;background:#eaf1ff;
 padding:6px 14px;border-radius:20px;
 font-weight:800;margin:6px;
 }
 
-/* WARNING */
+.main-download{
+width:240px;padding:14px;font-size:16px;
+background:linear-gradient(180deg,#ff3d00,#d50000);
+color:#fff;box-shadow:0 8px 0 #b71c1c;margin-top:14px;
+}
+
+.share{
+width:240px;padding:14px;font-size:15px;
+background:#229ED9;color:#fff;margin-top:10px;
+}
+
 .site-warning{
 background:#fff3cd;
 border-left:6px solid #ff5722;
-padding:18px;
-margin:20px;
-border-radius:14px;
-font-weight:900;
-color:#7a1c00;
-line-height:1.6;
+padding:18px;margin:20px;border-radius:14px;
+font-weight:900;color:#7a1c00;line-height:1.6;
 }
 
 .footer{text-align:center;padding:18px;color:#555;font-weight:900}
@@ -88,14 +85,20 @@ line-height:1.6;
 
 <body>
 
-<div class="header">All Yono App Store</div>
+<div class="header">
+  All Yono App Store
+  <div class="menu">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Privacy Policy</a>
+    <a href="#">Disclaimer</a>
+  </div>
+</div>
 
 <div class="container">
 
-<!-- HOME -->
 <div id="home"></div>
 
-<!-- DETAIL PAGE -->
 <div id="detail" class="hide">
   <div class="card center">
     <img id="dImg" class="big-icon">
@@ -110,10 +113,7 @@ line-height:1.6;
 
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
 
-    <!-- ONLY SHARE -->
-    <button class="btn share" onclick="shareApp()">
-      📤 Share with Friends
-    </button>
+    <button class="btn share" onclick="shareApp()">📤 Share with Friends</button>
   </div>
 
   <div class="card">
@@ -124,16 +124,15 @@ line-height:1.6;
 
 </div>
 
-<!-- STRONG WARNING -->
 <div class="site-warning">
 ⚠️ IMPORTANT WARNING (100%)  
 <br><br>
-• This website is strictly for **18+ users only**.  
-• All listed games are **real money games** and involve financial risk.  
-• Users may lose money – please play **responsibly**.  
-• We do **NOT own, modify, or host** any APK files.  
-• All downloads redirect to **official / third-party sources**.  
-• By using this site, you agree that **you are solely responsible** for any loss or damage.
+• This website is strictly for **18+ users only**  
+• All apps are **real money games** and involve financial risk  
+• You may lose money – play **responsibly**  
+• We do **NOT host any APK files**  
+• Downloads redirect to official / third-party websites  
+• User is fully responsible for any profit or loss
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
@@ -143,7 +142,10 @@ const apps=[
 {id:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
 {id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
 {id:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
-{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"}
+{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
+{id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
+{id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
+{id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz"}
 ];
 
 const home=document.getElementById("home");
@@ -187,7 +189,6 @@ allApps.innerHTML+=`
 
 function openApp(id){
 const app=apps.find(x=>x.id===id);
-
 home.style.display="none";
 detail.style.display="block";
 
@@ -196,7 +197,6 @@ dTitle.innerText=app.name+" New Update APK";
 dRating.innerText=app.rating;
 dSize.innerText=app.size;
 dBonus.innerText="🎁 Signup Bonus ₹"+app.bonus;
-
 dDownload.onclick=()=>window.open(app.link,"_blank");
 
 renderAllApps();
@@ -204,8 +204,8 @@ window.scrollTo(0,0);
 }
 
 function shareApp(){
-const text="🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 Visit: "+window.location.href;
-window.open("https://t.me/share/url?url="+encodeURIComponent(text));
+const msg="🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 "+location.href;
+window.open("https://t.me/share/url?url="+encodeURIComponent(msg));
 }
 
 renderHome();
