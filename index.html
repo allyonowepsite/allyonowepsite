@@ -144,14 +144,52 @@ color:#fff;
 box-shadow:0 10px 0 #8e0000;
 margin-top:14px;
 }
-.share{
-width:260px;
-padding:15px;
-font-size:16px;
-background:#229ED9;
-color:#fff;
-margin-top:10px;
+/* bullet list */
+.feature-list{
+list-style:none;
+padding:0;
+margin:15px 0;
+text-align:left;
+display:inline-block;
 }
+.feature-list li{
+margin:8px 0;
+font-weight:600;
+color:#222;
+}
+.feature-list li:before{
+content:"✔️";
+margin-right:10px;
+color:#2e7d32;
+}
+.install-note{
+background:#f1f8fe;
+padding:12px;
+border-radius:16px;
+margin:20px 0;
+font-size:15px;
+color:#014361;
+}
+.social-flex{
+display:flex;
+gap:12px;
+justify-content:center;
+flex-wrap:wrap;
+margin:20px 0;
+}
+.social-btn{
+background:#222;
+color:#fff;
+padding:12px 24px;
+border-radius:40px;
+text-decoration:none;
+font-weight:800;
+display:inline-flex;
+align-items:center;
+gap:8px;
+}
+.whtsapp{background:#25D366; color:#fff;}
+.telegram{background:#0088cc; color:#fff;}
 
 /* WARNING */
 .site-warning{
@@ -190,19 +228,43 @@ All Yono App Store
 <!-- HOME TAB (list of apps) -->
 <div id="home" class="tab active"></div>
 
-<!-- DETAIL TAB (selected app info + all apps list A→Z) -->
+<!-- DETAIL TAB – now matches the image exactly -->
 <div id="detail" class="tab">
   <div class="card center">
     <img id="dImg" class="big-icon">
-    <h2 id="dTitle"></h2>
+    <h2 id="dTitle"></h2>  <!-- e.g. "Yono Rummy APK – Official Real Cash Rummy App" -->
+    
+    <!-- descriptive paragraph -->
+    <p id="dDesc" style="font-size:16px; margin:10px 0; padding:0 10px;"></p>
+    
+    <!-- bullet points (common for all) -->
+    <ul class="feature-list">
+      <li>Real Cash Games</li>
+      <li>Signup Bonus Eligible</li>
+      <li>Fast UPI Withdrawals</li>
+    </ul>
+    
+    <!-- rating, size, free badge, and bonus -->
     <div>
-      <span class="badge">⭐ <span id="dRating"></span></span>
-      <span class="badge">⬇ <span id="dSize"></span></span>
+      <span class="badge">⭐ <span id="dRating"></span> Ratings</span>
+      <span class="badge">⬇ <span id="dSize"></span> APK</span>
+      <span class="badge">🆓 Free to Join</span>
     </div>
-    <div class="badge" id="dBonus"></div>
+    <div class="badge" id="dBonus" style="margin-top:10px;"></div> <!-- bonus badge -->
+    
+    <!-- big download button -->
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
-    <button class="btn share" onclick="shareApp()">📤 Share App</button>
+    
+    <!-- install note -->
+    <div class="install-note" id="dNote"></div>
+    
+    <!-- social follow buttons (static, can be updated later) -->
+    <div class="social-flex">
+      <a href="#" class="social-btn whtsapp" target="_blank">📱 Follow WhatsApp Channel</a>
+      <a href="#" class="social-btn telegram" target="_blank">✈️ Join Telegram</a>
+    </div>
   </div>
+  
   <!-- All apps quick list (A→Z) below detail -->
   <div class="card">
     <h3>📱 All Available Apps (A→Z)</h3>
@@ -246,15 +308,15 @@ All Yono App Store
 <div class="footer">© 2026 All Yono App Store</div>
 
 <script>
-// App data with rating, size, bonus, link
+// App data with rating, size, bonus, link, and we also need a game type for description
 const apps = [
-  {id:1, name:"Teen Patti Master", img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png", rating:"4.1", size:"58–100MB", bonus:"43", link:"https://www.earntp.com/gold/jexzd"},
-  {id:2, name:"101Z Skill Game", img:"https://i.ibb.co/9mWjVf1m/101z.png", rating:"4.2", size:"25MB", bonus:"50", link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
-  {id:3, name:"Yono Rummy", img:"https://i.ibb.co/xSW9DRBr/yonorummy.png", rating:"4.5", size:"61MB", bonus:"50", link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
-  {id:4, name:"Teen Patti Old", img:"https://i.ibb.co/zWSRGNJD/teenpatti.png", rating:"4.3", size:"40MB", bonus:"35", link:"https://www.earntp.com/m/jm9n7r"},
-  {id:5, name:"RummySe", img:"https://i.ibb.co/CpV12LMX/rummyse.png", rating:"4.1", size:"28MB", bonus:"30", link:"https://www.rummyse.com/share/88Guqxy"},
-  {id:6, name:"RummySe Old", img:"https://i.ibb.co/gMpkG28x/rummyse-old.png", rating:"4.0", size:"26MB", bonus:"25", link:"https://www.rummyse.com/share/88G.xxy"},
-  {id:7, name:"Good Slots", img:"https://i.ibb.co/F4mzg3fx/goodslots.png", rating:"4.2", size:"10MB", bonus:"45", link:"https://sharegoodslots.xyz"}
+  {id:1, name:"Teen Patti Master", type:"Teen Patti", img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png", rating:"4.1", size:"58–100MB", bonus:"43", link:"https://www.earntp.com/gold/jexzd"},
+  {id:2, name:"101Z Skill Game", type:"Skill Game", img:"https://i.ibb.co/9mWjVf1m/101z.png", rating:"4.2", size:"25MB", bonus:"50", link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+  {id:3, name:"Yono Rummy", type:"Rummy", img:"https://i.ibb.co/xSW9DRBr/yonorummy.png", rating:"4.5", size:"61MB", bonus:"50", link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+  {id:4, name:"Teen Patti Old", type:"Teen Patti", img:"https://i.ibb.co/zWSRGNJD/teenpatti.png", rating:"4.3", size:"40MB", bonus:"35", link:"https://www.earntp.com/m/jm9n7r"},
+  {id:5, name:"RummySe", type:"Rummy", img:"https://i.ibb.co/CpV12LMX/rummyse.png", rating:"4.1", size:"28MB", bonus:"30", link:"https://www.rummyse.com/share/88Guqxy"},
+  {id:6, name:"RummySe Old", type:"Rummy", img:"https://i.ibb.co/gMpkG28x/rummyse-old.png", rating:"4.0", size:"26MB", bonus:"25", link:"https://www.rummyse.com/share/88G.xxy"},
+  {id:7, name:"Good Slots", type:"Slots", img:"https://i.ibb.co/F4mzg3fx/goodslots.png", rating:"4.2", size:"10MB", bonus:"45", link:"https://sharegoodslots.xyz"}
 ];
 
 const home = document.getElementById("home");
@@ -292,12 +354,20 @@ function renderHome() {
 // Open detail tab for a specific app
 function openApp(id) {
   const app = apps.find(x => x.id === id);
-  // populate detail section
+  
+  // Big icon
   document.getElementById('dImg').src = app.img;
-  document.getElementById('dTitle').innerText = app.name + " New Update APK";
+  // Title: e.g. "Yono Rummy APK – Official Real Cash Rummy App"
+  document.getElementById('dTitle').innerText = `${app.name} APK – Official Real Cash ${app.type} App`;
+  // Description paragraph
+  document.getElementById('dDesc').innerText = `Play online ${app.type}, card games for real cash on the official ${app.name} app.`;
+  // Rating, size, bonus
   document.getElementById('dRating').innerText = app.rating;
   document.getElementById('dSize').innerText = app.size;
-  document.getElementById('dBonus').innerText = "🎁 Signup Bonus ₹" + app.bonus;
+  document.getElementById('dBonus').innerText = `🎁 Signup Bonus ₹${app.bonus} (approx.)`;
+  // Install note (dynamic with app name)
+  document.getElementById('dNote').innerHTML = `Use the button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
+  // Set download button link
   document.getElementById('dDownload').onclick = () => window.open(app.link, "_blank");
   
   // render the quick list of all apps below (sorted A→Z)
@@ -328,14 +398,12 @@ function renderAllApps() {
   });
 }
 
-// Share function (Telegram)
-function shareApp() {
-  const msg = "🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 " + location.href;
-  window.open("https://t.me/share/url?url=" + encodeURIComponent(msg));
-}
-
 // Initial render
 renderHome();
+
+// WhatsApp & Telegram links (placeholders – update as needed)
+document.querySelector('.whtsapp').href = "https://whatsapp.com/channel/...";
+document.querySelector('.telegram').href = "https://t.me/...";
 </script>
 
 </body>
