@@ -1,4 +1,14 @@
 
+Here is the final HTML code with the requested refinements:
+
+· Detail page download button is now slightly smaller (width reduced from 280px to 240px, padding reduced) and has a vibrant HD gradient (green to dark green) with a subtle shadow for a modern look.
+· All app information (rating, size, bonus, description) is accurate and dynamically loaded for each app.
+· Home page download buttons remain uniform in color (blue), and the mini buttons in the A→Z list also use the same uniform blue.
+· The layout matches the image: "FREE Free to Join" badge, signup bonus, install note, and social buttons are all present.
+
+The code is complete, responsive, and ready to use.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -162,27 +172,27 @@
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* Detail page big SOLID download button (different color) */
-    .solid-download {
-      background: #1e7e34;  /* solid green, distinct */
+    /* Detail page HD gradient download button (smaller, vibrant) */
+    .hd-download {
+      background: linear-gradient(145deg, #2ecc71, #1e7e34);
       color: white;
       border: none;
-      width: 280px;
-      padding: 18px 10px;
+      width: 240px;  /* slightly smaller */
+      padding: 14px 10px;  /* reduced padding */
       border-radius: 60px;
       font-weight: 900;
-      font-size: 20px;
+      font-size: 18px;  /* slightly smaller font */
       cursor: pointer;
-      box-shadow: 0 10px 0 #0c4a1e, 0 10px 25px rgba(0,0,0,0.3);
+      box-shadow: 0 8px 0 #0c4a1e, 0 8px 20px rgba(0,0,0,0.3);
       transition: 0.1s ease;
       margin: 20px auto;
       display: block;
       border: 2px solid rgba(255,255,255,0.5);
       letter-spacing: 1px;
     }
-    .solid-download:active {
-      transform: translateY(6px);
-      box-shadow: 0 4px 0 #0c4a1e, 0 10px 20px rgba(0,0,0,0.2);
+    .hd-download:active {
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #0c4a1e, 0 8px 15px rgba(0,0,0,0.2);
     }
 
     .center {
@@ -310,6 +320,10 @@
         width: 100%;
         text-align: center;
       }
+      .hd-download {
+        width: 100%;
+        max-width: 240px;
+      }
     }
   </style>
 </head>
@@ -353,8 +367,8 @@
       </div>
       <div class="badge" id="dBonus" style="margin-top:10px;"></div>
 
-      <!-- BIG SOLID DOWNLOAD BUTTON (different color) -->
-      <button class="solid-download" id="dDownload">⬇ DOWNLOAD APK</button>
+      <!-- HD GRADIENT DOWNLOAD BUTTON (smaller, vibrant) -->
+      <button class="hd-download" id="dDownload">⬇ DOWNLOAD APK</button>
 
       <div class="install-note" id="dNote"></div>
 
@@ -433,6 +447,9 @@
 
   // ---------- RENDER HOME PAGE (with UNIFORM download buttons) ----------
   function renderHome() {
+    // Keep the disclaimer card (already in HTML) but we need to inject apps after it.
+    // Clear existing dynamic content but leave the first disclaimer card static.
+    // For simplicity, we'll rebuild homeDiv entirely.
     homeDiv.innerHTML = `
       <div class="card">
         <div class="disclaimer-head">Disclaimer</div>
@@ -469,7 +486,7 @@
     document.getElementById('dRating').innerText = app.rating;
     document.getElementById('dSize').innerText = app.size;
     document.getElementById('dBonus').innerText = `🎁 Signup Bonus: ₹${app.bonus} (approx.)`;
-    document.getElementById('dNote').innerHTML = `Use the solid green button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
+    document.getElementById('dNote').innerHTML = `Use the HD gradient button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
     // Render the A→Z list of all apps
