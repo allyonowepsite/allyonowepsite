@@ -1,43 +1,43 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Yono App Store – HD Game Referral</title>
-  <meta name="robots" content="index, follow">
-  <meta name="description" content="All Yono App Store – Trusted Yono, Teen Patti & Rummy Apps. 18+ Only.">
-  <meta name="theme-color" content="#0f5cff">
+  <title>All Yono App Store – HD Download</title>
+  <meta name="description" content="Fast view of Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots and more. 18+ only.">
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', Roboto, system-ui, sans-serif;
     }
 
     body {
-      font-family: 'Segoe UI', Roboto, Arial, sans-serif;
-      background: linear-gradient(135deg, #e0e7ff, #f8fbff);
+      background: linear-gradient(145deg, #edf2fb 0%, #dae6f5 100%);
       min-height: 100vh;
     }
 
-    /* Header with glow */
+    /* Glowing header */
     .header {
-      background: linear-gradient(90deg, #0f5cff, #00c6ff, #6a5cff);
+      background: linear-gradient(90deg, #0b5ed7, #0f5cff, #6a5cff);
       color: white;
-      padding: 14px 10px;
-      font-size: 22px;
-      font-weight: 900;
+      padding: 16px 10px;
+      font-size: 24px;
+      font-weight: 800;
       text-align: center;
+      letter-spacing: 0.5px;
       position: sticky;
       top: 0;
       z-index: 100;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      animation: headerGlow 3s infinite ease-in-out;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      animation: softGlow 2.5s infinite ease-in-out;
     }
-    @keyframes headerGlow {
-      0% { box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 5px #fff; }
-      50% { box-shadow: 0 15px 40px rgba(255,215,0,0.5), 0 0 20px #ffd966; }
-      100% { box-shadow: 0 10px 30px rgba(0,0,0,0.35), 0 0 5px #fff; }
+    @keyframes softGlow {
+      0% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+      50% { box-shadow: 0 12px 35px #ffb347, 0 0 15px #ffb347; }
+      100% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
     }
 
     .menu {
@@ -63,8 +63,8 @@
 
     .container {
       max-width: 1150px;
-      margin: 0 auto;
-      padding: 14px;
+      margin: 20px auto;
+      padding: 0 15px;
     }
 
     /* Tabs */
@@ -75,75 +75,104 @@
       display: block;
     }
 
-    /* Cards */
+    /* Card style */
     .card {
       background: rgba(255,255,255,0.9);
+      backdrop-filter: blur(4px);
       margin: 18px 0;
-      padding: 18px;
-      border-radius: 26px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.18), inset 0 1px 0 rgba(255,255,255,0.7);
-      backdrop-filter: blur(8px);
+      padding: 18px 20px;
+      border-radius: 28px;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15), inset 0 1px 4px #fff;
+      border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* List layout */
-    .list {
+    /* Home list layout */
+    .app-row {
       display: flex;
-      gap: 14px;
       align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
     }
     .rank {
       background: linear-gradient(135deg, #ff9800, #ff5722);
       color: white;
-      width: 36px;
-      height: 36px;
-      border-radius: 12px;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
       display: flex;
       align-items: center;
       justify-content: center;
       font-weight: 900;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+      font-size: 18px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
     }
     .icon img {
-      width: 68px;
-      height: 68px;
-      border-radius: 20px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+    .details {
+      flex: 1;
     }
     .details h3 {
-      margin: 0;
       font-size: 18px;
       font-weight: 900;
+      margin-bottom: 4px;
     }
-    .red {
-      color: #e53935;
-      font-weight: 900;
+    .bonus {
+      color: #c62828;
+      font-weight: 800;
     }
-    .green {
+    .min-withdraw {
       color: #2e7d32;
-      font-weight: 900;
+      font-weight: 700;
     }
 
-    /* Buttons */
-    .btn {
-      border: none;
-      cursor: pointer;
-      font-weight: 900;
-      border-radius: 18px;
-      transition: 0.2s;
-    }
-    .download {
-      width: 170px;
-      padding: 12px;
-      font-size: 14px;
+    /* Green download button (home) */
+    .download-home {
       background: linear-gradient(180deg, #00e676, #00b248);
       color: white;
-      box-shadow: 0 8px 0 #008c3a;
+      border: none;
+      padding: 12px 22px;
+      border-radius: 40px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 7px 0 #008c3a;
+      transition: 0.1s ease;
+      text-decoration: none;
+      display: inline-block;
+      border: 1px solid rgba(255,255,255,0.3);
     }
-    .download:active {
-      transform: translateY(4px);
+    .download-home:active {
+      transform: translateY(5px);
+      box-shadow: 0 2px 0 #008c3a;
     }
 
-    /* Detail page styles */
+    /* Detail page big green HD button */
+    .big-download {
+      background: linear-gradient(180deg, #00e676, #00b248);
+      color: white;
+      border: none;
+      width: 280px;
+      padding: 18px 10px;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 12px 0 #008c3a, 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.1s ease;
+      margin: 20px auto;
+      display: block;
+      border: 2px solid rgba(255,255,255,0.5);
+      letter-spacing: 1px;
+    }
+    .big-download:active {
+      transform: translateY(8px);
+      box-shadow: 0 4px 0 #008c3a, 0 10px 20px rgba(0,0,0,0.2);
+    }
+
     .center {
       text-align: center;
     }
@@ -161,15 +190,6 @@
       border-radius: 22px;
       font-weight: 900;
       margin: 6px;
-    }
-    .main-download {
-      width: 260px;
-      padding: 16px;
-      font-size: 17px;
-      background: linear-gradient(180deg, #ff3d00, #c62828);
-      color: white;
-      box-shadow: 0 10px 0 #8e0000;
-      margin: 14px auto 10px;
     }
     .feature-list {
       list-style: none;
@@ -189,8 +209,8 @@
     }
     .install-note {
       background: #f1f8fe;
-      padding: 12px;
-      border-radius: 16px;
+      padding: 14px;
+      border-radius: 20px;
       margin: 20px 0;
       font-size: 15px;
       color: #014361;
@@ -213,42 +233,78 @@
       align-items: center;
       gap: 8px;
     }
-    .whtsapp { background: #25D366; color: white; }
-    .telegram { background: #0088cc; color: white; }
+    .whtsapp { background: #25D366; }
+    .telegram { background: #0088cc; }
 
-    /* Warning footer */
-    .site-warning {
+    /* Mini download inside all apps list */
+    .mini-download {
+      background: linear-gradient(180deg, #00e676, #00b248);
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #008c3a;
+      transition: 0.1s;
+    }
+    .mini-download:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #008c3a;
+    }
+
+    /* All apps list inside detail */
+    .all-app-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+    .all-app-item .icon-small img {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
+    }
+
+    /* Warning box */
+    .warning {
       background: #fff3cd;
-      border-left: 6px solid #ff5722;
-      padding: 18px;
-      margin: 20px;
-      border-radius: 16px;
-      font-weight: 900;
-      color: #7a1c00;
-      line-height: 1.6;
-      max-width: 1150px;
-      margin-left: auto;
-      margin-right: auto;
+      border-left: 8px solid #ff5722;
+      padding: 20px 18px;
+      margin: 30px 0 20px;
+      border-radius: 22px;
+      font-weight: 600;
+      color: #4a1c00;
+      line-height: 1.7;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
     }
 
     .footer {
       text-align: center;
       padding: 20px;
-      color: #555;
-      font-weight: 900;
+      font-weight: 600;
+      color: #2c3e50;
+      border-top: 1px solid rgba(0,0,0,0.1);
+      background: rgba(255,255,255,0.3);
     }
 
-    /* About/Privacy/Disclaimer pages simple style */
-    .info-card p {
-      margin: 12px 0;
-      line-height: 1.5;
+    /* Responsive */
+    @media (max-width: 600px) {
+      .app-row {
+        gap: 12px;
+      }
+      .download-home {
+        width: 100%;
+        text-align: center;
+      }
     }
   </style>
 </head>
 <body>
 
 <div class="header">
-  All Yono App Store
+  ⚡ All Yono App Store ⚡
   <div class="menu">
     <a onclick="openTab('home')">Home</a>
     <a onclick="openTab('about')">About</a>
@@ -258,24 +314,20 @@
 </div>
 
 <div class="container">
-  <!-- HOME TAB (list of apps) -->
+  <!-- HOME TAB (list of all apps) -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB (selected app info + all apps A→Z) -->
+  <!-- DETAIL TAB (shows selected app + all apps) -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
       <h2 id="dTitle"></h2>
-      <p id="dDesc" style="font-size:16px; margin:10px 0; padding:0 10px;"></p>
-      
-      <!-- bullet points (same for all) -->
+      <p id="dDesc" style="font-size:16px; margin:10px 0;"></p>
       <ul class="feature-list">
         <li>Real Cash Games</li>
         <li>Signup Bonus Eligible</li>
         <li>Fast UPI Withdrawals</li>
       </ul>
-
-      <!-- rating, size, free badge -->
       <div>
         <span class="badge">⭐ <span id="dRating"></span> Ratings</span>
         <span class="badge">⬇ <span id="dSize"></span> APK</span>
@@ -283,29 +335,27 @@
       </div>
       <div class="badge" id="dBonus" style="margin-top:10px;"></div>
 
-      <!-- main download button -->
-      <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
+      <!-- BIG GREEN HD DOWNLOAD BUTTON -->
+      <button class="big-download" id="dDownload">⬇ DOWNLOAD APK</button>
 
-      <!-- install note -->
       <div class="install-note" id="dNote"></div>
 
-      <!-- social follow (static, update links later) -->
       <div class="social-flex">
-        <a href="#" class="social-btn whtsapp" target="_blank">📱 Follow WhatsApp Channel</a>
+        <a href="#" class="social-btn whtsapp" target="_blank">📱 Follow WhatsApp</a>
         <a href="#" class="social-btn telegram" target="_blank">✈️ Join Telegram</a>
       </div>
     </div>
 
     <!-- All apps A→Z list -->
     <div class="card">
-      <h3>📱 All Available Apps (A → Z)</h3>
-      <div id="allApps"></div>
+      <h3>📱 All Available Apps (A→Z)</h3>
+      <div id="allAppsList"></div>
     </div>
   </div>
 
   <!-- ABOUT TAB -->
   <div id="about" class="tab">
-    <div class="card info-card">
+    <div class="card">
       <h2>About Us</h2>
       <p>All Yono App Store is an independent referral platform. We do not own or operate any of the listed apps. This site is for informational purposes only.</p>
     </div>
@@ -313,7 +363,7 @@
 
   <!-- PRIVACY TAB -->
   <div id="privacy" class="tab">
-    <div class="card info-card">
+    <div class="card">
       <h2>Privacy Policy</h2>
       <p>We do not collect any personal data. All links are to third-party websites. Users visit at their own responsibility.</p>
     </div>
@@ -321,16 +371,16 @@
 
   <!-- DISCLAIMER TAB -->
   <div id="disclaimer" class="tab">
-    <div class="card info-card">
+    <div class="card">
       <h2>Disclaimer</h2>
       <p>We do not host APK files. Real money games involve financial risk. This website is only for 18+ users. Please play responsibly.</p>
     </div>
   </div>
 </div>
 
-<!-- GLOBAL WARNING (shown outside tabs, always visible) -->
-<div class="site-warning">
-  ⚠️ IMPORTANT WARNING<br><br>
+<!-- Permanent warning box -->
+<div class="warning" style="max-width:1150px; margin:20px auto;">
+  ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
   • Only for 18+ users<br>
   • Real money games involve financial risk<br>
   • We do NOT host APK files<br>
@@ -338,11 +388,11 @@
 </div>
 
 <div class="footer">
-  © 2026 All Yono App Store
+  © 2026 All Yono App Store – HD Download
 </div>
 
 <script>
-  // ---------- APP DATA (from the images) ----------
+  // ---------- APP DATA (exactly as requested) ----------
   const apps = [
     { id:1, name:"Teen Patti Master",   type:"Teen Patti", img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png", rating:"4.1", size:"58–100MB", bonus:"43", link:"https://www.earntp.com/gold/jexzd" },
     { id:2, name:"101Z Skill Game",      type:"Skill Game", img:"https://i.ibb.co/9mWjVf1m/101z.png", rating:"4.2", size:"25MB", bonus:"50", link:"https://101z2.com/?code=Z9YJW6N9CJ8" },
@@ -353,10 +403,9 @@
     { id:7, name:"Good Slots",           type:"Slots", img:"https://i.ibb.co/F4mzg3fx/goodslots.png", rating:"4.2", size:"10MB", bonus:"45", link:"https://sharegoodslots.xyz" }
   ];
 
-  // references
-  const home = document.getElementById('home');
-  const detail = document.getElementById('detail');
-  const allAppsDiv = document.getElementById('allApps');
+  const homeDiv = document.getElementById('home');
+  const detailDiv = document.getElementById('detail');
+  const allAppsDiv = document.getElementById('allAppsList');
 
   // ---------- TAB SWITCHING ----------
   function openTab(tabId) {
@@ -365,76 +414,76 @@
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE (app list) ----------
+  // ---------- RENDER HOME PAGE (list with green download buttons) ----------
   function renderHome() {
-    home.innerHTML = '';
+    homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
-      home.innerHTML += `
+      homeDiv.innerHTML += `
         <div class="card">
-          <div class="list">
+          <div class="app-row">
             <div class="rank">${index+1}</div>
             <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
             <div class="details">
               <h3>${app.name}</h3>
-              <div class="red">Bonus ₹${app.bonus}</div>
-              <div class="green">Min Withdraw ₹100</div>
+              <div class="bonus">🔥 Bonus ₹${app.bonus}</div>
+              <div class="min-withdraw">💸 Min Withdraw ₹100</div>
             </div>
-          </div><br>
-          <button class="btn download" onclick="openApp(${app.id})">⬇ Download</button>
+            <button class="download-home" onclick="openApp(${app.id})">⬇ Download</button>
+          </div>
         </div>
       `;
     });
   }
 
-  // ---------- OPEN DETAIL PAGE FOR A SPECIFIC APP ----------
+  // ---------- OPEN DETAIL PAGE FOR SELECTED APP ----------
   function openApp(id) {
     const app = apps.find(a => a.id === id);
     if (!app) return;
 
-    // fill detail fields
+    // Fill detail fields
     document.getElementById('dImg').src = app.img;
     document.getElementById('dTitle').innerText = `${app.name} APK – Official Real Cash ${app.type} App`;
     document.getElementById('dDesc').innerText = `Play online ${app.type}, card games for real cash on the official ${app.name} app.`;
     document.getElementById('dRating').innerText = app.rating;
     document.getElementById('dSize').innerText = app.size;
     document.getElementById('dBonus').innerText = `🎁 Signup Bonus ₹${app.bonus} (approx.)`;
-    document.getElementById('dNote').innerHTML = `Use the button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
+    document.getElementById('dNote').innerHTML = `Use the big green button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
-    // render the A→Z list of all apps
+    // Render the A→Z list of all apps
     renderAllApps();
 
-    // switch to detail tab
+    // Switch to detail tab
     openTab('detail');
   }
 
   // ---------- RENDER ALL APPS (A→Z) INSIDE DETAIL TAB ----------
   function renderAllApps() {
-    // sort alphabetically
     const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
     allAppsDiv.innerHTML = '';
     sorted.forEach((app, idx) => {
       allAppsDiv.innerHTML += `
-        <div class="list" style="margin-bottom:14px">
-          <div class="rank">${idx+1}</div>
-          <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
-          <div class="details">
-            <h3>${app.name}</h3>
-            <div class="red">Bonus ₹${app.bonus}</div>
+        <div class="all-app-item">
+          <div class="rank" style="width:32px; height:32px; font-size:14px;">${idx+1}</div>
+          <div class="icon-small"><img src="${app.img}" alt="${app.name}" style="width:50px; height:50px; border-radius:14px;"></div>
+          <div style="flex:1;">
+            <strong>${app.name}</strong><br>
+            <span style="color:#c62828;">₹${app.bonus}</span>
           </div>
-          <button class="btn download" onclick="openApp(${app.id})">⬇</button>
+          <button class="mini-download" onclick="openApp(${app.id})">⬇</button>
         </div>
       `;
     });
   }
 
-  // ---------- INITIAL RENDER ----------
+  // Initialize home
   renderHome();
 
-  // (Optional) set social links – update as needed
-  document.querySelector('.whtsapp').href = 'https://whatsapp.com/channel/...';
-  document.querySelector('.telegram').href = 'https://t.me/...';
+  // Set placeholder social links (update if needed)
+  document.querySelector('.whtsapp').href = '#';
+  document.querySelector('.telegram').href = '#';
 </script>
 
 </body>
 </html>
+```
