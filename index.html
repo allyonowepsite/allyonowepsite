@@ -1,6 +1,4 @@
-Here is the final HTML code. It provides a fast, clean interface: on the home page, you see a list of all apps. Clicking the Download button on any card opens a dedicated detail page for that app, showing its rating, size, bonus, and a prominent download button (which takes you directly to the app link). Below the detail, a full list of all apps is displayed so you can quickly switch between them. The header has a premium animated glow, and the top light has been removed as requested. Everything is designed for a smooth, one‑click experience.
 
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -192,7 +190,7 @@ All Yono App Store
 <!-- HOME TAB (list of apps) -->
 <div id="home" class="tab active"></div>
 
-<!-- DETAIL TAB (selected app info + all apps list) -->
+<!-- DETAIL TAB (selected app info + all apps list A→Z) -->
 <div id="detail" class="tab">
   <div class="card center">
     <img id="dImg" class="big-icon">
@@ -205,9 +203,9 @@ All Yono App Store
     <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
     <button class="btn share" onclick="shareApp()">📤 Share App</button>
   </div>
-  <!-- All apps quick list below detail -->
+  <!-- All apps quick list (A→Z) below detail -->
   <div class="card">
-    <h3>📱 All Available Apps</h3>
+    <h3>📱 All Available Apps (A→Z)</h3>
     <div id="allApps"></div>
   </div>
 </div>
@@ -302,17 +300,20 @@ function openApp(id) {
   document.getElementById('dBonus').innerText = "🎁 Signup Bonus ₹" + app.bonus;
   document.getElementById('dDownload').onclick = () => window.open(app.link, "_blank");
   
-  // render the quick list of all apps below
+  // render the quick list of all apps below (sorted A→Z)
   renderAllApps();
   
   // switch to detail tab
   openTab('detail');
 }
 
-// Render the list of all apps inside detail tab (each with a mini download button that opens that app's detail)
+// Render the list of all apps inside detail tab (sorted alphabetically A→Z)
 function renderAllApps() {
+  // create a sorted copy (A to Z by name)
+  const sortedApps = [...apps].sort((a, b) => a.name.localeCompare(b.name));
+  
   allAppsDiv.innerHTML = "";
-  apps.forEach((a, i) => {
+  sortedApps.forEach((a, i) => {
     allAppsDiv.innerHTML += `
       <div class="list" style="margin-bottom:14px">
         <div class="rank">${i+1}</div>
