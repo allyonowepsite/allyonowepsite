@@ -1,4 +1,6 @@
+Here is the final HTML code. It provides a fast, clean interface: on the home page, you see a list of all apps. Clicking the Download button on any card opens a dedicated detail page for that app, showing its rating, size, bonus, and a prominent download button (which takes you directly to the app link). Below the detail, a full list of all apps is displayed so you can quickly switch between them. The header has a premium animated glow, and the top light has been removed as requested. Everything is designed for a smooth, one‑click experience.
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,21 +22,7 @@ font-family:Segoe UI,Arial;
 background:linear-gradient(135deg,#e0e7ff,#f8fbff);
 }
 
-/* 🔆 top light – a soft glowing bar (added exactly as requested) */
-.top-light {
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, #f9e79f, #f7dc6f, #f1c40f, #f7dc6f, #f9e79f);
-    box-shadow: 0 0 15px #f1c40f, 0 0 30px #f39c12;
-    animation: glowPulse 2s infinite ease-in-out;
-}
-@keyframes glowPulse {
-    0% { opacity: 0.7; box-shadow: 0 0 8px #f1c40f, 0 0 15px #f39c12; }
-    50% { opacity: 1; box-shadow: 0 0 18px #f7dc6f, 0 0 35px #f1c40f; }
-    100% { opacity: 0.7; box-shadow: 0 0 8px #f1c40f, 0 0 15px #f39c12; }
-}
-
-/* HEADER */
+/* HEADER – premium animated glow (HD look) */
 .header{
 background:linear-gradient(90deg,#0f5cff,#00c6ff,#6a5cff);
 color:#fff;
@@ -45,7 +33,14 @@ position:sticky;
 top:0;
 z-index:999;
 box-shadow:0 10px 30px rgba(0,0,0,.35);
+animation: headerGlow 3s infinite ease-in-out;
 }
+@keyframes headerGlow {
+    0% { box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 5px #fff; }
+    50% { box-shadow: 0 15px 40px rgba(255,215,0,0.5), 0 0 20px #ffd966; }
+    100% { box-shadow: 0 10px 30px rgba(0,0,0,.35), 0 0 5px #fff; }
+}
+
 .menu{
 display:flex;
 gap:18px;
@@ -126,6 +121,22 @@ box-shadow:0 8px 0 #008c3a;
 }
 .download:active{transform:translateY(4px)}
 
+/* detail page specific */
+.center{text-align:center}
+.big-icon{
+width:130px;height:130px;
+border-radius:30px;
+margin:10px auto;
+box-shadow:0 20px 35px rgba(0,0,0,.4);
+}
+.badge{
+display:inline-block;
+background:#eef2ff;
+padding:6px 16px;
+border-radius:22px;
+font-weight:900;
+margin:6px;
+}
 .main-download{
 width:260px;
 padding:16px;
@@ -142,22 +153,6 @@ font-size:16px;
 background:#229ED9;
 color:#fff;
 margin-top:10px;
-}
-
-.center{text-align:center}
-.big-icon{
-width:130px;height:130px;
-border-radius:30px;
-margin:10px auto;
-box-shadow:0 20px 35px rgba(0,0,0,.4);
-}
-.badge{
-display:inline-block;
-background:#eef2ff;
-padding:6px 16px;
-border-radius:22px;
-font-weight:900;
-margin:6px;
 }
 
 /* WARNING */
@@ -181,11 +176,7 @@ font-weight:900;
 }
 </style>
 </head>
-
 <body>
-
-<!-- 🔆 top light added exactly as instructed – a single light element at the very top -->
-<div class="top-light" aria-hidden="true"></div>
 
 <div class="header">
 All Yono App Store
@@ -198,158 +189,154 @@ All Yono App Store
 </div>
 
 <div class="container">
-
-<!-- HOME -->
+<!-- HOME TAB (list of apps) -->
 <div id="home" class="tab active"></div>
 
-<!-- APP DETAIL -->
+<!-- DETAIL TAB (selected app info + all apps list) -->
 <div id="detail" class="tab">
-<div class="card center">
-<img id="dImg" class="big-icon">
-<h2 id="dTitle"></h2>
-
-<div>
-<span class="badge">⭐ <span id="dRating"></span></span>
-<span class="badge">⬇ <span id="dSize"></span></span>
+  <div class="card center">
+    <img id="dImg" class="big-icon">
+    <h2 id="dTitle"></h2>
+    <div>
+      <span class="badge">⭐ <span id="dRating"></span></span>
+      <span class="badge">⬇ <span id="dSize"></span></span>
+    </div>
+    <div class="badge" id="dBonus"></div>
+    <button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
+    <button class="btn share" onclick="shareApp()">📤 Share App</button>
+  </div>
+  <!-- All apps quick list below detail -->
+  <div class="card">
+    <h3>📱 All Available Apps</h3>
+    <div id="allApps"></div>
+  </div>
 </div>
 
-<div class="badge" id="dBonus"></div>
-
-<button class="btn main-download" id="dDownload">⬇ DOWNLOAD APK</button>
-<button class="btn share" onclick="shareApp()">📤 Share App</button>
-</div>
-
-<div class="card">
-<h3>All Available Apps</h3>
-<div id="allApps"></div>
-</div>
-</div>
-
-<!-- ABOUT -->
+<!-- ABOUT TAB -->
 <div id="about" class="tab">
-<div class="card">
-<h2>About Us</h2>
-<p>
-All Yono App Store ek independent referral platform hai.
-Hum kisi bhi game ke owner ya developer nahi hain.
-Ye site sirf information aur referral purpose ke liye hai.
-</p>
-</div>
+  <div class="card">
+    <h2>About Us</h2>
+    <p>All Yono App Store ek independent referral platform hai.<br>Hum kisi bhi game ke owner ya developer nahi hain.<br>Ye site sirf information aur referral purpose ke liye hai.</p>
+  </div>
 </div>
 
-<!-- PRIVACY -->
+<!-- PRIVACY TAB -->
 <div id="privacy" class="tab">
-<div class="card">
-<h2>Privacy Policy</h2>
-<p>
-Hum koi personal data collect nahi karte.
-Sabhi links third-party websites ke hain.
-User apni responsibility par visit karta hai.
-</p>
-</div>
+  <div class="card">
+    <h2>Privacy Policy</h2>
+    <p>Hum koi personal data collect nahi karte.<br>Sabhi links third-party websites ke hain.<br>User apni responsibility par visit karta hai.</p>
+  </div>
 </div>
 
-<!-- DISCLAIMER -->
+<!-- DISCLAIMER TAB -->
 <div id="disclaimer" class="tab">
-<div class="card">
-<h2>Disclaimer</h2>
-<p>
-Hum koi APK host nahi karte.
-Real money games mein financial risk hota hai.
-Ye website sirf 18+ users ke liye hai.
-</p>
+  <div class="card">
+    <h2>Disclaimer</h2>
+    <p>Hum koi APK host nahi karte.<br>Real money games mein financial risk hota hai.<br>Ye website sirf 18+ users ke liye hai.</p>
+  </div>
 </div>
-</div>
-
 </div>
 
 <div class="site-warning">
-⚠️ IMPORTANT WARNING  
-<br><br>
-• Only for 18+ users  
-• Real money games involve financial risk  
-• We do NOT host APK files  
-• User is responsible for profit or loss  
+⚠️ IMPORTANT WARNING<br><br>
+• Only for 18+ users<br>
+• Real money games involve financial risk<br>
+• We do NOT host APK files<br>
+• User is responsible for profit or loss
 </div>
 
 <div class="footer">© 2026 All Yono App Store</div>
 
 <script>
-const apps=[
-{id:1,name:"Teen Patti Master",img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",rating:"4.1",size:"58–100MB",bonus:"43",link:"https://www.earntp.com/gold/jexzd"},
-{id:2,name:"101Z Skill Game",img:"https://i.ibb.co/9mWjVf1m/101z.png",rating:"4.2",size:"25MB",bonus:"50",link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
-{id:3,name:"Yono Rummy",img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",rating:"4.5",size:"61MB",bonus:"50",link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
-{id:4,name:"Teen Patti Old",img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",rating:"4.3",size:"40MB",bonus:"35",link:"https://www.earntp.com/m/jm9n7r"},
-{id:5,name:"RummySe",img:"https://i.ibb.co/CpV12LMX/rummyse.png",rating:"4.1",size:"28MB",bonus:"30",link:"https://www.rummyse.com/share/88Guqxy"},
-{id:6,name:"RummySe Old",img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",rating:"4.0",size:"26MB",bonus:"25",link:"https://www.rummyse.com/share/88G.xxy"},
-{id:7,name:"Good Slots",img:"https://i.ibb.co/F4mzg3fx/goodslots.png",rating:"4.2",size:"10MB",bonus:"45",link:"https://sharegoodslots.xyz"}
+// App data with rating, size, bonus, link
+const apps = [
+  {id:1, name:"Teen Patti Master", img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png", rating:"4.1", size:"58–100MB", bonus:"43", link:"https://www.earntp.com/gold/jexzd"},
+  {id:2, name:"101Z Skill Game", img:"https://i.ibb.co/9mWjVf1m/101z.png", rating:"4.2", size:"25MB", bonus:"50", link:"https://101z2.com/?code=Z9YJW6N9CJ8"},
+  {id:3, name:"Yono Rummy", img:"https://i.ibb.co/xSW9DRBr/yonorummy.png", rating:"4.5", size:"61MB", bonus:"50", link:"https://yonorummy009.com/?code=VIP17W6WRJE"},
+  {id:4, name:"Teen Patti Old", img:"https://i.ibb.co/zWSRGNJD/teenpatti.png", rating:"4.3", size:"40MB", bonus:"35", link:"https://www.earntp.com/m/jm9n7r"},
+  {id:5, name:"RummySe", img:"https://i.ibb.co/CpV12LMX/rummyse.png", rating:"4.1", size:"28MB", bonus:"30", link:"https://www.rummyse.com/share/88Guqxy"},
+  {id:6, name:"RummySe Old", img:"https://i.ibb.co/gMpkG28x/rummyse-old.png", rating:"4.0", size:"26MB", bonus:"25", link:"https://www.rummyse.com/share/88G.xxy"},
+  {id:7, name:"Good Slots", img:"https://i.ibb.co/F4mzg3fx/goodslots.png", rating:"4.2", size:"10MB", bonus:"45", link:"https://sharegoodslots.xyz"}
 ];
 
-const home=document.getElementById("home");
-const allApps=document.getElementById("allApps");
+const home = document.getElementById("home");
+const detail = document.getElementById("detail");
+const allAppsDiv = document.getElementById("allApps");
 
-function openTab(id){
-document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
-document.getElementById(id).classList.add('active');
-window.scrollTo(0,0);
+// Tab switching
+function openTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  window.scrollTo(0, 0);
 }
 
-function renderHome(){
-home.innerHTML="";
-apps.forEach((a,i)=>{
-home.innerHTML+=`
-<div class="card">
-<div class="list">
-<div class="rank">${i+1}</div>
-<div class="icon"><img src="${a.img}"></div>
-<div class="details">
-<h3>${a.name}</h3>
-<div class="red">Bonus ₹${a.bonus}</div>
-<div class="green">Min Withdraw ₹100</div>
-</div>
-</div><br>
-<button class="btn download" onclick="openApp(${a.id})">⬇ Download</button>
-</div>`;
-});
+// Render home page – each card has a Download button that opens detail
+function renderHome() {
+  home.innerHTML = "";
+  apps.forEach((a, i) => {
+    home.innerHTML += `
+      <div class="card">
+        <div class="list">
+          <div class="rank">${i+1}</div>
+          <div class="icon"><img src="${a.img}" alt="${a.name}"></div>
+          <div class="details">
+            <h3>${a.name}</h3>
+            <div class="red">Bonus ₹${a.bonus}</div>
+            <div class="green">Min Withdraw ₹100</div>
+          </div>
+        </div><br>
+        <button class="btn download" onclick="openApp(${a.id})">⬇ Download</button>
+      </div>
+    `;
+  });
 }
 
-function openApp(id){
-const app=apps.find(x=>x.id===id);
-openTab('detail');
-dImg.src=app.img;
-dTitle.innerText=app.name+" New Update APK";
-dRating.innerText=app.rating;
-dSize.innerText=app.size;
-dBonus.innerText="🎁 Signup Bonus ₹"+app.bonus;
-dDownload.onclick=()=>window.open(app.link,"_blank");
-renderAllApps();
+// Open detail tab for a specific app
+function openApp(id) {
+  const app = apps.find(x => x.id === id);
+  // populate detail section
+  document.getElementById('dImg').src = app.img;
+  document.getElementById('dTitle').innerText = app.name + " New Update APK";
+  document.getElementById('dRating').innerText = app.rating;
+  document.getElementById('dSize').innerText = app.size;
+  document.getElementById('dBonus').innerText = "🎁 Signup Bonus ₹" + app.bonus;
+  document.getElementById('dDownload').onclick = () => window.open(app.link, "_blank");
+  
+  // render the quick list of all apps below
+  renderAllApps();
+  
+  // switch to detail tab
+  openTab('detail');
 }
 
-function renderAllApps(){
-allApps.innerHTML="";
-apps.forEach((a,i)=>{
-allApps.innerHTML+=`
-<div class="list" style="margin-bottom:14px">
-<div class="rank">${i+1}</div>
-<div class="icon"><img src="${a.img}"></div>
-<div class="details">
-<h3>${a.name}</h3>
-<div class="red">Bonus ₹${a.bonus}</div>
-</div>
-<button class="btn download" onclick="openApp(${a.id})">⬇</button>
-</div>`;
-});
+// Render the list of all apps inside detail tab (each with a mini download button that opens that app's detail)
+function renderAllApps() {
+  allAppsDiv.innerHTML = "";
+  apps.forEach((a, i) => {
+    allAppsDiv.innerHTML += `
+      <div class="list" style="margin-bottom:14px">
+        <div class="rank">${i+1}</div>
+        <div class="icon"><img src="${a.img}" alt="${a.name}"></div>
+        <div class="details">
+          <h3>${a.name}</h3>
+          <div class="red">Bonus ₹${a.bonus}</div>
+        </div>
+        <button class="btn download" onclick="openApp(${a.id})">⬇</button>
+      </div>
+    `;
+  });
 }
 
-function shareApp(){
-const msg="🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 "+location.href;
-window.open("https://t.me/share/url?url="+encodeURIComponent(msg));
+// Share function (Telegram)
+function shareApp() {
+  const msg = "🔥 Download Latest Yono & Teen Patti Apps with Bonus!\n👉 " + location.href;
+  window.open("https://t.me/share/url?url=" + encodeURIComponent(msg));
 }
 
+// Initial render
 renderHome();
 </script>
 
 </body>
 </html>
 ```
-
