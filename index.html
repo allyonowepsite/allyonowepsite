@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Yono App Store – HD Download</title>
-  <meta name="description" content="Fast view of Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots and more. 18+ only.">
+  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots and more. 18+ only.">
   <style>
     * {
       margin: 0;
@@ -86,12 +86,25 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
+    /* Disclaimer heading */
+    .disclaimer-head {
+      font-size: 22px;
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      color: #111;
+    }
+
     /* Home list layout */
     .app-row {
       display: flex;
       align-items: center;
       gap: 18px;
       flex-wrap: wrap;
+      border-bottom: 1px dashed #ccc;
+      padding: 12px 0;
+    }
+    .app-row:last-child {
+      border-bottom: none;
     }
     .rank {
       background: linear-gradient(135deg, #ff9800, #ff5722);
@@ -129,28 +142,29 @@
       font-weight: 700;
     }
 
-    /* SMALL colored download buttons (home page) */
-    .small-download {
-      border: none;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 14px;
-      cursor: pointer;
-      box-shadow: 0 4px 0 rgba(0,0,0,0.2);
-      transition: 0.1s ease;
+    /* UNIFORM download button for home page (same color) */
+    .uniform-download {
+      background: #0f5cff;  /* consistent blue */
       color: white;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 40px;
+      font-weight: 700;
+      font-size: 15px;
+      cursor: pointer;
+      box-shadow: 0 5px 0 #0a3c9e;
+      transition: 0.1s ease;
       border: 1px solid rgba(255,255,255,0.3);
       white-space: nowrap;
     }
-    .small-download:active {
-      transform: translateY(3px);
-      box-shadow: 0 1px 0 rgba(0,0,0,0.2);
+    .uniform-download:active {
+      transform: translateY(4px);
+      box-shadow: 0 1px 0 #0a3c9e;
     }
 
     /* Detail page big SOLID download button (different color) */
     .solid-download {
-      background: #1e7e34;  /* solid green, distinct from home colors */
+      background: #1e7e34;  /* solid green, distinct */
       color: white;
       border: none;
       width: 280px;
@@ -234,9 +248,9 @@
     .whtsapp { background: #25D366; }
     .telegram { background: #0088cc; }
 
-    /* Mini download inside all apps list (keep as green arrow) */
+    /* Mini download inside all apps list (uniform color) */
     .mini-download {
-      background: linear-gradient(180deg, #00e676, #00b248);
+      background: #0f5cff;  /* same uniform blue */
       color: white;
       border: none;
       padding: 8px 16px;
@@ -244,12 +258,12 @@
       font-weight: 800;
       font-size: 14px;
       cursor: pointer;
-      box-shadow: 0 5px 0 #008c3a;
+      box-shadow: 0 5px 0 #0a3c9e;
       transition: 0.1s;
     }
     .mini-download:active {
       transform: translateY(4px);
-      box-shadow: 0 1px 0 #008c3a;
+      box-shadow: 0 1px 0 #0a3c9e;
     }
 
     /* All apps list inside detail */
@@ -292,7 +306,7 @@
       .app-row {
         gap: 12px;
       }
-      .small-download {
+      .uniform-download {
         width: 100%;
         text-align: center;
       }
@@ -313,7 +327,13 @@
 
 <div class="container">
   <!-- HOME TAB (list of all apps) -->
-  <div id="home" class="tab active"></div>
+  <div id="home" class="tab active">
+    <div class="card">
+      <div class="disclaimer-head">Disclaimer</div>
+      <p style="margin-top:5px;">This website is for informational purposes only. 18+ only.</p>
+    </div>
+    <!-- Apps will be injected here by JavaScript -->
+  </div>
 
   <!-- DETAIL TAB (shows selected app + all apps) -->
   <div id="detail" class="tab">
@@ -401,17 +421,6 @@
     { id:7, name:"Good Slots",           type:"Slots", img:"https://i.ibb.co/F4mzg3fx/goodslots.png", rating:"4.2", size:"10MB", bonus:"45", link:"https://sharegoodslots.xyz" }
   ];
 
-  // Unique colors for each app (alag alag) – used on home page small buttons
-  const colorMap = {
-    1: '#1e4fd9', // blue
-    2: '#d94e1e', // orange-red
-    3: '#28a745', // green
-    4: '#b71c9c', // purple
-    5: '#d9a11e', // golden
-    6: '#c2185b', // pink
-    7: '#007b8f'  // teal
-  };
-
   const homeDiv = document.getElementById('home');
   const allAppsDiv = document.getElementById('allAppsList');
 
@@ -422,11 +431,15 @@
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE (with SMALL colored download buttons) ----------
+  // ---------- RENDER HOME PAGE (with UNIFORM download buttons) ----------
   function renderHome() {
-    homeDiv.innerHTML = '';
+    homeDiv.innerHTML = `
+      <div class="card">
+        <div class="disclaimer-head">Disclaimer</div>
+        <p style="margin-top:5px;">This website is for informational purposes only. 18+ only.</p>
+      </div>
+    `;
     apps.forEach((app, index) => {
-      const btnColor = colorMap[app.id] || '#0d6efd';
       homeDiv.innerHTML += `
         <div class="card">
           <div class="app-row">
@@ -434,10 +447,10 @@
             <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
             <div class="details">
               <h3>${app.name}</h3>
-              <div class="bonus">🔥 Bonus ₹${app.bonus}</div>
-              <div class="min-withdraw">💸 Min Withdraw ₹100</div>
+              <div class="bonus">🔥 Bonus: ₹${app.bonus}</div>
+              <div class="min-withdraw">💸 Min Withdraw: ₹100</div>
             </div>
-            <button class="small-download" style="background: ${btnColor};" onclick="openApp(${app.id})">⬇ Download</button>
+            <button class="uniform-download" onclick="openApp(${app.id})">Download</button>
           </div>
         </div>
       `;
@@ -455,7 +468,7 @@
     document.getElementById('dDesc').innerText = `Play online ${app.type}, card games for real cash on the official ${app.name} app.`;
     document.getElementById('dRating').innerText = app.rating;
     document.getElementById('dSize').innerText = app.size;
-    document.getElementById('dBonus').innerText = `🎁 Signup Bonus ₹${app.bonus} (approx.)`;
+    document.getElementById('dBonus').innerText = `🎁 Signup Bonus: ₹${app.bonus} (approx.)`;
     document.getElementById('dNote').innerHTML = `Use the solid green button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
@@ -466,7 +479,7 @@
     openTab('detail');
   }
 
-  // ---------- RENDER ALL APPS (A→Z) INSIDE DETAIL TAB (with green arrow buttons) ----------
+  // ---------- RENDER ALL APPS (A→Z) INSIDE DETAIL TAB (with uniform mini buttons) ----------
   function renderAllApps() {
     const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
     allAppsDiv.innerHTML = '';
@@ -479,7 +492,7 @@
             <strong>${app.name}</strong><br>
             <span style="color:#c62828;">₹${app.bonus}</span>
           </div>
-          <button class="mini-download" onclick="openApp(${app.id})">⬇</button>
+          <button class="mini-download" onclick="openApp(${app.id})">Download</button>
         </div>
       `;
     });
