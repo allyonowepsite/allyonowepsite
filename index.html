@@ -1,6 +1,4 @@
-Here is the final, fully functional HTML code. I have carefully verified that the download button on every app's detail page now correctly opens the official app link in a new tab. All 7 apps (plus My 777 Yono) have working download links. The design remains exactly as you requested: vibrant pink gradient button with subtle animation, app name in the button, share buttons, and all safety/rating information. Enjoy! 🧡
 
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -164,12 +162,12 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* Detail page HD download button – longer, two-color gradient, subtle up-down animation */
+    /* Detail page HD download button – two-color gradient, subtle up-down animation */
     .hd-download {
       background: linear-gradient(145deg, #ff4d6d, #b23b5c);
       color: white;
       border: none;
-      width: 320px; /* longer */
+      width: 320px;
       padding: 16px 10px;
       border-radius: 60px;
       font-weight: 900;
@@ -226,23 +224,30 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       margin: 10px auto;
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
     }
+
+    /* HD Ratings badge – enhanced with gradient and glow */
     .badge {
       display: inline-block;
-      background: #eef2ff;
-      padding: 6px 16px;
-      border-radius: 22px;
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+      padding: 8px 18px;
+      border-radius: 30px;
       font-weight: 900;
       margin: 6px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.8);
+      border: 1px solid rgba(255,255,255,0.9);
     }
     .safety-badge {
-      background: #d4edda;
+      background: linear-gradient(145deg, #d4edda, #c3e6cb);
       color: #155724;
       border-left: 4px solid #28a745;
+      box-shadow: 0 4px 10px rgba(40,167,69,0.2);
     }
     .downloads-badge {
-      background: #fff3cd;
+      background: linear-gradient(145deg, #fff3cd, #ffe69c);
       color: #856404;
+      box-shadow: 0 4px 10px rgba(255,193,7,0.2);
     }
+
     .feature-list {
       list-style: none;
       padding: 0;
@@ -275,7 +280,6 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       margin: 20px 0;
     }
     .social-btn {
-      background: #222;
       color: white;
       padding: 12px 24px;
       border-radius: 40px;
@@ -287,15 +291,30 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       border: none;
       cursor: pointer;
       font-size: 16px;
-      transition: transform 0.2s;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 6px 0 rgba(0,0,0,0.2);
     }
     .social-btn:hover {
       transform: translateY(-2px);
+      box-shadow: 0 8px 0 rgba(0,0,0,0.2);
+    }
+    .social-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 rgba(0,0,0,0.2);
     }
     .whtsapp { background: #25D366; }
     .telegram { background: #0088cc; }
+
+    /* HD Share with friends button – two-color gradient with pulse animation */
     .share-btn {
-      background: #6c5ce7;
+      background: linear-gradient(145deg, #8e44ad, #6c5ce7);
+      color: white;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 6px 0 #4a2c6d, 0 0 15px rgba(142,68,173,0.5); }
+      50% { box-shadow: 0 6px 0 #4a2c6d, 0 0 25px rgba(108,92,231,0.8); transform: scale(1.02); }
+      100% { box-shadow: 0 6px 0 #4a2c6d, 0 0 15px rgba(142,68,173,0.5); }
     }
 
     /* Mini download inside all apps list (uniform blue) */
@@ -415,7 +434,7 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
 
-      <!-- HD DOWNLOAD BUTTON with app name, longer, two-color, animated -->
+      <!-- HD DOWNLOAD BUTTON with app name, two-color, animated -->
       <button class="hd-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
@@ -423,6 +442,7 @@ Here is the final, fully functional HTML code. I have carefully verified that th
       <div class="social-flex">
         <button class="social-btn whtsapp" id="whatsappShare" onclick="shareViaWhatsApp()">📱 WhatsApp</button>
         <button class="social-btn telegram" id="telegramShare" onclick="shareViaTelegram()">✈️ Telegram</button>
+        <!-- HD Share with friends button (two-color gradient with pulse) -->
         <button class="social-btn share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share with friends</button>
       </div>
     </div>
@@ -626,7 +646,7 @@ Here is the final, fully functional HTML code. I have carefully verified that th
     document.getElementById('dAppName').innerText = app.name; // for button
     document.getElementById('dNote').innerHTML = `Use the HD button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
     
-    // ----- FIX: Ensure the download button opens the correct link -----
+    // Ensure download button opens the correct link
     document.getElementById('dDownload').onclick = function() {
       window.open(app.link, '_blank');
     };
