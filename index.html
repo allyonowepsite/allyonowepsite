@@ -1,12 +1,11 @@
-Here is the final HTML code with the requested enhancements:
+Here is the final HTML code with the refined detail page download button:
 
-· Download button on detail page now includes the app name (e.g., "DOWNLOAD Yono Rummy APK").
-· A new "Share with friends" button has been added, which uses the Web Share API if available, or falls back to a Telegram share link.
-· Telegram and WhatsApp buttons remain with icons, and the Telegram button now includes a Telegram icon (photo) for a more visual HD look.
-· All app information (downloads, size, free badge, ratings, bonus) is displayed exactly as in your image.
-· The pink gradient download button is retained, now with dynamic app name.
+· Longer & vibrant: The pink gradient button is now wider (320px) and uses a richer two-color gradient (#ff4d6d → #b23b5c with a subtle shine).
+· Up/down moment: The button has a gentle floating animation (subtle move up/down) to catch attention, plus a hover lift effect.
+· HD best color: Enhanced gradient and shadow for a premium look.
+· All other features remain: home page uniform blue buttons, app name in download button, share buttons, and full app details.
 
-The code is fully responsive and ready to use. You can replace placeholder links as needed.
+The code is fully responsive and ready to use.
 
 ```html
 <!DOCTYPE html>
@@ -172,28 +171,56 @@ The code is fully responsive and ready to use. You can replace placeholder links
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* Detail page PINK gradient download button (HD look) with app name */
-    .pink-download {
+    /* Detail page HD download button – longer, two-color gradient, subtle up-down animation */
+    .hd-download {
       background: linear-gradient(145deg, #ff4d6d, #b23b5c);
       color: white;
       border: none;
-      width: 280px;
+      width: 320px; /* longer */
       padding: 16px 10px;
       border-radius: 60px;
       font-weight: 900;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 8px 0 #7a2a42, 0 8px 20px rgba(0,0,0,0.3);
-      transition: 0.1s ease;
+      box-shadow: 0 15px 25px rgba(178, 59, 92, 0.4);
       margin: 20px auto;
       display: block;
-      border: 2px solid rgba(255,255,255,0.5);
+      border: 2px solid rgba(255,255,255,0.6);
       letter-spacing: 0.5px;
       line-height: 1.2;
+      animation: float 2.5s infinite ease-in-out;
+      transition: transform 0.2s, box-shadow 0.2s;
+      position: relative;
+      overflow: hidden;
     }
-    .pink-download:active {
-      transform: translateY(5px);
-      box-shadow: 0 3px 0 #7a2a42, 0 8px 15px rgba(0,0,0,0.2);
+    .hd-download::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(60deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 80%);
+      transform: rotate(30deg);
+      animation: shine 4s infinite;
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); box-shadow: 0 18px 30px rgba(178, 59, 92, 0.5); }
+      100% { transform: translateY(0); }
+    }
+    @keyframes shine {
+      0% { left: -50%; top: -50%; }
+      70% { left: 100%; top: 100%; }
+      100% { left: 100%; top: 100%; }
+    }
+    .hd-download:hover {
+      transform: scale(1.02) translateY(-2px);
+      box-shadow: 0 20px 35px rgba(178, 59, 92, 0.6);
+    }
+    .hd-download:active {
+      transform: scale(0.98) translateY(2px);
+      box-shadow: 0 8px 15px rgba(178, 59, 92, 0.4);
     }
 
     .center {
@@ -267,6 +294,10 @@ The code is fully responsive and ready to use. You can replace placeholder links
       border: none;
       cursor: pointer;
       font-size: 16px;
+      transition: transform 0.2s;
+    }
+    .social-btn:hover {
+      transform: translateY(-2px);
     }
     .whtsapp { background: #25D366; }
     .telegram { background: #0088cc; }
@@ -336,9 +367,9 @@ The code is fully responsive and ready to use. You can replace placeholder links
         width: 100%;
         text-align: center;
       }
-      .pink-download {
+      .hd-download {
         width: 100%;
-        max-width: 280px;
+        max-width: 320px;
       }
     }
   </style>
@@ -391,8 +422,8 @@ The code is fully responsive and ready to use. You can replace placeholder links
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
 
-      <!-- PINK GRADIENT DOWNLOAD BUTTON with app name -->
-      <button class="pink-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+      <!-- HD DOWNLOAD BUTTON with app name, longer, two-color, animated -->
+      <button class="hd-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
 
@@ -600,7 +631,7 @@ The code is fully responsive and ready to use. You can replace placeholder links
     document.getElementById('dBonusValue').innerText = app.bonus;
     document.getElementById('dSafety').innerText = app.safety;
     document.getElementById('dAppName').innerText = app.name; // for button
-    document.getElementById('dNote').innerHTML = `Use the pink gradient button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
+    document.getElementById('dNote').innerHTML = `Use the HD button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
     // Store current app for sharing
@@ -653,7 +684,6 @@ The code is fully responsive and ready to use. You can replace placeholder links
         text: `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}!`,
         url: window.currentApp.link,
       }).catch(() => {
-        // fallback
         shareViaTelegram();
       });
     } else {
