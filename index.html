@@ -86,7 +86,7 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* Disclaimer heading */
+    /* Disclaimer heading (removed from home, but kept for other tabs) */
     .disclaimer-head {
       font-size: 22px;
       font-weight: 800;
@@ -167,7 +167,7 @@
       background: linear-gradient(145deg, #ff4d6d, #b23b5c);
       color: white;
       border: none;
-      width: 260px;  /* smaller */
+      width: 260px;
       padding: 14px 10px;
       border-radius: 60px;
       font-weight: 900;
@@ -387,12 +387,8 @@
 </div>
 
 <div class="container">
-  <!-- HOME TAB -->
+  <!-- HOME TAB – no disclaimer card, only apps -->
   <div id="home" class="tab active">
-    <div class="card">
-      <div class="disclaimer-head">Disclaimer</div>
-      <p style="margin-top:5px;">This website is for informational purposes only. 18+ only.</p>
-    </div>
     <!-- Apps injected via JS -->
   </div>
 
@@ -429,7 +425,7 @@
 
       <div class="install-note" id="dNote"></div>
 
-      <!-- Only Share with friends button (no WhatsApp/Telegram) -->
+      <!-- Only Share with friends button -->
       <button class="share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share with friends</button>
     </div>
 
@@ -480,7 +476,7 @@
 </div>
 
 <script>
-  // ---------- 7 APPS (exactly) ----------
+  // ---------- 7 APPS ----------
   const apps = [
     { 
       id:1, 
@@ -604,14 +600,9 @@
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE ----------
+  // ---------- RENDER HOME PAGE – NO DISCLAIMER CARD, ONLY APPS ----------
   function renderHome() {
-    homeDiv.innerHTML = `
-      <div class="card">
-        <div class="disclaimer-head">Disclaimer</div>
-        <p style="margin-top:5px;">This website is for informational purposes only. 18+ only.</p>
-      </div>
-    `;
+    homeDiv.innerHTML = '';  // start empty
     apps.forEach((app, index) => {
       homeDiv.innerHTML += `
         <div class="card">
@@ -620,8 +611,8 @@
             <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
             <div class="details">
               <h3>${app.name}</h3>
-              <div class="bonus">🔥 Bonus: ₹${app.bonus}</div>
-              <div class="min-withdraw">💸 Min Withdraw: ₹100</div>
+              <div class="bonus">🟢 Bonus: ₹${app.bonus}</div>
+              <div class="min-withdraw">🟢 Min Withdraw: ₹100</div>
             </div>
             <button class="uniform-download" onclick="openApp(${app.id})">Download</button>
           </div>
@@ -691,7 +682,6 @@
 
   // Handle initial hash (if any)
   if (window.location.hash === '#detail') {
-    // default to home if no app selected
     openTab('home');
   } else if (window.location.hash === '#about') {
     openTab('about');
@@ -709,4 +699,3 @@
 </body>
 </html>
 ```
-
