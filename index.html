@@ -1,11 +1,21 @@
+Here is the final HTML code with all your requirements:
 
+· Exactly 7 apps (Teen Patti Master, 101Z Games, Yono Rummy, Teen Patti master Old, RummySe, RummySe Old, Good Slots) – each with rich information including ratings, downloads, size, safety, and a fraud risk warning badge.
+· Detail page download button is slightly smaller (260px) but still vibrant with two‑color gradient and gentle animation.
+· Only one social button remains – a stylish two‑color Share with friends button (WhatsApp/Telegram removed).
+· Single‑page app behavior: back button navigates between tabs without leaving the site.
+· All information is clear, fast‑loading, and user‑friendly.
+
+The code is ready to use. Just copy and save as an .html file.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Yono App Store – HD Info</title>
-  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, My 777 Yono and more – safety, ratings, bonuses.">
+  <title>All Yono App Store – 7 Apps</title>
+  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – safety, bonuses, fraud warning.">
   <style>
     * {
       margin: 0;
@@ -142,7 +152,7 @@
       font-weight: 700;
     }
 
-    /* UNIFORM download button for home page (same blue) */
+    /* Uniform home download button */
     .uniform-download {
       background: #0f5cff;
       color: white;
@@ -162,18 +172,18 @@
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* Detail page HD download button – two-color gradient, subtle up-down animation */
-    .hd-download {
+    /* Detail page download button – slightly smaller, two-color gradient */
+    .small-download {
       background: linear-gradient(145deg, #ff4d6d, #b23b5c);
       color: white;
       border: none;
-      width: 320px;
-      padding: 16px 10px;
+      width: 260px;  /* smaller */
+      padding: 14px 10px;
       border-radius: 60px;
       font-weight: 900;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 15px 25px rgba(178, 59, 92, 0.4);
+      box-shadow: 0 8px 0 #7a2a42, 0 8px 20px rgba(0,0,0,0.3);
       margin: 20px auto;
       display: block;
       border: 2px solid rgba(255,255,255,0.6);
@@ -184,7 +194,7 @@
       position: relative;
       overflow: hidden;
     }
-    .hd-download::after {
+    .small-download::after {
       content: '';
       position: absolute;
       top: -50%;
@@ -197,7 +207,7 @@
     }
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); box-shadow: 0 18px 30px rgba(178, 59, 92, 0.5); }
+      50% { transform: translateY(-4px); box-shadow: 0 10px 0 #7a2a42, 0 12px 25px rgba(178, 59, 92, 0.5); }
       100% { transform: translateY(0); }
     }
     @keyframes shine {
@@ -205,13 +215,12 @@
       70% { left: 100%; top: 100%; }
       100% { left: 100%; top: 100%; }
     }
-    .hd-download:hover {
+    .small-download:hover {
       transform: scale(1.02) translateY(-2px);
-      box-shadow: 0 20px 35px rgba(178, 59, 92, 0.6);
     }
-    .hd-download:active {
+    .small-download:active {
       transform: scale(0.98) translateY(2px);
-      box-shadow: 0 8px 15px rgba(178, 59, 92, 0.4);
+      box-shadow: 0 4px 0 #7a2a42, 0 8px 15px rgba(178, 59, 92, 0.4);
     }
 
     .center {
@@ -225,7 +234,7 @@
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
     }
 
-    /* HD Ratings badge – enhanced with gradient and glow */
+    /* HD badges */
     .badge {
       display: inline-block;
       background: linear-gradient(145deg, #ffffff, #f0f4ff);
@@ -240,12 +249,15 @@
       background: linear-gradient(145deg, #d4edda, #c3e6cb);
       color: #155724;
       border-left: 4px solid #28a745;
-      box-shadow: 0 4px 10px rgba(40,167,69,0.2);
+    }
+    .fraud-badge {
+      background: linear-gradient(145deg, #f8d7da, #f5c6cb);
+      color: #721c24;
+      border-left: 4px solid #dc3545;
     }
     .downloads-badge {
       background: linear-gradient(145deg, #fff3cd, #ffe69c);
       color: #856404;
-      box-shadow: 0 4px 10px rgba(255,193,7,0.2);
     }
 
     .feature-list {
@@ -264,6 +276,7 @@
       margin-right: 10px;
       color: #2e7d32;
     }
+
     .install-note {
       background: #f1f8fe;
       padding: 14px;
@@ -272,52 +285,39 @@
       font-size: 15px;
       color: #014361;
     }
-    .social-flex {
-      display: flex;
-      gap: 12px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 20px 0;
-    }
-    .social-btn {
-      color: white;
-      padding: 12px 24px;
-      border-radius: 40px;
-      text-decoration: none;
-      font-weight: 800;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      border: none;
-      cursor: pointer;
-      font-size: 16px;
-      transition: transform 0.2s, box-shadow 0.2s;
-      box-shadow: 0 6px 0 rgba(0,0,0,0.2);
-    }
-    .social-btn:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 0 rgba(0,0,0,0.2);
-    }
-    .social-btn:active {
-      transform: translateY(4px);
-      box-shadow: 0 2px 0 rgba(0,0,0,0.2);
-    }
-    .whtsapp { background: #25D366; }
-    .telegram { background: #0088cc; }
 
-    /* HD Share with friends button – two-color gradient with pulse animation */
+    /* Share button – two-color gradient (only one) */
     .share-btn {
       background: linear-gradient(145deg, #8e44ad, #6c5ce7);
       color: white;
+      border: none;
+      padding: 14px 32px;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #4a2c6d, 0 8px 20px rgba(0,0,0,0.3);
+      margin: 10px auto;
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: transform 0.2s, box-shadow 0.2s;
       animation: pulse 2s infinite ease-in-out;
     }
+    .share-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 0 #4a2c6d, 0 12px 25px rgba(108,92,231,0.5);
+    }
+    .share-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 4px 0 #4a2c6d, 0 8px 15px rgba(108,92,231,0.4);
+    }
     @keyframes pulse {
-      0% { box-shadow: 0 6px 0 #4a2c6d, 0 0 15px rgba(142,68,173,0.5); }
-      50% { box-shadow: 0 6px 0 #4a2c6d, 0 0 25px rgba(108,92,231,0.8); transform: scale(1.02); }
-      100% { box-shadow: 0 6px 0 #4a2c6d, 0 0 15px rgba(142,68,173,0.5); }
+      0% { box-shadow: 0 8px 0 #4a2c6d, 0 8px 20px rgba(108,92,231,0.3); }
+      50% { box-shadow: 0 8px 0 #4a2c6d, 0 15px 30px rgba(108,92,231,0.6); transform: scale(1.02); }
+      100% { box-shadow: 0 8px 0 #4a2c6d, 0 8px 20px rgba(108,92,231,0.3); }
     }
 
-    /* Mini download inside all apps list (uniform blue) */
+    /* Mini download inside all apps list */
     .mini-download {
       background: #0f5cff;
       color: white;
@@ -335,7 +335,6 @@
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* All apps list inside detail */
     .all-app-item {
       display: flex;
       align-items: center;
@@ -370,7 +369,6 @@
       background: rgba(255,255,255,0.3);
     }
 
-    /* Responsive */
     @media (max-width: 600px) {
       .app-row {
         gap: 12px;
@@ -379,9 +377,9 @@
         width: 100%;
         text-align: center;
       }
-      .hd-download {
+      .small-download {
         width: 100%;
-        max-width: 320px;
+        max-width: 260px;
       }
     }
   </style>
@@ -399,24 +397,26 @@
 </div>
 
 <div class="container">
-  <!-- HOME TAB (list of all apps) -->
+  <!-- HOME TAB -->
   <div id="home" class="tab active">
     <div class="card">
       <div class="disclaimer-head">Disclaimer</div>
       <p style="margin-top:5px;">This website is for informational purposes only. 18+ only.</p>
     </div>
-    <!-- Apps will be injected here by JavaScript -->
+    <!-- Apps injected via JS -->
   </div>
 
-  <!-- DETAIL TAB (shows selected app + all apps) -->
+  <!-- DETAIL TAB -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
       <h2 id="dTitle"></h2>
       <p id="dDesc" style="font-size:16px; margin:10px 0;"></p>
       
-      <!-- Safety & Security Badge -->
+      <!-- Safety badge -->
       <div class="badge safety-badge" id="dSafety">🔒 Secure & Verified</div>
+      <!-- Fraud warning badge (additional) -->
+      <div class="badge fraud-badge" id="dFraud">⚠️ Play at your own risk</div>
       
       <ul class="feature-list">
         <li>Real Cash Games</li>
@@ -434,17 +434,13 @@
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
 
-      <!-- HD DOWNLOAD BUTTON with app name, two-color, animated -->
-      <button class="hd-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+      <!-- Smaller download button with app name -->
+      <button class="small-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
 
-      <div class="social-flex">
-        <button class="social-btn whtsapp" id="whatsappShare" onclick="shareViaWhatsApp()">📱 WhatsApp</button>
-        <button class="social-btn telegram" id="telegramShare" onclick="shareViaTelegram()">✈️ Telegram</button>
-        <!-- HD Share with friends button (two-color gradient with pulse) -->
-        <button class="social-btn share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share with friends</button>
-      </div>
+      <!-- Only Share with friends button (no WhatsApp/Telegram) -->
+      <button class="share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share with friends</button>
     </div>
 
     <!-- All apps A→Z list -->
@@ -458,7 +454,7 @@
   <div id="about" class="tab">
     <div class="card">
       <h2>About Us</h2>
-      <p>All Yono App Store is an independent referral platform. We do not own or operate any of the listed apps. This site is for informational purposes only.</p>
+      <p>All Yono App Store is an independent informational platform. We do not own or operate any listed apps. This site is for educational purposes only.</p>
     </div>
   </div>
 
@@ -474,7 +470,7 @@
   <div id="disclaimer" class="tab">
     <div class="card">
       <h2>Disclaimer</h2>
-      <p>We do not host APK files. Real money games involve financial risk. This website is only for 18+ users. Please play responsibly.</p>
+      <p>We do not host APK files. Real money games involve financial risk. This website is only for 18+ users. Please play responsibly. Always verify app authenticity before depositing money.</p>
     </div>
   </div>
 </div>
@@ -485,15 +481,16 @@
   • Only for 18+ users<br>
   • Real money games involve financial risk<br>
   • We do NOT host APK files<br>
-  • User is responsible for profit or loss
+  • User is responsible for profit or loss<br>
+  • Be aware of fraud: never share OTP or password
 </div>
 
 <div class="footer">
-  © 2026 All Yono App Store – HD Info
+  © 2026 All Yono App Store – 7 Apps
 </div>
 
 <script>
-  // ---------- APP DATA with safety, downloads, and WORKING LINKS ----------
+  // ---------- 7 APPS (exactly) ----------
   const apps = [
     { 
       id:1, 
@@ -505,6 +502,8 @@
       bonus:"43", 
       downloads:"50k+", 
       safety:"🔒 Secure & Verified",
+      fraud:"⚠️ Possible high risk – play with caution",
+      review: "Popular card game, fast withdrawals, but verify terms.",
       link:"https://www.earntp.com/gold/jexzd" 
     },
     { 
@@ -517,6 +516,8 @@
       bonus:"50", 
       downloads:"75k+", 
       safety:"🔒 Trusted App",
+      fraud:"⚠️ Some users report withdrawal delays",
+      review: "Good bonus, but read terms carefully.",
       link:"https://101z2.com/?code=Z9YJW6N9CJ8" 
     },
     { 
@@ -529,6 +530,8 @@
       bonus:"50", 
       downloads:"100k+", 
       safety:"🔒 Verified Publisher",
+      fraud:"⚠️ Only play with money you can afford to lose",
+      review: "High ratings, smooth gameplay.",
       link:"https://yonorummy009.com/?code=VIP17W6WRJE" 
     },
     { 
@@ -541,6 +544,8 @@
       bonus:"35", 
       downloads:"40k+", 
       safety:"🔒 Safe & Secure",
+      fraud:"⚠️ Not responsible for third-party ads",
+      review: "Classic version, stable app.",
       link:"https://www.earntp.com/m/jm9n7r" 
     },
     { 
@@ -553,6 +558,8 @@
       bonus:"30", 
       downloads:"60k+", 
       safety:"🔒 Secure Payment",
+      fraud:"⚠️ Check withdrawal limits before playing",
+      review: "Decent bonus, user-friendly.",
       link:"https://www.rummyse.com/share/88Guqxy" 
     },
     { 
@@ -565,6 +572,8 @@
       bonus:"25", 
       downloads:"35k+", 
       safety:"🔒 Verified",
+      fraud:"⚠️ Older version may lack support",
+      review: "Lightweight, good for low-end devices.",
       link:"https://www.rummyse.com/share/88G.xxy" 
     },
     { 
@@ -577,33 +586,35 @@
       bonus:"45", 
       downloads:"80k+", 
       safety:"🔒 Safe & Fair",
+      fraud:"⚠️ Slots are high risk – set limits",
+      review: "Exciting slot games, fast interface.",
       link:"https://sharegoodslots.xyz" 
-    },
-    { 
-      id:8, 
-      name:"My 777 Yono",           
-      type:"Slots & Cards", 
-      img:"https://via.placeholder.com/130?text=777", // Replace with actual icon if needed
-      rating:"4.5", 
-      size:"62MB", 
-      bonus:"30", 
-      downloads:"90k+", 
-      safety:"🔒 Secure & Fast",
-      link:"https://example.com/my777" // Replace with actual download link
     }
   ];
 
   const homeDiv = document.getElementById('home');
   const allAppsDiv = document.getElementById('allAppsList');
 
-  // ---------- TAB SWITCHING ----------
-  function openTab(tabId) {
+  // ---------- HISTORY MANAGEMENT (back stays inside site) ----------
+  window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.tab) {
+      openTab(event.state.tab, false); // false = don't push another state
+    } else {
+      openTab('home', false);
+    }
+  });
+
+  // ---------- TAB SWITCHING with history ----------
+  function openTab(tabId, pushState = true) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
+    if (pushState) {
+      history.pushState({ tab: tabId }, '', '#' + tabId);
+    }
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE (with UNIFORM blue download buttons) ----------
+  // ---------- RENDER HOME PAGE ----------
   function renderHome() {
     homeDiv.innerHTML = `
       <div class="card">
@@ -629,39 +640,30 @@
     });
   }
 
-  // ---------- OPEN DETAIL PAGE FOR SELECTED APP ----------
+  // ---------- OPEN DETAIL PAGE ----------
   function openApp(id) {
     const app = apps.find(a => a.id === id);
     if (!app) return;
 
-    // Fill detail fields
     document.getElementById('dImg').src = app.img;
     document.getElementById('dTitle').innerText = `${app.name} APK – Official Real Cash ${app.type} App`;
-    document.getElementById('dDesc').innerText = `Play online ${app.type}, card games for real cash on the official ${app.name} app.`;
+    document.getElementById('dDesc').innerText = `⭐ Review: ${app.review}`;
     document.getElementById('dRating').innerText = app.rating;
     document.getElementById('dDownloads').innerText = app.downloads;
     document.getElementById('dSize').innerText = app.size;
     document.getElementById('dBonusValue').innerText = app.bonus;
     document.getElementById('dSafety').innerText = app.safety;
-    document.getElementById('dAppName').innerText = app.name; // for button
-    document.getElementById('dNote').innerHTML = `Use the HD button above to go to the official <strong>${app.name}</strong> page and install the app safely on your Android phone.`;
-    
-    // Ensure download button opens the correct link
-    document.getElementById('dDownload').onclick = function() {
-      window.open(app.link, '_blank');
-    };
+    document.getElementById('dFraud').innerText = app.fraud;
+    document.getElementById('dAppName').innerText = app.name;
+    document.getElementById('dNote').innerHTML = `Use the button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
+    document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
-    // Store current app for sharing
     window.currentApp = app;
-
-    // Render the A→Z list of all apps
     renderAllApps();
-
-    // Switch to detail tab
     openTab('detail');
   }
 
-  // ---------- RENDER ALL APPS (A→Z) INSIDE DETAIL TAB (with uniform blue mini buttons) ----------
+  // ---------- RENDER ALL APPS (A→Z) ----------
   function renderAllApps() {
     const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
     allAppsDiv.innerHTML = '';
@@ -680,35 +682,37 @@
     });
   }
 
-  // ---------- SHARE FUNCTIONS ----------
-  function shareViaWhatsApp() {
-    if (!window.currentApp) return;
-    const text = `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}! Download now: ${window.currentApp.link}`;
-    window.open(`https://wa.me/?text=${encodeURIComponent(text)}`, '_blank');
-  }
-
-  function shareViaTelegram() {
-    if (!window.currentApp) return;
-    const text = `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}! Download now: ${window.currentApp.link}`;
-    window.open(`https://t.me/share/url?url=${encodeURIComponent(window.currentApp.link)}&text=${encodeURIComponent(text)}`, '_blank');
-  }
-
+  // ---------- SHARE WITH FRIENDS ----------
   function shareWithFriends() {
     if (!window.currentApp) return;
+    const shareData = {
+      title: window.currentApp.name,
+      text: `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}! ${window.currentApp.review} Download: ${window.currentApp.link}`,
+      url: window.currentApp.link,
+    };
     if (navigator.share) {
-      navigator.share({
-        title: window.currentApp.name,
-        text: `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}!`,
-        url: window.currentApp.link,
-      }).catch(() => {
-        shareViaTelegram();
+      navigator.share(shareData).catch(() => {
+        prompt('Copy this link to share:', window.currentApp.link);
       });
     } else {
-      shareViaTelegram();
+      prompt('Share this link with friends:', window.currentApp.link);
     }
   }
 
-  // Initialize home
+  // Handle initial hash (if any)
+  if (window.location.hash === '#detail') {
+    // default to home if no app selected
+    openTab('home');
+  } else if (window.location.hash === '#about') {
+    openTab('about');
+  } else if (window.location.hash === '#privacy') {
+    openTab('privacy');
+  } else if (window.location.hash === '#disclaimer') {
+    openTab('disclaimer');
+  } else {
+    openTab('home');
+  }
+
   renderHome();
 </script>
 
