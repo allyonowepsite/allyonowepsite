@@ -1,14 +1,4 @@
-Here is the final HTML code with the requested adjustments:
 
-· Only one download button on the detail page (top, next to share button) – the bottom duplicate has been removed.
-· Download button size reduced to 240px (slightly smaller) for a more balanced look.
-· App information tags are clearly displayed both at the top and bottom, with the best bonus and all safety badges.
-· Home page download buttons remain the uniform green‑gold gradient.
-· All other features (share button, extensive info badges, pulsing warning box) are intact.
-
-This is the complete, production‑ready version.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -171,16 +161,16 @@ This is the complete, production‑ready version.
       100% { transform: translateY(0); }
     }
 
-    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (slightly smaller) */
+    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (smaller and long pill) */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
       border: none;
-      width: 240px;  /* reduced from 280px */
-      padding: 14px 8px; /* slightly smaller padding */
+      width: 200px;  /* reduced width – smaller and still long */
+      padding: 12px 6px; /* adjusted padding */
       border-radius: 60px;
       font-weight: 900;
-      font-size: 17px; /* slightly smaller font */
+      font-size: 16px; /* slightly smaller font */
       cursor: pointer;
       box-shadow: 0 10px 0 #1e8449, 0 12px 20px rgba(0,0,0,0.4);
       margin: 10px auto;
@@ -220,10 +210,10 @@ This is the complete, production‑ready version.
       background: linear-gradient(145deg, #ff1493, #0a0a0a);
       color: white;
       border: none;
-      padding: 14px 32px;
+      padding: 12px 24px; /* adjusted to match new size */
       border-radius: 60px;
       font-weight: 900;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
       box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(0,0,0,0.3);
       margin: 10px auto;
@@ -408,7 +398,7 @@ This is the complete, production‑ready version.
       }
       .detail-download {
         width: 100%;
-        max-width: 240px;
+        max-width: 200px;
       }
     }
   </style>
