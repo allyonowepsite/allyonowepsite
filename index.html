@@ -17,7 +17,7 @@
       min-height: 100vh;
     }
 
-    /* Header with navigation */
+    /* Header */
     .header {
       background: linear-gradient(90deg, #0b5ed7, #0f5cff, #6a5cff);
       color: white;
@@ -78,7 +78,7 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* Detail page layout */
+    /* App header: icon left, title right */
     .app-header {
       display: flex;
       gap: 20px;
@@ -112,42 +112,38 @@
       color: #0a3c9e;
     }
 
-    /* Stats row – four items with star icon */
-    .stats-row {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-      gap: 15px;
-      margin: 30px 0;
+    /* Vertical stats (like image) */
+    .stats-vertical {
+      margin: 20px 0;
     }
-    .stat-card {
-      background: white;
-      border-radius: 20px;
-      padding: 15px 10px;
-      flex: 1 1 120px;
-      text-align: center;
-      box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-      border: 1px solid rgba(0,0,0,0.05);
+    .stat-line {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+      font-size: 18px;
+      font-weight: 700;
+    }
+    .stat-line:last-child {
+      border-bottom: none;
     }
     .stat-icon {
-      font-size: 32px;
-      display: block;
-      margin-bottom: 8px;
+      font-size: 28px;
+      width: 40px;
+      text-align: center;
     }
     .stat-value {
-      font-size: 24px;
-      font-weight: 900;
       color: #1e3a8a;
-      line-height: 1.2;
+      margin-right: 5px;
     }
     .stat-label {
-      font-size: 14px;
       color: #555;
       font-weight: 600;
       text-transform: uppercase;
     }
 
-    /* Download button – green-red gradient */
+    /* Download button */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
@@ -175,7 +171,7 @@
       100% { transform: translateY(0); }
     }
 
-    /* All apps list */
+    /* All apps A→Z list */
     .all-app-item {
       display: flex;
       align-items: center;
@@ -268,7 +264,7 @@
       box-shadow: 0 4px 0 #b8860b;
     }
 
-    /* Footer warning */
+    /* Warning */
     .warning {
       background: #fff3cd;
       border-left: 8px solid #ff5722;
@@ -296,13 +292,6 @@
       .home-download {
         width: 100%;
       }
-      .stats-row {
-        flex-direction: column;
-        align-items: center;
-      }
-      .stat-card {
-        width: 100%;
-      }
     }
   </style>
 </head>
@@ -313,9 +302,8 @@
   <div class="menu">
     <a onclick="openTab('home')">Home</a>
     <a onclick="openTab('about')">About</a>
-    <a onclick="openTab('contact')">Contact</a>
+    <a onclick="openTab('privacy')">Privacy</a>
     <a onclick="openTab('disclaimer')">Disclaimer</a>
-    <a onclick="openTab('tg')">TG Join</a>
   </div>
 </div>
 
@@ -323,7 +311,7 @@
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB (matches image style) -->
+  <!-- DETAIL TAB (simple stats like image) -->
   <div id="detail" class="tab">
     <div class="card">
       <div class="app-header">
@@ -334,27 +322,27 @@
         </div>
       </div>
 
-      <!-- Four stat cards with stars -->
-      <div class="stats-row">
-        <div class="stat-card">
+      <!-- Vertical stats: rating, MB, downloads, bonus -->
+      <div class="stats-vertical">
+        <div class="stat-line">
           <span class="stat-icon">⭐</span>
-          <div class="stat-value" id="dRating"></div>
-          <div class="stat-label">RATING</div>
+          <span class="stat-value" id="dRating"></span>
+          <span class="stat-label">RATING</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-icon">⭐</span>
-          <div class="stat-value" id="dSize"></div>
-          <div class="stat-label">MB</div>
+        <div class="stat-line">
+          <span class="stat-icon">📦</span>
+          <span class="stat-value" id="dSize"></span>
+          <span class="stat-label">MB</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-icon">⭐</span>
-          <div class="stat-value" id="dDownloads"></div>
-          <div class="stat-label">DOWNLOAD</div>
+        <div class="stat-line">
+          <span class="stat-icon">⬇️</span>
+          <span class="stat-value" id="dDownloads"></span>
+          <span class="stat-label">DOWNLOAD</span>
         </div>
-        <div class="stat-card">
-          <span class="stat-icon">⭐</span>
-          <div class="stat-value" id="dBonus"></div>
-          <div class="stat-label">BONUS</div>
+        <div class="stat-line">
+          <span class="stat-icon">🎁</span>
+          <span class="stat-value" id="dBonus"></span>
+          <span class="stat-label">BONUS</span>
         </div>
       </div>
 
@@ -372,14 +360,11 @@
   <div id="about" class="tab">
     <div class="card"><h2>About Us</h2><p>Independent informational platform. 18+ only.</p></div>
   </div>
-  <div id="contact" class="tab">
-    <div class="card"><h2>Contact</h2><p>Email: support@allyonoapp.com</p></div>
+  <div id="privacy" class="tab">
+    <div class="card"><h2>Privacy</h2><p>We do not collect personal data.</p></div>
   </div>
   <div id="disclaimer" class="tab">
     <div class="card"><h2>Disclaimer</h2><p>We do not host APK files. Play responsibly.</p></div>
-  </div>
-  <div id="tg" class="tab">
-    <div class="card"><h2>TG Join</h2><p>Join our Telegram: <a href="#">t.me/allyonoapp</a></p></div>
   </div>
 </div>
 
@@ -476,9 +461,8 @@
   // Initial load
   if (location.hash === '#detail') openTab('home');
   else if (location.hash === '#about') openTab('about');
-  else if (location.hash === '#contact') openTab('contact');
+  else if (location.hash === '#privacy') openTab('privacy');
   else if (location.hash === '#disclaimer') openTab('disclaimer');
-  else if (location.hash === '#tg') openTab('tg');
   else openTab('home');
 
   renderHome();
