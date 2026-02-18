@@ -1,24 +1,22 @@
 ठीक है 👍
-मैं आपको Final Clean Menu Version (Option 1 – Simple & Best) दे रहा हूँ।
+आप चाहते हो:
 
-👉 इसमें menu में ये होंगे:
+✅ Menu में Home
+✅ Option 1 के अंदर → About
+✅ Option 1 के अंदर → Privacy Policy
+✅ Option 1 के अंदर → Disclaimer
+✅ पूरा final code एक साथ
+✅ Old HTML file में replace करने लायक
 
-Home
-
-About
-
-Privacy Policy
-
-Disclaimer
-
-
-सब working tab के साथ ✅
-पूरा final code एक साथ नीचे है 👇
+अब मैं आपको Final Clean Professional Dropdown Menu Code दे रहा हूँ 👇
+(पूरा working, ready to upload)
 
 
 ---
 
-✅ 🔥 FINAL COMPLETE HTML CODE (Best Simple Menu)
+✅ 🔥 FINAL COMPLETE HTML (Dropdown Menu Option 1)
+
+इसे पूरा copy करके अपनी पुरानी HTML file में replace कर दो 👇
 
 <!DOCTYPE html>
 <html lang="en">
@@ -38,8 +36,8 @@ body{
 .header{
   background:linear-gradient(to right,#1e3c72,#2a5298);
   color:white;
-  text-align:center;
   padding:15px;
+  text-align:center;
   position:sticky;
   top:0;
 }
@@ -57,8 +55,37 @@ body{
   cursor:pointer;
 }
 
-.menu a:hover{
-  text-decoration:underline;
+/* DROPDOWN */
+.dropdown{
+  display:inline-block;
+  position:relative;
+}
+
+.dropdown-content{
+  display:none;
+  position:absolute;
+  background:white;
+  min-width:160px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.2);
+  text-align:left;
+  z-index:99;
+}
+
+.dropdown-content a{
+  color:black;
+  padding:10px;
+  display:block;
+  text-decoration:none;
+  font-weight:600;
+}
+
+.dropdown-content a:hover{
+  background:#f1f1f1;
+}
+
+.dropdown:hover .dropdown-content{
+  display:block;
 }
 
 /* CONTENT */
@@ -74,63 +101,91 @@ body{
   display:block;
 }
 
-/* WARNING BOX */
+/* APP CARD */
+.app{
+  background:white;
+  padding:15px;
+  margin:15px 0;
+  border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* WARNING */
 .warning{
   background:#ffe0b2;
   padding:15px;
   border-radius:10px;
   margin:20px;
   font-weight:bold;
+  text-align:center;
 }
 </style>
 </head>
 
 <body>
 
-<!-- HEADER -->
 <div class="header">
   <h1>⚡ All Yono App Store ⚡</h1>
 
   <div class="menu">
     <a onclick="openTab('home')">Home</a>
-    <a onclick="openTab('about')">About</a>
-    <a onclick="openTab('privacy')">Privacy Policy</a>
-    <a onclick="openTab('disclaimer')">Disclaimer</a>
+
+    <div class="dropdown">
+      <a>Option 1 ▾</a>
+      <div class="dropdown-content">
+        <a onclick="openTab('about')">About</a>
+        <a onclick="openTab('privacy')">Privacy Policy</a>
+        <a onclick="openTab('disclaimer')">Disclaimer</a>
+      </div>
+    </div>
   </div>
 </div>
 
-<!-- CONTENT -->
 <div class="container">
 
-  <!-- HOME -->
-  <div id="home" class="tab active">
-    <h2>Home</h2>
-    <p>Welcome to All Yono App Store. Here you will find gaming apps information.</p>
+<!-- HOME -->
+<div id="home" class="tab active">
+  <h2>🔥 Top Gaming Apps</h2>
+
+  <div class="app">
+    <h3>Teen Patti Master</h3>
+    <p>Bonus ₹43 | Instant Withdraw</p>
   </div>
 
-  <!-- ABOUT -->
-  <div id="about" class="tab">
-    <h2>About</h2>
-    <p>This website provides informational content about gaming apps only.</p>
+  <div class="app">
+    <h3>Yono Rummy</h3>
+    <p>Bonus ₹50 | Secure App</p>
   </div>
 
-  <!-- PRIVACY POLICY -->
-  <div id="privacy" class="tab">
-    <h2>Privacy Policy</h2>
-    <p>We do not collect any personal data. All links are third-party links.</p>
-  </div>
-
-  <!-- DISCLAIMER -->
-  <div id="disclaimer" class="tab">
-    <h2>Disclaimer</h2>
-    <p>Only for 18+ users. Real money games involve financial risk. Play responsibly.</p>
+  <div class="app">
+    <h3>Good Slots</h3>
+    <p>Bonus ₹45 | Fast Game</p>
   </div>
 
 </div>
 
-<!-- WARNING -->
+<!-- ABOUT -->
+<div id="about" class="tab">
+  <h2>About</h2>
+  <p>This website provides informational content about gaming apps only.</p>
+</div>
+
+<!-- PRIVACY -->
+<div id="privacy" class="tab">
+  <h2>Privacy Policy</h2>
+  <p>We do not collect personal data. All links are third-party.</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimer" class="tab">
+  <h2>Disclaimer</h2>
+  <p>Only for 18+ users. Real money games involve financial risk.</p>
+</div>
+
+</div>
+
 <div class="warning">
-⚠ 18+ Only. Real money games involve financial risk.
+⚠ 18+ Only. Play Responsibly.
 </div>
 
 <script>
@@ -148,16 +203,18 @@ function openTab(tabId){
 
 ---
 
-✅ Result
+✅ Final Result
 
-✔ Menu top में दिखेगा
-✔ Home default open रहेगा
-✔ About click → About खुलेगा
-✔ Privacy Policy click → Privacy खुलेगा
-✔ Disclaimer click → Disclaimer खुलेगा
-✔ 18+ Warning नीचे show होगा
+✔ Top Menu
+✔ Home
+✔ Option 1 Dropdown
+✔ About inside Option 1
+✔ Privacy Policy inside Option 1
+✔ Disclaimer inside Option 1
+✔ 18+ Warning
+✔ Fully Working Tabs
 
 
 ---
 
-अगर आप चाहें तो मैं इसे और भी professional glowing navbar version बना दूँ 😊
+अगर आप चाहें तो मैं इसे mobile click dropdown version (hover नहीं, click से खुले) भी बना दूँ 😊
