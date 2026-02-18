@@ -1,4 +1,12 @@
-Here is the final HTML code with the download button now appearing both at the top and the bottom of the detail page. The top button remains next to the share button, and an identical bottom button is placed after the bottom tags (before the install note). All app information tags are displayed both at the top and bottom as before. This gives users quick access to download without scrolling. All other features (uniform green‑gold home buttons, extensive app info badges, share button, pulsing warning box) remain unchanged. This is the complete, production‑ready version.
+Here is the final HTML code with the requested adjustments:
+
+· Only one download button on the detail page (top, next to share button) – the bottom duplicate has been removed.
+· Download button size reduced to 240px (slightly smaller) for a more balanced look.
+· App information tags are clearly displayed both at the top and bottom, with the best bonus and all safety badges.
+· Home page download buttons remain the uniform green‑gold gradient.
+· All other features (share button, extensive info badges, pulsing warning box) are intact.
+
+This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -163,18 +171,18 @@ Here is the final HTML code with the download button now appearing both at the t
       100% { transform: translateY(0); }
     }
 
-    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (used for both top and bottom) */
+    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (slightly smaller) */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
       border: none;
-      width: 280px;
-      padding: 16px 10px;
+      width: 240px;  /* reduced from 280px */
+      padding: 14px 8px; /* slightly smaller padding */
       border-radius: 60px;
       font-weight: 900;
-      font-size: 18px;
+      font-size: 17px; /* slightly smaller font */
       cursor: pointer;
-      box-shadow: 0 12px 0 #1e8449, 0 12px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 10px 0 #1e8449, 0 12px 20px rgba(0,0,0,0.4);
       margin: 10px auto;
       display: inline-block;
       border: 2px solid rgba(255,255,255,0.7);
@@ -198,7 +206,7 @@ Here is the final HTML code with the download button now appearing both at the t
     }
     @keyframes detailFloat {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-5px); box-shadow: 0 15px 0 #1e8449, 0 18px 30px rgba(231,76,60,0.5); }
+      50% { transform: translateY(-4px); box-shadow: 0 13px 0 #1e8449, 0 15px 25px rgba(231,76,60,0.5); }
       100% { transform: translateY(0); }
     }
     @keyframes shine {
@@ -400,7 +408,7 @@ Here is the final HTML code with the download button now appearing both at the t
       }
       .detail-download {
         width: 100%;
-        max-width: 280px;
+        max-width: 240px;
       }
     }
   </style>
@@ -421,7 +429,7 @@ Here is the final HTML code with the download button now appearing both at the t
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB (with download button at top and bottom) -->
+  <!-- DETAIL TAB (single download button at top) -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
@@ -448,19 +456,14 @@ Here is the final HTML code with the download button now appearing both at the t
       <!-- Tags top -->
       <div id="dTagsTop" style="margin:15px 0;"></div>
       
-      <!-- Download and Share buttons at the top -->
+      <!-- Single download button + share button at top -->
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
-        <button class="detail-download" id="dDownloadTop">⬇ DOWNLOAD <span id="dAppNameTop"></span> APK</button>
+        <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
         <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
       </div>
       
-      <!-- Ratings, downloads, size, bonus already displayed above -->
-      
-      <!-- Tags bottom -->
+      <!-- Tags bottom (still present) -->
       <div id="dTagsBottom" style="margin:20px 0;"></div>
-
-      <!-- Second download button at the bottom -->
-      <button class="detail-download" id="dDownloadBottom" style="margin-top:0;">⬇ DOWNLOAD <span id="dAppNameBottom"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
     </div>
@@ -700,16 +703,13 @@ Here is the final HTML code with the download button now appearing both at the t
     document.getElementById('dOtpFraud').innerText = app.otpFraud;
     document.getElementById('dLegalWithdraw').innerText = app.legalWithdraw;
     
-    // Set app name in both top and bottom download buttons
-    document.getElementById('dAppNameTop').innerText = app.name;
-    document.getElementById('dAppNameBottom').innerText = app.name;
+    // Set app name in download button
+    document.getElementById('dAppName').innerText = app.name;
     
-    // Set common click handler for both buttons
-    const downloadHandler = () => window.open(app.link, '_blank');
-    document.getElementById('dDownloadTop').onclick = downloadHandler;
-    document.getElementById('dDownloadBottom').onclick = downloadHandler;
+    // Set click handler
+    document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
     
-    document.getElementById('dNote').innerHTML = `Use the green-red buttons above or below to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
+    document.getElementById('dNote').innerHTML = `Use the green-red button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
 
     // Tags
     const tagsTop = document.getElementById('dTagsTop');
