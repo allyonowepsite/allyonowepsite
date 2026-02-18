@@ -1,4 +1,4 @@
-Here is the final HTML code with a uniform green‑gold gradient download button for all apps on the home page, as you requested. All buttons are identical, featuring a vibrant HD look with a 3D shadow and floating animation. The detail pages remain fully functional with extensive app information (Google rank, safety, OTP fraud warning, legal withdraw, customer service, custom tags) and a share button. This matches the layout in your image and is production‑ready.
+Here is the final HTML code with the download button now appearing both at the top and the bottom of the detail page. The top button remains next to the share button, and an identical bottom button is placed after the bottom tags (before the install note). All app information tags are displayed both at the top and bottom as before. This gives users quick access to download without scrolling. All other features (uniform green‑gold home buttons, extensive app info badges, share button, pulsing warning box) remain unchanged. This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -163,7 +163,7 @@ Here is the final HTML code with a uniform green‑gold gradient download button
       100% { transform: translateY(0); }
     }
 
-    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation */
+    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (used for both top and bottom) */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
@@ -421,7 +421,7 @@ Here is the final HTML code with a uniform green‑gold gradient download button
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB -->
+  <!-- DETAIL TAB (with download button at top and bottom) -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
@@ -448,14 +448,19 @@ Here is the final HTML code with a uniform green‑gold gradient download button
       <!-- Tags top -->
       <div id="dTagsTop" style="margin:15px 0;"></div>
       
-      <!-- Download and Share buttons -->
+      <!-- Download and Share buttons at the top -->
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
-        <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+        <button class="detail-download" id="dDownloadTop">⬇ DOWNLOAD <span id="dAppNameTop"></span> APK</button>
         <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
       </div>
       
+      <!-- Ratings, downloads, size, bonus already displayed above -->
+      
       <!-- Tags bottom -->
       <div id="dTagsBottom" style="margin:20px 0;"></div>
+
+      <!-- Second download button at the bottom -->
+      <button class="detail-download" id="dDownloadBottom" style="margin-top:0;">⬇ DOWNLOAD <span id="dAppNameBottom"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
     </div>
@@ -694,9 +699,17 @@ Here is the final HTML code with a uniform green‑gold gradient download button
     document.getElementById('dCustomerService').innerText = app.customerService;
     document.getElementById('dOtpFraud').innerText = app.otpFraud;
     document.getElementById('dLegalWithdraw').innerText = app.legalWithdraw;
-    document.getElementById('dAppName').innerText = app.name;
-    document.getElementById('dNote').innerHTML = `Use the green-red button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
-    document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
+    
+    // Set app name in both top and bottom download buttons
+    document.getElementById('dAppNameTop').innerText = app.name;
+    document.getElementById('dAppNameBottom').innerText = app.name;
+    
+    // Set common click handler for both buttons
+    const downloadHandler = () => window.open(app.link, '_blank');
+    document.getElementById('dDownloadTop').onclick = downloadHandler;
+    document.getElementById('dDownloadBottom').onclick = downloadHandler;
+    
+    document.getElementById('dNote').innerHTML = `Use the green-red buttons above or below to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
 
     // Tags
     const tagsTop = document.getElementById('dTagsTop');
