@@ -1,3 +1,6 @@
+Here is the final HTML code with the only requested fix: the warning box now has a subtle pulsing animation on its left border (rolling/“krol” moment) while keeping all text left‑aligned. Everything else remains exactly as you wanted—home buttons (pink‑orange 3D), detail button (green‑red 3D), and all app information (Google rank, safety, customer service, etc.) are intact.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -356,17 +359,25 @@
       border-radius: 14px;
     }
 
-    /* Warning box */
+    /* Warning box with left-aligned text and pulsing left border (krol moment) */
     .warning {
       background: #fff3cd;
       border-left: 8px solid #ff5722;
       padding: 20px 18px;
-      margin: 30px 0 20px;
+      margin: 30px auto 20px;
       border-radius: 22px;
       font-weight: 600;
       color: #4a1c00;
       line-height: 1.7;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 1150px;
+      text-align: left;  /* ensure left alignment */
+      animation: borderPulse 2s infinite ease-in-out;
+    }
+    @keyframes borderPulse {
+      0% { border-left-color: #ff5722; }
+      50% { border-left-color: #ff8c00; box-shadow: 0 10px 25px rgba(255,87,34,0.3); }
+      100% { border-left-color: #ff5722; }
     }
 
     .footer {
@@ -455,7 +466,7 @@
     </div>
   </div>
 
-  <!-- ABOUT, PRIVACY, DISCLAIMER tabs (unchanged) -->
+  <!-- ABOUT, PRIVACY, DISCLAIMER tabs -->
   <div id="about" class="tab">
     <div class="card">
       <h2>About Us</h2>
@@ -478,8 +489,8 @@
   </div>
 </div>
 
-<!-- Permanent warning box -->
-<div class="warning" style="max-width:1150px; margin:20px auto;">
+<!-- Permanent warning box with left-aligned text and pulsing left border -->
+<div class="warning">
   ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
   • Only for 18+ users<br>
   • Real money games involve financial risk<br>
@@ -644,7 +655,7 @@
     window.scrollTo(0, 0);
   }
 
-  // Render home with new pink-orange buttons
+  // Render home with pink-orange buttons
   function renderHome() {
     homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
@@ -762,3 +773,4 @@
 
 </body>
 </html>
+```
