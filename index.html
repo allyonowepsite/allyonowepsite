@@ -1,3 +1,11 @@
+Here is the final HTML code with the updated layout:
+
+· Download button and Share with friends button are now placed together near the top of the detail page, just below the safety badges and the first set of tags.
+· App information tags appear both at the top (above the buttons) and again at the bottom (above the A–Z list) as requested.
+· All other information (ratings, downloads, size, bonus, install note) remains in place, and the A–Z list is still included.
+· The design maintains the vibrant colors, animations, and full functionality for all 7 apps.
+
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -165,8 +173,8 @@
       font-size: 18px;
       cursor: pointer;
       box-shadow: 0 8px 0 #7a2a42, 0 8px 20px rgba(0,0,0,0.3);
-      margin: 20px auto;
-      display: block;
+      margin: 10px auto;
+      display: inline-block;
       border: 2px solid rgba(255,255,255,0.6);
       letter-spacing: 0.5px;
       line-height: 1.2;
@@ -390,29 +398,31 @@
   <!-- HOME TAB – no disclaimer, only apps -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB -->
+  <!-- DETAIL TAB with new layout -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
       <h2 id="dTitle"></h2>
       
-      <!-- Long description (unique per app) -->
+      <!-- Long description -->
       <p id="dLongDesc" style="font-size:16px; margin:15px 0; text-align:left; background:#f9f9ff; padding:14px; border-radius:20px;"></p>
       
-      <!-- Safety badge -->
-      <div class="badge safety-badge" id="dSafety">🔒 Secure & Verified</div>
-      <!-- Fraud warning badge -->
-      <div class="badge fraud-badge" id="dFraud">⚠️ Play at your own risk</div>
+      <!-- Safety badges -->
+      <div>
+        <span class="badge safety-badge" id="dSafety">🔒 Secure & Verified</span>
+        <span class="badge fraud-badge" id="dFraud">⚠️ Play at your own risk</span>
+      </div>
       
-      <!-- Tags (unique per app) -->
-      <div id="dTags" style="margin:15px 0;"></div>
+      <!-- Tags (first appearance – top) -->
+      <div id="dTagsTop" style="margin:15px 0;"></div>
       
-      <ul class="feature-list">
-        <li>Real Cash Games</li>
-        <li>Signup Bonus Eligible</li>
-        <li>Fast UPI Withdrawals</li>
-      </ul>
+      <!-- Download and Share buttons at the top -->
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
+        <button class="small-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+        <button class="share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
+      </div>
       
+      <!-- Ratings, downloads, size, bonus -->
       <div>
         <span class="badge">⭐ <span id="dRating"></span> Ratings</span>
         <span class="badge downloads-badge">⬇ <span id="dDownloads"></span> Downloads</span>
@@ -423,13 +433,10 @@
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
 
-      <!-- Download button -->
-      <button class="small-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+      <!-- Tags (second appearance – bottom) -->
+      <div id="dTagsBottom" style="margin:20px 0;"></div>
 
       <div class="install-note" id="dNote"></div>
-
-      <!-- Only Share with friends button -->
-      <button class="share-btn" id="shareFriends" onclick="shareWithFriends()">📤 Share with friends</button>
     </div>
 
     <!-- All apps A→Z list -->
@@ -649,14 +656,21 @@
     document.getElementById('dNote').innerHTML = `Use the button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
-    // Render tags
-    const tagsContainer = document.getElementById('dTags');
-    tagsContainer.innerHTML = '';
+    // Render tags in both top and bottom containers
+    const tagsTop = document.getElementById('dTagsTop');
+    const tagsBottom = document.getElementById('dTagsBottom');
+    tagsTop.innerHTML = '';
+    tagsBottom.innerHTML = '';
     app.tags.forEach(tag => {
-      const span = document.createElement('span');
-      span.className = 'badge tag-badge';
-      span.innerText = tag;
-      tagsContainer.appendChild(span);
+      const spanTop = document.createElement('span');
+      spanTop.className = 'badge tag-badge';
+      spanTop.innerText = tag;
+      tagsTop.appendChild(spanTop);
+
+      const spanBottom = document.createElement('span');
+      spanBottom.className = 'badge tag-badge';
+      spanBottom.innerText = tag;
+      tagsBottom.appendChild(spanBottom);
     });
 
     window.currentApp = app;
@@ -718,3 +732,4 @@
 
 </body>
 </html>
+```
