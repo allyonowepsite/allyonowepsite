@@ -1,4 +1,4 @@
-Here is the final HTML code with the requested home page download button featuring a vibrant green‑to‑gold gradient (green to golden yellow) with a bold 3D shadow and floating animation. All other elements—detail page download button (green‑red), share button (pink‑black), detailed app info badges, tags, and the pulsing warning box—remain exactly as you approved. This is the complete, production‑ready version.
+Here is the final HTML code with the home page download button enhanced to your exact specification: a bright, two‑color gradient (green to lime yellow) with a deep 3D shadow and a pronounced floating animation for that full 3D moment. All other elements—detail page button, share button, detailed app info badges, tags, pulsing warning box—remain as previously approved and fully functional. This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -136,29 +136,30 @@ Here is the final HTML code with the requested home page download button featuri
       font-weight: 700;
     }
 
-    /* HOME DOWNLOAD BUTTON – green-gold gradient, 3D, animation */
+    /* HOME DOWNLOAD BUTTON – bright green-lime gradient, deep 3D, floating animation */
     .home-download {
-      background: linear-gradient(145deg, #2ecc71, #f1c40f);
+      background: linear-gradient(145deg, #6ef06e, #f0e68c);
       color: #1e3a8a;
       border: none;
-      padding: 10px 24px;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 16px;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 10px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 14px 0 #b8860b, 0 15px 25px rgba(0,0,0,0.4);
       transition: 0.1s ease;
-      border: 2px solid rgba(255,255,255,0.5);
+      border: 2px solid rgba(255,255,255,0.7);
       white-space: nowrap;
       animation: homeFloat 2s infinite ease-in-out;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
     }
     .home-download:active {
-      transform: translateY(6px);
-      box-shadow: 0 4px 0 #b8860b, 0 8px 15px rgba(0,0,0,0.3);
+      transform: translateY(8px);
+      box-shadow: 0 6px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
     }
     @keyframes homeFloat {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); box-shadow: 0 12px 0 #b8860b, 0 15px 25px rgba(46,204,113,0.5); }
+      50% { transform: translateY(-6px); box-shadow: 0 18px 0 #b8860b, 0 20px 30px rgba(110,240,110,0.5); }
       100% { transform: translateY(0); }
     }
 
@@ -655,7 +656,7 @@ Here is the final HTML code with the requested home page download button featuri
     window.scrollTo(0, 0);
   }
 
-  // Render home with green-gold buttons
+  // Render home with bright green-lime buttons
   function renderHome() {
     homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
