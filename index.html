@@ -1,4 +1,187 @@
 <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Yono Games</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f2f2;
+}
+
+/* HEADER */
+.header{
+  background:linear-gradient(to right,#1e3c72,#2a5298);
+  color:white;
+  text-align:center;
+  padding:15px;
+  position:sticky;
+  top:0;
+}
+
+.menu a{
+  color:white;
+  margin:10px;
+  text-decoration:none;
+  font-weight:bold;
+  cursor:pointer;
+}
+
+.menu a:hover{
+  text-decoration:underline;
+}
+
+/* CONTENT */
+.container{
+  padding:20px;
+}
+
+/* TAB SYSTEM */
+.tab{
+  display:none;
+}
+
+.tab.active{
+  display:block;
+}
+
+/* CARD */
+.app{
+  background:white;
+  padding:15px;
+  margin:15px 0;
+  border-radius:10px;
+  box-shadow:0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* WARNING */
+.warning{
+  background:#ffe0b2;
+  padding:15px;
+  margin:20px;
+  border-radius:10px;
+  text-align:center;
+  font-weight:bold;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <h1>All Yono Games</h1>
+  <div class="menu">
+    <a onclick="openTab('home')">Home</a>
+    <a onclick="openTab('about')">About</a>
+    <a onclick="openTab('privacy')">Privacy Policy</a>
+    <a onclick="openTab('disclaimer')">Disclaimer</a>
+  </div>
+</div>
+
+<div class="container">
+
+<!-- HOME -->
+<div id="home" class="tab active">
+  <h2>Top Gaming Apps</h2>
+
+  <div class="app">
+    <h3>Teen Patti Master</h3>
+    <p>Bonus ₹43 | Instant Withdraw</p>
+  </div>
+
+  <div class="app">
+    <h3>Yono Rummy</h3>
+    <p>Bonus ₹50 | Secure App</p>
+  </div>
+
+</div>
+
+<!-- ABOUT -->
+<div id="about" class="tab">
+<h2>About Us - All Yono Games</h2>
+<p>
+Welcome to our platform, created on 30 November 2024, dedicated to enhancing digital experiences for everyone.
+Our mission is to empower users with access to a wide range of applications focused on Indian users.
+</p>
+<p>
+We aim to revolutionize how people discover and download apps by offering utility, productivity,
+entertainment and lifestyle applications in one place.
+</p>
+<p>
+We believe in local solutions for local challenges and strive to provide user-friendly digital access.
+</p>
+</div>
+
+<!-- DISCLAIMER -->
+<div id="disclaimer" class="tab">
+<h2>Independent App Disclaimers</h2>
+
+<p><strong>Independent App Disclaimers:</strong> We recommend users review full terms of each app before use.</p>
+
+<p><strong>No Liability:</strong> AllYonoGames assumes no liability for any losses, damages or issues from third-party apps.</p>
+
+<p><strong>Notice of Regional Legal Restrictions:</strong> Some apps like Rummy, Poker and Fantasy Sports may be restricted in certain Indian states.</p>
+
+<p>By using AllYonoGames, users accept that apps are managed by third-party entities and use is at their own risk.</p>
+</div>
+
+<!-- PRIVACY POLICY -->
+<div id="privacy" class="tab">
+<h2>Privacy Policy</h2>
+
+<h3>Business Transactions</h3>
+<p>If involved in merger or acquisition, data may be transferred with notice.</p>
+
+<h3>Law Enforcement</h3>
+<p>Data may be disclosed if required by law.</p>
+
+<h3>Other Legal Requirements</h3>
+<ul>
+<li>Comply with legal obligation</li>
+<li>Protect rights or property</li>
+<li>Investigate wrongdoing</li>
+<li>Protect user safety</li>
+<li>Protect against liability</li>
+</ul>
+
+<h3>Security of Your Personal Data</h3>
+<p>We strive to protect data but cannot guarantee 100% security.</p>
+
+<h3>Children’s Privacy</h3>
+<p>Service is not for users under 13. We do not knowingly collect children's data.</p>
+
+<h3>Links to Other Websites</h3>
+<p>We are not responsible for third-party website policies.</p>
+
+<h3>Changes to this Privacy Policy</h3>
+<p>Policy may be updated periodically.</p>
+
+<h3>Contact Us</h3>
+<p>Contact us for any privacy-related questions.</p>
+
+</div>
+
+</div>
+
+<div class="warning">
+⚠ 18+ Only. Real money games involve financial risk.
+</div>
+
+<script>
+function openTab(tabId){
+  document.querySelectorAll('.tab').forEach(function(tab){
+    tab.classList.remove('active');
+  });
+  document.getElementById(tabId).classList.add('active');
+}
+</script>
+
+</body>
+</html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -837,3 +1020,4 @@
 
 </body>
 </html>
+
