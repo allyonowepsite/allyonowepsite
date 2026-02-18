@@ -1,4 +1,4 @@
-Here is the final HTML code. It includes a home page with all 7 apps (Teen Patti Master, 101Z Games, Yono Rummy, Teen Patti master Old, RummySe, RummySe Old, Good Slots) – each with a unique, vibrant gradient download button (inspired by the VectorStock image). The detail page for every app (including 101Z Games) features a green‑red gradient download button, a share button, and extensive information (Google rank, safety, OTP fraud warning, legal withdraw, customer service, and custom tags). The warning box has a pulsing left border. This is the complete, production‑ready version.
+Here is the final HTML code with a uniform home page download button – all apps now use the same vibrant green‑gold gradient (green to golden yellow) with a deep 3D shadow and floating animation. All other features remain: detail page buttons (green‑red), share button (pink‑black), extensive app info badges (Google rank, safety, OTP fraud, legal withdraw, customer service), custom tags, and pulsing warning box. This matches your request for "fast page download button ek hona chahiye" and the earlier green/gold look.
 
 ```html
 <!DOCTYPE html>
@@ -136,29 +136,30 @@ Here is the final HTML code. It includes a home page with all 7 apps (Teen Patti
       font-weight: 700;
     }
 
-    /* HOME DOWNLOAD BUTTON – base style, gradient applied inline */
+    /* HOME DOWNLOAD BUTTON – uniform green-gold gradient, 3D, animation */
     .home-download {
+      background: linear-gradient(145deg, #2ecc71, #f1c40f);
+      color: #1e3a8a;
       border: none;
       padding: 12px 28px;
       border-radius: 60px;
       font-weight: 900;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 14px 0 rgba(0,0,0,0.3), 0 15px 25px rgba(0,0,0,0.4);
+      box-shadow: 0 14px 0 #b8860b, 0 15px 25px rgba(0,0,0,0.4);
       transition: 0.1s ease;
       border: 2px solid rgba(255,255,255,0.7);
       white-space: nowrap;
       animation: homeFloat 2s infinite ease-in-out;
       text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-      color: white;
     }
     .home-download:active {
       transform: translateY(8px);
-      box-shadow: 0 6px 0 rgba(0,0,0,0.3), 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
     }
     @keyframes homeFloat {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-6px); box-shadow: 0 18px 0 rgba(0,0,0,0.3), 0 20px 30px rgba(255,255,255,0.3); }
+      50% { transform: translateY(-6px); box-shadow: 0 18px 0 #b8860b, 0 20px 30px rgba(46,204,113,0.5); }
       100% { transform: translateY(0); }
     }
 
@@ -634,17 +635,6 @@ Here is the final HTML code. It includes a home page with all 7 apps (Teen Patti
     }
   ];
 
-  // Array of vibrant gradients for home download buttons (best colors for RummySe etc.)
-  const gradientColors = [
-    'linear-gradient(145deg, #ff6b6b, #feca57)', // red-orange
-    'linear-gradient(145deg, #48dbfb, #1dd1a1)', // blue-green
-    'linear-gradient(145deg, #f368e0, #ff9f43)', // pink-orange
-    'linear-gradient(145deg, #5f27cd, #54a0ff)', // purple-blue
-    'linear-gradient(145deg, #00d2d3, #f368e0)', // teal-pink (great for RummySe)
-    'linear-gradient(145deg, #ff9f43, #ee5a24)', // orange-red (great for RummySe Old)
-    'linear-gradient(145deg, #10ac84, #5f27cd)'  // green-purple
-  ];
-
   const homeDiv = document.getElementById('home');
   const allAppsDiv = document.getElementById('allAppsList');
 
@@ -666,11 +656,10 @@ Here is the final HTML code. It includes a home page with all 7 apps (Teen Patti
     window.scrollTo(0, 0);
   }
 
-  // Render home with unique gradient per app
+  // Render home with uniform green-gold download buttons
   function renderHome() {
     homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
-      const gradient = gradientColors[index % gradientColors.length];
       homeDiv.innerHTML += `
         <div class="card">
           <div class="app-row">
@@ -681,7 +670,7 @@ Here is the final HTML code. It includes a home page with all 7 apps (Teen Patti
               <div class="bonus">🟢 Bonus: ₹${app.bonus}</div>
               <div class="min-withdraw">🟢 Min Withdraw: ₹100</div>
             </div>
-            <button class="home-download" style="background: ${gradient};" onclick="openApp(${app.id})">Download</button>
+            <button class="home-download" onclick="openApp(${app.id})">Download</button>
           </div>
         </div>
       `;
