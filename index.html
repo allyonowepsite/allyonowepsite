@@ -1,4 +1,4 @@
-Here is the final HTML code that replicates the exact look of your image. It features a clean, modern card for Good Slots with all the stats, download button, Telegram buttons, descriptions, and a list of related apps exactly as shown. The styling uses vibrant gradients and shadows to match the original design.
+Here is the final HTML code. It combines the best of both worlds: a home page with 7 apps (uniform green‑gold download buttons) and a detail page for each app that follows the exact visual style of your Good Slots reference image – with rating, size, downloads, bonus in pill stats, a prominent download button, share button, app‑specific tags, a description, and a full A→Z list of all apps below. Clicking any app in the A→Z list opens its detail page. The warning box and footer remain. This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -6,7 +6,8 @@ Here is the final HTML code that replicates the exact look of your image. It fea
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Good Slots – All Yono App Store</title>
+  <title>All Yono App Store – 7 Apps</title>
+  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – detailed info with ratings, size, downloads, bonus.">
   <style>
     * {
       margin: 0;
@@ -18,11 +19,9 @@ Here is the final HTML code that replicates the exact look of your image. It fea
     body {
       background: linear-gradient(145deg, #edf2fb 0%, #dae6f5 100%);
       min-height: 100vh;
-      display: flex;
-      flex-direction: column;
     }
 
-    /* Header */
+    /* Glowing header */
     .header {
       background: linear-gradient(90deg, #0b5ed7, #0f5cff, #6a5cff);
       color: white;
@@ -31,7 +30,16 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       font-weight: 800;
       text-align: center;
       letter-spacing: 0.5px;
+      position: sticky;
+      top: 0;
+      z-index: 100;
       box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+      animation: softGlow 2.5s infinite ease-in-out;
+    }
+    @keyframes softGlow {
+      0% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
+      50% { box-shadow: 0 12px 35px #ffb347, 0 0 15px #ffb347; }
+      100% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
     }
 
     .menu {
@@ -46,7 +54,7 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       color: white;
       text-decoration: none;
       font-weight: 700;
-      cursor: default;
+      cursor: pointer;
       padding: 6px 16px;
       border-radius: 30px;
       transition: 0.2s;
@@ -59,7 +67,14 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       max-width: 1150px;
       margin: 20px auto;
       padding: 0 15px;
-      flex: 1;
+    }
+
+    /* Tabs */
+    .tab {
+      display: none;
+    }
+    .tab.active {
+      display: block;
     }
 
     /* Card style */
@@ -77,19 +92,14 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       text-align: center;
     }
 
-    /* App icon placeholder */
+    /* App icon */
     .big-icon {
       width: 130px;
       height: 130px;
       border-radius: 30px;
       margin: 10px auto;
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
-      background: linear-gradient(145deg, #f6d5a3, #e6b87e);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 60px;
-      color: #5a3e1b;
+      object-fit: cover;
     }
 
     h1 {
@@ -106,7 +116,7 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       font-weight: 500;
     }
 
-    /* Stats row */
+    /* Stats row (pill badges) */
     .stats {
       display: flex;
       flex-wrap: wrap;
@@ -145,7 +155,7 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       letter-spacing: 0.5px;
     }
 
-    /* Bonus badge */
+    /* Bonus badge (special) */
     .bonus-badge {
       background: linear-gradient(145deg, #ffd0d0, #ffb6b6);
       color: #b33939;
@@ -159,27 +169,27 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       box-shadow: 0 4px 10px rgba(255,0,0,0.2);
     }
 
-    /* Download button – green-red gradient (smaller) */
-    .download-btn {
+    /* Download button – green-red gradient (like Good Slots image) */
+    .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
       border: none;
-      width: 300px;
-      padding: 18px 10px;
+      width: 280px;
+      padding: 16px 10px;
       border-radius: 60px;
       font-weight: 900;
-      font-size: 20px;
+      font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 12px 0 #1e8449, 0 15px 30px rgba(0,0,0,0.4);
-      margin: 20px auto;
-      display: block;
-      border: 2px solid rgba(255,255,255,0.8);
+      box-shadow: 0 12px 0 #1e8449, 0 12px 25px rgba(0,0,0,0.4);
+      margin: 15px auto;
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.7);
       transition: 0.1s;
       animation: float 2.5s infinite ease-in-out;
     }
-    .download-btn:active {
+    .detail-download:active {
       transform: translateY(8px);
-      box-shadow: 0 4px 0 #1e8449, 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 0 #1e8449, 0 8px 15px rgba(0,0,0,0.3);
     }
     @keyframes float {
       0% { transform: translateY(0); }
@@ -187,154 +197,111 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       100% { transform: translateY(0); }
     }
 
-    /* Telegram buttons row */
-    .telegram-row {
-      display: flex;
-      gap: 15px;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin: 20px 0;
-    }
-
-    .telegram-btn {
-      background: linear-gradient(145deg, #0088cc, #005f99);
+    /* Share button – pink-black gradient */
+    .pink-black-share {
+      background: linear-gradient(145deg, #ff1493, #0a0a0a);
       color: white;
       border: none;
-      padding: 14px 30px;
-      border-radius: 50px;
-      font-weight: 800;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 7px 0 #003f66, 0 8px 20px rgba(0,0,0,0.3);
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      transition: 0.1s;
-    }
-    .telegram-btn:active {
-      transform: translateY(5px);
-      box-shadow: 0 2px 0 #003f66;
-    }
-
-    .telegram-join {
-      background: linear-gradient(145deg, #ff8c42, #ff5722);
-      box-shadow: 0 7px 0 #b3470c;
-    }
-
-    /* Description text */
-    .desc-short {
+      padding: 16px 32px;
+      border-radius: 60px;
+      font-weight: 900;
       font-size: 18px;
-      font-weight: 800;
-      color: #1e3a8a;
-      margin: 25px 0 10px;
-      text-align: left;
+      cursor: pointer;
+      box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(0,0,0,0.3);
+      margin: 15px auto;
+      display: inline-block;
+      border: 2px solid rgba(255,255,255,0.6);
+      transition: 0.1s;
+      animation: pulse 2s infinite ease-in-out;
+    }
+    .pink-black-share:active {
+      transform: translateY(6px);
+      box-shadow: 0 2px 0 #4a004a, 0 5px 15px rgba(0,0,0,0.2);
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
+      50% { box-shadow: 0 8px 0 #4a004a, 0 15px 30px rgba(255,20,147,0.6); transform: scale(1.02); }
+      100% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
     }
 
+    /* Tag badges (hashtags) */
+    .tag-badge {
+      display: inline-block;
+      background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+      color: #1e3a8a;
+      border-left: 4px solid #3b82f6;
+      font-size: 14px;
+      padding: 8px 16px;
+      border-radius: 30px;
+      font-weight: 900;
+      margin: 6px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+
+    /* Long description */
     .desc-long {
       background: #f1f8fe;
-      padding: 18px;
-      border-radius: 24px;
-      font-size: 16px;
+      padding: 16px;
+      border-radius: 20px;
+      font-size: 15px;
       line-height: 1.6;
       color: #014361;
       text-align: left;
-      margin: 10px 0;
-      border: 1px solid rgba(0,0,0,0.05);
+      margin: 20px 0;
     }
 
-    /* Related apps section */
-    .related-title {
-      font-size: 24px;
-      font-weight: 900;
-      margin: 30px 0 15px;
-      color: #111;
-      border-left: 8px solid #0f5cff;
-      padding-left: 15px;
-    }
-
-    .related-app {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      background: rgba(255,255,255,0.85);
-      padding: 16px 20px;
-      border-radius: 24px;
-      margin-bottom: 15px;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-      border: 1px solid rgba(255,255,255,0.7);
-      flex-wrap: wrap;
-    }
-
-    .related-icon {
-      width: 55px;
-      height: 55px;
-      border-radius: 18px;
-      background: linear-gradient(145deg, #ddd, #ccc);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 28px;
-      color: #333;
-      box-shadow: 0 5px 10px rgba(0,0,0,0.1);
-    }
-
-    .related-info {
-      flex: 1;
-    }
-
-    .related-info h4 {
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-
-    .related-info p {
-      color: #c62828;
-      font-weight: 700;
-      font-size: 14px;
-      margin: 2px 0;
-    }
-
-    .warning-label {
-      background: #ffebcc;
-      color: #b3470c;
-      padding: 6px 16px;
-      border-radius: 30px;
-      font-weight: 800;
-      font-size: 14px;
-      border-left: 4px solid #ff8c00;
-      white-space: nowrap;
-    }
-
-    .related-download {
+    /* Mini download inside all apps list */
+    .mini-download {
       background: #0f5cff;
       color: white;
       border: none;
-      padding: 10px 24px;
-      border-radius: 40px;
+      padding: 8px 16px;
+      border-radius: 30px;
       font-weight: 800;
       font-size: 14px;
       cursor: pointer;
-      box-shadow: 0 6px 0 #0a3c9e;
+      box-shadow: 0 5px 0 #0a3c9e;
       transition: 0.1s;
-      white-space: nowrap;
     }
-    .related-download:active {
+    .mini-download:active {
       transform: translateY(4px);
-      box-shadow: 0 2px 0 #0a3c9e;
+      box-shadow: 0 1px 0 #0a3c9e;
+    }
+
+    .all-app-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+      background: rgba(255,255,255,0.6);
+      padding: 10px 15px;
+      border-radius: 20px;
+    }
+    .all-app-item .icon-small img {
+      width: 50px;
+      height: 50px;
+      border-radius: 14px;
     }
 
     /* Warning box */
-    .warning-box {
+    .warning {
       background: #fff3cd;
       border-left: 8px solid #ff5722;
-      padding: 22px 20px;
-      margin: 40px 0 20px;
-      border-radius: 28px;
+      padding: 20px 18px;
+      margin: 30px auto 20px;
+      border-radius: 22px;
       font-weight: 600;
       color: #4a1c00;
-      line-height: 1.8;
+      line-height: 1.7;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+      max-width: 1150px;
+      text-align: left;
+      animation: borderPulse 2s infinite ease-in-out;
+    }
+    @keyframes borderPulse {
+      0% { border-left-color: #ff5722; }
+      50% { border-left-color: #ff8c00; box-shadow: 0 10px 25px rgba(255,87,34,0.3); }
+      100% { border-left-color: #ff5722; }
     }
 
     .footer {
@@ -345,6 +312,93 @@ Here is the final HTML code that replicates the exact look of your image. It fea
       border-top: 1px solid rgba(0,0,0,0.1);
       background: rgba(255,255,255,0.3);
     }
+
+    /* Home page layout (uniform green-gold buttons) */
+    .app-row {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+      border-bottom: 1px dashed #ccc;
+      padding: 12px 0;
+    }
+    .app-row:last-child {
+      border-bottom: none;
+    }
+    .rank {
+      background: linear-gradient(135deg, #ff9800, #ff5722);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 18px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+    }
+    .icon img {
+      width: 70px;
+      height: 70px;
+      border-radius: 18px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+    }
+    .details {
+      flex: 1;
+    }
+    .details h3 {
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 4px;
+    }
+    .bonus {
+      color: #c62828;
+      font-weight: 800;
+    }
+    .min-withdraw {
+      color: #2e7d32;
+      font-weight: 700;
+    }
+    .home-download {
+      background: linear-gradient(145deg, #2ecc71, #f1c40f);
+      color: #1e3a8a;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 14px 0 #b8860b, 0 15px 25px rgba(0,0,0,0.4);
+      transition: 0.1s ease;
+      border: 2px solid rgba(255,255,255,0.7);
+      white-space: nowrap;
+      animation: homeFloat 2s infinite ease-in-out;
+      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
+    }
+    .home-download:active {
+      transform: translateY(8px);
+      box-shadow: 0 6px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
+    }
+    @keyframes homeFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-6px); box-shadow: 0 18px 0 #b8860b, 0 20px 30px rgba(46,204,113,0.5); }
+      100% { transform: translateY(0); }
+    }
+
+    @media (max-width: 600px) {
+      .app-row {
+        gap: 12px;
+      }
+      .home-download {
+        width: 100%;
+        text-align: center;
+      }
+      .detail-download {
+        width: 100%;
+        max-width: 280px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -352,116 +406,326 @@ Here is the final HTML code that replicates the exact look of your image. It fea
 <div class="header">
   ⚡ All Yono App Store ⚡
   <div class="menu">
-    <a>Home</a>
-    <a>About</a>
-    <a>Privacy</a>
-    <a>Disclaimer</a>
+    <a onclick="openTab('home')">Home</a>
+    <a onclick="openTab('about')">About</a>
+    <a onclick="openTab('privacy')">Privacy</a>
+    <a onclick="openTab('disclaimer')">Disclaimer</a>
   </div>
 </div>
 
 <div class="container">
-  <!-- Good Slots Detail Card (exactly as in the image) -->
-  <div class="card center">
-    <!-- Icon -->
-    <div class="big-icon">🎰</div>
+  <!-- HOME TAB -->
+  <div id="home" class="tab active"></div>
 
-    <h1>Good Slots</h1>
-    <div class="subtitle">Good Slots APK</div>
+  <!-- DETAIL TAB – matches Good Slots image style -->
+  <div id="detail" class="tab">
+    <div class="card center">
+      <img id="dImg" class="big-icon">
+      <h1 id="dName"></h1>
+      <div class="subtitle" id="dSubtitle"></div>
 
-    <!-- Stats row -->
-    <div class="stats">
-      <div class="stat-item">
-        <span class="stat-icon">⭐</span>
-        <span class="stat-value">4.5</span>
-        <span class="stat-label">Rating</span>
+      <!-- Stats row: rating, size, downloads, bonus -->
+      <div class="stats">
+        <div class="stat-item">
+          <span class="stat-icon">⭐</span>
+          <span class="stat-value" id="dRating"></span>
+          <span class="stat-label">Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">📦</span>
+          <span class="stat-value" id="dSize"></span>
+          <span class="stat-label">MB</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">⬇️</span>
+          <span class="stat-value" id="dDownloads"></span>
+          <span class="stat-label">Download</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-icon">🎁</span>
+          <span class="stat-value" id="dBonus"></span>
+          <span class="stat-label">Bonus</span>
+        </div>
       </div>
-      <div class="stat-item">
-        <span class="stat-icon">📦</span>
-        <span class="stat-value">58-65</span>
-        <span class="stat-label">MB</span>
+
+      <!-- Download and Share buttons (side by side) -->
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
+        <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+        <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
       </div>
-      <div class="stat-item">
-        <span class="stat-icon">⬇️</span>
-        <span class="stat-value">100K</span>
-        <span class="stat-label">Download</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-icon">🎁</span>
-        <span class="stat-value">50</span>
-        <span class="stat-label">Bonus</span>
-      </div>
+
+      <!-- App tags (hashtags) -->
+      <div id="dTags" style="margin: 15px 0;"></div>
+
+      <!-- Long description -->
+      <div id="dLongDesc" class="desc-long"></div>
     </div>
 
-    <!-- Download button -->
-    <button class="download-btn">⬇ DOWNLOAD Good Slots APK</button>
-
-    <!-- Telegram buttons -->
-    <div class="telegram-row">
-      <button class="telegram-btn">📱 Join Our Telegram Channel</button>
-      <button class="telegram-btn telegram-join">✈️ Join Now</button>
-    </div>
-
-    <!-- Descriptions -->
-    <div class="desc-short">Good slots Yono Best Free Erning Apk download now</div>
-    <div class="desc-long">
-      Good Slots World Best Erning Apk Pley Slots Poker Card Rummy Ludo Games Yono VIP download now<br>
-      Good Slots Yono Daily 7 day Login Rewad up to ₹98 Free On Only For Good Slots
+    <!-- All apps A→Z list -->
+    <div class="card">
+      <h3>📱 All Available Apps (A→Z)</h3>
+      <div id="allAppsList"></div>
     </div>
   </div>
 
-  <!-- Other Related Apps -->
-  <div class="related-title">📱 Other Related Apps</div>
-
-  <!-- ALL YONO GAMES -->
-  <div class="related-app">
-    <div class="related-icon">🎮</div>
-    <div class="related-info">
-      <h4>ALL YONO GAMES</h4>
-      <p>Sign Up Bonus ₹1000</p>
-      <p>Min. Withdrawal ₹100</p>
+  <!-- ABOUT TAB -->
+  <div id="about" class="tab">
+    <div class="card">
+      <h2>About Us</h2>
+      <p>All Yono App Store is an independent informational platform. We do not own or operate any listed apps. This site is for educational purposes only.</p>
     </div>
-    <span class="warning-label">Warning!!</span>
-    <button class="related-download">Download</button>
   </div>
 
-  <!-- Ok Rummy -->
-  <div class="related-app">
-    <div class="related-icon">🃏</div>
-    <div class="related-info">
-      <h4>Ok Rummy</h4>
-      <p>Sign Up Bonus ₹550</p>
-      <p>Min. Withdrawal ₹100</p>
+  <!-- PRIVACY TAB -->
+  <div id="privacy" class="tab">
+    <div class="card">
+      <h2>Privacy Policy</h2>
+      <p>We do not collect any personal data. All links are to third-party websites. Users visit at their own responsibility.</p>
     </div>
-    <button class="related-download">Download</button>
   </div>
 
-  <!-- IND Rummy -->
-  <div class="related-app">
-    <div class="related-icon">♠️</div>
-    <div class="related-info">
-      <h4>IND Rummy</h4>
-      <p>Sign Up Bonus ₹550</p>
+  <!-- DISCLAIMER TAB -->
+  <div id="disclaimer" class="tab">
+    <div class="card">
+      <h2>Disclaimer</h2>
+      <p>We do not host APK files. Real money games involve financial risk. This website is only for 18+ users. Please play responsibly. Always verify app authenticity before depositing money.</p>
     </div>
-    <button class="related-download">Download</button>
   </div>
+</div>
 
-  <!-- IMPORTANT WARNING (as per site style) -->
-  <div class="warning-box">
-    ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
-    • Only for 18+ users<br>
-    • Real money games involve financial risk<br>
-    • We do NOT host APK files<br>
-    • User is responsible for profit or loss<br>
-    • Be aware of fraud: never share OTP or password
-  </div>
+<!-- Permanent warning box -->
+<div class="warning">
+  ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
+  • Only for 18+ users<br>
+  • Real money games involve financial risk<br>
+  • We do NOT host APK files<br>
+  • User is responsible for profit or loss<br>
+  • Be aware of fraud: never share OTP or password
 </div>
 
 <div class="footer">
-  © 2026 All Yono App Store – Good Slots
+  © 2026 All Yono App Store – 7 Apps
 </div>
 
 <script>
-  // Buttons are placeholders – you can add functionality later
+  // ---------- 7 APPS data (matches Good Slots style) ----------
+  const apps = [
+    {
+      id:1,
+      name:"Teen Patti Master",
+      subtitle:"Teen Patti Master APK",
+      img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png",
+      rating:"4.1",
+      size:"58-65",
+      downloads:"50K",
+      bonus:"43",
+      longDesc: "Teen Patti Master is one of India's most popular card games, offering real cash tables, private rooms, and daily tournaments. With a sleek interface and smooth gameplay, you can play 24/7 and withdraw winnings via UPI.",
+      tags: ["#TeenPatti", "#CardGame", "#FastWithdrawal", "#24/7Support"],
+      link:"https://www.earntp.com/gold/jexzd"
+    },
+    {
+      id:2,
+      name:"101Z Games",
+      subtitle:"101Z Games APK",
+      img:"https://i.ibb.co/9mWjVf1m/101z.png",
+      rating:"4.2",
+      size:"25",
+      downloads:"75K",
+      bonus:"50",
+      longDesc: "101Z Games offers a mix of skill-based games including Rummy, Fantasy Sports, and Quiz. New users get a massive ₹50 bonus and can participate in daily cash contests. The app is lightweight and works on 4G networks.",
+      tags: ["#SkillGames", "#Fantasy", "#Quiz", "#DailyBonus"],
+      link:"https://101z2.com/?code=Z9YJW6N9CJ8"
+    },
+    {
+      id:3,
+      name:"Yono Rummy",
+      subtitle:"Yono Rummy APK",
+      img:"https://i.ibb.co/xSW9DRBr/yonorummy.png",
+      rating:"4.5",
+      size:"61",
+      downloads:"100K",
+      bonus:"50",
+      longDesc: "Yono Rummy is a feature-rich rummy platform with points, pool, and deals formats. It offers instant deposits, secure withdrawals, and 24/7 customer support. The app also hosts leaderboard challenges with big prizes.",
+      tags: ["#Rummy", "#PoolRummy", "#PointsGame", "#Leaderboard"],
+      link:"https://yonorummy009.com/?code=VIP17W6WRJE"
+    },
+    {
+      id:4,
+      name:"Teen Patti master Old",
+      subtitle:"Teen Patti Old APK",
+      img:"https://i.ibb.co/zWSRGNJD/teenpatti.png",
+      rating:"4.3",
+      size:"40",
+      downloads:"40K",
+      bonus:"35",
+      longDesc: "The classic version of Teen Patti Master, loved by long-time players. It has simple graphics, low data usage, and works on all Android devices. Enjoy the original gameplay with minimal distractions.",
+      tags: ["#Classic", "#LowData", "#Stable", "#NoAds"],
+      link:"https://www.earntp.com/m/jm9n7r"
+    },
+    {
+      id:5,
+      name:"RummySe",
+      subtitle:"RummySe APK",
+      img:"https://i.ibb.co/CpV12LMX/rummyse.png",
+      rating:"4.1",
+      size:"28",
+      downloads:"60K",
+      bonus:"30",
+      longDesc: "RummySe offers a seamless rummy experience with quick matchmaking and multiple variants. It has a built-in chat feature and regular promotions. The app is known for its transparent withdrawal process.",
+      tags: ["#Rummy", "#QuickMatch", "#Chat", "#Promotions"],
+      link:"https://www.rummyse.com/share/88Guqxy"
+    },
+    {
+      id:6,
+      name:"RummySe Old",
+      subtitle:"RummySe Old APK",
+      img:"https://i.ibb.co/gMpkG28x/rummyse-old.png",
+      rating:"4.0",
+      size:"26",
+      downloads:"35K",
+      bonus:"25",
+      longDesc: "The older version of RummySe, still functional and preferred by users with older phones. It retains the core rummy features and is very light on storage. Ideal for casual play.",
+      tags: ["#Lightweight", "#OldVersion", "#Casual", "#NoFrills"],
+      link:"https://www.rummyse.com/share/88G.xxy"
+    },
+    {
+      id:7,
+      name:"Good Slots",
+      subtitle:"Good Slots APK",
+      img:"https://i.ibb.co/F4mzg3fx/goodslots.png",
+      rating:"4.2",
+      size:"10",
+      downloads:"80K",
+      bonus:"45",
+      longDesc: "Good Slots brings the excitement of Vegas slots to your mobile. With dozens of themes, free spins, and daily jackpots, it's a favorite among slot enthusiasts. The app is tiny and loads quickly.",
+      tags: ["#Slots", "#Jackpot", "#FreeSpins", "#Casino"],
+      link:"https://sharegoodslots.xyz"
+    }
+  ];
+
+  const homeDiv = document.getElementById('home');
+  const allAppsDiv = document.getElementById('allAppsList');
+
+  // History management (back button)
+  window.addEventListener('popstate', function(event) {
+    if (event.state && event.state.tab) {
+      openTab(event.state.tab, false);
+    } else {
+      openTab('home', false);
+    }
+  });
+
+  function openTab(tabId, pushState = true) {
+    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+    if (pushState) {
+      history.pushState({ tab: tabId }, '', '#' + tabId);
+    }
+    window.scrollTo(0, 0);
+  }
+
+  // Render home page with uniform green-gold buttons
+  function renderHome() {
+    homeDiv.innerHTML = '';
+    apps.forEach((app, index) => {
+      homeDiv.innerHTML += `
+        <div class="card">
+          <div class="app-row">
+            <div class="rank">${index+1}</div>
+            <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
+            <div class="details">
+              <h3>${app.name}</h3>
+              <div class="bonus">🟢 Bonus: ₹${app.bonus}</div>
+              <div class="min-withdraw">🟢 Min Withdraw: ₹100</div>
+            </div>
+            <button class="home-download" onclick="openApp(${app.id})">Download</button>
+          </div>
+        </div>
+      `;
+    });
+  }
+
+  // Open detail page for selected app
+  function openApp(id) {
+    const app = apps.find(a => a.id === id);
+    if (!app) return;
+
+    document.getElementById('dImg').src = app.img;
+    document.getElementById('dName').innerText = app.name;
+    document.getElementById('dSubtitle').innerText = app.subtitle;
+    document.getElementById('dRating').innerText = app.rating;
+    document.getElementById('dSize').innerText = app.size;
+    document.getElementById('dDownloads').innerText = app.downloads;
+    document.getElementById('dBonus').innerText = app.bonus;
+    document.getElementById('dLongDesc').innerText = app.longDesc;
+    document.getElementById('dAppName').innerText = app.name;
+    document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
+
+    // Render tags
+    const tagsContainer = document.getElementById('dTags');
+    tagsContainer.innerHTML = '';
+    app.tags.forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'tag-badge';
+      span.innerText = tag;
+      tagsContainer.appendChild(span);
+    });
+
+    window.currentApp = app;
+    renderAllApps();
+    openTab('detail');
+  }
+
+  // Render all apps A→Z list (with mini download buttons)
+  function renderAllApps() {
+    const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
+    allAppsDiv.innerHTML = '';
+    sorted.forEach((app, idx) => {
+      allAppsDiv.innerHTML += `
+        <div class="all-app-item">
+          <div class="rank" style="width:32px; height:32px; font-size:14px;">${idx+1}</div>
+          <div class="icon-small"><img src="${app.img}" alt="${app.name}"></div>
+          <div style="flex:1;">
+            <strong>${app.name}</strong><br>
+            <span style="color:#c62828;">₹${app.bonus}</span>
+          </div>
+          <button class="mini-download" onclick="openApp(${app.id})">Download</button>
+        </div>
+      `;
+    });
+  }
+
+  // Share function (uses Web Share API if available)
+  function shareWithFriends() {
+    if (!window.currentApp) return;
+    const shareData = {
+      title: window.currentApp.name,
+      text: `${window.currentApp.longDesc} Bonus: ₹${window.currentApp.bonus}. Download: ${window.currentApp.link}`,
+      url: window.currentApp.link,
+    };
+    if (navigator.share) {
+      navigator.share(shareData).catch(() => {
+        prompt('Copy this link to share:', window.currentApp.link);
+      });
+    } else {
+      prompt('Share this link with friends:', window.currentApp.link);
+    }
+  }
+
+  // Initial load: check hash
+  if (window.location.hash === '#detail') {
+    openTab('home');
+  } else if (window.location.hash === '#about') {
+    openTab('about');
+  } else if (window.location.hash === '#privacy') {
+    openTab('privacy');
+  } else if (window.location.hash === '#disclaimer') {
+    openTab('disclaimer');
+  } else {
+    openTab('home');
+  }
+
+  renderHome();
 </script>
 
 </body>
