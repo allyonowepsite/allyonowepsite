@@ -1,11 +1,10 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Yono App Store – 7 Apps</title>
-  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – safety, bonuses, fraud warning.">
+  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – detailed info and tags.">
   <style>
     * {
       margin: 0;
@@ -86,14 +85,6 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* Disclaimer heading (removed from home, but kept for other tabs) */
-    .disclaimer-head {
-      font-size: 22px;
-      font-weight: 800;
-      margin: 0 0 10px 0;
-      color: #111;
-    }
-
     /* Home list layout */
     .app-row {
       display: flex;
@@ -162,7 +153,7 @@
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    /* Detail page download button – slightly smaller, two-color gradient */
+    /* Detail page download button – smaller, two-color gradient */
     .small-download {
       background: linear-gradient(145deg, #ff4d6d, #b23b5c);
       color: white;
@@ -250,6 +241,15 @@
       color: #856404;
     }
 
+    /* Tag badges */
+    .tag-badge {
+      background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+      color: #1e3a8a;
+      border-left: 4px solid #3b82f6;
+      font-size: 14px;
+      padding: 6px 14px;
+    }
+
     .feature-list {
       list-style: none;
       padding: 0;
@@ -276,7 +276,7 @@
       color: #014361;
     }
 
-    /* Share button – two-color gradient (only one) */
+    /* Share button – two-color gradient */
     .share-btn {
       background: linear-gradient(145deg, #8e44ad, #6c5ce7);
       color: white;
@@ -387,22 +387,25 @@
 </div>
 
 <div class="container">
-  <!-- HOME TAB – no disclaimer card, only apps -->
-  <div id="home" class="tab active">
-    <!-- Apps injected via JS -->
-  </div>
+  <!-- HOME TAB – no disclaimer, only apps -->
+  <div id="home" class="tab active"></div>
 
   <!-- DETAIL TAB -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
       <h2 id="dTitle"></h2>
-      <p id="dDesc" style="font-size:16px; margin:10px 0;"></p>
+      
+      <!-- Long description (unique per app) -->
+      <p id="dLongDesc" style="font-size:16px; margin:15px 0; text-align:left; background:#f9f9ff; padding:14px; border-radius:20px;"></p>
       
       <!-- Safety badge -->
       <div class="badge safety-badge" id="dSafety">🔒 Secure & Verified</div>
-      <!-- Fraud warning badge (additional) -->
+      <!-- Fraud warning badge -->
       <div class="badge fraud-badge" id="dFraud">⚠️ Play at your own risk</div>
+      
+      <!-- Tags (unique per app) -->
+      <div id="dTags" style="margin:15px 0;"></div>
       
       <ul class="feature-list">
         <li>Real Cash Games</li>
@@ -420,7 +423,7 @@
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
 
-      <!-- Smaller download button with app name -->
+      <!-- Download button -->
       <button class="small-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
 
       <div class="install-note" id="dNote"></div>
@@ -476,7 +479,7 @@
 </div>
 
 <script>
-  // ---------- 7 APPS ----------
+  // ---------- 7 APPS with enhanced unique information and tags ----------
   const apps = [
     { 
       id:1, 
@@ -489,7 +492,8 @@
       downloads:"50k+", 
       safety:"🔒 Secure & Verified",
       fraud:"⚠️ Possible high risk – play with caution",
-      review: "Popular card game, fast withdrawals, but verify terms.",
+      longDesc: "Teen Patti Master is one of India's most popular card games, offering real cash tables, private rooms, and daily tournaments. With a sleek interface and smooth gameplay, you can play 24/7 and withdraw winnings via UPI.",
+      tags: ["#TeenPatti", "#CardGame", "#FastWithdrawal", "#24/7Support"],
       link:"https://www.earntp.com/gold/jexzd" 
     },
     { 
@@ -503,7 +507,8 @@
       downloads:"75k+", 
       safety:"🔒 Trusted App",
       fraud:"⚠️ Some users report withdrawal delays",
-      review: "Good bonus, but read terms carefully.",
+      longDesc: "101Z Games offers a mix of skill-based games including Rummy, Fantasy Sports, and Quiz. New users get a massive ₹50 bonus and can participate in daily cash contests. The app is lightweight and works on 4G networks.",
+      tags: ["#SkillGames", "#Fantasy", "#Quiz", "#DailyBonus"],
       link:"https://101z2.com/?code=Z9YJW6N9CJ8" 
     },
     { 
@@ -517,7 +522,8 @@
       downloads:"100k+", 
       safety:"🔒 Verified Publisher",
       fraud:"⚠️ Only play with money you can afford to lose",
-      review: "High ratings, smooth gameplay.",
+      longDesc: "Yono Rummy is a feature-rich rummy platform with points, pool, and deals formats. It offers instant deposits, secure withdrawals, and 24/7 customer support. The app also hosts leaderboard challenges with big prizes.",
+      tags: ["#Rummy", "#PoolRummy", "#PointsGame", "#Leaderboard"],
       link:"https://yonorummy009.com/?code=VIP17W6WRJE" 
     },
     { 
@@ -531,7 +537,8 @@
       downloads:"40k+", 
       safety:"🔒 Safe & Secure",
       fraud:"⚠️ Not responsible for third-party ads",
-      review: "Classic version, stable app.",
+      longDesc: "The classic version of Teen Patti Master, loved by long-time players. It has simple graphics, low data usage, and works on all Android devices. Enjoy the original gameplay with minimal distractions.",
+      tags: ["#Classic", "#LowData", "#Stable", "#NoAds"],
       link:"https://www.earntp.com/m/jm9n7r" 
     },
     { 
@@ -545,7 +552,8 @@
       downloads:"60k+", 
       safety:"🔒 Secure Payment",
       fraud:"⚠️ Check withdrawal limits before playing",
-      review: "Decent bonus, user-friendly.",
+      longDesc: "RummySe offers a seamless rummy experience with quick matchmaking and multiple variants. It has a built-in chat feature and regular promotions. The app is known for its transparent withdrawal process.",
+      tags: ["#Rummy", "#QuickMatch", "#Chat", "#Promotions"],
       link:"https://www.rummyse.com/share/88Guqxy" 
     },
     { 
@@ -559,7 +567,8 @@
       downloads:"35k+", 
       safety:"🔒 Verified",
       fraud:"⚠️ Older version may lack support",
-      review: "Lightweight, good for low-end devices.",
+      longDesc: "The older version of RummySe, still functional and preferred by users with older phones. It retains the core rummy features and is very light on storage. Ideal for casual play.",
+      tags: ["#Lightweight", "#OldVersion", "#Casual", "#NoFrills"],
       link:"https://www.rummyse.com/share/88G.xxy" 
     },
     { 
@@ -573,7 +582,8 @@
       downloads:"80k+", 
       safety:"🔒 Safe & Fair",
       fraud:"⚠️ Slots are high risk – set limits",
-      review: "Exciting slot games, fast interface.",
+      longDesc: "Good Slots brings the excitement of Vegas slots to your mobile. With dozens of themes, free spins, and daily jackpots, it's a favorite among slot enthusiasts. The app is tiny and loads quickly.",
+      tags: ["#Slots", "#Jackpot", "#FreeSpins", "#Casino"],
       link:"https://sharegoodslots.xyz" 
     }
   ];
@@ -581,16 +591,16 @@
   const homeDiv = document.getElementById('home');
   const allAppsDiv = document.getElementById('allAppsList');
 
-  // ---------- HISTORY MANAGEMENT (back stays inside site) ----------
+  // ---------- HISTORY MANAGEMENT ----------
   window.addEventListener('popstate', function(event) {
     if (event.state && event.state.tab) {
-      openTab(event.state.tab, false); // false = don't push another state
+      openTab(event.state.tab, false);
     } else {
       openTab('home', false);
     }
   });
 
-  // ---------- TAB SWITCHING with history ----------
+  // ---------- TAB SWITCHING ----------
   function openTab(tabId, pushState = true) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
@@ -600,9 +610,9 @@
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE – NO DISCLAIMER CARD, ONLY APPS ----------
+  // ---------- RENDER HOME PAGE ----------
   function renderHome() {
-    homeDiv.innerHTML = '';  // start empty
+    homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
       homeDiv.innerHTML += `
         <div class="card">
@@ -628,7 +638,7 @@
 
     document.getElementById('dImg').src = app.img;
     document.getElementById('dTitle').innerText = `${app.name} APK – Official Real Cash ${app.type} App`;
-    document.getElementById('dDesc').innerText = `⭐ Review: ${app.review}`;
+    document.getElementById('dLongDesc').innerText = app.longDesc;
     document.getElementById('dRating').innerText = app.rating;
     document.getElementById('dDownloads').innerText = app.downloads;
     document.getElementById('dSize').innerText = app.size;
@@ -638,6 +648,16 @@
     document.getElementById('dAppName').innerText = app.name;
     document.getElementById('dNote').innerHTML = `Use the button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
+
+    // Render tags
+    const tagsContainer = document.getElementById('dTags');
+    tagsContainer.innerHTML = '';
+    app.tags.forEach(tag => {
+      const span = document.createElement('span');
+      span.className = 'badge tag-badge';
+      span.innerText = tag;
+      tagsContainer.appendChild(span);
+    });
 
     window.currentApp = app;
     renderAllApps();
@@ -668,7 +688,7 @@
     if (!window.currentApp) return;
     const shareData = {
       title: window.currentApp.name,
-      text: `Check out ${window.currentApp.name} – Bonus ₹${window.currentApp.bonus}! ${window.currentApp.review} Download: ${window.currentApp.link}`,
+      text: `${window.currentApp.longDesc} Bonus: ₹${window.currentApp.bonus}. Download: ${window.currentApp.link}`,
       url: window.currentApp.link,
     };
     if (navigator.share) {
@@ -680,7 +700,7 @@
     }
   }
 
-  // Handle initial hash (if any)
+  // Handle initial hash
   if (window.location.hash === '#detail') {
     openTab('home');
   } else if (window.location.hash === '#about') {
@@ -698,4 +718,3 @@
 
 </body>
 </html>
-```
