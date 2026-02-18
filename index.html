@@ -1,4 +1,4 @@
-Here is the final HTML code with the only requested fix: the warning box now has a subtle pulsing animation on its left border (rolling/“krol” moment) while keeping all text left‑aligned. Everything else remains exactly as you wanted—home buttons (pink‑orange 3D), detail button (green‑red 3D), and all app information (Google rank, safety, customer service, etc.) are intact.
+Here is the final HTML code with the requested home page download button featuring a vibrant green‑to‑gold gradient (green to golden yellow) with a bold 3D shadow and floating animation. All other elements—detail page download button (green‑red), share button (pink‑black), detailed app info badges, tags, and the pulsing warning box—remain exactly as you approved. This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -136,17 +136,17 @@ Here is the final HTML code with the only requested fix: the warning box now has
       font-weight: 700;
     }
 
-    /* HOME DOWNLOAD BUTTON – pink-orange gradient, 3D, animation */
+    /* HOME DOWNLOAD BUTTON – green-gold gradient, 3D, animation */
     .home-download {
-      background: linear-gradient(145deg, #ff4d6d, #ff8c42);
-      color: white;
+      background: linear-gradient(145deg, #2ecc71, #f1c40f);
+      color: #1e3a8a;
       border: none;
       padding: 10px 24px;
       border-radius: 50px;
       font-weight: 800;
       font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 10px 0 #b3472c, 0 10px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 10px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
       transition: 0.1s ease;
       border: 2px solid rgba(255,255,255,0.5);
       white-space: nowrap;
@@ -154,11 +154,11 @@ Here is the final HTML code with the only requested fix: the warning box now has
     }
     .home-download:active {
       transform: translateY(6px);
-      box-shadow: 0 4px 0 #b3472c, 0 8px 15px rgba(0,0,0,0.3);
+      box-shadow: 0 4px 0 #b8860b, 0 8px 15px rgba(0,0,0,0.3);
     }
     @keyframes homeFloat {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); box-shadow: 0 12px 0 #b3472c, 0 15px 25px rgba(255,77,109,0.5); }
+      50% { transform: translateY(-4px); box-shadow: 0 12px 0 #b8860b, 0 15px 25px rgba(46,204,113,0.5); }
       100% { transform: translateY(0); }
     }
 
@@ -206,7 +206,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
       100% { left: 100%; top: 100%; }
     }
 
-    /* Share button – pink-black (unchanged) */
+    /* Share button – pink-black gradient */
     .pink-black-share {
       background: linear-gradient(145deg, #ff1493, #0a0a0a);
       color: white;
@@ -248,7 +248,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
     }
 
-    /* HD badges – all new info badges */
+    /* HD badges – all info badges */
     .badge {
       display: inline-block;
       background: linear-gradient(145deg, #ffffff, #f0f4ff);
@@ -359,7 +359,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
       border-radius: 14px;
     }
 
-    /* Warning box with left-aligned text and pulsing left border (krol moment) */
+    /* Warning box with left-aligned text and pulsing left border */
     .warning {
       background: #fff3cd;
       border-left: 8px solid #ff5722;
@@ -371,7 +371,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
       line-height: 1.7;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
       max-width: 1150px;
-      text-align: left;  /* ensure left alignment */
+      text-align: left;
       animation: borderPulse 2s infinite ease-in-out;
     }
     @keyframes borderPulse {
@@ -489,7 +489,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
   </div>
 </div>
 
-<!-- Permanent warning box with left-aligned text and pulsing left border -->
+<!-- Permanent warning box with pulsing left border -->
 <div class="warning">
   ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
   • Only for 18+ users<br>
@@ -655,7 +655,7 @@ Here is the final HTML code with the only requested fix: the warning box now has
     window.scrollTo(0, 0);
   }
 
-  // Render home with pink-orange buttons
+  // Render home with green-gold buttons
   function renderHome() {
     homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
