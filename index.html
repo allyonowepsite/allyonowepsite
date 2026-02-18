@@ -1,186 +1,14 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Yono Games</title>
+Here is the final HTML code for the complete All Yono App Store website. It includes:
 
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f2f2f2;
-}
+· A home page listing all 7 apps with uniform green‑gold download buttons.
+· A detail page for each app showing icon, stacked title, three‑column stats (rating, size, downloads, bonus), an extensive information grid, download & share buttons, tags, a description, and a numbered A→Z list of all apps.
+· Navigation tabs: Home, About, Privacy, Disclaimer (with content).
+· A prominent IMPORTANT WARNING box at the bottom (18+ users, financial risk, no APK hosting, fraud awareness).
+· Fully responsive design with smooth animations.
 
-/* HEADER */
-.header{
-  background:linear-gradient(to right,#1e3c72,#2a5298);
-  color:white;
-  text-align:center;
-  padding:15px;
-  position:sticky;
-  top:0;
-}
+This is the production‑ready version you requested.
 
-.menu a{
-  color:white;
-  margin:10px;
-  text-decoration:none;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.menu a:hover{
-  text-decoration:underline;
-}
-
-/* CONTENT */
-.container{
-  padding:20px;
-}
-
-/* TAB SYSTEM */
-.tab{
-  display:none;
-}
-
-.tab.active{
-  display:block;
-}
-
-/* CARD */
-.app{
-  background:white;
-  padding:15px;
-  margin:15px 0;
-  border-radius:10px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-/* WARNING */
-.warning{
-  background:#ffe0b2;
-  padding:15px;
-  margin:20px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:bold;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-  <h1>All Yono Games</h1>
-  <div class="menu">
-    <a onclick="openTab('home')">Home</a>
-    <a onclick="openTab('about')">About</a>
-    <a onclick="openTab('privacy')">Privacy Policy</a>
-    <a onclick="openTab('disclaimer')">Disclaimer</a>
-  </div>
-</div>
-
-<div class="container">
-
-<!-- HOME -->
-<div id="home" class="tab active">
-  <h2>Top Gaming Apps</h2>
-
-  <div class="app">
-    <h3>Teen Patti Master</h3>
-    <p>Bonus ₹43 | Instant Withdraw</p>
-  </div>
-
-  <div class="app">
-    <h3>Yono Rummy</h3>
-    <p>Bonus ₹50 | Secure App</p>
-  </div>
-
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="tab">
-<h2>About Us - All Yono Games</h2>
-<p>
-Welcome to our platform, created on 30 November 2024, dedicated to enhancing digital experiences for everyone.
-Our mission is to empower users with access to a wide range of applications focused on Indian users.
-</p>
-<p>
-We aim to revolutionize how people discover and download apps by offering utility, productivity,
-entertainment and lifestyle applications in one place.
-</p>
-<p>
-We believe in local solutions for local challenges and strive to provide user-friendly digital access.
-</p>
-</div>
-
-<!-- DISCLAIMER -->
-<div id="disclaimer" class="tab">
-<h2>Independent App Disclaimers</h2>
-
-<p><strong>Independent App Disclaimers:</strong> We recommend users review full terms of each app before use.</p>
-
-<p><strong>No Liability:</strong> AllYonoGames assumes no liability for any losses, damages or issues from third-party apps.</p>
-
-<p><strong>Notice of Regional Legal Restrictions:</strong> Some apps like Rummy, Poker and Fantasy Sports may be restricted in certain Indian states.</p>
-
-<p>By using AllYonoGames, users accept that apps are managed by third-party entities and use is at their own risk.</p>
-</div>
-
-<!-- PRIVACY POLICY -->
-<div id="privacy" class="tab">
-<h2>Privacy Policy</h2>
-
-<h3>Business Transactions</h3>
-<p>If involved in merger or acquisition, data may be transferred with notice.</p>
-
-<h3>Law Enforcement</h3>
-<p>Data may be disclosed if required by law.</p>
-
-<h3>Other Legal Requirements</h3>
-<ul>
-<li>Comply with legal obligation</li>
-<li>Protect rights or property</li>
-<li>Investigate wrongdoing</li>
-<li>Protect user safety</li>
-<li>Protect against liability</li>
-</ul>
-
-<h3>Security of Your Personal Data</h3>
-<p>We strive to protect data but cannot guarantee 100% security.</p>
-
-<h3>Children’s Privacy</h3>
-<p>Service is not for users under 13. We do not knowingly collect children's data.</p>
-
-<h3>Links to Other Websites</h3>
-<p>We are not responsible for third-party website policies.</p>
-
-<h3>Changes to this Privacy Policy</h3>
-<p>Policy may be updated periodically.</p>
-
-<h3>Contact Us</h3>
-<p>Contact us for any privacy-related questions.</p>
-
-</div>
-
-</div>
-
-<div class="warning">
-⚠ 18+ Only. Real money games involve financial risk.
-</div>
-
-<script>
-function openTab(tabId){
-  document.querySelectorAll('.tab').forEach(function(tab){
-    tab.classList.remove('active');
-  });
-  document.getElementById(tabId).classList.add('active');
-}
-</script>
-
-</body>
-</html>
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -643,7 +471,7 @@ function openTab(tabId){
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB with new layout -->
+  <!-- DETAIL TAB -->
   <div id="detail" class="tab">
     <div class="card">
       <!-- Header with icon and right-aligned title -->
@@ -694,7 +522,7 @@ function openTab(tabId){
     </div>
   </div>
 
-  <!-- ABOUT, PRIVACY, DISCLAIMER tabs -->
+  <!-- ABOUT TAB -->
   <div id="about" class="tab">
     <div class="card">
       <h2>About Us</h2>
@@ -702,6 +530,7 @@ function openTab(tabId){
     </div>
   </div>
 
+  <!-- PRIVACY TAB -->
   <div id="privacy" class="tab">
     <div class="card">
       <h2>Privacy Policy</h2>
@@ -709,6 +538,7 @@ function openTab(tabId){
     </div>
   </div>
 
+  <!-- DISCLAIMER TAB -->
   <div id="disclaimer" class="tab">
     <div class="card">
       <h2>Disclaimer</h2>
@@ -719,200 +549,14 @@ function openTab(tabId){
 
 <!-- Permanent warning box -->
 <div class="warning">
-  ⚠️ <strong>IMPORTANT WARNING 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>All Yono Games 2026</title>
-
-<meta name="description" content="All Yono Games, Yono Rummy, Yono VIP, Best Earning Apps 2026, New Yono App Bonus ₹51 ₹551 ₹789">
-
-<style>
-body{
-  margin:0;
-  font-family:Arial, sans-serif;
-  background:#f2f2f2;
-}
-
-.header{
-  background:linear-gradient(to right,#1e3c72,#2a5298);
-  color:white;
-  text-align:center;
-  padding:15px;
-  position:sticky;
-  top:0;
-}
-
-.menu a{
-  color:white;
-  margin:10px;
-  text-decoration:none;
-  font-weight:bold;
-  cursor:pointer;
-}
-
-.menu a:hover{
-  text-decoration:underline;
-}
-
-.container{
-  padding:20px;
-}
-
-.tab{
-  display:none;
-}
-
-.tab.active{
-  display:block;
-}
-
-.app{
-  background:white;
-  padding:15px;
-  margin:15px 0;
-  border-radius:10px;
-  box-shadow:0 2px 5px rgba(0,0,0,0.1);
-}
-
-.warning{
-  background:#ffe0b2;
-  padding:15px;
-  margin:20px;
-  border-radius:10px;
-  text-align:center;
-  font-weight:bold;
-}
-
-.small{
-  font-size:14px;
-  color:#555;
-}
-</style>
-</head>
-
-<body>
-
-<div class="header">
-  <h1>All Yono Games</h1>
-  <div class="menu">
-    <a onclick="openTab('home')">Home</a>
-    <a onclick="openTab('about')">About</a>
-    <a onclick="openTab('privacy')">Privacy Policy</a>
-    <a onclick="openTab('disclaimer')">Disclaimer</a>
-  </div>
+  ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
+  • Only for 18+ users<br>
+  • Real money games involve financial risk<br>
+  • We do NOT host APK files<br>
+  • User is responsible for profit or loss<br>
+  • Be aware of fraud: never share OTP or password
 </div>
 
-<div class="container">
-
-<!-- HOME -->
-<div id="home" class="tab active">
-
-<h2>🔥 All Yono Games 2026</h2>
-
-<p>
-All yono rummy store doesn’t run or own the apps listed here.
-The rummy app can be addictive and financially risky.
-Use carefully. Only for 18+ people.
-</p>
-
-<p>
-Please read our Disclaimer page and the specific disclaimer for each app.
-</p>
-
-<p><strong>Alert:</strong> Rummy is banned in Andhra Pradesh, Sikkim, Nagaland, Assam, Arunachal Pradesh, Tamil Nadu, Odisha and Telangana.</p>
-
-<div class="app">
-<h3>Yono Rummy Apk</h3>
-<p>Most Popular India No 1 Rummy Apk. Daily Bonus ₹68.</p>
-</div>
-
-<div class="app">
-<h3>Yono VIP Apk</h3>
-<p>Play Slots, Poker, Rummy. 24x7 Bonus Available.</p>
-</div>
-
-<div class="app">
-<h3>Yono Games Apk</h3>
-<p>Slots Machine Games. Fast Withdrawal. ₹89 Bonus.</p>
-</div>
-
-</div>
-
-<!-- ABOUT -->
-<div id="about" class="tab">
-<h2>About Us - All Yono Games</h2>
-<p>
-Welcome to our platform created on 30 November 2024.
-We focus on Indian gaming applications and digital access.
-Our goal is to provide information about apps in one place.
-</p>
-</div>
-
-<!-- DISCLAIMER -->
-<div id="disclaimer" class="tab">
-<h2>Independent App Disclaimers</h2>
-
-<p><strong>Independent App Disclaimers:</strong> Users must read full disclaimer and terms of each App.</p>
-
-<p><strong>No Liability:</strong> We are not responsible for losses, damages or issues from third-party apps.</p>
-
-<p><strong>Notice of Regional Legal Restrictions:</strong> Some apps may be restricted in certain Indian states.</p>
-
-<p>By using this website, you agree that usage is at your own risk.</p>
-
-</div>
-
-<!-- PRIVACY POLICY -->
-<div id="privacy" class="tab">
-<h2>Privacy Policy</h2>
-
-<h3>Business Transactions</h3>
-<p>Data may transfer during merger or acquisition.</p>
-
-<h3>Law Enforcement</h3>
-<p>Data may be shared if required by law.</p>
-
-<h3>Security</h3>
-<p>No internet transmission is 100% secure.</p>
-
-<h3>Children’s Privacy</h3>
-<p>Service not intended for children under 13.</p>
-
-<h3>Changes to Policy</h3>
-<p>We may update policy from time to time.</p>
-
-<h3>Contact Us</h3>
-<p>Email: support@allyonogames.com</p>
-
-</div>
-
-</div>
-
-<div class="warning">
-⚠ 18+ Only. Real money games involve financial risk.
-</div>
-
-<!-- Hidden SEO Keywords -->
-<div style="display:none;">
-Yono All Games 2026, new rummy app today, rummy, Yono Rummy, Best Earning Apps,
-All Yono App List 51 Bonus, Yono 551 Bonus, All Yono Games 2024, Top Rummy Apps,
-Yono VIP, Yono Slots, Dragon Vs Tiger, Teen Patti Gold 51 Bonus
-</div>
-
-<script>
-function openTab(tabId){
-  document.querySelectorAll('.tab').forEach(function(tab){
-    tab.classList.remove('active');
-  });
-  document.getElementById(tabId).classList.add('active');
-}
-</script>
-
-</body>
-</html>
 <div class="footer">
   © 2026 All Yono App Store – 7 Apps
 </div>
@@ -1206,5 +850,4 @@ function openTab(tabId){
 
 </body>
 </html>
-
-
+```
