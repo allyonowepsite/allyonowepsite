@@ -1,16 +1,13 @@
-Here is the final HTML code. It implements a detail page for 101Z Games (and all other apps) with the exact layout you requested:
+Here is the final HTML code. It creates a detail page for each app with:
 
-· App name and subtitle are placed to the right of the icon (as a natural “right side” within the card).
-· Rating star on the left with a subtle 3D animation.
-· MB in the middle.
-· Downloads and bonus stacked on the right.
-· Below, an info grid with min deposit, min withdraw, safety, customer support, game info, mobile, and referral.
-· A small elongated download button and a share button side by side.
-· Tags and an “About this app” description.
-· A numbered A→Z list of all 7 apps (1 to 7) with mini download buttons – clicking any opens its detail page.
-· The home page (default) lists all apps with uniform green‑gold download buttons.
+· App name and subtitle stacked prominently at the top (right of the icon).
+· Three-column stats with rating (3D animation), size (center), and downloads + bonus (stacked right).
+· Extensive information grid (min deposit, min withdraw, safety, customer support, game info, mobile, referral).
+· Download button (green-red) and Share button (pink-black) side by side.
+· Hashtag tags and a long description.
+· Numbered A→Z list of all 7 apps with mini download buttons.
 
-All data is dynamic and includes all 7 apps. The layout matches your images and instructions perfectly. This is the complete, production‑ready version.
+The home page lists all apps with uniform green‑gold download buttons. All data is dynamic and includes all 7 apps. This matches your image and request perfectly.
 
 ```html
 <!DOCTYPE html>
@@ -100,7 +97,7 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* Header area with icon and title */
+    /* App header: icon left, stacked titles right */
     .app-header {
       display: flex;
       gap: 20px;
@@ -114,19 +111,21 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
       object-fit: cover;
     }
-    .title-area {
+    .title-stack {
       flex: 1;
-      text-align: right; /* name & subtitle on the right side */
+      text-align: left;
     }
-    h1 {
-      font-size: 36px;
+    .title-stack h1 {
+      font-size: 42px;
       font-weight: 900;
       color: #111;
+      line-height: 1.2;
+      margin-bottom: 5px;
     }
     .subtitle-link {
-      font-size: 18px;
+      font-size: 24px;
       color: #0f5cff;
-      font-weight: 600;
+      font-weight: 700;
       text-decoration: underline;
       cursor: pointer;
       display: inline-block;
@@ -180,7 +179,7 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
       font-weight: 600;
       text-transform: uppercase;
     }
-    /* Special 3D effect for rating */
+    /* 3D animation for rating only */
     .stat-left .stat-item {
       animation: star3d 3s infinite ease-in-out;
       box-shadow: 0 6px 0 #b8860b, 0 8px 15px rgba(0,0,0,0.3);
@@ -191,18 +190,15 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
       100% { transform: translateY(0); box-shadow: 0 6px 0 #b8860b, 0 8px 15px rgba(0,0,0,0.3); }
     }
 
-    /* Right side stats stacked (download & bonus) */
+    /* Right side stacked */
     .stat-right .stat-stack {
       display: flex;
       flex-direction: column;
       gap: 10px;
       align-items: flex-end;
     }
-    .stat-right .stat-item {
-      width: fit-content;
-    }
 
-    /* Info grid */
+    /* Info grid (extensive) */
     .info-grid {
       display: flex;
       flex-wrap: wrap;
@@ -456,6 +452,12 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
       .stat-right .stat-stack {
         align-items: center;
       }
+      .title-stack h1 {
+        font-size: 32px;
+      }
+      .subtitle-link {
+        font-size: 18px;
+      }
     }
   </style>
 </head>
@@ -475,13 +477,13 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB with new layout -->
+  <!-- DETAIL TAB with stacked titles and extensive info -->
   <div id="detail" class="tab">
     <div class="card">
-      <!-- Header with icon and right-aligned title -->
+      <!-- Header: icon + stacked titles -->
       <div class="app-header">
         <img id="dImg" class="big-icon">
-        <div class="title-area">
+        <div class="title-stack">
           <h1 id="dName"></h1>
           <a id="dSubtitleLink" class="subtitle-link" target="_blank"></a>
         </div>
@@ -503,7 +505,7 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
         </div>
       </div>
 
-      <!-- Info grid -->
+      <!-- Extensive info grid -->
       <div class="info-grid" id="dInfoGrid"></div>
 
       <!-- Download & share buttons -->
@@ -767,7 +769,7 @@ All data is dynamic and includes all 7 apps. The layout matches your images and 
     document.getElementById('dDownloadsStat').innerHTML = `<span class="stat-icon">⬇️</span><span class="stat-value">${app.downloads}</span> <span class="stat-label">DOWNLOAD</span>`;
     document.getElementById('dBonusStat').innerHTML = `<span class="stat-icon">🎁</span><span class="stat-value">${app.bonus}</span> <span class="stat-label">BONUS</span>`;
 
-    // Info grid
+    // Info grid (extensive)
     const infoGrid = document.getElementById('dInfoGrid');
     infoGrid.innerHTML = `
       <div class="info-item"><span>💰</span> ${app.minDeposit}</div>
