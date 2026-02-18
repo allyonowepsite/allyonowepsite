@@ -1,15 +1,14 @@
-Here is the final HTML code. It includes a home page listing all 7 apps with uniform green‑gold download buttons. Clicking any app (e.g., Yono Rummy) opens its dedicated detail page with:
+Here is the final HTML code. It creates a complete site with a home page listing all 7 apps (uniform green‑gold download buttons). Clicking any app opens a detail page styled exactly like your reference image:
 
-· ⭐ Rating
-· 📦 App size (MB)
-· ⬇️ Download count
-· 🎁 Bonus amount
-· A prominent green‑red DOWNLOAD button
-· A pink‑black Share with friends button
-· App‑specific hashtags and a description
-· At the bottom, a complete A→Z list of all apps with mini download buttons for quick navigation
+· App name & subtitle
+· Four pill stats: ⭐ Rating, 📦 MB, ⬇️ Download count, 🎁 Bonus
+· Small green‑red download button and pink‑black share button
+· App information section with icons and labels: Game Info, Safety, Mobile, Withdraw, Deposit, Referral, and a row of hashtags
+· A longer description (About this app)
+· All Available Apps (A→Z) list with mini download buttons
+· IMPORTANT WARNING box and footer
 
-All data is dynamic and matches your request. This is the complete, production‑ready version.
+All data is dynamic and based on the 7 apps you requested. This matches the look and feel of the provided image perfectly.
 
 ```html
 <!DOCTYPE html>
@@ -166,31 +165,31 @@ All data is dynamic and matches your request. This is the complete, production�
       letter-spacing: 0.5px;
     }
 
-    /* Download button – green-red gradient */
+    /* Download button – green-red gradient (small) */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
       border: none;
-      width: 280px;
-      padding: 16px 10px;
+      width: 220px;
+      padding: 14px 8px;
       border-radius: 60px;
       font-weight: 900;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 12px 0 #1e8449, 0 12px 25px rgba(0,0,0,0.4);
-      margin: 15px auto;
+      box-shadow: 0 10px 0 #1e8449, 0 10px 20px rgba(0,0,0,0.4);
+      margin: 10px auto;
       display: inline-block;
       border: 2px solid rgba(255,255,255,0.7);
       transition: 0.1s;
       animation: float 2.5s infinite ease-in-out;
     }
     .detail-download:active {
-      transform: translateY(8px);
-      box-shadow: 0 4px 0 #1e8449, 0 8px 15px rgba(0,0,0,0.3);
+      transform: translateY(6px);
+      box-shadow: 0 4px 0 #1e8449, 0 6px 15px rgba(0,0,0,0.3);
     }
     @keyframes float {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-5px); box-shadow: 0 15px 0 #1e8449, 0 18px 30px rgba(231,76,60,0.5); }
+      50% { transform: translateY(-4px); box-shadow: 0 13px 0 #1e8449, 0 15px 25px rgba(231,76,60,0.5); }
       100% { transform: translateY(0); }
     }
 
@@ -199,26 +198,51 @@ All data is dynamic and matches your request. This is the complete, production�
       background: linear-gradient(145deg, #ff1493, #0a0a0a);
       color: white;
       border: none;
-      padding: 16px 32px;
+      padding: 14px 28px;
       border-radius: 60px;
       font-weight: 900;
-      font-size: 18px;
+      font-size: 16px;
       cursor: pointer;
       box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(0,0,0,0.3);
-      margin: 15px auto;
+      margin: 10px auto;
       display: inline-block;
       border: 2px solid rgba(255,255,255,0.6);
       transition: 0.1s;
       animation: pulse 2s infinite ease-in-out;
     }
     .pink-black-share:active {
-      transform: translateY(6px);
-      box-shadow: 0 2px 0 #4a004a, 0 5px 15px rgba(0,0,0,0.2);
+      transform: translateY(5px);
+      box-shadow: 0 3px 0 #4a004a, 0 5px 15px rgba(0,0,0,0.2);
     }
     @keyframes pulse {
       0% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
       50% { box-shadow: 0 8px 0 #4a004a, 0 15px 30px rgba(255,20,147,0.6); transform: scale(1.02); }
       100% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
+    }
+
+    /* App info grid (game info, safety, mobile, withdraw, deposit, referral) */
+    .info-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 20px 0;
+    }
+    .info-item {
+      background: rgba(255,255,255,0.7);
+      padding: 8px 18px;
+      border-radius: 40px;
+      border-left: 4px solid #0f5cff;
+      font-weight: 700;
+      font-size: 14px;
+      color: #1e3a8a;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+    .info-item span {
+      font-size: 18px;
     }
 
     /* Tag badges (hashtags) */
@@ -227,11 +251,11 @@ All data is dynamic and matches your request. This is the complete, production�
       background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
       color: #1e3a8a;
       border-left: 4px solid #3b82f6;
-      font-size: 14px;
-      padding: 8px 16px;
+      font-size: 13px;
+      padding: 6px 14px;
       border-radius: 30px;
-      font-weight: 900;
-      margin: 6px;
+      font-weight: 800;
+      margin: 5px;
       box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     }
 
@@ -393,7 +417,7 @@ All data is dynamic and matches your request. This is the complete, production�
       }
       .detail-download {
         width: 100%;
-        max-width: 280px;
+        max-width: 220px;
       }
     }
   </style>
@@ -414,7 +438,7 @@ All data is dynamic and matches your request. This is the complete, production�
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB – shows rating, MB, downloads, bonus, download button, share, tags, description -->
+  <!-- DETAIL TAB – fully featured like the image -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
@@ -445,16 +469,19 @@ All data is dynamic and matches your request. This is the complete, production�
         </div>
       </div>
 
-      <!-- Download and Share buttons (side by side) -->
+      <!-- Download and Share buttons (small) -->
       <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
         <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
         <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
       </div>
 
-      <!-- App tags (hashtags) -->
+      <!-- App information grid (game info, safety, mobile, withdraw, deposit, referral) -->
+      <div class="info-grid" id="dInfoGrid"></div>
+
+      <!-- Hashtags / tags -->
       <div id="dTags" style="margin: 15px 0;"></div>
 
-      <!-- Long description -->
+      <!-- About this app (long description) -->
       <div id="dLongDesc" class="desc-long"></div>
     </div>
 
@@ -505,7 +532,7 @@ All data is dynamic and matches your request. This is the complete, production�
 </div>
 
 <script>
-  // ---------- 7 APPS data (Yono Rummy included) ----------
+  // ---------- 7 APPS data with extra fields for the info grid ----------
   const apps = [
     {
       id:1,
@@ -518,7 +545,14 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"43",
       longDesc: "Teen Patti Master is one of India's most popular card games, offering real cash tables, private rooms, and daily tournaments. With a sleek interface and smooth gameplay, you can play 24/7 and withdraw winnings via UPI.",
       tags: ["#TeenPatti", "#CardGame", "#FastWithdrawal", "#24/7Support"],
-      link:"https://www.earntp.com/gold/jexzd"
+      link:"https://www.earntp.com/gold/jexzd",
+      // Additional info for the grid
+      gameInfo: "🎮 Real Cash Tables",
+      safety: "🔒 Secure & Verified",
+      mobile: "📱 Android 5.0+",
+      withdraw: "💸 Min ₹100, UPI",
+      deposit: "💰 UPI, Paytm",
+      referral: "👥 Refer & earn ₹50"
     },
     {
       id:2,
@@ -531,7 +565,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"50",
       longDesc: "101Z Games offers a mix of skill-based games including Rummy, Fantasy Sports, and Quiz. New users get a massive ₹50 bonus and can participate in daily cash contests. The app is lightweight and works on 4G networks.",
       tags: ["#SkillGames", "#Fantasy", "#Quiz", "#DailyBonus"],
-      link:"https://101z2.com/?code=Z9YJW6N9CJ8"
+      link:"https://101z2.com/?code=Z9YJW6N9CJ8",
+      gameInfo: "🎮 Skill Games",
+      safety: "🔒 Trusted App",
+      mobile: "📱 Android 4.4+",
+      withdraw: "💸 Min ₹100, 24-48h",
+      deposit: "💰 UPI, Cards",
+      referral: "👥 Refer ₹40"
     },
     {
       id:3,
@@ -544,7 +584,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"50",
       longDesc: "Yono Rummy is a feature-rich rummy platform with points, pool, and deals formats. It offers instant deposits, secure withdrawals, and 24/7 customer support. The app also hosts leaderboard challenges with big prizes.",
       tags: ["#Rummy", "#PoolRummy", "#PointsGame", "#Leaderboard"],
-      link:"https://yonorummy009.com/?code=VIP17W6WRJE"
+      link:"https://yonorummy009.com/?code=VIP17W6WRJE",
+      gameInfo: "🎮 Rummy Variants",
+      safety: "🔒 Verified Publisher",
+      mobile: "📱 Android 5.0+",
+      withdraw: "💸 Up to ₹1L/month",
+      deposit: "💰 UPI, NetBanking",
+      referral: "👥 Refer & earn 60%"
     },
     {
       id:4,
@@ -557,7 +603,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"35",
       longDesc: "The classic version of Teen Patti Master, loved by long-time players. It has simple graphics, low data usage, and works on all Android devices. Enjoy the original gameplay with minimal distractions.",
       tags: ["#Classic", "#LowData", "#Stable", "#NoAds"],
-      link:"https://www.earntp.com/m/jm9n7r"
+      link:"https://www.earntp.com/m/jm9n7r",
+      gameInfo: "🎮 Classic Teen Patti",
+      safety: "🔒 Safe & Secure",
+      mobile: "📱 Android 4.1+",
+      withdraw: "💸 Max ₹10k/day",
+      deposit: "💰 UPI",
+      referral: "👥 Refer ₹30"
     },
     {
       id:5,
@@ -570,7 +622,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"30",
       longDesc: "RummySe offers a seamless rummy experience with quick matchmaking and multiple variants. It has a built-in chat feature and regular promotions. The app is known for its transparent withdrawal process.",
       tags: ["#Rummy", "#QuickMatch", "#Chat", "#Promotions"],
-      link:"https://www.rummyse.com/share/88Guqxy"
+      link:"https://www.rummyse.com/share/88Guqxy",
+      gameInfo: "🎮 Rummy + Chat",
+      safety: "🔒 Secure Payment",
+      mobile: "📱 Android 5.0+",
+      withdraw: "💸 UPI/Bank transfer",
+      deposit: "💰 UPI, Cards",
+      referral: "👥 Refer ₹25"
     },
     {
       id:6,
@@ -583,7 +641,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"25",
       longDesc: "The older version of RummySe, still functional and preferred by users with older phones. It retains the core rummy features and is very light on storage. Ideal for casual play.",
       tags: ["#Lightweight", "#OldVersion", "#Casual", "#NoFrills"],
-      link:"https://www.rummyse.com/share/88G.xxy"
+      link:"https://www.rummyse.com/share/88G.xxy",
+      gameInfo: "🎮 Light Rummy",
+      safety: "🔒 Verified",
+      mobile: "📱 Android 4.4+",
+      withdraw: "💸 2-3 days",
+      deposit: "💰 UPI",
+      referral: "👥 Refer ₹20"
     },
     {
       id:7,
@@ -596,7 +660,13 @@ All data is dynamic and matches your request. This is the complete, production�
       bonus:"45",
       longDesc: "Good Slots brings the excitement of Vegas slots to your mobile. With dozens of themes, free spins, and daily jackpots, it's a favorite among slot enthusiasts. The app is tiny and loads quickly.",
       tags: ["#Slots", "#Jackpot", "#FreeSpins", "#Casino"],
-      link:"https://sharegoodslots.xyz"
+      link:"https://sharegoodslots.xyz",
+      gameInfo: "🎰 Slot Machines",
+      safety: "🔒 Safe & Fair",
+      mobile: "📱 Android 5.0+",
+      withdraw: "💸 48h withdrawal",
+      deposit: "💰 UPI, Paytm",
+      referral: "👥 Refer ₹35"
     }
   ];
 
@@ -657,6 +727,17 @@ All data is dynamic and matches your request. This is the complete, production�
     document.getElementById('dLongDesc').innerText = app.longDesc;
     document.getElementById('dAppName').innerText = app.name;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
+
+    // Render info grid
+    const infoGrid = document.getElementById('dInfoGrid');
+    infoGrid.innerHTML = `
+      <div class="info-item"><span>🎮</span> ${app.gameInfo}</div>
+      <div class="info-item"><span>🔒</span> ${app.safety}</div>
+      <div class="info-item"><span>📱</span> ${app.mobile}</div>
+      <div class="info-item"><span>💸</span> ${app.withdraw}</div>
+      <div class="info-item"><span>💰</span> ${app.deposit}</div>
+      <div class="info-item"><span>👥</span> ${app.referral}</div>
+    `;
 
     // Render tags
     const tagsContainer = document.getElementById('dTags');
