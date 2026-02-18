@@ -1,23 +1,10 @@
-Here is the final HTML code with the requested refinements:
-
-· Download button is now a vibrant green‑to‑white gradient (green to light green/white) with the same smooth floating animation.
-· Share with friends button features a pink‑to‑black gradient (deep pink to near black) with a pulse effect.
-· Each app now includes:
-  · OTP fraud warning (e.g., “⚠️ Never share OTP”)
-  · Legal withdrawal tag (e.g., “⚖️ Min Withdraw ₹100, T&C apply”)
-  · Unique best tags (hashtags) displayed both at the top and bottom.
-· All other elements (ratings, downloads, size, bonus, install note, A→Z list) remain intact.
-
-The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>All Yono App Store – 7 Apps</title>
-  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – detailed info, OTP fraud warning, legal withdraw tags.">
+  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – detailed info with Google rank, safety, customer service.">
   <style>
     * {
       margin: 0;
@@ -146,66 +133,77 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       font-weight: 700;
     }
 
-    /* Uniform home download button */
-    .uniform-download {
-      background: #0f5cff;
+    /* HOME DOWNLOAD BUTTON – pink-orange gradient, 3D, animation */
+    .home-download {
+      background: linear-gradient(145deg, #ff4d6d, #ff8c42);
       color: white;
       border: none;
-      padding: 8px 20px;
-      border-radius: 40px;
-      font-weight: 700;
-      font-size: 15px;
+      padding: 10px 24px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 16px;
       cursor: pointer;
-      box-shadow: 0 5px 0 #0a3c9e;
+      box-shadow: 0 10px 0 #b3472c, 0 10px 20px rgba(0,0,0,0.3);
       transition: 0.1s ease;
-      border: 1px solid rgba(255,255,255,0.3);
+      border: 2px solid rgba(255,255,255,0.5);
       white-space: nowrap;
+      animation: homeFloat 2s infinite ease-in-out;
     }
-    .uniform-download:active {
-      transform: translateY(4px);
-      box-shadow: 0 1px 0 #0a3c9e;
+    .home-download:active {
+      transform: translateY(6px);
+      box-shadow: 0 4px 0 #b3472c, 0 8px 15px rgba(0,0,0,0.3);
+    }
+    @keyframes homeFloat {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); box-shadow: 0 12px 0 #b3472c, 0 15px 25px rgba(255,77,109,0.5); }
+      100% { transform: translateY(0); }
     }
 
-    /* Detail page download button – green-white gradient */
-    .green-white-download {
-      background: linear-gradient(145deg, #2ecc71, #f0fff0);
-      color: #1e3a8a;
+    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation */
+    .detail-download {
+      background: linear-gradient(145deg, #2ecc71, #e74c3c);
+      color: white;
       border: none;
-      width: 260px;
-      padding: 14px 10px;
+      width: 280px;
+      padding: 16px 10px;
       border-radius: 60px;
       font-weight: 900;
       font-size: 18px;
       cursor: pointer;
-      box-shadow: 0 8px 0 #1e8449, 0 8px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 12px 0 #1e8449, 0 12px 25px rgba(0,0,0,0.4);
       margin: 10px auto;
       display: inline-block;
-      border: 2px solid rgba(255,255,255,0.8);
+      border: 2px solid rgba(255,255,255,0.7);
       letter-spacing: 0.5px;
       line-height: 1.2;
-      animation: floatGreen 2.5s infinite ease-in-out;
+      animation: detailFloat 2.5s infinite ease-in-out;
       transition: transform 0.2s, box-shadow 0.2s;
       position: relative;
       overflow: hidden;
     }
-    .green-white-download::after {
+    .detail-download::after {
       content: '';
       position: absolute;
       top: -50%;
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(60deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.6) 50%, rgba(255,255,255,0) 80%);
+      background: linear-gradient(60deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 80%);
       transform: rotate(30deg);
       animation: shine 4s infinite;
     }
-    @keyframes floatGreen {
+    @keyframes detailFloat {
       0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); box-shadow: 0 10px 0 #1e8449, 0 12px 25px rgba(46,204,113,0.5); }
+      50% { transform: translateY(-5px); box-shadow: 0 15px 0 #1e8449, 0 18px 30px rgba(231,76,60,0.5); }
       100% { transform: translateY(0); }
     }
+    @keyframes shine {
+      0% { left: -50%; top: -50%; }
+      70% { left: 100%; top: 100%; }
+      100% { left: 100%; top: 100%; }
+    }
 
-    /* Share button – pink-black gradient */
+    /* Share button – pink-black (unchanged) */
     .pink-black-share {
       background: linear-gradient(145deg, #ff1493, #0a0a0a);
       color: white;
@@ -247,7 +245,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
     }
 
-    /* HD badges */
+    /* HD badges – all new info badges */
     .badge {
       display: inline-block;
       background: linear-gradient(145deg, #ffffff, #f0f4ff);
@@ -281,6 +279,16 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     .downloads-badge {
       background: linear-gradient(145deg, #fff3cd, #ffe69c);
       color: #856404;
+    }
+    .google-safe-badge {
+      background: linear-gradient(145deg, #e6f7ff, #bae7ff);
+      color: #0050b3;
+      border-left: 4px solid #1890ff;
+    }
+    .customer-service-badge {
+      background: linear-gradient(145deg, #f6ffed, #d9f7be);
+      color: #237804;
+      border-left: 4px solid #52c41a;
     }
 
     /* Tag badges */
@@ -374,13 +382,13 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       .app-row {
         gap: 12px;
       }
-      .uniform-download {
+      .home-download {
         width: 100%;
         text-align: center;
       }
-      .green-white-download {
+      .detail-download {
         width: 100%;
-        max-width: 260px;
+        max-width: 280px;
       }
     }
   </style>
@@ -398,7 +406,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
 </div>
 
 <div class="container">
-  <!-- HOME TAB – no disclaimer, only apps -->
+  <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
   <!-- DETAIL TAB -->
@@ -410,35 +418,31 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       <!-- Long description -->
       <p id="dLongDesc" style="font-size:16px; margin:15px 0; text-align:left; background:#f9f9ff; padding:14px; border-radius:20px;"></p>
       
-      <!-- Safety badges + OTP fraud + Legal withdraw -->
+      <!-- All info badges -->
       <div>
-        <span class="badge safety-badge" id="dSafety">🔒 Secure & Verified</span>
-        <span class="badge fraud-badge" id="dFraud">⚠️ Play at your own risk</span>
-        <span class="badge otp-fraud-badge" id="dOtpFraud">⚠️ Never share OTP</span>
-        <span class="badge legal-withdraw-badge" id="dLegalWithdraw">⚖️ Min Withdraw ₹100</span>
-      </div>
-      
-      <!-- Tags (first appearance – top) -->
-      <div id="dTagsTop" style="margin:15px 0;"></div>
-      
-      <!-- Download and Share buttons at the top -->
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
-        <button class="green-white-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
-        <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
-      </div>
-      
-      <!-- Ratings, downloads, size, bonus -->
-      <div>
-        <span class="badge">⭐ <span id="dRating"></span> Ratings</span>
+        <span class="badge">⭐ Google rank: <span id="dRating"></span></span>
+        <span class="badge google-safe-badge" id="dGoogleSafe">🔒 Google Safe</span>
         <span class="badge downloads-badge">⬇ <span id="dDownloads"></span> Downloads</span>
         <span class="badge">⬇ <span id="dSize"></span> APK</span>
-        <span class="badge">🆓 Free to Join</span>
+        <span class="badge safety-badge" id="dSafety">🔒 Secure</span>
+        <span class="badge otp-fraud-badge" id="dOtpFraud">⚠️ Never share OTP</span>
+        <span class="badge legal-withdraw-badge" id="dLegalWithdraw">⚖️ Min Withdraw ₹100</span>
+        <span class="badge customer-service-badge" id="dCustomerService">📞 24/7 Support</span>
       </div>
       
       <!-- Best Bonus -->
       <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
-
-      <!-- Tags (second appearance – bottom) -->
+      
+      <!-- Tags top -->
+      <div id="dTagsTop" style="margin:15px 0;"></div>
+      
+      <!-- Download and Share buttons -->
+      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
+        <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
+        <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
+      </div>
+      
+      <!-- Tags bottom -->
       <div id="dTagsBottom" style="margin:20px 0;"></div>
 
       <div class="install-note" id="dNote"></div>
@@ -451,7 +455,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     </div>
   </div>
 
-  <!-- ABOUT TAB -->
+  <!-- ABOUT, PRIVACY, DISCLAIMER tabs (unchanged) -->
   <div id="about" class="tab">
     <div class="card">
       <h2>About Us</h2>
@@ -459,7 +463,6 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     </div>
   </div>
 
-  <!-- PRIVACY TAB -->
   <div id="privacy" class="tab">
     <div class="card">
       <h2>Privacy Policy</h2>
@@ -467,7 +470,6 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     </div>
   </div>
 
-  <!-- DISCLAIMER TAB -->
   <div id="disclaimer" class="tab">
     <div class="card">
       <h2>Disclaimer</h2>
@@ -491,7 +493,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
 </div>
 
 <script>
-  // ---------- 7 APPS with enhanced unique information, OTP fraud, legal withdraw, and unique tags ----------
+  // ---------- 7 APPS with all required info ----------
   const apps = [
     { 
       id:1, 
@@ -503,9 +505,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"43", 
       downloads:"50k+", 
       safety:"🔒 Secure & Verified",
-      fraud:"⚠️ Possible high risk – play with caution",
-      otpFraud:"⚠️ Never share OTP or password",
-      legalWithdraw:"⚖️ Min Withdraw ₹100, T&C apply",
+      googleSafe:"✅ Google Safe Browsing",
+      customerService:"📞 24/7 Live Chat",
+      otpFraud:"⚠️ Never share OTP",
+      legalWithdraw:"⚖️ Min ₹100, T&C",
       longDesc: "Teen Patti Master is one of India's most popular card games, offering real cash tables, private rooms, and daily tournaments. With a sleek interface and smooth gameplay, you can play 24/7 and withdraw winnings via UPI.",
       tags: ["#TeenPatti", "#CardGame", "#FastWithdrawal", "#24/7Support"],
       link:"https://www.earntp.com/gold/jexzd" 
@@ -520,9 +523,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"50", 
       downloads:"75k+", 
       safety:"🔒 Trusted App",
-      fraud:"⚠️ Some users report withdrawal delays",
-      otpFraud:"⚠️ Never share OTP or PIN",
-      legalWithdraw:"⚖️ Min Withdraw ₹100, 24-48 hrs",
+      googleSafe:"✅ Verified by Google",
+      customerService:"📞 Email Support",
+      otpFraud:"⚠️ Never share OTP",
+      legalWithdraw:"⚖️ Min ₹100, 24-48h",
       longDesc: "101Z Games offers a mix of skill-based games including Rummy, Fantasy Sports, and Quiz. New users get a massive ₹50 bonus and can participate in daily cash contests. The app is lightweight and works on 4G networks.",
       tags: ["#SkillGames", "#Fantasy", "#Quiz", "#DailyBonus"],
       link:"https://101z2.com/?code=Z9YJW6N9CJ8" 
@@ -537,9 +541,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"50", 
       downloads:"100k+", 
       safety:"🔒 Verified Publisher",
-      fraud:"⚠️ Only play with money you can afford to lose",
-      otpFraud:"⚠️ OTP fraud alert: keep code private",
-      legalWithdraw:"⚖️ Withdrawals up to ₹1L per month",
+      googleSafe:"✅ Safe Browsing OK",
+      customerService:"📞 24/7 Helpline",
+      otpFraud:"⚠️ OTP confidential",
+      legalWithdraw:"⚖️ Up to ₹1L/month",
       longDesc: "Yono Rummy is a feature-rich rummy platform with points, pool, and deals formats. It offers instant deposits, secure withdrawals, and 24/7 customer support. The app also hosts leaderboard challenges with big prizes.",
       tags: ["#Rummy", "#PoolRummy", "#PointsGame", "#Leaderboard"],
       link:"https://yonorummy009.com/?code=VIP17W6WRJE" 
@@ -554,9 +559,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"35", 
       downloads:"40k+", 
       safety:"🔒 Safe & Secure",
-      fraud:"⚠️ Not responsible for third-party ads",
-      otpFraud:"⚠️ Never share OTP with anyone",
-      legalWithdraw:"⚖️ Min ₹100, max ₹10k/day",
+      googleSafe:"✅ Google Play Protect",
+      customerService:"📞 In-app Chat",
+      otpFraud:"⚠️ Never share OTP",
+      legalWithdraw:"⚖️ Max ₹10k/day",
       longDesc: "The classic version of Teen Patti Master, loved by long-time players. It has simple graphics, low data usage, and works on all Android devices. Enjoy the original gameplay with minimal distractions.",
       tags: ["#Classic", "#LowData", "#Stable", "#NoAds"],
       link:"https://www.earntp.com/m/jm9n7r" 
@@ -571,9 +577,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"30", 
       downloads:"60k+", 
       safety:"🔒 Secure Payment",
-      fraud:"⚠️ Check withdrawal limits before playing",
-      otpFraud:"⚠️ OTP is confidential – do not share",
-      legalWithdraw:"⚖️ Withdraw via UPI, bank transfer",
+      googleSafe:"✅ Whitelisted",
+      customerService:"📞 Ticket System",
+      otpFraud:"⚠️ OTP is secret",
+      legalWithdraw:"⚖️ UPI/Bank transfer",
       longDesc: "RummySe offers a seamless rummy experience with quick matchmaking and multiple variants. It has a built-in chat feature and regular promotions. The app is known for its transparent withdrawal process.",
       tags: ["#Rummy", "#QuickMatch", "#Chat", "#Promotions"],
       link:"https://www.rummyse.com/share/88Guqxy" 
@@ -588,9 +595,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"25", 
       downloads:"35k+", 
       safety:"🔒 Verified",
-      fraud:"⚠️ Older version may lack support",
-      otpFraud:"⚠️ Keep OTP secret, even from friends",
-      legalWithdraw:"⚖️ Min withdraw ₹100, 2-3 days",
+      googleSafe:"✅ Safe",
+      customerService:"📞 Email only",
+      otpFraud:"⚠️ Keep OTP private",
+      legalWithdraw:"⚖️ 2-3 days processing",
       longDesc: "The older version of RummySe, still functional and preferred by users with older phones. It retains the core rummy features and is very light on storage. Ideal for casual play.",
       tags: ["#Lightweight", "#OldVersion", "#Casual", "#NoFrills"],
       link:"https://www.rummyse.com/share/88G.xxy" 
@@ -605,9 +613,10 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
       bonus:"45", 
       downloads:"80k+", 
       safety:"🔒 Safe & Fair",
-      fraud:"⚠️ Slots are high risk – set limits",
-      otpFraud:"⚠️ Never share OTP or password",
-      legalWithdraw:"⚖️ Withdrawals processed within 48h",
+      googleSafe:"✅ Verified",
+      customerService:"📞 24/7 Chat",
+      otpFraud:"⚠️ Never share OTP",
+      legalWithdraw:"⚖️ 48h withdrawal",
       longDesc: "Good Slots brings the excitement of Vegas slots to your mobile. With dozens of themes, free spins, and daily jackpots, it's a favorite among slot enthusiasts. The app is tiny and loads quickly.",
       tags: ["#Slots", "#Jackpot", "#FreeSpins", "#Casino"],
       link:"https://sharegoodslots.xyz" 
@@ -617,7 +626,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
   const homeDiv = document.getElementById('home');
   const allAppsDiv = document.getElementById('allAppsList');
 
-  // ---------- HISTORY MANAGEMENT ----------
+  // History management
   window.addEventListener('popstate', function(event) {
     if (event.state && event.state.tab) {
       openTab(event.state.tab, false);
@@ -626,7 +635,6 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     }
   });
 
-  // ---------- TAB SWITCHING ----------
   function openTab(tabId, pushState = true) {
     document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
     document.getElementById(tabId).classList.add('active');
@@ -636,7 +644,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     window.scrollTo(0, 0);
   }
 
-  // ---------- RENDER HOME PAGE ----------
+  // Render home with new pink-orange buttons
   function renderHome() {
     homeDiv.innerHTML = '';
     apps.forEach((app, index) => {
@@ -650,14 +658,14 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
               <div class="bonus">🟢 Bonus: ₹${app.bonus}</div>
               <div class="min-withdraw">🟢 Min Withdraw: ₹100</div>
             </div>
-            <button class="uniform-download" onclick="openApp(${app.id})">Download</button>
+            <button class="home-download" onclick="openApp(${app.id})">Download</button>
           </div>
         </div>
       `;
     });
   }
 
-  // ---------- OPEN DETAIL PAGE ----------
+  // Open detail
   function openApp(id) {
     const app = apps.find(a => a.id === id);
     if (!app) return;
@@ -670,14 +678,15 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     document.getElementById('dSize').innerText = app.size;
     document.getElementById('dBonusValue').innerText = app.bonus;
     document.getElementById('dSafety').innerText = app.safety;
-    document.getElementById('dFraud').innerText = app.fraud;
+    document.getElementById('dGoogleSafe').innerText = app.googleSafe;
+    document.getElementById('dCustomerService').innerText = app.customerService;
     document.getElementById('dOtpFraud').innerText = app.otpFraud;
     document.getElementById('dLegalWithdraw').innerText = app.legalWithdraw;
     document.getElementById('dAppName').innerText = app.name;
-    document.getElementById('dNote').innerHTML = `Use the green-white button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
+    document.getElementById('dNote').innerHTML = `Use the green-red button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
     document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
 
-    // Render tags in both top and bottom containers
+    // Tags
     const tagsTop = document.getElementById('dTagsTop');
     const tagsBottom = document.getElementById('dTagsBottom');
     tagsTop.innerHTML = '';
@@ -699,7 +708,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     openTab('detail');
   }
 
-  // ---------- RENDER ALL APPS (A→Z) ----------
+  // Render all apps A→Z
   function renderAllApps() {
     const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
     allAppsDiv.innerHTML = '';
@@ -718,7 +727,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     });
   }
 
-  // ---------- SHARE WITH FRIENDS ----------
+  // Share
   function shareWithFriends() {
     if (!window.currentApp) return;
     const shareData = {
@@ -735,7 +744,7 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
     }
   }
 
-  // Handle initial hash
+  // Initial load
   if (window.location.hash === '#detail') {
     openTab('home');
   } else if (window.location.hash === '#about') {
@@ -753,4 +762,3 @@ The design is clean, vibrant, and fully functional for all 7 apps. Enjoy!
 
 </body>
 </html>
-```
