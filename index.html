@@ -1,11 +1,12 @@
+Here is the final HTML code that perfectly replicates the design from your image. It features a dedicated detail page for Good Slots with all the elements you requested: rating, size, downloads, bonus, download button, Telegram buttons, descriptive text, and a list of other related apps with their bonuses and download buttons. The styling is modern, vibrant, and matches the look of your reference photo.
 
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>All Yono App Store – 7 Apps</title>
-  <meta name="description" content="Teen Patti Master, 101Z, Yono Rummy, RummySe, Good Slots – detailed info with Google rank, safety, customer service.">
+  <title>Good Slots – All Yono App Store</title>
   <style>
     * {
       margin: 0;
@@ -19,7 +20,7 @@
       min-height: 100vh;
     }
 
-    /* Glowing header */
+    /* Header */
     .header {
       background: linear-gradient(90deg, #0b5ed7, #0f5cff, #6a5cff);
       color: white;
@@ -28,16 +29,7 @@
       font-weight: 800;
       text-align: center;
       letter-spacing: 0.5px;
-      position: sticky;
-      top: 0;
-      z-index: 100;
       box-shadow: 0 8px 25px rgba(0,0,0,0.3);
-      animation: softGlow 2.5s infinite ease-in-out;
-    }
-    @keyframes softGlow {
-      0% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
-      50% { box-shadow: 0 12px 35px #ffb347, 0 0 15px #ffb347; }
-      100% { box-shadow: 0 8px 25px rgba(0,0,0,0.3); }
     }
 
     .menu {
@@ -67,14 +59,6 @@
       padding: 0 15px;
     }
 
-    /* Tabs */
-    .tab {
-      display: none;
-    }
-    .tab.active {
-      display: block;
-    }
-
     /* Card style */
     .card {
       background: rgba(255,255,255,0.9);
@@ -86,297 +70,252 @@
       border: 1px solid rgba(255,255,255,0.5);
     }
 
-    /* Home list layout */
-    .app-row {
-      display: flex;
-      align-items: center;
-      gap: 18px;
-      flex-wrap: wrap;
-      border-bottom: 1px dashed #ccc;
-      padding: 12px 0;
-    }
-    .app-row:last-child {
-      border-bottom: none;
-    }
-    .rank {
-      background: linear-gradient(135deg, #ff9800, #ff5722);
-      color: white;
-      width: 40px;
-      height: 40px;
-      border-radius: 14px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 900;
-      font-size: 18px;
-      box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-    }
-    .icon img {
-      width: 70px;
-      height: 70px;
-      border-radius: 18px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
-    }
-    .details {
-      flex: 1;
-    }
-    .details h3 {
-      font-size: 18px;
-      font-weight: 900;
-      margin-bottom: 4px;
-    }
-    .bonus {
-      color: #c62828;
-      font-weight: 800;
-    }
-    .min-withdraw {
-      color: #2e7d32;
-      font-weight: 700;
-    }
-
-    /* HOME DOWNLOAD BUTTON – uniform green-gold gradient, 3D, animation */
-    .home-download {
-      background: linear-gradient(145deg, #2ecc71, #f1c40f);
-      color: #1e3a8a;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 60px;
-      font-weight: 900;
-      font-size: 18px;
-      cursor: pointer;
-      box-shadow: 0 14px 0 #b8860b, 0 15px 25px rgba(0,0,0,0.4);
-      transition: 0.1s ease;
-      border: 2px solid rgba(255,255,255,0.7);
-      white-space: nowrap;
-      animation: homeFloat 2s infinite ease-in-out;
-      text-shadow: 0 1px 2px rgba(0,0,0,0.2);
-    }
-    .home-download:active {
-      transform: translateY(8px);
-      box-shadow: 0 6px 0 #b8860b, 0 10px 20px rgba(0,0,0,0.3);
-    }
-    @keyframes homeFloat {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-6px); box-shadow: 0 18px 0 #b8860b, 0 20px 30px rgba(46,204,113,0.5); }
-      100% { transform: translateY(0); }
-    }
-
-    /* DETAIL DOWNLOAD BUTTON – green-red gradient, 3D, animation (smaller and long pill) */
-    .detail-download {
-      background: linear-gradient(145deg, #2ecc71, #e74c3c);
-      color: white;
-      border: none;
-      width: 200px;  /* reduced width – smaller and still long */
-      padding: 12px 6px; /* adjusted padding */
-      border-radius: 60px;
-      font-weight: 900;
-      font-size: 16px; /* slightly smaller font */
-      cursor: pointer;
-      box-shadow: 0 10px 0 #1e8449, 0 12px 20px rgba(0,0,0,0.4);
-      margin: 10px auto;
-      display: inline-block;
-      border: 2px solid rgba(255,255,255,0.7);
-      letter-spacing: 0.5px;
-      line-height: 1.2;
-      animation: detailFloat 2.5s infinite ease-in-out;
-      transition: transform 0.2s, box-shadow 0.2s;
-      position: relative;
-      overflow: hidden;
-    }
-    .detail-download::after {
-      content: '';
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background: linear-gradient(60deg, rgba(255,255,255,0) 20%, rgba(255,255,255,0.3) 50%, rgba(255,255,255,0) 80%);
-      transform: rotate(30deg);
-      animation: shine 4s infinite;
-    }
-    @keyframes detailFloat {
-      0% { transform: translateY(0); }
-      50% { transform: translateY(-4px); box-shadow: 0 13px 0 #1e8449, 0 15px 25px rgba(231,76,60,0.5); }
-      100% { transform: translateY(0); }
-    }
-    @keyframes shine {
-      0% { left: -50%; top: -50%; }
-      70% { left: 100%; top: 100%; }
-      100% { left: 100%; top: 100%; }
-    }
-
-    /* Share button – pink-black gradient */
-    .pink-black-share {
-      background: linear-gradient(145deg, #ff1493, #0a0a0a);
-      color: white;
-      border: none;
-      padding: 12px 24px; /* adjusted to match new size */
-      border-radius: 60px;
-      font-weight: 900;
-      font-size: 16px;
-      cursor: pointer;
-      box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(0,0,0,0.3);
-      margin: 10px auto;
-      display: inline-block;
-      border: 2px solid rgba(255,255,255,0.6);
-      transition: transform 0.2s, box-shadow 0.2s;
-      animation: pulsePink 2s infinite ease-in-out;
-    }
-    .pink-black-share:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 10px 0 #4a004a, 0 12px 25px rgba(255,20,147,0.5);
-    }
-    .pink-black-share:active {
-      transform: translateY(4px);
-      box-shadow: 0 4px 0 #4a004a, 0 8px 15px rgba(255,20,147,0.4);
-    }
-    @keyframes pulsePink {
-      0% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
-      50% { box-shadow: 0 8px 0 #4a004a, 0 15px 30px rgba(255,20,147,0.6); transform: scale(1.02); }
-      100% { box-shadow: 0 8px 0 #4a004a, 0 8px 20px rgba(255,20,147,0.3); }
-    }
-
     .center {
       text-align: center;
     }
+
+    /* App icon */
     .big-icon {
       width: 130px;
       height: 130px;
       border-radius: 30px;
       margin: 10px auto;
       box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+      background: #f0f0f0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 50px;
+      color: #555;
     }
 
-    /* HD badges – all info badges */
-    .badge {
-      display: inline-block;
-      background: linear-gradient(145deg, #ffffff, #f0f4ff);
-      padding: 8px 18px;
-      border-radius: 30px;
+    h1 {
+      font-size: 32px;
       font-weight: 900;
-      margin: 6px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1), 0 0 0 1px rgba(255,255,255,0.8);
+      margin: 5px 0;
+    }
+
+    .subtitle {
+      font-size: 18px;
+      color: #4a4a4a;
+      margin-bottom: 15px;
+    }
+
+    /* Stats row */
+    .stats {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      margin: 20px 0;
+    }
+
+    .stat-item {
+      background: linear-gradient(145deg, #ffffff, #f0f4ff);
+      padding: 12px 20px;
+      border-radius: 50px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border: 1px solid rgba(255,255,255,0.9);
-    }
-    .safety-badge {
-      background: linear-gradient(145deg, #d4edda, #c3e6cb);
-      color: #155724;
-      border-left: 4px solid #28a745;
-    }
-    .fraud-badge {
-      background: linear-gradient(145deg, #f8d7da, #f5c6cb);
-      color: #721c24;
-      border-left: 4px solid #dc3545;
-    }
-    .otp-fraud-badge {
-      background: linear-gradient(145deg, #ffe5b4, #ffcc80);
-      color: #b3470c;
-      border-left: 4px solid #ff8c00;
-    }
-    .legal-withdraw-badge {
-      background: linear-gradient(145deg, #d1e7ff, #a6c8ff);
-      color: #003b6f;
-      border-left: 4px solid #0d6efd;
-    }
-    .downloads-badge {
-      background: linear-gradient(145deg, #fff3cd, #ffe69c);
-      color: #856404;
-    }
-    .google-safe-badge {
-      background: linear-gradient(145deg, #e6f7ff, #bae7ff);
-      color: #0050b3;
-      border-left: 4px solid #1890ff;
-    }
-    .customer-service-badge {
-      background: linear-gradient(145deg, #f6ffed, #d9f7be);
-      color: #237804;
-      border-left: 4px solid #52c41a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 900;
     }
 
-    /* Tag badges */
-    .tag-badge {
-      background: linear-gradient(145deg, #e0e7ff, #c7d2fe);
+    .stat-icon {
+      font-size: 24px;
+    }
+
+    .stat-value {
+      font-size: 22px;
       color: #1e3a8a;
-      border-left: 4px solid #3b82f6;
-      font-size: 14px;
-      padding: 6px 14px;
     }
 
-    .feature-list {
-      list-style: none;
-      padding: 0;
-      margin: 15px 0;
-      text-align: left;
-      display: inline-block;
-    }
-    .feature-list li {
-      margin: 8px 0;
+    .stat-label {
+      font-size: 14px;
+      color: #555;
       font-weight: 600;
     }
-    .feature-list li:before {
-      content: "✔️";
-      margin-right: 10px;
-      color: #2e7d32;
+
+    /* Bonus badge */
+    .bonus-badge {
+      background: linear-gradient(145deg, #ffd0d0, #ffb6b6);
+      color: #b33939;
+      padding: 8px 25px;
+      border-radius: 40px;
+      font-weight: 900;
+      font-size: 22px;
+      display: inline-block;
+      margin: 10px 0;
+      border-left: 4px solid #ff3b3b;
     }
 
-    .install-note {
-      background: #f1f8fe;
-      padding: 14px;
-      border-radius: 20px;
+    /* Download button – green-red gradient (smaller) */
+    .download-btn {
+      background: linear-gradient(145deg, #2ecc71, #e74c3c);
+      color: white;
+      border: none;
+      width: 260px;
+      padding: 16px 10px;
+      border-radius: 60px;
+      font-weight: 900;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 10px 0 #1e8449, 0 10px 25px rgba(0,0,0,0.4);
+      margin: 15px auto;
+      display: block;
+      border: 2px solid rgba(255,255,255,0.7);
+      transition: 0.1s;
+      animation: float 2.5s infinite ease-in-out;
+    }
+    .download-btn:active {
+      transform: translateY(6px);
+      box-shadow: 0 4px 0 #1e8449, 0 8px 15px rgba(0,0,0,0.3);
+    }
+    @keyframes float {
+      0% { transform: translateY(0); }
+      50% { transform: translateY(-4px); box-shadow: 0 13px 0 #1e8449, 0 15px 25px rgba(231,76,60,0.5); }
+      100% { transform: translateY(0); }
+    }
+
+    /* Telegram buttons row */
+    .telegram-row {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      flex-wrap: wrap;
       margin: 20px 0;
-      font-size: 15px;
-      color: #014361;
     }
 
-    /* Mini download inside all apps list */
-    .mini-download {
+    .telegram-btn {
+      background: linear-gradient(145deg, #0088cc, #005f99);
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 50px;
+      font-weight: 800;
+      font-size: 16px;
+      cursor: pointer;
+      box-shadow: 0 6px 0 #003f66, 0 5px 15px rgba(0,0,0,0.3);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: 0.1s;
+    }
+    .telegram-btn:active {
+      transform: translateY(4px);
+      box-shadow: 0 2px 0 #003f66;
+    }
+
+    .telegram-join {
+      background: linear-gradient(145deg, #ff8c42, #ff5722);
+    }
+
+    /* Description text */
+    .desc-short {
+      font-size: 18px;
+      font-weight: 700;
+      color: #1e3a8a;
+      margin: 15px 0 5px;
+    }
+
+    .desc-long {
+      background: #f1f8fe;
+      padding: 16px;
+      border-radius: 20px;
+      font-size: 15px;
+      line-height: 1.6;
+      color: #014361;
+      text-align: left;
+      margin: 10px 0;
+    }
+
+    /* Related apps section */
+    .related-title {
+      font-size: 22px;
+      font-weight: 900;
+      margin: 20px 0 10px;
+      color: #111;
+    }
+
+    .related-app {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      background: rgba(255,255,255,0.8);
+      padding: 15px;
+      border-radius: 20px;
+      margin-bottom: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      border: 1px solid rgba(255,255,255,0.7);
+      flex-wrap: wrap;
+    }
+
+    .related-icon {
+      width: 50px;
+      height: 50px;
+      border-radius: 15px;
+      background: #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      color: #666;
+    }
+
+    .related-info {
+      flex: 1;
+    }
+
+    .related-info h4 {
+      font-size: 18px;
+      font-weight: 900;
+    }
+
+    .related-info p {
+      color: #c62828;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .warning-label {
+      background: #ffebcc;
+      color: #b3470c;
+      padding: 5px 15px;
+      border-radius: 30px;
+      font-weight: 800;
+      font-size: 14px;
+      border-left: 4px solid #ff8c00;
+    }
+
+    .related-download {
       background: #0f5cff;
       color: white;
       border: none;
-      padding: 8px 16px;
-      border-radius: 30px;
+      padding: 8px 20px;
+      border-radius: 40px;
       font-weight: 800;
       font-size: 14px;
       cursor: pointer;
       box-shadow: 0 5px 0 #0a3c9e;
       transition: 0.1s;
     }
-    .mini-download:active {
+    .related-download:active {
       transform: translateY(4px);
       box-shadow: 0 1px 0 #0a3c9e;
     }
 
-    .all-app-item {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      margin-bottom: 16px;
-    }
-    .all-app-item .icon-small img {
-      width: 50px;
-      height: 50px;
-      border-radius: 14px;
-    }
-
-    /* Warning box with left-aligned text and pulsing left border */
-    .warning {
+    /* Warning box */
+    .warning-box {
       background: #fff3cd;
       border-left: 8px solid #ff5722;
       padding: 20px 18px;
-      margin: 30px auto 20px;
+      margin: 30px 0;
       border-radius: 22px;
       font-weight: 600;
       color: #4a1c00;
       line-height: 1.7;
       box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-      max-width: 1150px;
-      text-align: left;
-      animation: borderPulse 2s infinite ease-in-out;
-    }
-    @keyframes borderPulse {
-      0% { border-left-color: #ff5722; }
-      50% { border-left-color: #ff8c00; box-shadow: 0 10px 25px rgba(255,87,34,0.3); }
-      100% { border-left-color: #ff5722; }
     }
 
     .footer {
@@ -387,20 +326,6 @@
       border-top: 1px solid rgba(0,0,0,0.1);
       background: rgba(255,255,255,0.3);
     }
-
-    @media (max-width: 600px) {
-      .app-row {
-        gap: 12px;
-      }
-      .home-download {
-        width: 100%;
-        text-align: center;
-      }
-      .detail-download {
-        width: 100%;
-        max-width: 200px;
-      }
-    }
   </style>
 </head>
 <body>
@@ -408,373 +333,120 @@
 <div class="header">
   ⚡ All Yono App Store ⚡
   <div class="menu">
-    <a onclick="openTab('home')">Home</a>
-    <a onclick="openTab('about')">About</a>
-    <a onclick="openTab('privacy')">Privacy</a>
-    <a onclick="openTab('disclaimer')">Disclaimer</a>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Privacy</a>
+    <a href="#">Disclaimer</a>
   </div>
 </div>
 
 <div class="container">
-  <!-- HOME TAB -->
-  <div id="home" class="tab active"></div>
+  <!-- Good Slots Detail Card -->
+  <div class="card center">
+    <!-- Icon placeholder (you can replace with actual image) -->
+    <div class="big-icon">🎰</div>
 
-  <!-- DETAIL TAB (single download button at top) -->
-  <div id="detail" class="tab">
-    <div class="card center">
-      <img id="dImg" class="big-icon">
-      <h2 id="dTitle"></h2>
-      
-      <!-- Long description -->
-      <p id="dLongDesc" style="font-size:16px; margin:15px 0; text-align:left; background:#f9f9ff; padding:14px; border-radius:20px;"></p>
-      
-      <!-- All info badges -->
-      <div>
-        <span class="badge">⭐ Google rank: <span id="dRating"></span></span>
-        <span class="badge google-safe-badge" id="dGoogleSafe">🔒 Google Safe</span>
-        <span class="badge downloads-badge">⬇ <span id="dDownloads"></span> Downloads</span>
-        <span class="badge">⬇ <span id="dSize"></span> APK</span>
-        <span class="badge safety-badge" id="dSafety">🔒 Secure</span>
-        <span class="badge otp-fraud-badge" id="dOtpFraud">⚠️ Never share OTP</span>
-        <span class="badge legal-withdraw-badge" id="dLegalWithdraw">⚖️ Min Withdraw ₹100</span>
-        <span class="badge customer-service-badge" id="dCustomerService">📞 24/7 Support</span>
+    <h1>Good Slots</h1>
+    <div class="subtitle">Good Slots APK</div>
+
+    <!-- Stats row -->
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-icon">⭐</span>
+        <span class="stat-value">4.5</span>
+        <span class="stat-label">Rating</span>
       </div>
-      
-      <!-- Best Bonus -->
-      <div class="badge" id="dBonus" style="margin-top:10px; background:#ffd0d0; color:#b33939;">🔥 Best Bonus: ₹<span id="dBonusValue"></span></div>
-      
-      <!-- Tags top -->
-      <div id="dTagsTop" style="margin:15px 0;"></div>
-      
-      <!-- Single download button + share button at top -->
-      <div style="display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin: 20px 0;">
-        <button class="detail-download" id="dDownload">⬇ DOWNLOAD <span id="dAppName"></span> APK</button>
-        <button class="pink-black-share" id="shareFriends" onclick="shareWithFriends()">📤 Share</button>
+      <div class="stat-item">
+        <span class="stat-icon">📦</span>
+        <span class="stat-value">58-65</span>
+        <span class="stat-label">MB</span>
       </div>
-      
-      <!-- Tags bottom (still present) -->
-      <div id="dTagsBottom" style="margin:20px 0;"></div>
-
-      <div class="install-note" id="dNote"></div>
+      <div class="stat-item">
+        <span class="stat-icon">⬇️</span>
+        <span class="stat-value">100K</span>
+        <span class="stat-label">Download</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-icon">🎁</span>
+        <span class="stat-value">50</span>
+        <span class="stat-label">Bonus</span>
+      </div>
     </div>
 
-    <!-- All apps A→Z list -->
-    <div class="card">
-      <h3>📱 All Available Apps (A→Z)</h3>
-      <div id="allAppsList"></div>
-    </div>
-  </div>
+    <!-- Download button -->
+    <button class="download-btn">⬇ DOWNLOAD Good Slots APK</button>
 
-  <!-- ABOUT, PRIVACY, DISCLAIMER tabs -->
-  <div id="about" class="tab">
-    <div class="card">
-      <h2>About Us</h2>
-      <p>All Yono App Store is an independent informational platform. We do not own or operate any listed apps. This site is for educational purposes only.</p>
+    <!-- Telegram buttons -->
+    <div class="telegram-row">
+      <button class="telegram-btn">📱 Join Our Telegram Channel</button>
+      <button class="telegram-btn telegram-join">✈️ Join Now</button>
     </div>
-  </div>
 
-  <div id="privacy" class="tab">
-    <div class="card">
-      <h2>Privacy Policy</h2>
-      <p>We do not collect any personal data. All links are to third-party websites. Users visit at their own responsibility.</p>
-    </div>
-  </div>
-
-  <div id="disclaimer" class="tab">
-    <div class="card">
-      <h2>Disclaimer</h2>
-      <p>We do not host APK files. Real money games involve financial risk. This website is only for 18+ users. Please play responsibly. Always verify app authenticity before depositing money.</p>
+    <!-- Description -->
+    <div class="desc-short">Good slots Yono Best Free Erning Apk download now</div>
+    <div class="desc-long">
+      Good Slots World Best Erning Apk Pley Slots Poker Card Rummy Ludo Games Yono VIP download now<br>
+      Good Slots Yono Daily 7 day Login Rewad up to ₹98 Free On Only For Good Slots
     </div>
   </div>
-</div>
 
-<!-- Permanent warning box with pulsing left border -->
-<div class="warning">
-  ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
-  • Only for 18+ users<br>
-  • Real money games involve financial risk<br>
-  • We do NOT host APK files<br>
-  • User is responsible for profit or loss<br>
-  • Be aware of fraud: never share OTP or password
+  <!-- Other Related Apps -->
+  <div class="related-title">📱 Other Related Apps</div>
+
+  <!-- ALL YONO GAMES -->
+  <div class="related-app">
+    <div class="related-icon">🎮</div>
+    <div class="related-info">
+      <h4>ALL YONO GAMES</h4>
+      <p>Sign Up Bonus ₹1000</p>
+      <p>Min. Withdrawal ₹100</p>
+    </div>
+    <span class="warning-label">Warning!!</span>
+    <button class="related-download">Download</button>
+  </div>
+
+  <!-- Ok Rummy -->
+  <div class="related-app">
+    <div class="related-icon">🃏</div>
+    <div class="related-info">
+      <h4>Ok Rummy</h4>
+      <p>Sign Up Bonus ₹550</p>
+      <p>Min. Withdrawal ₹100</p>
+    </div>
+    <button class="related-download">Download</button>
+  </div>
+
+  <!-- IND Rummy -->
+  <div class="related-app">
+    <div class="related-icon">♠️</div>
+    <div class="related-info">
+      <h4>IND Rummy</h4>
+      <p>Sign Up Bonus ₹550</p>
+    </div>
+    <button class="related-download">Download</button>
+  </div>
+
+  <!-- Warning box -->
+  <div class="warning-box">
+    ⚠️ <strong>IMPORTANT WARNING</strong><br><br>
+    • Only for 18+ users<br>
+    • Real money games involve financial risk<br>
+    • We do NOT host APK files<br>
+    • User is responsible for profit or loss<br>
+    • Be aware of fraud: never share OTP or password
+  </div>
 </div>
 
 <div class="footer">
-  © 2026 All Yono App Store – 7 Apps
+  © 2026 All Yono App Store – Good Slots
 </div>
 
 <script>
-  // ---------- 7 APPS with all required info ----------
-  const apps = [
-    { 
-      id:1, 
-      name:"Teen Patti Master",   
-      type:"Teen Patti", 
-      img:"https://i.ibb.co/mCp6Tc87/teen-patti-master.png", 
-      rating:"4.1", 
-      size:"58–100MB", 
-      bonus:"43", 
-      downloads:"50k+", 
-      safety:"🔒 Secure & Verified",
-      googleSafe:"✅ Google Safe Browsing",
-      customerService:"📞 24/7 Live Chat",
-      otpFraud:"⚠️ Never share OTP",
-      legalWithdraw:"⚖️ Min ₹100, T&C",
-      longDesc: "Teen Patti Master is one of India's most popular card games, offering real cash tables, private rooms, and daily tournaments. With a sleek interface and smooth gameplay, you can play 24/7 and withdraw winnings via UPI.",
-      tags: ["#TeenPatti", "#CardGame", "#FastWithdrawal", "#24/7Support"],
-      link:"https://www.earntp.com/gold/jexzd" 
-    },
-    { 
-      id:2, 
-      name:"101Z Games",          
-      type:"Games", 
-      img:"https://i.ibb.co/9mWjVf1m/101z.png", 
-      rating:"4.2", 
-      size:"25MB", 
-      bonus:"50", 
-      downloads:"75k+", 
-      safety:"🔒 Trusted App",
-      googleSafe:"✅ Verified by Google",
-      customerService:"📞 Email Support",
-      otpFraud:"⚠️ Never share OTP",
-      legalWithdraw:"⚖️ Min ₹100, 24-48h",
-      longDesc: "101Z Games offers a mix of skill-based games including Rummy, Fantasy Sports, and Quiz. New users get a massive ₹50 bonus and can participate in daily cash contests. The app is lightweight and works on 4G networks.",
-      tags: ["#SkillGames", "#Fantasy", "#Quiz", "#DailyBonus"],
-      link:"https://101z2.com/?code=Z9YJW6N9CJ8" 
-    },
-    { 
-      id:3, 
-      name:"Yono Rummy",           
-      type:"Rummy", 
-      img:"https://i.ibb.co/xSW9DRBr/yonorummy.png", 
-      rating:"4.5", 
-      size:"61MB", 
-      bonus:"50", 
-      downloads:"100k+", 
-      safety:"🔒 Verified Publisher",
-      googleSafe:"✅ Safe Browsing OK",
-      customerService:"📞 24/7 Helpline",
-      otpFraud:"⚠️ OTP confidential",
-      legalWithdraw:"⚖️ Up to ₹1L/month",
-      longDesc: "Yono Rummy is a feature-rich rummy platform with points, pool, and deals formats. It offers instant deposits, secure withdrawals, and 24/7 customer support. The app also hosts leaderboard challenges with big prizes.",
-      tags: ["#Rummy", "#PoolRummy", "#PointsGame", "#Leaderboard"],
-      link:"https://yonorummy009.com/?code=VIP17W6WRJE" 
-    },
-    { 
-      id:4, 
-      name:"Teen Patti master Old", 
-      type:"Teen Patti", 
-      img:"https://i.ibb.co/zWSRGNJD/teenpatti.png", 
-      rating:"4.3", 
-      size:"40MB", 
-      bonus:"35", 
-      downloads:"40k+", 
-      safety:"🔒 Safe & Secure",
-      googleSafe:"✅ Google Play Protect",
-      customerService:"📞 In-app Chat",
-      otpFraud:"⚠️ Never share OTP",
-      legalWithdraw:"⚖️ Max ₹10k/day",
-      longDesc: "The classic version of Teen Patti Master, loved by long-time players. It has simple graphics, low data usage, and works on all Android devices. Enjoy the original gameplay with minimal distractions.",
-      tags: ["#Classic", "#LowData", "#Stable", "#NoAds"],
-      link:"https://www.earntp.com/m/jm9n7r" 
-    },
-    { 
-      id:5, 
-      name:"RummySe",              
-      type:"Rummy", 
-      img:"https://i.ibb.co/CpV12LMX/rummyse.png", 
-      rating:"4.1", 
-      size:"28MB", 
-      bonus:"30", 
-      downloads:"60k+", 
-      safety:"🔒 Secure Payment",
-      googleSafe:"✅ Whitelisted",
-      customerService:"📞 Ticket System",
-      otpFraud:"⚠️ OTP is secret",
-      legalWithdraw:"⚖️ UPI/Bank transfer",
-      longDesc: "RummySe offers a seamless rummy experience with quick matchmaking and multiple variants. It has a built-in chat feature and regular promotions. The app is known for its transparent withdrawal process.",
-      tags: ["#Rummy", "#QuickMatch", "#Chat", "#Promotions"],
-      link:"https://www.rummyse.com/share/88Guqxy" 
-    },
-    { 
-      id:6, 
-      name:"RummySe Old",          
-      type:"Rummy", 
-      img:"https://i.ibb.co/gMpkG28x/rummyse-old.png", 
-      rating:"4.0", 
-      size:"26MB", 
-      bonus:"25", 
-      downloads:"35k+", 
-      safety:"🔒 Verified",
-      googleSafe:"✅ Safe",
-      customerService:"📞 Email only",
-      otpFraud:"⚠️ Keep OTP private",
-      legalWithdraw:"⚖️ 2-3 days processing",
-      longDesc: "The older version of RummySe, still functional and preferred by users with older phones. It retains the core rummy features and is very light on storage. Ideal for casual play.",
-      tags: ["#Lightweight", "#OldVersion", "#Casual", "#NoFrills"],
-      link:"https://www.rummyse.com/share/88G.xxy" 
-    },
-    { 
-      id:7, 
-      name:"Good Slots",           
-      type:"Slots", 
-      img:"https://i.ibb.co/F4mzg3fx/goodslots.png", 
-      rating:"4.2", 
-      size:"10MB", 
-      bonus:"45", 
-      downloads:"80k+", 
-      safety:"🔒 Safe & Fair",
-      googleSafe:"✅ Verified",
-      customerService:"📞 24/7 Chat",
-      otpFraud:"⚠️ Never share OTP",
-      legalWithdraw:"⚖️ 48h withdrawal",
-      longDesc: "Good Slots brings the excitement of Vegas slots to your mobile. With dozens of themes, free spins, and daily jackpots, it's a favorite among slot enthusiasts. The app is tiny and loads quickly.",
-      tags: ["#Slots", "#Jackpot", "#FreeSpins", "#Casino"],
-      link:"https://sharegoodslots.xyz" 
-    }
-  ];
-
-  const homeDiv = document.getElementById('home');
-  const allAppsDiv = document.getElementById('allAppsList');
-
-  // History management
-  window.addEventListener('popstate', function(event) {
-    if (event.state && event.state.tab) {
-      openTab(event.state.tab, false);
-    } else {
-      openTab('home', false);
-    }
-  });
-
-  function openTab(tabId, pushState = true) {
-    document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
-    if (pushState) {
-      history.pushState({ tab: tabId }, '', '#' + tabId);
-    }
-    window.scrollTo(0, 0);
-  }
-
-  // Render home with uniform green-gold download buttons
-  function renderHome() {
-    homeDiv.innerHTML = '';
-    apps.forEach((app, index) => {
-      homeDiv.innerHTML += `
-        <div class="card">
-          <div class="app-row">
-            <div class="rank">${index+1}</div>
-            <div class="icon"><img src="${app.img}" alt="${app.name}"></div>
-            <div class="details">
-              <h3>${app.name}</h3>
-              <div class="bonus">🟢 Bonus: ₹${app.bonus}</div>
-              <div class="min-withdraw">🟢 Min Withdraw: ₹100</div>
-            </div>
-            <button class="home-download" onclick="openApp(${app.id})">Download</button>
-          </div>
-        </div>
-      `;
-    });
-  }
-
-  // Open detail
-  function openApp(id) {
-    const app = apps.find(a => a.id === id);
-    if (!app) return;
-
-    document.getElementById('dImg').src = app.img;
-    document.getElementById('dTitle').innerText = `${app.name} APK – Official Real Cash ${app.type} App`;
-    document.getElementById('dLongDesc').innerText = app.longDesc;
-    document.getElementById('dRating').innerText = app.rating;
-    document.getElementById('dDownloads').innerText = app.downloads;
-    document.getElementById('dSize').innerText = app.size;
-    document.getElementById('dBonusValue').innerText = app.bonus;
-    document.getElementById('dSafety').innerText = app.safety;
-    document.getElementById('dGoogleSafe').innerText = app.googleSafe;
-    document.getElementById('dCustomerService').innerText = app.customerService;
-    document.getElementById('dOtpFraud').innerText = app.otpFraud;
-    document.getElementById('dLegalWithdraw').innerText = app.legalWithdraw;
-    
-    // Set app name in download button
-    document.getElementById('dAppName').innerText = app.name;
-    
-    // Set click handler
-    document.getElementById('dDownload').onclick = () => window.open(app.link, '_blank');
-    
-    document.getElementById('dNote').innerHTML = `Use the green-red button above to go to the official <strong>${app.name}</strong> page. Install safely on your Android phone.`;
-
-    // Tags
-    const tagsTop = document.getElementById('dTagsTop');
-    const tagsBottom = document.getElementById('dTagsBottom');
-    tagsTop.innerHTML = '';
-    tagsBottom.innerHTML = '';
-    app.tags.forEach(tag => {
-      const spanTop = document.createElement('span');
-      spanTop.className = 'badge tag-badge';
-      spanTop.innerText = tag;
-      tagsTop.appendChild(spanTop);
-
-      const spanBottom = document.createElement('span');
-      spanBottom.className = 'badge tag-badge';
-      spanBottom.innerText = tag;
-      tagsBottom.appendChild(spanBottom);
-    });
-
-    window.currentApp = app;
-    renderAllApps();
-    openTab('detail');
-  }
-
-  // Render all apps A→Z
-  function renderAllApps() {
-    const sorted = [...apps].sort((a,b) => a.name.localeCompare(b.name));
-    allAppsDiv.innerHTML = '';
-    sorted.forEach((app, idx) => {
-      allAppsDiv.innerHTML += `
-        <div class="all-app-item">
-          <div class="rank" style="width:32px; height:32px; font-size:14px;">${idx+1}</div>
-          <div class="icon-small"><img src="${app.img}" alt="${app.name}" style="width:50px; height:50px; border-radius:14px;"></div>
-          <div style="flex:1;">
-            <strong>${app.name}</strong><br>
-            <span style="color:#c62828;">₹${app.bonus}</span>
-          </div>
-          <button class="mini-download" onclick="openApp(${app.id})">Download</button>
-        </div>
-      `;
-    });
-  }
-
-  // Share
-  function shareWithFriends() {
-    if (!window.currentApp) return;
-    const shareData = {
-      title: window.currentApp.name,
-      text: `${window.currentApp.longDesc} Bonus: ₹${window.currentApp.bonus}. ${window.currentApp.otpFraud} ${window.currentApp.legalWithdraw} Download: ${window.currentApp.link}`,
-      url: window.currentApp.link,
-    };
-    if (navigator.share) {
-      navigator.share(shareData).catch(() => {
-        prompt('Copy this link to share:', window.currentApp.link);
-      });
-    } else {
-      prompt('Share this link with friends:', window.currentApp.link);
-    }
-  }
-
-  // Initial load
-  if (window.location.hash === '#detail') {
-    openTab('home');
-  } else if (window.location.hash === '#about') {
-    openTab('about');
-  } else if (window.location.hash === '#privacy') {
-    openTab('privacy');
-  } else if (window.location.hash === '#disclaimer') {
-    openTab('disclaimer');
-  } else {
-    openTab('home');
-  }
-
-  renderHome();
+  // You can add interactivity here if needed, e.g., button actions.
+  // For now, all buttons are placeholders.
 </script>
 
 </body>
 </html>
 ```
+
