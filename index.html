@@ -1,4 +1,15 @@
-Here is the final HTML code. It combines the best of both worlds: a home page with 7 apps (uniform green‑gold download buttons) and a detail page for each app that follows the exact visual style of your Good Slots reference image – with rating, size, downloads, bonus in pill stats, a prominent download button, share button, app‑specific tags, a description, and a full A→Z list of all apps below. Clicking any app in the A→Z list opens its detail page. The warning box and footer remain. This is the complete, production‑ready version.
+Here is the final HTML code. It includes a home page listing all 7 apps with uniform green‑gold download buttons. Clicking any app (e.g., Yono Rummy) opens its dedicated detail page with:
+
+· ⭐ Rating
+· 📦 App size (MB)
+· ⬇️ Download count
+· 🎁 Bonus amount
+· A prominent green‑red DOWNLOAD button
+· A pink‑black Share with friends button
+· App‑specific hashtags and a description
+· At the bottom, a complete A→Z list of all apps with mini download buttons for quick navigation
+
+All data is dynamic and matches your request. This is the complete, production‑ready version.
 
 ```html
 <!DOCTYPE html>
@@ -155,21 +166,7 @@ Here is the final HTML code. It combines the best of both worlds: a home page wi
       letter-spacing: 0.5px;
     }
 
-    /* Bonus badge (special) */
-    .bonus-badge {
-      background: linear-gradient(145deg, #ffd0d0, #ffb6b6);
-      color: #b33939;
-      padding: 8px 30px;
-      border-radius: 40px;
-      font-weight: 900;
-      font-size: 24px;
-      display: inline-block;
-      margin: 10px 0 15px;
-      border-left: 5px solid #ff3b3b;
-      box-shadow: 0 4px 10px rgba(255,0,0,0.2);
-    }
-
-    /* Download button – green-red gradient (like Good Slots image) */
+    /* Download button – green-red gradient */
     .detail-download {
       background: linear-gradient(145deg, #2ecc71, #e74c3c);
       color: white;
@@ -417,7 +414,7 @@ Here is the final HTML code. It combines the best of both worlds: a home page wi
   <!-- HOME TAB -->
   <div id="home" class="tab active"></div>
 
-  <!-- DETAIL TAB – matches Good Slots image style -->
+  <!-- DETAIL TAB – shows rating, MB, downloads, bonus, download button, share, tags, description -->
   <div id="detail" class="tab">
     <div class="card center">
       <img id="dImg" class="big-icon">
@@ -508,7 +505,7 @@ Here is the final HTML code. It combines the best of both worlds: a home page wi
 </div>
 
 <script>
-  // ---------- 7 APPS data (matches Good Slots style) ----------
+  // ---------- 7 APPS data (Yono Rummy included) ----------
   const apps = [
     {
       id:1,
